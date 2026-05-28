@@ -166,7 +166,7 @@
     .tag-pattern {
       font-size: 0.65rem;
       font-family: 'Courier New', Courier, monospace;
-      background: transparent;
+      background: #ece5d1;
       border: 1px solid var(--border);
       color: var(--muted);
       border-radius: 4px;
@@ -314,6 +314,34 @@
       border-radius: 3px;
     }
 
+    /* ── Source tags ── */
+    .verb-sources {
+      margin-top: 20px;
+      padding-top: 14px;
+      border-top: 1px solid #e8dfc8;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .sources-label {
+      font-size: 0.65rem;
+      font-style: italic;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    .tag-source {
+      font-size: 11px;
+      background: #e8f0f5;
+      color: #2a4a5a;
+      border: 1px solid #a0bcc8;
+      border-radius: 5px;
+      padding: 3px 10px;
+      white-space: nowrap;
+    }
+
     /* ── Scrollbars ── */
     #verb-list::-webkit-scrollbar,
     .verbs-right::-webkit-scrollbar { width: 5px; }
@@ -453,6 +481,8 @@
       imperative: 'The command form. Singular for one person, plural for a group.'
     };
 
+    const SOURCE_NAMES = { 'osweald-bera': 'Ōsweald Bera' };
+
     function section(title, rows, tip) {
       const tipAttr = tip ? ` data-tip="${tip}"` : '';
       return `<div class="conj-section">
@@ -535,6 +565,10 @@
           <div class="nonfinite-head">Non-finite &amp; Imperative</div>
           <div class="tile-grid">${tiles}</div>
         </div>
+        ${verb.sources && verb.sources.length ? `<div class="verb-sources">
+          <span class="sources-label">Sources</span>
+          ${verb.sources.map(s => `<span class="tag-source">${SOURCE_NAMES[s.text] || s.text} · Ch. ${s.chapter}</span>`).join('')}
+        </div>` : ''}
       </div>`;
     }
 
