@@ -1,6 +1,7 @@
 <!-- Serve locally: python3 -m http.server 8000  →  open http://localhost:8000 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,7 +51,9 @@
       white-space: nowrap;
     }
 
-    .entry-body { min-width: 0; }
+    .entry-body {
+      min-width: 0;
+    }
 
     .entry-title {
       font-size: 0.95rem;
@@ -83,7 +86,10 @@
     }
 
     @media (max-width: 768px) {
-      .changelog-main { padding: 28px 16px 48px; }
+      .changelog-main {
+        padding: 28px 16px 48px;
+      }
+
       .entry {
         grid-template-columns: 1fr;
         gap: 6px 0;
@@ -91,6 +97,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <div class="wip-banner">Work in progress — content and features are actively being added.</div>
@@ -118,11 +125,27 @@
       <article class="entry">
         <div class="entry-date">28 May 2026</div>
         <div class="entry-body">
+          <div class="entry-title">Add verbs from Ōsweald Bera Chapter I</div>
+          <ul class="entry-items">
+            <li>Added ġehieran, ġewītan, ġeseon, reċċan, wunian, </li>
+            <li>Added sources tags on verb cards</li>
+            <li>Standardized presentation of weak verb patterns on verb cards</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-date">28 May 2026</div>
+        <div class="entry-body">
           <div class="entry-title">Initial site setup and starter verbs</div>
           <ul class="entry-items">
-            <li>Five-page structure: landing page, verb conjugation reference, grammar basics reference, about page, and changelog</li>
-            <li>12 starter verbs covering Strong classes I–VII, Weak classes I–II, <em>bēon</em> (irregular, with dual <em>eom-</em> and <em>bēo-</em> paradigms), and <em>wītan</em> (preterite-present)</li>
-            <li>Full conjugation display: present and past indicative, present and past subjunctive, non-finite forms, and imperative</li>
+            <li>Five-page structure: landing page, verb conjugation reference, grammar basics reference, about page, and
+              changelog</li>
+            <li>12 starter verbs covering Strong classes I–VII, Weak classes I–II, <em>bēon</em> (irregular, with dual
+              <em>eom-</em> and <em>bēo-</em> paradigms), and <em>wītan</em> (preterite-present)
+            </li>
+            <li>Full conjugation display: present and past indicative, present and past subjunctive, non-finite forms,
+              and imperative</li>
             <li>Live search filtering the verb sidebar by Old English headword or English gloss</li>
             <li>Shared parchment design with WIP banner, site header, navigation, and footer</li>
           </ul>
@@ -137,4 +160,5 @@
 
   <script src="components.js"></script>
 </body>
+
 </html>
