@@ -483,6 +483,17 @@
 
     const SOURCE_NAMES = { 'osweald-bera': 'Ōsweald Bera' };
 
+    const CLASS_PATTERNS = {
+      'Strong I':   'ī · ā · i · i',
+      'Strong II':  'ēo · ēa · u · o',
+      'Strong III': 'i · a · u · u',
+      'Strong IV':  'e · æ · ǣ · o',
+      'Strong V':   'e · æ · ǣ · e',
+      'Strong VI':  'a · ō · ō · a',
+      'Strong VII': 'ā · ē · ē · ā',
+      'Weak II':    'Weak II · -ian',
+    };
+
     function section(title, rows, tip) {
       const tipAttr = tip ? ` data-tip="${tip}"` : '';
       return `<div class="conj-section">
@@ -502,6 +513,7 @@
     function renderVerb(verb) {
       const f = verb.forms;
       const patternLabel = verb.type === 'strong' ? 'Ablaut series' : 'Stem pattern';
+      const pattern = CLASS_PATTERNS[verb.class] ?? verb.pattern;
 
       const presIndRows =
         row('1st sg.', f.pres_ind.sg1) +
@@ -556,7 +568,7 @@
             <span class="tag ${tagClass(verb.type)}">${verb.class}</span>
             <span class="pattern-wrap">
               <span class="pattern-label">${patternLabel}:</span>
-              <span class="tag-pattern">${verb.pattern}</span>
+              <span class="tag-pattern">${pattern}</span>
             </span>
           </div>
         </div>

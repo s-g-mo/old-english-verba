@@ -5,7 +5,6 @@
     "gloss": "to carry, bear",
     "class": "Strong IV",
     "type": "strong",
-    "pattern": "e · æ · ǣ · o",
     "sources": [],
     "forms": {
       "infinitive": "beran",
@@ -42,7 +41,6 @@
     "gloss": "to choose",
     "class": "Strong II",
     "type": "strong",
-    "pattern": "ēo · ēa · u · o",
     "sources": [],
     "forms": {
       "infinitive": "cēosan",
@@ -79,7 +77,6 @@
     "gloss": "to drive",
     "class": "Strong I",
     "type": "strong",
-    "pattern": "ī · ā · i · i",
     "sources": [],
     "forms": {
       "infinitive": "drīfan",
@@ -116,7 +113,6 @@
     "gloss": "to travel, go",
     "class": "Strong VI",
     "type": "strong",
-    "pattern": "a · ō · ō · a",
     "sources": [],
     "forms": {
       "infinitive": "faran",
@@ -153,7 +149,6 @@
     "gloss": "to see",
     "class": "Strong V",
     "type": "strong",
-    "pattern": "e + C",
     "sources": [{ "text": "osweald-bera", "chapter": 1 }],
     "review_notes": "Contracted Strong V. Past plural ġesāwon is irregular for class V — verify if needed.",
     "forms": {
@@ -191,7 +186,6 @@
     "gloss": "to leave, depart",
     "class": "Strong I",
     "type": "strong",
-    "pattern": "ī + C",
     "sources": [{ "text": "osweald-bera", "chapter": 1 }],
     "review_notes": "",
     "forms": {
@@ -229,7 +223,6 @@
     "gloss": "to command; to be called",
     "class": "Strong VII",
     "type": "strong",
-    "pattern": "ā · ē · ē · ā",
     "sources": [{ "text": "osweald-bera", "chapter": 1 }],
     "forms": {
       "infinitive": "hātan",
@@ -266,7 +259,6 @@
     "gloss": "to sing",
     "class": "Strong III",
     "type": "strong",
-    "pattern": "i · a · u · u",
     "sources": [],
     "forms": {
       "infinitive": "singan",
@@ -303,7 +295,6 @@
     "gloss": "to speak",
     "class": "Strong V",
     "type": "strong",
-    "pattern": "e · æ · ǣ · e",
     "sources": [],
     "forms": {
       "infinitive": "sprecan",
@@ -454,7 +445,6 @@
     "gloss": "to love",
     "class": "Weak II",
     "type": "weak",
-    "pattern": "Weak II · -ian",
     "sources": [],
     "forms": {
       "infinitive": "lufian",
@@ -529,7 +519,6 @@
     "gloss": "to live, dwell; remain, stay",
     "class": "Weak II",
     "type": "weak",
-    "pattern": "Weak II · -ian",
     "sources": [{ "text": "osweald-bera", "chapter": 1 }],
     "review_notes": "",
     "forms": {
