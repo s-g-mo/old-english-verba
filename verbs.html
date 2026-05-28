@@ -326,6 +326,71 @@
       background: var(--border);
       border-radius: 3px;
     }
+
+    /* ── Mobile (≤ 768px) ── */
+    @media (max-width: 768px) {
+
+      /* Allow the page to scroll naturally */
+      html, body { height: auto; overflow: auto; }
+
+      /* Stack sidebar above content */
+      .verbs-layout { flex-direction: column; overflow: visible; }
+
+      /* Sidebar: full width, horizontal strip */
+      #sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        height: auto;
+        overflow: visible;
+      }
+
+      /* Search: stretch to full width */
+      .sidebar-search { padding: 10px 16px; border-bottom: none; }
+
+      /* Verb strip: horizontal scroll lane */
+      #verb-list {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 0 4px 4px;
+        flex: none;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      #verb-list::-webkit-scrollbar { display: none; }
+
+      /* Flatten group structure for strip layout */
+      .sidebar-group { display: contents; }
+      .group-label   { display: none; }
+
+      /* Compact horizontal verb items */
+      .verb-item {
+        flex-shrink: 0;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        padding: 6px 12px 5px;
+      }
+      .verb-item.active { border-bottom-color: var(--accent); }
+      .verb-item .tag   { display: none; }
+
+      /* Right panel: full width, natural page scroll */
+      .verbs-right { overflow-y: visible; }
+      #main-content { padding: 24px 16px 40px; }
+
+      /* Conjugation grid → single column */
+      .conj-grid { grid-template-columns: 1fr; gap: 16px; }
+
+      /* Tile grid → two columns */
+      .tile-grid { grid-template-columns: 1fr 1fr; }
+
+      /* Typography */
+      .verb-headword { font-size: 1.3rem; }
+      .conj-label    { font-size: 0.76rem; }
+      .conj-form     { font-size: 0.875rem; }
+      .tile-form     { font-size: 0.875rem; }
+    }
   </style>
 </head>
 <body>
@@ -516,6 +581,9 @@
       renderSidebar(document.getElementById('search-input').value);
       document.getElementById('main-content').innerHTML = renderVerb(verb);
       document.getElementById('main-content').scrollTop = 0;
+      // On mobile the sidebar is a horizontal strip — scroll active item into view
+      const activeEl = document.querySelector('.verb-item.active');
+      if (activeEl) activeEl.scrollIntoView({ block: 'nearest', inline: 'nearest' });
     }
 
     document.getElementById('sidebar').addEventListener('click', e => {
