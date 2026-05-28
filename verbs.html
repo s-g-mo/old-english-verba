@@ -3,6 +3,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231e1508' stroke='%23c4a96a' stroke-width='5'/><circle cx='50' cy='50' r='38' fill='none' stroke='%238b6914' stroke-width='2'/><line x1='18' y1='18' x2='82' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><line x1='82' y1='18' x2='18' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><circle cx='50' cy='50' r='10' fill='%23c4a96a'/><circle cx='50' cy='50' r='5' fill='%231e1508'/></svg>">
+  <link rel="alternate icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231e1508' stroke='%23c4a96a' stroke-width='5'/><circle cx='50' cy='50' r='38' fill='none' stroke='%238b6914' stroke-width='2'/><line x1='18' y1='18' x2='82' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><line x1='82' y1='18' x2='18' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><circle cx='50' cy='50' r='10' fill='%23c4a96a'/><circle cx='50' cy='50' r='5' fill='%231e1508'/></svg>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Verbs — Old English Verbs</title>
   <link rel="stylesheet" href="style.css">
@@ -276,6 +278,42 @@
       border-radius: 3px;
     }
 
+    /* ── Ablaut / stem pattern label ── */
+    .pattern-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pattern-label {
+      font-size: 0.65rem;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    /* ── Tooltips ── */
+    [data-tip] {
+      cursor: help;
+    }
+
+    .oe-tooltip {
+      position: fixed;
+      z-index: 9999;
+      background: #f5edd9;
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 0.78rem;
+      line-height: 1.6;
+      padding: 8px 12px;
+      max-width: 280px;
+      box-shadow: 0 2px 10px rgba(30, 21, 8, 0.1);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.12s ease;
+      border-radius: 3px;
+    }
+
     /* ── Scrollbars ── */
     #verb-list::-webkit-scrollbar,
     .verbs-right::-webkit-scrollbar { width: 5px; }
@@ -302,6 +340,7 @@
     <nav class="site-nav">
       <a href="index.html" class="nav-link">Home</a>
       <a href="verbs.html" class="nav-link active">Verbs</a>
+      <a href="basics.html" class="nav-link">Basics</a>
       <a href="about.html" class="nav-link">About</a>
       <a href="changelog.html" class="nav-link">Changelog</a>
     </nav>
@@ -337,22 +376,37 @@
       return `<tr><td class="conj-label">${label}</td><td class="conj-form">${form || '—'}</td></tr>`;
     }
 
-    function section(title, rows) {
+    const TIPS = {
+      pres_ind:   'States facts and real events in the present. The default mood for ordinary statements.',
+      past_ind:   'States facts and real events in the past. The default mood for ordinary past statements.',
+      pres_subj:  'Expresses present possibility, doubt, wishes, or indirect speech. Used where something is not stated as straightforwardly real.',
+      past_subj:  'Expresses past possibility, doubt, wishes, or indirect speech. Often found in hypothetical or reported constructions.',
+      infinitive: "The base verb form. Equivalent to modern 'to sing' in its plain sense — used after verbs of wanting, intending, or ability.",
+      inf_infl:   "Used to express purpose or intention. Formed with tō + the -enne ending. Equivalent to 'in order to sing' or 'for the purpose of singing'.",
+      pres_part:  "Describes an ongoing action, equivalent to the modern -ing form. Used attributively ('the singing man') or adverbially ('he came singing').",
+      past_part:  "Describes a completed action. Used in passive and perfect constructions ('the song was sung', 'he had sung'). Typically formed with the ġe- prefix.",
+      imperative: 'The command form. Singular for one person, plural for a group.'
+    };
+
+    function section(title, rows, tip) {
+      const tipAttr = tip ? ` data-tip="${tip}"` : '';
       return `<div class="conj-section">
-        <div class="section-head">${title}</div>
+        <div class="section-head"${tipAttr}>${title}</div>
         <table class="conj-table">${rows}</table>
       </div>`;
     }
 
-    function tile(label, form) {
+    function tile(label, form, tip) {
+      const tipAttr = tip ? ` data-tip="${tip}"` : '';
       return `<div class="tile">
-        <div class="tile-label">${label}</div>
+        <div class="tile-label"${tipAttr}>${label}</div>
         <div class="tile-form">${form || '—'}</div>
       </div>`;
     }
 
     function renderVerb(verb) {
       const f = verb.forms;
+      const patternLabel = verb.type === 'strong' ? 'Ablaut series' : 'Stem pattern';
 
       const presIndRows =
         row('1st sg.', f.pres_ind.sg1) +
@@ -375,10 +429,10 @@
         row('plural',   f.past_subj.pl);
 
       let gridSections =
-        section('Present Indicative',  presIndRows) +
-        section('Past Indicative',     pastIndRows) +
-        section('Present Subjunctive', presSubjRows) +
-        section('Past Subjunctive',    pastSubjRows);
+        section('Present Indicative',  presIndRows,  TIPS.pres_ind) +
+        section('Past Indicative',     pastIndRows,  TIPS.past_ind) +
+        section('Present Subjunctive', presSubjRows, TIPS.pres_subj) +
+        section('Past Subjunctive',    pastSubjRows, TIPS.past_subj);
 
       if (f.alt_pres_ind) {
         const altRows =
@@ -390,12 +444,12 @@
       }
 
       const tiles =
-        tile('Infinitive',           f.infinitive) +
-        tile('Inflected Infinitive', f.inflected_infinitive) +
-        tile('Present Participle',   f.pres_participle) +
-        tile('Past Participle',      f.past_participle) +
-        tile('Imperative Sg.',       f.imperative_sg) +
-        tile('Imperative Pl.',       f.imperative_pl);
+        tile('Infinitive',           f.infinitive,           TIPS.infinitive) +
+        tile('Inflected Infinitive', f.inflected_infinitive, TIPS.inf_infl) +
+        tile('Present Participle',   f.pres_participle,      TIPS.pres_part) +
+        tile('Past Participle',      f.past_participle,      TIPS.past_part) +
+        tile('Imperative Sg.',       f.imperative_sg,        TIPS.imperative) +
+        tile('Imperative Pl.',       f.imperative_pl,        TIPS.imperative);
 
       return `<div class="verb-view">
         <div class="verb-header">
@@ -405,7 +459,10 @@
           </div>
           <div class="verb-badges">
             <span class="tag ${tagClass(verb.type)}">${verb.class}</span>
-            <span class="tag-pattern">${verb.pattern}</span>
+            <span class="pattern-wrap">
+              <span class="pattern-label">${patternLabel}:</span>
+              <span class="tag-pattern">${verb.pattern}</span>
+            </span>
           </div>
         </div>
         <div class="conj-grid">${gridSections}</div>
@@ -485,7 +542,42 @@
       }
     }
 
+    function initTooltips() {
+      const tip = document.createElement('div');
+      tip.className = 'oe-tooltip';
+      document.body.appendChild(tip);
+
+      let showTimer = null;
+
+      document.getElementById('main-content').addEventListener('mouseover', e => {
+        const el = e.target.closest('[data-tip]');
+        if (!el) return;
+        clearTimeout(showTimer);
+        showTimer = setTimeout(() => {
+          tip.textContent = el.dataset.tip;
+          const r = el.getBoundingClientRect();
+          let top = r.bottom + 8;
+          let left = r.left;
+          const tw = tip.offsetWidth;
+          const th = tip.offsetHeight;
+          if (left + tw > window.innerWidth - 12) left = window.innerWidth - tw - 12;
+          if (top + th > window.innerHeight - 12) top = r.top - th - 8;
+          tip.style.left = left + 'px';
+          tip.style.top = top + 'px';
+          tip.style.opacity = '1';
+        }, 200);
+      });
+
+      document.getElementById('main-content').addEventListener('mouseout', e => {
+        const el = e.target.closest('[data-tip]');
+        if (!el) return;
+        clearTimeout(showTimer);
+        tip.style.opacity = '0';
+      });
+    }
+
     init();
+    initTooltips();
   </script>
   <script src="components.js"></script>
 </body>
