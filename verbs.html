@@ -555,7 +555,7 @@
 
       let html = '';
       for (const g of groups) {
-        const items = matched.filter(v => g.types.includes(v.type));
+        const items = matched.filter(v => g.types.includes(v.type)).sort((a, b) => a.oe.localeCompare(b.oe));
         if (!items.length) continue;
         html += `<div class="sidebar-group"><span class="group-label">${g.label}</span>`;
         for (const v of items) {
