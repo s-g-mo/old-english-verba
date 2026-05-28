@@ -149,7 +149,12 @@
     "gloss": "to see",
     "class": "Strong V",
     "type": "strong",
-    "sources": [{ "text": "osweald-bera", "chapter": 1 }],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 1
+      }
+    ],
     "review_notes": "Contracted Strong V. Past plural ġesāwon is irregular for class V — verify if needed.",
     "forms": {
       "infinitive": "ġesēon",
@@ -186,7 +191,12 @@
     "gloss": "to leave, depart",
     "class": "Strong I",
     "type": "strong",
-    "sources": [{ "text": "osweald-bera", "chapter": 1 }],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 1
+      }
+    ],
     "review_notes": "",
     "forms": {
       "infinitive": "ġewītan",
@@ -223,7 +233,12 @@
     "gloss": "to command; to be called",
     "class": "Strong VII",
     "type": "strong",
-    "sources": [{ "text": "osweald-bera", "chapter": 1 }],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 1
+      }
+    ],
     "forms": {
       "infinitive": "hātan",
       "inflected_infinitive": "tō hātenne",
@@ -370,7 +385,9 @@
     "type": "weak",
     "pattern": "Weak I · long stem",
     "sources": [],
-    "related": ["gehieran"],
+    "related": [
+      "gehieran"
+    ],
     "forms": {
       "infinitive": "hīeran",
       "inflected_infinitive": "tō hīerenne",
@@ -407,8 +424,15 @@
     "class": "Weak I",
     "type": "weak",
     "pattern": "Weak I · long stem",
-    "sources": [{ "text": "osweald-bera", "chapter": 1 }],
-    "related": ["hieran"],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 1
+      }
+    ],
+    "related": [
+      "hieran"
+    ],
     "review_notes": "Prefixed form of hīeran with perfectivising ġe-. Conjugates identically to hīeran.",
     "forms": {
       "infinitive": "ġehīeran",
@@ -482,7 +506,12 @@
     "class": "Weak I",
     "type": "weak",
     "pattern": "Weak I · geminating",
-    "sources": [{ "text": "osweald-bera", "chapter": 1 }],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 1
+      }
+    ],
     "review_notes": "Irregular past: reahte (not *recede). Past participle ġereht.",
     "forms": {
       "infinitive": "reċċan",
@@ -519,7 +548,12 @@
     "gloss": "to live, dwell; remain, stay",
     "class": "Weak II",
     "type": "weak",
-    "sources": [{ "text": "osweald-bera", "chapter": 1 }],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 1
+      }
+    ],
     "review_notes": "",
     "forms": {
       "infinitive": "wunian",
@@ -557,7 +591,12 @@
     "class": "Irregular",
     "type": "irregular",
     "pattern": "suppletive",
-    "sources": [{ "text": "osweald-bera", "chapter": 1 }],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 1
+      }
+    ],
     "forms": {
       "infinitive": "bēon / wesan",
       "inflected_infinitive": "tō bēonne",
@@ -600,7 +639,12 @@
     "class": "Irregular",
     "type": "irregular",
     "pattern": "anomalous modal",
-    "sources": [{ "text": "osweald-bera", "chapter": 1 }],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 1
+      }
+    ],
     "review_notes": "No imperative or inflected infinitive. Past participle rarely attested.",
     "forms": {
       "infinitive": "willan",

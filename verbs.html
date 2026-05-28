@@ -647,7 +647,9 @@
         if (!res.ok) throw new Error(res.statusText);
         verbs = await res.json();
         renderSidebar('');
-        if (verbs.length) selectVerb(verbs[0].id);
+        const hash = window.location.hash.slice(1);
+        const initial = (hash && verbs.find(v => v.id === hash)) || verbs[0];
+        if (initial) selectVerb(initial.id);
       } catch (err) {
         document.getElementById('main-content').innerHTML =
           `<div class="placeholder">Could not load verbs.json.<br>
