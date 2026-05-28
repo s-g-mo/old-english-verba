@@ -1,0 +1,491 @@
+<!-- Serve locally: python3 -m http.server 8000  →  open http://localhost:8000 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verbs — Old English Verbs</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Verbs page fills the viewport below banner + header ── */
+    html, body { height: 100%; overflow: hidden; }
+
+    /* ── Two-panel layout ── */
+    .verbs-layout {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    /* ── Sidebar ── */
+    #sidebar {
+      width: 220px;
+      flex-shrink: 0;
+      background: var(--sidebar-bg);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .sidebar-search {
+      padding: 10px 10px 8px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    #search-input {
+      font-family: var(--font);
+      font-size: 0.82rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 6px 10px;
+      color: var(--text);
+      width: 100%;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    #search-input:focus { border-color: var(--accent); }
+    #search-input::placeholder { color: var(--muted); }
+
+    #verb-list {
+      overflow-y: auto;
+      flex: 1;
+      padding: 8px 0 24px;
+    }
+
+    .sidebar-group { margin-bottom: 4px; }
+
+    .group-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 10px 14px 4px;
+      display: block;
+    }
+
+    .verb-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      padding: 6px 12px 6px 14px;
+      cursor: pointer;
+      border-left: 3px solid transparent;
+      transition: background 0.1s;
+    }
+
+    .verb-item:hover { background: rgba(139, 105, 20, 0.07); }
+
+    .verb-item.active {
+      border-left-color: var(--accent);
+      background: rgba(139, 105, 20, 0.11);
+    }
+
+    .verb-oe {
+      font-size: 0.875rem;
+      font-style: italic;
+      color: var(--text);
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .verb-item.active .verb-oe {
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    .no-results {
+      font-size: 0.8rem;
+      font-style: italic;
+      color: var(--muted);
+      padding: 16px 14px;
+    }
+
+    /* ── Right panel: verb display + footer ── */
+    .verbs-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      min-width: 0;
+    }
+
+    #main-content {
+      flex: 1;
+      padding: 36px 44px 48px;
+    }
+
+    .verbs-right .site-footer {
+      margin-top: 0;
+    }
+
+    /* ── Verb view ── */
+    .verb-view { max-width: 740px; }
+
+    .verb-header { margin-bottom: 28px; }
+
+    .verb-heading-row {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .verb-headword {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.1;
+    }
+
+    .verb-gloss {
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .verb-badges {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tag-pattern {
+      font-size: 0.65rem;
+      font-family: 'Courier New', Courier, monospace;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      border-radius: 4px;
+      padding: 2px 7px;
+      line-height: 1.5;
+    }
+
+    /* ── Conjugation grid ── */
+    .conj-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px 36px;
+      margin-bottom: 28px;
+    }
+
+    .conj-section { min-width: 0; }
+
+    .section-head {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .conj-table { width: 100%; border-collapse: collapse; }
+    .conj-table tr { border-bottom: 1px solid #e0d9c8; }
+    .conj-table tr:last-child { border-bottom: none; }
+    .conj-table td { padding: 5px 0; vertical-align: middle; }
+
+    .conj-label {
+      font-size: 0.72rem;
+      font-style: italic;
+      color: var(--muted);
+      width: 88px;
+      padding-right: 8px;
+      white-space: nowrap;
+    }
+
+    .conj-form {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    /* ── Non-finite & Imperative tiles ── */
+    .nonfinite-section { margin-top: 4px; }
+
+    .nonfinite-head {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .tile-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .tile {
+      background: #ece5d1;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 14px 11px;
+    }
+
+    .tile-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 5px;
+    }
+
+    .tile-form {
+      font-size: 0.93rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    /* ── Loading / error placeholder ── */
+    .placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 200px;
+      color: var(--muted);
+      font-style: italic;
+      font-size: 1rem;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .placeholder code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+      font-style: normal;
+      background: #e8e0cc;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+
+    /* ── Scrollbars ── */
+    #verb-list::-webkit-scrollbar,
+    .verbs-right::-webkit-scrollbar { width: 5px; }
+
+    #verb-list::-webkit-scrollbar-track,
+    .verbs-right::-webkit-scrollbar-track { background: transparent; }
+
+    #verb-list::-webkit-scrollbar-thumb,
+    .verbs-right::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wip-banner">Work in progress — content and features are actively being added.</div>
+
+  <header class="site-header">
+    <a href="index.html" class="site-brand">
+      <span class="site-name">Old English Verbs</span>
+      <span class="site-subtitle">A verb conjugation reference</span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="verbs.html" class="nav-link active">Verbs</a>
+      <a href="about.html" class="nav-link">About</a>
+    </nav>
+  </header>
+
+  <div class="verbs-layout">
+
+    <nav id="sidebar">
+      <div class="sidebar-search">
+        <input type="search" id="search-input" placeholder="Search verbs…" autocomplete="off" spellcheck="false" />
+      </div>
+      <div id="verb-list"></div>
+    </nav>
+
+    <div class="verbs-right">
+      <main id="main-content">
+        <div class="placeholder">Loading…</div>
+      </main>
+      <footer class="site-footer"></footer>
+    </div>
+
+  </div>
+
+  <script>
+    let verbs = [];
+    let activeId = null;
+
+    function tagClass(type) {
+      return { strong: 'tag-strong', weak: 'tag-weak', 'preterite-present': 'tag-pret', irregular: 'tag-irreg' }[type] || 'tag-strong';
+    }
+
+    function row(label, form) {
+      return `<tr><td class="conj-label">${label}</td><td class="conj-form">${form || '—'}</td></tr>`;
+    }
+
+    function section(title, rows) {
+      return `<div class="conj-section">
+        <div class="section-head">${title}</div>
+        <table class="conj-table">${rows}</table>
+      </div>`;
+    }
+
+    function tile(label, form) {
+      return `<div class="tile">
+        <div class="tile-label">${label}</div>
+        <div class="tile-form">${form || '—'}</div>
+      </div>`;
+    }
+
+    function renderVerb(verb) {
+      const f = verb.forms;
+
+      const presIndRows =
+        row('1st sg.', f.pres_ind.sg1) +
+        row('2nd sg.', f.pres_ind.sg2) +
+        row('3rd sg.', f.pres_ind.sg3) +
+        row('plural',  f.pres_ind.pl);
+
+      const pastIndRows =
+        row('1st sg.', f.past_ind.sg1) +
+        row('2nd sg.', f.past_ind.sg2) +
+        row('3rd sg.', f.past_ind.sg3) +
+        row('plural',  f.past_ind.pl);
+
+      const presSubjRows =
+        row('singular', f.pres_subj.sg) +
+        row('plural',   f.pres_subj.pl);
+
+      const pastSubjRows =
+        row('singular', f.past_subj.sg) +
+        row('plural',   f.past_subj.pl);
+
+      let gridSections =
+        section('Present Indicative',  presIndRows) +
+        section('Past Indicative',     pastIndRows) +
+        section('Present Subjunctive', presSubjRows) +
+        section('Past Subjunctive',    pastSubjRows);
+
+      if (f.alt_pres_ind) {
+        const altRows =
+          row('1st sg.', f.alt_pres_ind.sg1) +
+          row('2nd sg.', f.alt_pres_ind.sg2) +
+          row('3rd sg.', f.alt_pres_ind.sg3) +
+          row('plural',  f.alt_pres_ind.pl);
+        gridSections += section('Pres. Ind. (bēo-)', altRows);
+      }
+
+      const tiles =
+        tile('Infinitive',           f.infinitive) +
+        tile('Inflected Infinitive', f.inflected_infinitive) +
+        tile('Present Participle',   f.pres_participle) +
+        tile('Past Participle',      f.past_participle) +
+        tile('Imperative Sg.',       f.imperative_sg) +
+        tile('Imperative Pl.',       f.imperative_pl);
+
+      return `<div class="verb-view">
+        <div class="verb-header">
+          <div class="verb-heading-row">
+            <span class="verb-headword">${verb.oe}</span>
+            <span class="verb-gloss">${verb.gloss}</span>
+          </div>
+          <div class="verb-badges">
+            <span class="tag ${tagClass(verb.type)}">${verb.class}</span>
+            <span class="tag-pattern">${verb.pattern}</span>
+          </div>
+        </div>
+        <div class="conj-grid">${gridSections}</div>
+        <div class="nonfinite-section">
+          <div class="nonfinite-head">Non-finite &amp; Imperative</div>
+          <div class="tile-grid">${tiles}</div>
+        </div>
+      </div>`;
+    }
+
+    function renderSidebar(filter) {
+      const q = filter.trim().toLowerCase();
+      const matched = q
+        ? verbs.filter(v =>
+            v.oe.toLowerCase().includes(q) ||
+            v.gloss.toLowerCase().includes(q)
+          )
+        : verbs;
+
+      const groups = [
+        { label: 'Strong Verbs', types: ['strong'] },
+        { label: 'Weak Verbs',   types: ['weak'] },
+        { label: 'Other',        types: ['preterite-present', 'irregular'] }
+      ];
+
+      let html = '';
+      for (const g of groups) {
+        const items = matched.filter(v => g.types.includes(v.type));
+        if (!items.length) continue;
+        html += `<div class="sidebar-group"><span class="group-label">${g.label}</span>`;
+        for (const v of items) {
+          html += `<div class="verb-item${activeId === v.id ? ' active' : ''}" data-id="${v.id}">
+            <span class="verb-oe">${v.oe}</span>
+            <span class="tag ${tagClass(v.type)}">${v.class}</span>
+          </div>`;
+        }
+        html += `</div>`;
+      }
+
+      if (!html) {
+        html = `<span class="no-results">No verbs match.</span>`;
+      }
+
+      document.getElementById('verb-list').innerHTML = html;
+    }
+
+    function selectVerb(id) {
+      const verb = verbs.find(v => v.id === id);
+      if (!verb) return;
+      activeId = id;
+      renderSidebar(document.getElementById('search-input').value);
+      document.getElementById('main-content').innerHTML = renderVerb(verb);
+      document.getElementById('main-content').scrollTop = 0;
+    }
+
+    document.getElementById('sidebar').addEventListener('click', e => {
+      const item = e.target.closest('.verb-item');
+      if (item) selectVerb(item.dataset.id);
+    });
+
+    document.getElementById('search-input').addEventListener('input', e => {
+      renderSidebar(e.target.value);
+    });
+
+    async function init() {
+      try {
+        const res = await fetch('verbs.json');
+        if (!res.ok) throw new Error(res.statusText);
+        verbs = await res.json();
+        renderSidebar('');
+        if (verbs.length) selectVerb(verbs[0].id);
+      } catch (err) {
+        document.getElementById('main-content').innerHTML =
+          `<div class="placeholder">Could not load verbs.json.<br>
+          Run <code>python3 -m http.server 8000</code> in this directory,<br>
+          then open <code>http://localhost:8000</code></div>`;
+      }
+    }
+
+    init();
+  </script>
+  <script src="components.js"></script>
+</body>
+</html>

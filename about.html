@@ -1,0 +1,361 @@
+<!-- Serve locally: python3 -m http.server 8000  →  open http://localhost:8000 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Old English Verbs</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── About page layout ── */
+    .about-main {
+      flex: 1;
+      padding: 48px 28px 64px;
+      max-width: 1000px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 240px;
+      gap: 52px;
+      align-items: start;
+    }
+
+    @media (max-width: 640px) {
+      .about-layout {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+
+    /* ── Article sections ── */
+    .about-article {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .about-section {}
+
+    .about-h2 {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .about-p {
+      font-size: 0.9rem;
+      line-height: 1.85;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .about-p:last-child {
+      margin-bottom: 0;
+    }
+
+    .about-p a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .about-p a:hover {
+      text-decoration: underline;
+    }
+
+    /* Credits list */
+    .credits-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 2px;
+    }
+
+    .credits-list li {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--text);
+      padding-left: 14px;
+      border-left: 2px solid var(--border);
+    }
+
+    .credits-list li strong {
+      color: var(--text);
+    }
+
+    .credits-list li a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .credits-list li a:hover {
+      text-decoration: underline;
+    }
+
+    .cc-note {
+      font-size: 0.78rem;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    /* Future directions */
+    .future-note {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 14px;
+      padding: 10px 14px;
+      background: #ece6d4;
+      border-left: 3px solid var(--border);
+      border-radius: 0 3px 3px 0;
+    }
+
+    .future-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .future-list li {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: var(--text);
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .future-list li::before {
+      content: '◦';
+      position: absolute;
+      left: 4px;
+      color: var(--muted);
+    }
+
+    /* ── Sidebar ── */
+    .about-sidebar {
+      position: sticky;
+      top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .inset-box {
+      border: 1px solid var(--border);
+      background: var(--sidebar-bg);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .inset-title {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding: 10px 16px 8px;
+      border-bottom: 1px solid var(--border);
+      background: #e5dfc9;
+    }
+
+    .qf-table {
+      width: 100%;
+      border-collapse: collapse;
+      padding: 4px 0;
+    }
+
+    .qf-table tr {
+      border-bottom: 1px solid #ddd5c0;
+    }
+
+    .qf-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .qf-table td {
+      padding: 8px 16px;
+      vertical-align: top;
+      font-size: 0.8rem;
+    }
+
+    .qf-key {
+      color: var(--muted);
+      font-style: italic;
+      width: 45%;
+      line-height: 1.4;
+    }
+
+    .qf-val {
+      color: var(--text);
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    /* Quick links */
+    .ql-list {
+      list-style: none;
+      padding: 8px 0;
+    }
+
+    .ql-list li {
+      border-bottom: 1px solid #ddd5c0;
+    }
+
+    .ql-list li:last-child {
+      border-bottom: none;
+    }
+
+    .ql-list a {
+      display: block;
+      padding: 8px 16px;
+      font-size: 0.8rem;
+      color: var(--accent);
+      text-decoration: none;
+      transition: background 0.1s;
+    }
+
+    .ql-list a:hover {
+      background: rgba(139, 105, 20, 0.07);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wip-banner">Work in progress — content and features are actively being added.</div>
+
+  <header class="site-header">
+    <a href="index.html" class="site-brand">
+      <span class="site-name">Old English Verbs</span>
+      <span class="site-subtitle">A verb conjugation reference</span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="verbs.html" class="nav-link">Verbs</a>
+      <a href="about.html" class="nav-link active">About</a>
+    </nav>
+  </header>
+
+  <main class="about-main">
+    <div class="about-layout">
+
+      <!-- ── Main content column ── -->
+      <article class="about-article">
+
+        <section class="about-section">
+          <h2 class="about-h2">About this site</h2>
+          <p class="about-p">There is no simple, clean, Bescherelle-style conjugation reference for Old English verbs.
+            Resources tend to be either buried in grammar appendices, scattered across paradigm tables in course
+            packets, or written for specialists rather than students. This site is an attempt to fill that gap: a
+            structured, verb-centred reference organized by class, where every inflected form is visible at a glance.
+          </p>
+          <p class="about-p">It began as a personal study aid and is growing from there. The aim is something useful
+            enough to reach for while working through a text, rather than something requiring its own reading time.</p>
+        </section>
+
+        <section class="about-section">
+          <h2 class="about-h2">About the author</h2>
+          <p class="about-p">I am currently a student of Old English, partway through OE-102 at the Ancient Language
+            Institute. I am not a linguist or a language scholar. I am just someone working through the Old English
+            language with genuine enjoyment, finding that building reference tools is a useful complement to formal
+            study. This site is a side project in that spirit.</p>
+        </section>
+
+        <section class="about-section">
+          <h2 class="about-h2">Inspirations &amp; credits</h2>
+          <ul class="credits-list">
+            <li>
+              <strong>The French Bescherelle</strong> — the guiding model for this site. A concise, exhaustive verb
+              conjugation reference so embedded in French education that its name has become a common noun. That format,
+              namely, one verb class per spread, every form visible at once, nothing superfluous, translates well to Old
+              English and is the direct inspiration for the layout here.
+            </li>
+            <li>
+              <strong>The Ancient Language Institute</strong> — for making Old English accessible and genuinely
+              enjoyable as a living subject. Their OE-101 and -102 courses are the immediate context in which this site
+              was built.
+            </li>
+            <li>
+              <a href="https://people.uleth.ca/~daniel.odonnell/" target="_blank" rel="noopener">Daniel Paul O'Donnell's
+                <em>Old English Paradigms Cheat
+                  Sheet</em></a><!-- TODO: update with direct link to the PDF when known --> — a concise and
+              well-organized paradigm reference that informed the form of some of the patterns used here. <span
+                class="cc-note">Available under CC BY 4.0.</span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="about-section">
+          <h2 class="about-h2">Future directions</h2>
+          <p class="future-note">Some ideas being considered for future development — no promises, just thinking out
+            loud.</p>
+          <ul class="future-list">
+            <li>A testing and drilling mode — flashcards, fill-in-the-blank conjugation, or multiple-choice paradigm
+              practice</li>
+            <li>Attested example sentences for individual verbs, drawn from primary Old English sources</li>
+            <li>Frequency data — ranking verbs by how often they appear in the Old English corpus, to help prioritize
+              study</li>
+            <li>A dedicated page for verbs drawn specifically from <em>Ōsweald Bera</em> (Colin Gorrie / Ancient
+              Language Institute) as a companion resource for students of that reader</li>
+            <li>Expanded verb coverage beyond the initial corpus, growing over time as the project matures</li>
+          </ul>
+        </section>
+
+      </article>
+
+      <!-- ── Sidebar column ── -->
+      <aside class="about-sidebar">
+
+        <div class="inset-box">
+          <div class="inset-title">Quick Facts</div>
+          <table class="qf-table">
+            <tbody>
+              <tr>
+                <td class="qf-key">Verbs listed</td>
+                <td class="qf-val" id="qf-verb-count">12</td>
+              </tr>
+              <tr>
+                <td class="qf-key">Primary source(s)</td>
+                <td class="qf-val">Ōsweald Bera</td>
+              </tr>
+              <!-- <tr>
+                <td class="qf-key">Paradigm ref.</td>
+                <td class="qf-val">OE-102, ALI</td>
+              </tr> -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="inset-box">
+          <div class="inset-title">Quick Links</div>
+          <ul class="ql-list">
+            <li><a href="verbs.html">Browse verb conjugations →</a></li>
+            <li><a href="https://people.uleth.ca/~daniel.odonnell/" target="_blank" rel="noopener">O'Donnell cheat sheet ↗</a></li>
+            <li><a href="https://ancientlanguage.com" target="_blank" rel="noopener">Ancient Language Institute ↗</a></li>
+            <li><a href="mailto:steve@oldenglishverbs.com">Contact the author →</a></li>
+          </ul>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <footer class="site-footer"></footer>
+
+  <script src="components.js"></script>
+</body>
+
+</html>

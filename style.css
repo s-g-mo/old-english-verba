@@ -1,0 +1,145 @@
+/* ═══════════════════════════════════════════════
+   Old English Verbs — Shared Stylesheet
+   ═══════════════════════════════════════════════ */
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 17px; /* bump from browser default 16px — scales all rem values */
+}
+
+/* ── Design tokens ── */
+:root {
+  --bg:         #f7f3eb;
+  --sidebar-bg: #ede7d3;
+  --header-bg:  #eee8d5;
+  --border:     #cfc3a0;
+  --text:       #1e1508;
+  --muted:      #8a7558;
+  --accent:     #8b6914;
+  --font: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+}
+
+/* ── Base ── */
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ── WIP Banner ── */
+.wip-banner {
+  background: #f5e6c4;
+  color: #7a4f10;
+  border-bottom: 1px solid #d4b06a;
+  text-align: center;
+  font-size: 0.72rem;
+  padding: 5px 16px;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+/* ── Site Header ── */
+.site-header {
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--border);
+  padding: 0 28px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  gap: 16px;
+}
+
+.site-brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.site-name {
+  font-size: 1.0rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+.site-subtitle {
+  font-size: 0.67rem;
+  font-style: italic;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+/* ── Navigation ── */
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.nav-link {
+  font-family: var(--font);
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 6px 10px;
+  letter-spacing: 0.04em;
+  transition: color 0.15s;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+  color: var(--text);
+}
+
+.nav-link.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ── Footer ── */
+.site-footer {
+  background: var(--header-bg);
+  border-top: 1px solid var(--border);
+  padding: 11px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7rem;
+  color: var(--muted);
+  gap: 16px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+/* ── Pill tags — shared across verb reference and landing sample ── */
+.tag {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border-radius: 99px;
+  padding: 2px 7px;
+  white-space: nowrap;
+  border: 1px solid;
+  line-height: 1.5;
+  display: inline-block;
+}
+
+.tag-strong { background: #f5e6c4; color: #7a4f10; border-color: #d4b06a; }
+.tag-weak   { background: #dff0e8; color: #2a5c3a; border-color: #8bbfa0; }
+.tag-pret   { background: #e8e0f5; color: #4a3080; border-color: #a090c8; }
+.tag-irreg  { background: #fde8e0; color: #7a3020; border-color: #d0907a; }
