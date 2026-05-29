@@ -1,0 +1,1034 @@
+<!-- Serve locally: python3 -m http.server 8000  →  open http://localhost:8000 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231e1508' stroke='%23c4a96a' stroke-width='5'/><circle cx='50' cy='50' r='38' fill='none' stroke='%238b6914' stroke-width='2'/><line x1='18' y1='18' x2='82' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><line x1='82' y1='18' x2='18' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><circle cx='50' cy='50' r='10' fill='%23c4a96a'/><circle cx='50' cy='50' r='5' fill='%231e1508'/></svg>">
+  <link rel="alternate icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231e1508' stroke='%23c4a96a' stroke-width='5'/><circle cx='50' cy='50' r='38' fill='none' stroke='%238b6914' stroke-width='2'/><line x1='18' y1='18' x2='82' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><line x1='82' y1='18' x2='18' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><circle cx='50' cy='50' r='10' fill='%23c4a96a'/><circle cx='50' cy='50' r='5' fill='%231e1508'/></svg>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rules — Old English Verbs</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/onedark.min.css">
+  <style>
+    .rules-main {
+      flex: 1;
+      padding: 48px 28px 64px;
+      max-width: 740px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .rules-article {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    .rules-h2 {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .rules-p {
+      font-size: 0.9rem;
+      line-height: 1.85;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .rules-p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Code blocks */
+    .code-block-wrap {
+      margin: 14px 0;
+    }
+
+    .code-toggle {
+      display: flex;
+      justify-content: flex-end;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+
+    .code-toggle button {
+      font-family: var(--font);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 3px 10px;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      transition: background 0.12s, color 0.12s, border-color 0.12s;
+    }
+
+    .code-toggle button.active {
+      background: var(--accent);
+      color: var(--bg);
+      border-color: var(--accent);
+    }
+
+    .code-toggle button:not(.active):hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    pre.code-snippet {
+      background: #1e1508;
+      color: #f7f3eb;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.82rem;
+      line-height: 1.6;
+      padding: 16px;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin: 0;
+      white-space: pre;
+    }
+
+    pre.code-snippet.hidden {
+      display: none;
+    }
+
+    /* Stem extraction example */
+    .stem-example {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.85rem;
+      line-height: 2;
+      color: var(--text);
+      margin: 14px 0;
+      padding: 12px 16px;
+      background: #ece6d4;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+
+    .stem-example span.arrow {
+      color: var(--accent);
+    }
+
+    .stem-example span.stem {
+      font-weight: 700;
+    }
+
+    /* Ablaut-style tables (reuse basics.html styling) */
+    .ablaut-box {
+      border: 1px solid var(--border);
+      background: #ece6d4;
+      border-radius: 4px;
+      overflow: hidden;
+      max-width: 480px;
+      margin: 14px 0;
+    }
+
+    .ablaut-caption {
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      padding: 10px 16px 8px;
+      border-bottom: 1px solid var(--border);
+      background: #e5dfc9;
+    }
+
+    .ablaut-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .ablaut-table th {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: left;
+      padding: 7px 16px 6px;
+      border-bottom: 1px solid var(--border);
+      background: #e5dfc9;
+    }
+
+    .ablaut-table td {
+      font-size: 0.88rem;
+      padding: 7px 16px;
+      border-bottom: 1px solid #ddd5c0;
+      vertical-align: middle;
+    }
+
+    .ablaut-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .abl-position {
+      color: var(--muted);
+      font-style: italic;
+      width: 160px;
+    }
+
+    .abl-vowel {
+      font-weight: 700;
+      color: var(--accent);
+      width: 64px;
+    }
+
+    .abl-form {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    /* Two-column mutation table */
+    .mutation-table {
+      max-width: 320px;
+    }
+
+    .mutation-table .abl-position {
+      width: 120px;
+    }
+
+    /* Trace block for worked example */
+    .trace {
+      counter-reset: trace-step;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 14px 0;
+    }
+
+    .trace-step {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 10px;
+      align-items: baseline;
+    }
+
+    .trace-num {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-align: right;
+      padding-top: 2px;
+    }
+
+    .trace-body {
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    .trace-body code {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.85em;
+      background: #e8e0cc;
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+
+    .trace-arrow {
+      color: var(--accent);
+      font-weight: 700;
+      margin: 0 4px;
+    }
+
+    /* Final conjugation table in the worked example */
+    .worked-conj-box {
+      border: 1px solid var(--border);
+      background: #ece6d4;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .worked-conj-caption {
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      padding: 10px 16px 8px;
+      border-bottom: 1px solid var(--border);
+      background: #e5dfc9;
+    }
+
+    .worked-conj-caption em {
+      color: var(--text);
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    .worked-conj-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .worked-conj-section {
+      padding: 12px 16px;
+      border-bottom: 1px solid #ddd5c0;
+    }
+
+    .worked-conj-section:nth-child(odd) {
+      border-right: 1px solid #ddd5c0;
+    }
+
+    .worked-conj-section:last-child,
+    .worked-conj-section:nth-last-child(2):nth-child(odd) {
+      border-bottom: none;
+    }
+
+    .worked-section-head {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .worked-conj-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .worked-conj-table td {
+      font-size: 0.85rem;
+      padding: 3px 0;
+      vertical-align: middle;
+    }
+
+    .worked-label {
+      color: var(--muted);
+      font-style: italic;
+      width: 72px;
+      font-size: 0.72rem;
+    }
+
+    .worked-form {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .worked-nonfinite {
+      padding: 12px 16px;
+      border-top: 1px solid #ddd5c0;
+    }
+
+    .worked-tile-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .worked-tile {
+      background: #e5dfc9;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 8px 12px;
+    }
+
+    .worked-tile-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .worked-tile-form {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    @media (max-width: 768px) {
+      .rules-main {
+        padding: 28px 16px 48px;
+      }
+
+      .worked-conj-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .worked-conj-section:nth-child(odd) {
+        border-right: none;
+      }
+
+      .worked-conj-section:nth-last-child(2):nth-child(odd) {
+        border-bottom: 1px solid #ddd5c0;
+      }
+
+      .worked-conj-section:last-child {
+        border-bottom: none;
+      }
+
+      .worked-tile-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .ablaut-box {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wip-banner">Work in progress — content and features are actively being added.</div>
+
+  <header class="site-header">
+    <a href="index.html" class="site-brand">
+      <span class="site-name">Old English Verbs</span>
+      <span class="site-subtitle">A verb conjugation reference</span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="verbs.html" class="nav-link">Verbs</a>
+      <a href="basics.html" class="nav-link">Grammar</a>
+      <a href="rules.html" class="nav-link active">Rules</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="changelog.html" class="nav-link">Changelog</a>
+    </nav>
+  </header>
+
+  <main class="rules-main">
+    <article class="rules-article">
+
+      <!-- Section 1: The Derivation Idea -->
+      <section>
+        <h2 class="rules-h2">The Derivation Idea</h2>
+        <p class="rules-p">Most Old English verb forms are not memorized individually — they are derived from a small
+          number of inputs using a fixed sequence of rules. For strong verbs, those inputs are the four <em>principal
+            parts</em>: the infinitive, the past singular, the past plural, and the past participle. Every other form
+          can be produced mechanically from these four, given the right rules for endings, i-mutation, and consonant
+          collision.</p>
+        <p class="rules-p">This page documents those rules explicitly, so they can serve both as a learning aid and as
+          the specification for the paradigm generator used to produce the conjugation tables in the <a
+            href="verbs.html" style="color:var(--accent);text-decoration:none;">verb reference</a>.</p>
+      </section>
+
+      <!-- Section 2: Principal Parts and Stems -->
+      <section>
+        <h2 class="rules-h2">Principal Parts and Stems</h2>
+        <p class="rules-p">A strong verb is specified by four principal parts. We use the <em>infinitive</em> as the
+          first part rather than the 3rd person singular present — this is because the 3rd person singular present forms
+          (which involve i-mutation and consonant collision) are themselves derived by the rules. Supplying the
+          infinitive is therefore sufficient; the 3rd singular is a computed output, not an input.</p>
+        <p class="rules-p">The four principal parts are: <strong>infinitive, past singular, past plural, past
+            participle</strong>. Each yields one stem by stripping its characteristic ending:</p>
+
+        <div class="stem-example">
+          beran &nbsp;<span class="arrow">→</span> present stem: &nbsp;<span class="stem">ber-</span><br>
+          bær &nbsp;&nbsp;&nbsp;<span class="arrow">→</span> past sg stem: &nbsp;<span class="stem">bær-</span><br>
+          bǣron &nbsp;<span class="arrow">→</span> past pl stem: &nbsp;<span class="stem">bǣr-</span><br>
+          boren &nbsp;&nbsp;<span class="arrow">→</span> past part stem: <span class="stem">bor-</span>
+        </div>
+
+        <div class="code-block-wrap">
+          <div class="code-toggle">
+            <button class="active" onclick="toggleCode(this,'py')">Python</button>
+            <button onclick="toggleCode(this,'js')">JS</button>
+          </div>
+          <pre class="code-snippet" data-lang="py"><code class="language-python">import re
+
+def extract_stems(principal_parts):
+    inf, past_sg, past_pl, past_part = principal_parts
+    present_stem   = re.sub(r'an$', '', inf)
+    past_sg_stem   = past_sg
+    past_pl_stem   = re.sub(r'on$', '', past_pl)
+    past_part_stem = re.sub(r'en$', '', re.sub(r'^ġe', '', past_part))
+    return {
+        'present_stem':   present_stem,
+        'past_sg_stem':   past_sg_stem,
+        'past_pl_stem':   past_pl_stem,
+        'past_part_stem': past_part_stem,
+    }</code></pre>
+          <pre class="code-snippet hidden" data-lang="js"><code class="language-javascript">function extractStems(principalParts) {
+  const [inf, pastSg, pastPl, pastPart] = principalParts;
+  return {
+    presentStem:  inf.replace(/an$/, ''),
+    pastSgStem:   pastSg,
+    pastPlStem:   pastPl.replace(/on$/, ''),
+    pastPartStem: pastPart.replace(/^ġe/, '').replace(/en$/, ''),
+  };
+}</code></pre>
+        </div>
+      </section>
+
+      <!-- Section 3: The Ending Table -->
+      <section>
+        <h2 class="rules-h2">The Ending Table</h2>
+        <p class="rules-p">Once the four stems are known, each inflected form is built by concatenating the appropriate
+          stem with its ending. The present sg2 and sg3 use the i-mutated stem (with collision rules applied); all other
+          present forms use the plain present stem.</p>
+
+        <div class="ablaut-box">
+          <div class="ablaut-caption">Endings for strong verbs</div>
+          <table class="ablaut-table">
+            <thead>
+              <tr>
+                <th>Form</th>
+                <th>Stem</th>
+                <th>Ending</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="abl-position">Pres. ind. sg1</td>
+                <td class="abl-vowel">present</td>
+                <td class="abl-form">+ e</td>
+              </tr>
+              <tr>
+                <td class="abl-position">Pres. ind. sg2</td>
+                <td class="abl-vowel">mutated</td>
+                <td class="abl-form">+ st (apply collision rules)</td>
+              </tr>
+              <tr>
+                <td class="abl-position">Pres. ind. sg3</td>
+                <td class="abl-vowel">mutated</td>
+                <td class="abl-form">+ þ (apply collision rules)</td>
+              </tr>
+              <tr>
+                <td class="abl-position">Pres. ind. pl</td>
+                <td class="abl-vowel">present</td>
+                <td class="abl-form">+ aþ</td>
+              </tr>
+              <tr>
+                <td class="abl-position">Past ind. sg1</td>
+                <td class="abl-vowel">past sg</td>
+                <td class="abl-form">(bare stem)</td>
+              </tr>
+              <tr>
+                <td class="abl-position">Past ind. sg2</td>
+                <td class="abl-vowel">past pl</td>
+                <td class="abl-form">+ e</td>
+              </tr>
+              <tr>
+                <td class="abl-position">Past ind. sg3</td>
+                <td class="abl-vowel">past sg</td>
+                <td class="abl-form">(bare stem)</td>
+              </tr>
+              <tr>
+                <td class="abl-position">Past ind. pl</td>
+                <td class="abl-vowel">past pl</td>
+                <td class="abl-form">+ on</td>
+              </tr>
+              <tr>
+                <td class="abl-position">Pres. subj. sg</td>
+                <td class="abl-vowel">present</td>
+                <td class="abl-form">+ e</td>
+              </tr>
+              <tr>
+                <td class="abl-position">Pres. subj. pl</td>
+                <td class="abl-vowel">present</td>
+                <td class="abl-form">+ en</td>
+              </tr>
+              <tr>
+                <td class="abl-position">Past subj. sg</td>
+                <td class="abl-vowel">past pl</td>
+                <td class="abl-form">+ e</td>
+              </tr>
+              <tr>
+                <td class="abl-position">Past subj. pl</td>
+                <td class="abl-vowel">past pl</td>
+                <td class="abl-form">+ en</td>
+              </tr>
+              <tr>
+                <td class="abl-position">Inflected inf.</td>
+                <td class="abl-vowel">present</td>
+                <td class="abl-form">tō + … + enne</td>
+              </tr>
+              <tr>
+                <td class="abl-position">Pres. participle</td>
+                <td class="abl-vowel">present</td>
+                <td class="abl-form">+ ende</td>
+              </tr>
+              <tr>
+                <td class="abl-position">Past participle</td>
+                <td class="abl-vowel">past part</td>
+                <td class="abl-form">ġe + … + en</td>
+              </tr>
+              <tr>
+                <td class="abl-position">Imperative sg</td>
+                <td class="abl-vowel">present</td>
+                <td class="abl-form">(bare stem)</td>
+              </tr>
+              <tr>
+                <td class="abl-position">Imperative pl</td>
+                <td class="abl-vowel">present</td>
+                <td class="abl-form">+ aþ</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="code-block-wrap">
+          <div class="code-toggle">
+            <button class="active" onclick="toggleCode(this,'py')">Python</button>
+            <button onclick="toggleCode(this,'js')">JS</button>
+          </div>
+          <pre class="code-snippet" data-lang="py"><code class="language-python">def build_forms(stems, mutated_stem):
+    ps  = stems['present_stem']
+    sg  = stems['past_sg_stem']
+    pl  = stems['past_pl_stem']
+    pp  = stems['past_part_stem']
+    ms  = mutated_stem
+    return {
+        'pres_ind':  {'sg1': ps+'e', 'sg2': apply_collision(ms,'st'),
+                      'sg3': apply_collision(ms,'þ'),  'pl': ps+'aþ'},
+        'past_ind':  {'sg1': sg, 'sg2': pl+'e', 'sg3': sg, 'pl': pl+'on'},
+        'pres_subj': {'sg': ps+'e', 'pl': ps+'en'},
+        'past_subj': {'sg': pl+'e', 'pl': pl+'en'},
+        'infinitive': ps+'an',
+        'inflected_infinitive': 'tō '+ps+'enne',
+        'pres_participle': ps+'ende',
+        'past_participle': 'ġe'+pp+'en',
+        'imperative_sg': ps,
+        'imperative_pl': ps+'aþ',
+    }</code></pre>
+          <pre class="code-snippet hidden" data-lang="js"><code class="language-javascript">function buildForms(stems, mutatedStem) {
+  const { presentStem: ps, pastSgStem: sg,
+          pastPlStem: pl, pastPartStem: pp } = stems;
+  const ms = mutatedStem;
+  return {
+    presInd:  { sg1: ps+'e', sg2: applyCollision(ms,'st'),
+                sg3: applyCollision(ms,'þ'), pl: ps+'aþ' },
+    pastInd:  { sg1: sg, sg2: pl+'e', sg3: sg, pl: pl+'on' },
+    presSubj: { sg: ps+'e', pl: ps+'en' },
+    pastSubj: { sg: pl+'e', pl: pl+'en' },
+    infinitive: ps+'an',
+    inflectedInfinitive: 'tō '+ps+'enne',
+    presParticiple: ps+'ende',
+    pastParticiple: 'ġe'+pp+'en',
+    imperativeSg: ps,
+    imperativePl: ps+'aþ',
+  };
+}</code></pre>
+        </div>
+      </section>
+
+      <!-- Section 4: I-Mutation -->
+      <section>
+        <h2 class="rules-h2">I-Mutation</h2>
+        <p class="rules-p">I-mutation (also called <em>i-umlaut</em>) is a historical sound change in which a back or
+          low vowel was fronted and raised when a high front vowel /i/ or /j/ followed in the next syllable. That
+          triggering vowel was later lost, leaving the mutated stem vowel as the only trace. In the Old English present
+          tense, i-mutation applies to the 2nd and 3rd person singular, which historically took a suffix beginning with
+          <em>i</em>. The long vowel <em>ē</em> is already a front vowel and does not mutate.
+        </p>
+
+        <div class="ablaut-box mutation-table">
+          <div class="ablaut-caption">I-mutation vowel correspondences</div>
+          <table class="ablaut-table">
+            <thead>
+              <tr>
+                <th>Base vowel</th>
+                <th>Mutated</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="abl-position">a</td>
+                <td class="abl-form">æ</td>
+              </tr>
+              <tr>
+                <td class="abl-position">ā</td>
+                <td class="abl-form">ǣ</td>
+              </tr>
+              <tr>
+                <td class="abl-position">e</td>
+                <td class="abl-form">i</td>
+              </tr>
+              <tr>
+                <td class="abl-position">o</td>
+                <td class="abl-form">e</td>
+              </tr>
+              <tr>
+                <td class="abl-position">ō</td>
+                <td class="abl-form">ē</td>
+              </tr>
+              <tr>
+                <td class="abl-position">u</td>
+                <td class="abl-form">y</td>
+              </tr>
+              <tr>
+                <td class="abl-position">ū</td>
+                <td class="abl-form">ȳ</td>
+              </tr>
+              <tr>
+                <td class="abl-position">ea</td>
+                <td class="abl-form">ie</td>
+              </tr>
+              <tr>
+                <td class="abl-position">ēa</td>
+                <td class="abl-form">īe</td>
+              </tr>
+              <tr>
+                <td class="abl-position">eo</td>
+                <td class="abl-form">ie</td>
+              </tr>
+              <tr>
+                <td class="abl-position">ēo</td>
+                <td class="abl-form">īe</td>
+              </tr>
+              <tr>
+                <td class="abl-position">an</td>
+                <td class="abl-form">en</td>
+              </tr>
+              <tr>
+                <td class="abl-position">am</td>
+                <td class="abl-form">em</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="code-block-wrap">
+          <div class="code-toggle">
+            <button class="active" onclick="toggleCode(this,'py')">Python</button>
+            <button onclick="toggleCode(this,'js')">JS</button>
+          </div>
+          <pre class="code-snippet" data-lang="py"><code class="language-python">I_MUTATION = {
+    'a': 'æ',   'ā': 'ǣ',  'e': 'i',   'o': 'e',
+    'ō': 'ē',   'u': 'y',  'ū': 'ȳ',   'ea': 'ie',
+    'ēa': 'īe', 'eo': 'ie','ēo': 'īe', 'an': 'en',
+    'am': 'em',
+}
+
+# Match longest vowel sequence first to avoid 'e' matching inside 'eo'
+VOWELS_LONGEST_FIRST = sorted(I_MUTATION, key=len, reverse=True)
+
+def apply_i_mutation(stem):
+    for v in VOWELS_LONGEST_FIRST:
+        idx = stem.find(v)
+        if idx != -1:
+            return stem[:idx] + I_MUTATION[v] + stem[idx+len(v):]
+    return stem  # no vowel found — return unchanged</code></pre>
+          <pre class="code-snippet hidden" data-lang="js"><code class="language-javascript">const I_MUTATION = {
+  'a':'æ',   'ā':'ǣ',  'e':'i',   'o':'e',
+  'ō':'ē',   'u':'y',  'ū':'ȳ',   'ea':'ie',
+  'ēa':'īe', 'eo':'ie','ēo':'īe', 'an':'en',
+  'am':'em',
+};
+
+// Sort longest-first so 'ēo' is tested before 'eo' before 'e'
+const VOWELS_LONGEST_FIRST = Object.keys(I_MUTATION)
+  .sort((a, b) => b.length - a.length);
+
+function applyIMutation(stem) {
+  for (const v of VOWELS_LONGEST_FIRST) {
+    const idx = stem.indexOf(v);
+    if (idx !== -1)
+      return stem.slice(0, idx) + I_MUTATION[v] + stem.slice(idx + v.length);
+  }
+  return stem; // no vowel found — return unchanged
+}</code></pre>
+        </div>
+      </section>
+
+      <!-- Section 5: Consonant Collision -->
+      <section>
+        <h2 class="rules-h2">Consonant Collision</h2>
+        <p class="rules-p">When the stem ends in certain consonants and the ending begins with another consonant
+          (<em>-st</em> for 2nd sg, <em>-þ</em> for 3rd sg), the two consonants collide and must be resolved. The
+          collision produces a single merged spelling rather than an impossible cluster. Additionally, a doubled
+          consonant (nn, mm, ll, pp) is simplified to a single consonant before another consonant.</p>
+
+        <div class="ablaut-box">
+          <div class="ablaut-caption">Collision outcomes</div>
+          <table class="ablaut-table">
+            <thead>
+              <tr>
+                <th>Context</th>
+                <th>Result</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="abl-position">d + þ (3rd sg)</td>
+                <td class="abl-form">tt</td>
+              </tr>
+              <tr>
+                <td class="abl-position">t + þ (3rd sg)</td>
+                <td class="abl-form">tt</td>
+              </tr>
+              <tr>
+                <td class="abl-position">s + þ (3rd sg)</td>
+                <td class="abl-form">st</td>
+              </tr>
+              <tr>
+                <td class="abl-position">d + st (2nd sg)</td>
+                <td class="abl-form">tst</td>
+              </tr>
+              <tr>
+                <td class="abl-position">þ + st (2nd sg)</td>
+                <td class="abl-form">st</td>
+              </tr>
+              <tr>
+                <td class="abl-position">nn/mm/ll/pp + C</td>
+                <td class="abl-form">n/m/l/p + C</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="code-block-wrap">
+          <div class="code-toggle">
+            <button class="active" onclick="toggleCode(this,'py')">Python</button>
+            <button onclick="toggleCode(this,'js')">JS</button>
+          </div>
+          <pre class="code-snippet" data-lang="py"><code class="language-python">THIRD_SG_COLLISION  = {'d+þ': 'tt', 't+þ': 'tt', 's+þ': 'st'}
+SECOND_SG_COLLISION = {'d+st': 'tst', 'þ+st': 'st'}
+# Doubled consonants drop one before another consonant
+
+def apply_collision(stem, ending):
+    # Simplify doubled final consonant before a consonant ending
+    if len(stem) >= 2 and stem[-1] == stem[-2] and ending[0] not in 'aeiouāǣēīōūȳ':
+        stem = stem[:-1]
+    key = stem[-1] + '+' + ending
+    if ending == 'þ' and key in THIRD_SG_COLLISION:
+        return stem[:-1] + THIRD_SG_COLLISION[key]
+    if ending == 'st' and key in SECOND_SG_COLLISION:
+        return stem[:-1] + SECOND_SG_COLLISION[key]
+    return stem + ending</code></pre>
+          <pre class="code-snippet hidden" data-lang="js"><code class="language-javascript">const THIRD_SG_COLLISION  = {'d+þ':'tt', 't+þ':'tt', 's+þ':'st'};
+const SECOND_SG_COLLISION = {'d+st':'tst', 'þ+st':'st'};
+// Doubled consonants drop one before another consonant
+
+function applyCollision(stem, ending) {
+  // Simplify doubled final consonant before a consonant ending
+  const vowels = 'aeiouāǣēīōūȳ';
+  if (stem.length >= 2 && stem.at(-1) === stem.at(-2)
+      && !vowels.includes(ending[0])) {
+    stem = stem.slice(0, -1);
+  }
+  const key = stem.at(-1) + '+' + ending;
+  if (ending === 'þ' && key in THIRD_SG_COLLISION)
+    return stem.slice(0, -1) + THIRD_SG_COLLISION[key];
+  if (ending === 'st' && key in SECOND_SG_COLLISION)
+    return stem.slice(0, -1) + SECOND_SG_COLLISION[key];
+  return stem + ending;
+}</code></pre>
+        </div>
+      </section>
+
+      <!-- Section 6: Worked Example — beran -->
+      <section>
+        <h2 class="rules-h2">Worked Example — beran</h2>
+        <p class="rules-p">Input: <strong>beran</strong> &mdash; principal parts <code
+            style="font-family:monospace;background:#e8e0cc;padding:1px 5px;border-radius:3px">['beran', 'bær', 'bǣron', 'boren']</code>
+        </p>
+
+        <div class="trace">
+          <div class="trace-step">
+            <span class="trace-num">1</span>
+            <span class="trace-body"><strong>Extract stems.</strong>
+              Strip endings from each principal part:<br>
+              <code>beran</code> &minus; <em>-an</em> <span class="trace-arrow">→</span> presentStem =
+              <code>ber</code><br>
+              <code>bær</code> (bare stem) <span class="trace-arrow">→</span> pastSgStem = <code>bær</code><br>
+              <code>bǣron</code> &minus; <em>-on</em> <span class="trace-arrow">→</span> pastPlStem =
+              <code>bǣr</code><br>
+              <code>boren</code> &minus; <em>ġe-</em> (none) &minus; <em>-en</em> <span class="trace-arrow">→</span>
+              pastPartStem = <code>bor</code>
+            </span>
+          </div>
+          <div class="trace-step">
+            <span class="trace-num">2</span>
+            <span class="trace-body"><strong>Apply i-mutation</strong> to <code>ber</code>.
+              Scan longest-first: vowel <code>e</code> found at index 1 <span class="trace-arrow">→</span> mutated to
+              <code>i</code> <span class="trace-arrow">→</span> mutatedStem = <code>bir</code>
+            </span>
+          </div>
+          <div class="trace-step">
+            <span class="trace-num">3</span>
+            <span class="trace-body"><strong>Check collision</strong> for sg2 (<code>bir</code> + <em>st</em>).
+              Final consonant <code>r</code>: no collision rule applies, no doubled consonant <span
+                class="trace-arrow">→</span> <code>birst</code> (epenthetic <em>e</em> optional: <code>bir(e)st</code>)
+            </span>
+          </div>
+          <div class="trace-step">
+            <span class="trace-num">4</span>
+            <span class="trace-body"><strong>Check collision</strong> for sg3 (<code>bir</code> + <em>þ</em>).
+              Final consonant <code>r</code>: no collision rule applies <span class="trace-arrow">→</span>
+              <code>birþ</code> (epenthetic <em>e</em> optional: <code>bir(e)þ</code>)
+            </span>
+          </div>
+          <div class="trace-step">
+            <span class="trace-num">5</span>
+            <span class="trace-body"><strong>Build present indicative</strong> from presentStem <code>ber</code> and
+              mutatedStem <code>bir</code>:<br>
+              sg1 = <code>ber</code> + <em>e</em> = <code>bere</code> &ensp;·&ensp;
+              sg2 = <code>bir(e)st</code> &ensp;·&ensp;
+              sg3 = <code>bir(e)þ</code> &ensp;·&ensp;
+              pl = <code>ber</code> + <em>aþ</em> = <code>beraþ</code>
+            </span>
+          </div>
+          <div class="trace-step">
+            <span class="trace-num">6</span>
+            <span class="trace-body"><strong>Build past indicative</strong> from pastSgStem <code>bær</code> and
+              pastPlStem <code>bǣr</code>:<br>
+              sg1 = <code>bær</code> (bare) &ensp;·&ensp;
+              sg2 = <code>bǣr</code> + <em>e</em> = <code>bǣre</code> &ensp;·&ensp;
+              sg3 = <code>bær</code> (bare) &ensp;·&ensp;
+              pl = <code>bǣr</code> + <em>on</em> = <code>bǣron</code>
+            </span>
+          </div>
+          <div class="trace-step">
+            <span class="trace-num">7</span>
+            <span class="trace-body"><strong>Build non-finite forms</strong> from presentStem <code>ber</code> and
+              pastPartStem <code>bor</code>:<br>
+              inflected infinitive = tō + <code>ber</code> + <em>enne</em> = <code>tō berenne</code><br>
+              present participle = <code>ber</code> + <em>ende</em> = <code>berende</code><br>
+              past participle = <em>ġe</em> + <code>bor</code> + <em>en</em> = <code>ġeboren</code>
+            </span>
+          </div>
+          <div class="trace-step">
+            <span class="trace-num">8</span>
+            <span class="trace-body"><strong>Build imperative</strong> from presentStem <code>ber</code>:<br>
+              sg = <code>ber</code> (bare) &ensp;·&ensp; pl = <code>ber</code> + <em>aþ</em> = <code>beraþ</code>
+            </span>
+          </div>
+        </div>
+
+        <div class="worked-conj-box">
+          <div class="worked-conj-caption"><em>beran</em> &mdash; to carry, bear &mdash; Strong IV &mdash; derived
+            output</div>
+          <div class="worked-conj-grid">
+            <div class="worked-conj-section">
+              <div class="worked-section-head">Present Indicative</div>
+              <table class="worked-conj-table">
+                <tr>
+                  <td class="worked-label">1st sg.</td>
+                  <td class="worked-form">bere</td>
+                </tr>
+                <tr>
+                  <td class="worked-label">2nd sg.</td>
+                  <td class="worked-form">bir(e)st</td>
+                </tr>
+                <tr>
+                  <td class="worked-label">3rd sg.</td>
+                  <td class="worked-form">bir(e)þ</td>
+                </tr>
+                <tr>
+                  <td class="worked-label">plural</td>
+                  <td class="worked-form">beraþ</td>
+                </tr>
+              </table>
+            </div>
+            <div class="worked-conj-section">
+              <div class="worked-section-head">Past Indicative</div>
+              <table class="worked-conj-table">
+                <tr>
+                  <td class="worked-label">1st sg.</td>
+                  <td class="worked-form">bær</td>
+                </tr>
+                <tr>
+                  <td class="worked-label">2nd sg.</td>
+                  <td class="worked-form">bǣre</td>
+                </tr>
+                <tr>
+                  <td class="worked-label">3rd sg.</td>
+                  <td class="worked-form">bær</td>
+                </tr>
+                <tr>
+                  <td class="worked-label">plural</td>
+                  <td class="worked-form">bǣron</td>
+                </tr>
+              </table>
+            </div>
+            <div class="worked-conj-section">
+              <div class="worked-section-head">Present Subjunctive</div>
+              <table class="worked-conj-table">
+                <tr>
+                  <td class="worked-label">singular</td>
+                  <td class="worked-form">bere</td>
+                </tr>
+                <tr>
+                  <td class="worked-label">plural</td>
+                  <td class="worked-form">beren</td>
+                </tr>
+              </table>
+            </div>
+            <div class="worked-conj-section">
+              <div class="worked-section-head">Past Subjunctive</div>
+              <table class="worked-conj-table">
+                <tr>
+                  <td class="worked-label">singular</td>
+                  <td class="worked-form">bǣre</td>
+                </tr>
+                <tr>
+                  <td class="worked-label">plural</td>
+                  <td class="worked-form">bǣren</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="worked-nonfinite">
+            <div class="worked-section-head">Non-finite &amp; Imperative</div>
+            <div class="worked-tile-grid">
+              <div class="worked-tile">
+                <div class="worked-tile-label">Infinitive</div>
+                <div class="worked-tile-form">beran</div>
+              </div>
+              <div class="worked-tile">
+                <div class="worked-tile-label">Inflected Inf.</div>
+                <div class="worked-tile-form">tō berenne</div>
+              </div>
+              <div class="worked-tile">
+                <div class="worked-tile-label">Pres. Participle</div>
+                <div class="worked-tile-form">berende</div>
+              </div>
+              <div class="worked-tile">
+                <div class="worked-tile-label">Past Participle</div>
+                <div class="worked-tile-form">ġeboren</div>
+              </div>
+              <div class="worked-tile">
+                <div class="worked-tile-label">Imperative Sg.</div>
+                <div class="worked-tile-form">ber</div>
+              </div>
+              <div class="worked-tile">
+                <div class="worked-tile-label">Imperative Pl.</div>
+                <div class="worked-tile-form">beraþ</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="site-footer"></footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>
+    function toggleCode(btn, lang) {
+      const wrap = btn.closest('.code-block-wrap');
+      wrap.querySelectorAll('.code-toggle button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      wrap.querySelectorAll('pre.code-snippet').forEach(pre => {
+        pre.classList.toggle('hidden', pre.dataset.lang !== lang);
+      });
+      const shown = wrap.querySelector('pre.code-snippet:not(.hidden)');
+      if (shown) {
+        const code = shown.querySelector('code');
+        if (code && !code.dataset.highlighted) hljs.highlightElement(code);
+      }
+    }
+    hljs.highlightAll();
+  </script>
+  <script src="components.js"></script>
+</body>
+
+</html>

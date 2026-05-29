@@ -1,12 +1,15 @@
 <!-- Serve locally: python3 -m http.server 8000  →  open http://localhost:8000 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231e1508' stroke='%23c4a96a' stroke-width='5'/><circle cx='50' cy='50' r='38' fill='none' stroke='%238b6914' stroke-width='2'/><line x1='18' y1='18' x2='82' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><line x1='82' y1='18' x2='18' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><circle cx='50' cy='50' r='10' fill='%23c4a96a'/><circle cx='50' cy='50' r='5' fill='%231e1508'/></svg>">
-  <link rel="alternate icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231e1508' stroke='%23c4a96a' stroke-width='5'/><circle cx='50' cy='50' r='38' fill='none' stroke='%238b6914' stroke-width='2'/><line x1='18' y1='18' x2='82' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><line x1='82' y1='18' x2='18' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><circle cx='50' cy='50' r='10' fill='%23c4a96a'/><circle cx='50' cy='50' r='5' fill='%231e1508'/></svg>">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231e1508' stroke='%23c4a96a' stroke-width='5'/><circle cx='50' cy='50' r='38' fill='none' stroke='%238b6914' stroke-width='2'/><line x1='18' y1='18' x2='82' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><line x1='82' y1='18' x2='18' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><circle cx='50' cy='50' r='10' fill='%23c4a96a'/><circle cx='50' cy='50' r='5' fill='%231e1508'/></svg>">
+  <link rel="alternate icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231e1508' stroke='%23c4a96a' stroke-width='5'/><circle cx='50' cy='50' r='38' fill='none' stroke='%238b6914' stroke-width='2'/><line x1='18' y1='18' x2='82' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><line x1='82' y1='18' x2='18' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><circle cx='50' cy='50' r='10' fill='%23c4a96a'/><circle cx='50' cy='50' r='5' fill='%231e1508'/></svg>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Basics — Old English Verbs</title>
+  <title>Grammar — Old English Verbs</title>
   <link rel="stylesheet" href="style.css">
   <style>
     .basics-main {
@@ -41,10 +44,18 @@
       margin-bottom: 12px;
     }
 
-    .basics-p:last-child { margin-bottom: 0; }
+    .basics-p:last-child {
+      margin-bottom: 0;
+    }
 
-    .basics-p a { color: var(--accent); text-decoration: none; }
-    .basics-p a:hover { text-decoration: underline; }
+    .basics-p a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .basics-p a:hover {
+      text-decoration: underline;
+    }
 
     /* Definition list */
     .def-list {
@@ -59,7 +70,9 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .def-item:last-child { border-bottom: none; }
+    .def-item:last-child {
+      border-bottom: none;
+    }
 
     .def-term {
       font-size: 0.78rem;
@@ -78,8 +91,14 @@
     }
 
     @media (max-width: 500px) {
-      .def-item { grid-template-columns: 1fr; }
-      .def-term { border-right: none; border-bottom: 1px solid var(--border); }
+      .def-item {
+        grid-template-columns: 1fr;
+      }
+
+      .def-term {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
     }
 
     /* Ablaut table */
@@ -130,11 +149,26 @@
       vertical-align: middle;
     }
 
-    .ablaut-table tr:last-child td { border-bottom: none; }
+    .ablaut-table tr:last-child td {
+      border-bottom: none;
+    }
 
-    .abl-position { color: var(--muted); font-style: italic; width: 120px; }
-    .abl-vowel { font-weight: 700; color: var(--accent); width: 56px; }
-    .abl-form { font-weight: 700; color: var(--text); }
+    .abl-position {
+      color: var(--muted);
+      font-style: italic;
+      width: 120px;
+    }
+
+    .abl-vowel {
+      font-weight: 700;
+      color: var(--accent);
+      width: 56px;
+    }
+
+    .abl-form {
+      font-weight: 700;
+      color: var(--text);
+    }
 
     .series-note {
       font-size: 0.8rem;
@@ -144,17 +178,36 @@
       line-height: 1.6;
     }
 
-    .series-note a { color: var(--accent); text-decoration: none; }
-    .series-note a:hover { text-decoration: underline; }
+    .series-note a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .series-note a:hover {
+      text-decoration: underline;
+    }
 
     @media (max-width: 768px) {
-      .basics-main { padding: 28px 16px 48px; }
-      .def-item { grid-template-columns: 1fr; }
-      .def-term { border-right: none; border-bottom: 1px solid var(--border); }
-      .ablaut-box { max-width: 100%; }
+      .basics-main {
+        padding: 28px 16px 48px;
+      }
+
+      .def-item {
+        grid-template-columns: 1fr;
+      }
+
+      .def-term {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .ablaut-box {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <div class="wip-banner">Work in progress — content and features are actively being added.</div>
@@ -167,7 +220,8 @@
     <nav class="site-nav">
       <a href="index.html" class="nav-link">Home</a>
       <a href="verbs.html" class="nav-link">Verbs</a>
-      <a href="basics.html" class="nav-link active">Basics</a>
+      <a href="basics.html" class="nav-link active">Grammar</a>
+      <a href="rules.html" class="nav-link">Rules</a>
       <a href="about.html" class="nav-link">About</a>
       <a href="changelog.html" class="nav-link">Changelog</a>
     </nav>
@@ -178,23 +232,28 @@
 
       <section>
         <h2 class="basics-h2">Verb moods</h2>
-        <p class="basics-p">Old English has three moods: indicative, subjunctive, and imperative. The indicative and subjunctive each inflect for present and past tense.</p>
+        <p class="basics-p">Old English has three moods: indicative, subjunctive, and imperative. The indicative and
+          subjunctive each inflect for present and past tense.</p>
         <div class="def-list">
           <div class="def-item">
             <div class="def-term">Present Indicative</div>
-            <div class="def-desc">States facts and real events in the present. The default mood for ordinary statements.</div>
+            <div class="def-desc">States facts and real events in the present. The default mood for ordinary statements.
+            </div>
           </div>
           <div class="def-item">
             <div class="def-term">Past Indicative</div>
-            <div class="def-desc">States facts and real events in the past. The default mood for ordinary past statements.</div>
+            <div class="def-desc">States facts and real events in the past. The default mood for ordinary past
+              statements.</div>
           </div>
           <div class="def-item">
             <div class="def-term">Present Subjunctive</div>
-            <div class="def-desc">Expresses present possibility, doubt, wishes, or indirect speech. Used where something is not stated as straightforwardly real.</div>
+            <div class="def-desc">Expresses present possibility, doubt, wishes, or indirect speech. Used where something
+              is not stated as straightforwardly real.</div>
           </div>
           <div class="def-item">
             <div class="def-term">Past Subjunctive</div>
-            <div class="def-desc">Expresses past possibility, doubt, wishes, or indirect speech. Often found in hypothetical or reported constructions.</div>
+            <div class="def-desc">Expresses past possibility, doubt, wishes, or indirect speech. Often found in
+              hypothetical or reported constructions.</div>
           </div>
           <div class="def-item">
             <div class="def-term">Imperative</div>
@@ -205,37 +264,54 @@
 
       <section>
         <h2 class="basics-h2">Non-finite forms</h2>
-        <p class="basics-p">Non-finite forms are verb forms not inflected for person, number, or mood. Old English has two infinitives and two participles.</p>
+        <p class="basics-p">Non-finite forms are verb forms not inflected for person, number, or mood. Old English has
+          two infinitives and two participles.</p>
         <div class="def-list">
           <div class="def-item">
             <div class="def-term">Infinitive</div>
-            <div class="def-desc">The base verb form — equivalent to modern <em>to sing</em> in its plain sense. Used after verbs of wanting, intending, or ability.</div>
+            <div class="def-desc">The base verb form — equivalent to modern <em>to sing</em> in its plain sense. Used
+              after verbs of wanting, intending, or ability.</div>
           </div>
           <div class="def-item">
             <div class="def-term">Inflected Infinitive</div>
-            <div class="def-desc">Used to express purpose or intention. Formed with <em>tō</em> + the <em>-enne</em> ending — equivalent to <em>in order to sing</em>.</div>
+            <div class="def-desc">Used to express purpose or intention. Formed with <em>tō</em> + the <em>-enne</em>
+              ending — equivalent to <em>in order to sing</em> or <em>for the purpose of singing</em>.</div>
           </div>
           <div class="def-item">
             <div class="def-term">Present Participle</div>
-            <div class="def-desc">Describes an ongoing action — equivalent to the modern <em>-ing</em> form. Used attributively (<em>the singing man</em>) or adverbially (<em>he came singing</em>).</div>
+            <div class="def-desc">Describes an ongoing action — equivalent to the modern <em>-ing</em> form. Used
+              attributively (<em>the singing man</em>) or adverbially (<em>he came singing</em>).</div>
           </div>
           <div class="def-item">
             <div class="def-term">Past Participle</div>
-            <div class="def-desc">Describes a completed action. Used in passive and perfect constructions. Typically formed with the <em>ġe-</em> prefix.</div>
+            <div class="def-desc">Describes a completed action. Used in passive and perfect constructions. Typically
+              formed with the <em>ġe-</em> prefix.</div>
           </div>
         </div>
       </section>
 
       <section>
         <h2 class="basics-h2">Strong vs Weak verbs</h2>
-        <p class="basics-p">Old English verbs divide into two major types, distinguished by how they form the past tense.</p>
-        <p class="basics-p"><strong>Strong verbs</strong> form the past tense by changing the root vowel — a process called ablaut, or vowel gradation. <em>Singan</em> (to sing) is a strong verb: its present stem has <em>i</em>, its past singular has <em>a</em> (<em>sang</em>), and its past plural and past participle have <em>u</em> (<em>sungon</em>, <em>ġesungen</em>). Strong verbs are grouped into seven classes based on their ablaut pattern.</p>
-        <p class="basics-p"><strong>Weak verbs</strong> form the past tense with a dental suffix — the ancestor of the modern English <em>-ed</em> ending. <em>Lufian</em> (to love) is a weak verb: its past tense is <em>lufode</em>. Weak verbs are grouped into two main classes based on their stem type.</p>
+        <p class="basics-p">Old English verbs divide into two major types, distinguished by how they form the past
+          tense.</p>
+        <p class="basics-p"><strong>Strong verbs</strong> form the past tense by changing the root vowel — a process
+          called ablaut, or vowel gradation. <em>Singan</em> (to sing) is a strong verb: its present stem has
+          <em>i</em>, its past singular has <em>a</em> (<em>sang</em>), and its past plural and past participle have
+          <em>u</em> (<em>sungon</em>, <em>ġesungen</em>). Strong verbs are grouped into seven classes based on their
+          ablaut pattern.
+        </p>
+        <p class="basics-p"><strong>Weak verbs</strong> form the past tense with a dental suffix (i.e. <em>-t</em> or
+          <em>-d</em>) — the ancestor of the
+          modern English <em>-ed</em> ending. <em>Lufian</em> (to love) is a weak verb: its past tense is
+          <em>lufode</em>. Weak verbs are grouped into two main classes based on their stem type.
+        </p>
       </section>
 
       <section>
         <h2 class="basics-h2">The ablaut series</h2>
-        <p class="basics-p">Each strong verb class has a characteristic sequence of root vowels — the ablaut series — that appears across four key forms: the infinitive, the past indicative singular, the past indicative plural, and the past participle. Knowing the series for a class lets you derive the strong verb forms.</p>
+        <p class="basics-p">Each strong verb class has a characteristic sequence of root vowels — the ablaut series —
+          that appears across four key forms: the infinitive, the past indicative singular, the past indicative plural,
+          and the past participle. Knowing the series for a class lets you derive the strong verb forms.</p>
         <p class="basics-p">Class III, for example, has the series <strong>i – a – u – u</strong>:</p>
         <div class="ablaut-box">
           <div class="ablaut-caption"><em>singan</em> &mdash; to sing &mdash; Strong Class III</div>
@@ -271,7 +347,8 @@
             </tbody>
           </table>
         </div>
-        <p class="series-note">The ablaut series for each verb is shown on its card in the <a href="verbs.html">verb reference</a>.</p>
+        <p class="series-note">The ablaut series for each verb is shown on its card in the <a href="verbs.html">verb
+            reference</a>.</p>
       </section>
 
     </article>
@@ -281,4 +358,5 @@
 
   <script src="components.js"></script>
 </body>
+
 </html>

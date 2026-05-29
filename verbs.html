@@ -547,7 +547,8 @@
     <nav class="site-nav">
       <a href="index.html" class="nav-link">Home</a>
       <a href="verbs.html" class="nav-link active">Verbs</a>
-      <a href="basics.html" class="nav-link">Basics</a>
+      <a href="basics.html" class="nav-link">Grammar</a>
+      <a href="rules.html" class="nav-link">Rules</a>
       <a href="about.html" class="nav-link">About</a>
       <a href="changelog.html" class="nav-link">Changelog</a>
     </nav>
@@ -571,12 +572,28 @@
 
   </div>
 
+  <script src="paradigm.js"></script>
   <script>
     let verbs = [];
     let activeId = null;
 
     function tagClass(type) {
-      return { strong: 'tag-strong', weak: 'tag-weak', 'preterite-present': 'tag-pret', irregular: 'tag-irreg' }[type] || 'tag-strong';
+      return {
+        strong: 'tag-strong',
+        weak1: 'tag-weak',
+        weak2: 'tag-weak',
+        'preterite-present': 'tag-pret',
+        irregular: 'tag-irreg'
+      }[type] || 'tag-strong';
+    }
+
+    function typeLabel(verb, classLabel) {
+      if (verb.type === 'strong') return classLabel || 'Strong';
+      if (verb.type === 'weak1')  return 'Weak I';
+      if (verb.type === 'weak2')  return 'Weak II';
+      if (verb.type === 'preterite-present') return 'Pret.-Pres.';
+      if (verb.type === 'irregular') return 'Irregular';
+      return verb.type;
     }
 
     function row(label, form) {
@@ -629,12 +646,41 @@
     }
 
     function renderVerb(verb) {
-      const f = verb.forms;
-      const patternLabel = verb.type === 'strong' ? 'Ablaut series' : 'Stem pattern';
-      const pattern = CLASS_PATTERNS[verb.class] ?? verb.pattern;
+      // Treat preterite-present the same as irregular for rendering
+      const verbForConjugate = verb.type === 'preterite-present'
+        ? { ...verb, type: 'irregular' }
+        : verb;
+      const c = Paradigm.conjugate(verbForConjugate);
 
-      // Dual-column tables for suppletive verbs (bēon) that have alt_pres_ind
-      const hasDual = !!f.alt_pres_ind;
+      const classLabel = c.class === 'Irregular' && verb.type === 'preterite-present'
+        ? 'Preterite-Present'
+        : (c.class || verb.type);
+      const patternLabel = verb.type === 'strong' ? 'Ablaut series' : 'Stem pattern';
+      const CLASS_PATTERNS_LOCAL = {
+        'Strong I':    'ī · ā · i · i',
+        'Strong IIa':  'ēo · ēa · u · o',
+        'Strong IIb':  'ū · ēa · u · o',
+        'Strong IIIa': 'i · a · u · u',
+        'Strong IIIb': 'e · æ · u · o',
+        'Strong IV':   'e · æ · ǣ · o',
+        'Strong V':    'e · æ · ǣ · e',
+        'Strong VI':   'a · ō · ō · a',
+        'Strong VII':  'ā/ō · ē/ēo · ē/ēo · ā/ō',
+        'Weak 1':      '-de / -te past',
+        'Weak 2':      '-ode past · -ian infinitive',
+      };
+      const pattern = CLASS_PATTERNS_LOCAL[classLabel] || '';
+
+      const pi  = c.presentInd  || {};
+      const pai = c.pastInd     || {};
+      const ps  = c.presentSubj || {};
+      const pas = c.pastSubj    || {};
+      const imp = c.imperative  || {};
+      const nf  = c.nonFinite   || {};
+
+      const altPi  = c.altPresentInd  || null;
+      const altPs  = c.altPresentSubj || null;
+      const hasDual = !!altPi;
 
       const dualColHeader = (col1, col2) =>
         `<tr>
@@ -644,60 +690,59 @@
         </tr>`;
 
       const presIndRows = hasDual
-        ? dualColHeader('bēo–', 'eom-') +
-        rowDual('1st sg.', f.pres_ind.sg1, f.alt_pres_ind.sg1) +
-        rowDual('2nd sg.', f.pres_ind.sg2, f.alt_pres_ind.sg2) +
-        rowDual('3rd sg.', f.pres_ind.sg3, f.alt_pres_ind.sg3) +
-        rowDual('plural', f.pres_ind.pl, f.alt_pres_ind.pl)
-        : row('1st sg.', f.pres_ind.sg1) +
-        row('2nd sg.', f.pres_ind.sg2) +
-        row('3rd sg.', f.pres_ind.sg3) +
-        row('plural', f.pres_ind.pl);
+        ? dualColHeader('bēo–', 'eom–') +
+          rowDual('1st sg.', pi.sg1, altPi.sg1) +
+          rowDual('2nd sg.', pi.sg2, altPi.sg2) +
+          rowDual('3rd sg.', pi.sg3, altPi.sg3) +
+          rowDual('plural',  pi.pl,  altPi.pl)
+        : row('1st sg.', pi.sg1) +
+          row('2nd sg.', pi.sg2) +
+          row('3rd sg.', pi.sg3) +
+          row('plural',  pi.pl);
 
       const pastIndRows =
-        row('1st sg.', f.past_ind.sg1) +
-        row('2nd sg.', f.past_ind.sg2) +
-        row('3rd sg.', f.past_ind.sg3) +
-        row('plural', f.past_ind.pl);
+        row('1st sg.', pai.sg1) +
+        row('2nd sg.', pai.sg2) +
+        row('3rd sg.', pai.sg3) +
+        row('plural',  pai.pl);
 
-      // For bēon, pres subj has sīe/sīen (eom-) and bēo/bēon (bēo-)
-      const presSubjRows = hasDual && f.alt_pres_subj
+      const presSubjRows = hasDual && altPs
         ? dualColHeader('bēo–', 'eom–') +
-        rowDual('singular', f.pres_subj.sg, f.alt_pres_subj.sg) +
-        rowDual('plural', f.pres_subj.pl, f.alt_pres_subj.pl)
-        : row('singular', f.pres_subj.sg) +
-        row('plural', f.pres_subj.pl);
+          rowDual('singular', ps.sg, altPs.sg) +
+          rowDual('plural',   ps.pl, altPs.pl)
+        : row('singular', ps.sg) +
+          row('plural',   ps.pl);
 
       const pastSubjRows =
-        row('singular', f.past_subj.sg) +
-        row('plural', f.past_subj.pl);
+        row('singular', pas.sg) +
+        row('plural',   pas.pl);
 
-      let gridSections =
-        section('Present Indicative', presIndRows, TIPS.pres_ind) +
-        section('Past Indicative', pastIndRows, TIPS.past_ind) +
+      const gridSections =
+        section('Present Indicative',  presIndRows,  TIPS.pres_ind)  +
+        section('Past Indicative',     pastIndRows,  TIPS.past_ind)  +
         section('Present Subjunctive', presSubjRows, TIPS.pres_subj) +
-        section('Past Subjunctive', pastSubjRows, TIPS.past_subj);
+        section('Past Subjunctive',    pastSubjRows, TIPS.past_subj);
 
       const tiles =
-        tile('Infinitive', f.infinitive, TIPS.infinitive) +
-        tile('Inflected Infinitive', f.inflected_infinitive, TIPS.inf_infl) +
-        tile('Present Participle', f.pres_participle, TIPS.pres_part) +
-        tile('Past Participle', f.past_participle, TIPS.past_part) +
-        tile('Imperative Sg.', f.imperative_sg, TIPS.imperative) +
-        tile('Imperative Pl.', f.imperative_pl, TIPS.imperative);
+        tile('Infinitive',           nf.infinitive,          TIPS.infinitive) +
+        tile('Inflected Infinitive', nf.inflectedInfinitive, TIPS.inf_infl)   +
+        tile('Present Participle',   nf.presentParticiple,   TIPS.pres_part)  +
+        tile('Past Participle',      nf.pastParticiple,      TIPS.past_part)  +
+        tile('Imperative Sg.',       imp.sg,                 TIPS.imperative) +
+        tile('Imperative Pl.',       imp.pl,                 TIPS.imperative);
 
       return `<div class="verb-view">
         <div class="verb-header">
           <div class="verb-heading-row">
-            <span class="verb-headword">${verb.oe}</span>
+            <span class="verb-headword">${verb.lemma}</span>
             <span class="verb-gloss">${verb.gloss}</span>
           </div>
           <div class="verb-badges">
-            <span class="tag ${tagClass(verb.type)}">${verb.class}</span>
-            <span class="pattern-wrap">
+            <span class="tag ${tagClass(verb.type)}">${classLabel}</span>
+            ${pattern ? `<span class="pattern-wrap">
               <span class="pattern-label">${patternLabel}:</span>
               <span class="tag-pattern">${pattern}</span>
-            </span>
+            </span>` : ''}
           </div>
         </div>
         <div class="conj-grid">${gridSections}</div>
@@ -708,7 +753,9 @@
         ${verb.notes ? `<div class="verb-notes"><p>${verb.notes}</p></div>` : ''}
         ${verb.sources && verb.sources.length ? `<div class="verb-sources">
           <span class="sources-label">Sources</span>
-          ${verb.sources.map(s => `<span class="tag-source">${SOURCE_NAMES[s.text] || s.text} · Ch. ${s.chapter}</span>`).join('')}
+          ${verb.sources.map(s =>
+            `<span class="tag-source">${SOURCE_NAMES[s.text] || s.text} · Ch. ${s.chapter}</span>`
+          ).join('')}
         </div>` : ''}
       </div>`;
     }
@@ -717,26 +764,33 @@
       const q = filter.trim().toLowerCase();
       const matched = q
         ? verbs.filter(v =>
-          v.oe.toLowerCase().includes(q) ||
+          v.lemma.toLowerCase().includes(q) ||
           v.gloss.toLowerCase().includes(q)
         )
         : verbs;
 
       const groups = [
-        { label: 'Strong Verbs', types: ['strong'] },
-        { label: 'Weak Verbs', types: ['weak'] },
-        { label: 'Other', types: ['preterite-present', 'irregular'] }
+        { label: 'Strong Verbs',  types: ['strong'] },
+        { label: 'Weak Verbs',    types: ['weak1', 'weak2'] },
+        { label: 'Other',         types: ['preterite-present', 'irregular'] }
       ];
 
       let html = '';
       for (const g of groups) {
-        const items = matched.filter(v => g.types.includes(v.type)).sort((a, b) => a.oe.localeCompare(b.oe));
+        const items = matched.filter(v => g.types.includes(v.type)).sort((a, b) => a.lemma.localeCompare(b.lemma));
         if (!items.length) continue;
         html += `<div class="sidebar-group"><span class="group-label">${g.label}</span>`;
         for (const v of items) {
           html += `<div class="verb-item${activeId === v.id ? ' active' : ''}" data-id="${v.id}">
-            <span class="verb-oe">${v.oe}</span>
-            <span class="tag ${tagClass(v.type)}">${v.class}</span>
+            <span class="verb-oe">${v.lemma}</span>
+            <span class="tag ${tagClass(v.type)}">${
+    v.type === 'strong'
+      ? ('Strong ' + (Paradigm.inferClass(v.principalParts) || ''))
+      : v.type === 'weak1' ? 'Weak I'
+      : v.type === 'weak2' ? 'Weak II'
+      : v.type === 'preterite-present' ? 'Pret.-Pres.'
+      : 'Irregular'
+  }</span>
           </div>`;
         }
         html += `</div>`;

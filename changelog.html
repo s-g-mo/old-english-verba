@@ -110,7 +110,8 @@
     <nav class="site-nav">
       <a href="index.html" class="nav-link">Home</a>
       <a href="verbs.html" class="nav-link">Verbs</a>
-      <a href="basics.html" class="nav-link">Basics</a>
+      <a href="basics.html" class="nav-link">Grammar</a>
+      <a href="rules.html" class="nav-link">Rules</a>
       <a href="about.html" class="nav-link">About</a>
       <a href="changelog.html" class="nav-link active">Changelog</a>
     </nav>
@@ -121,6 +122,27 @@
     <p class="changelog-intro">A running record of additions and changes to the site, most recent first.</p>
 
     <div class="changelog-entries">
+
+      <article class="entry">
+        <div class="entry-date">29 May 2026</div>
+        <div class="entry-body">
+          <div class="entry-title">Rule-based conjugation engine and new Rules page</div>
+          <ul class="entry-items">
+            <li>Added a Rules page explaining how Old English verb forms are
+              mechanically derived from principal parts, with worked examples
+              and syntax-highlighted code snippets in Python and JavaScript</li>
+            <li>Verb conjugation tables are now generated programmatically at
+              runtime from a small set of inputs, rather than stored manually —
+              strong verbs need only their four principal parts, weak verbs
+              only their infinitive</li>
+            <li>Verb class (Strong IV, Weak 1 etc.) is now inferred automatically
+              from the ablaut pattern rather than stored explicitly</li>
+            <li>Renamed Grammar page (formerly Basics)</li>
+            <li>Syntax highlighting added to all code blocks on the Rules page</li>
+            <li>Added verbs from Ōsweald Bera Chapters 2, 3, & 4</li>
+          </ul>
+        </div>
+      </article>
 
       <article class="entry">
         <div class="entry-date">28 May 2026</div>
