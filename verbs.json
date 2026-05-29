@@ -6,6 +6,7 @@
     "class": "Strong IV",
     "type": "strong",
     "sources": [],
+    "notes": "",
     "forms": {
       "infinitive": "beran",
       "inflected_infinitive": "tō berenne",
@@ -42,6 +43,7 @@
     "class": "Strong II",
     "type": "strong",
     "sources": [],
+    "notes": "",
     "forms": {
       "infinitive": "cēosan",
       "inflected_infinitive": "tō cēosenne",
@@ -51,8 +53,8 @@
       "imperative_pl": "cēosaþ",
       "pres_ind": {
         "sg1": "cēose",
-        "sg2": "cēost",
-        "sg3": "cēosþ",
+        "sg2": "ċīest",
+        "sg3": "ċīesþ",
         "pl": "cēosaþ"
       },
       "past_ind": {
@@ -78,6 +80,7 @@
     "class": "Strong I",
     "type": "strong",
     "sources": [],
+    "notes": "",
     "forms": {
       "infinitive": "drīfan",
       "inflected_infinitive": "tō drīfenne",
@@ -114,6 +117,7 @@
     "class": "Strong VI",
     "type": "strong",
     "sources": [],
+    "notes": "",
     "forms": {
       "infinitive": "faran",
       "inflected_infinitive": "tō farenne",
@@ -156,6 +160,7 @@
       }
     ],
     "review_notes": "Contracted Strong V. Past plural ġesāwon is irregular for class V — verify if needed.",
+    "notes": "",
     "forms": {
       "infinitive": "ġesēon",
       "inflected_infinitive": "tō ġesēonne",
@@ -198,6 +203,7 @@
       }
     ],
     "review_notes": "",
+    "notes": "",
     "forms": {
       "infinitive": "ġewītan",
       "inflected_infinitive": "tō ġewītenne",
@@ -207,8 +213,8 @@
       "imperative_pl": "ġewītaþ",
       "pres_ind": {
         "sg1": "ġewīte",
-        "sg2": "ġewītest",
-        "sg3": "ġewīteþ",
+        "sg2": "ġewītst",
+        "sg3": "ġewītt",
         "pl": "ġewītaþ"
       },
       "past_ind": {
@@ -239,6 +245,7 @@
         "chapter": 1
       }
     ],
+    "notes": "",
     "forms": {
       "infinitive": "hātan",
       "inflected_infinitive": "tō hātenne",
@@ -248,8 +255,8 @@
       "imperative_pl": "hātaþ",
       "pres_ind": {
         "sg1": "hāte",
-        "sg2": "hātest",
-        "sg3": "hāteþ",
+        "sg2": "hǣtst",
+        "sg3": "hǣtt",
         "pl": "hātaþ"
       },
       "past_ind": {
@@ -275,6 +282,7 @@
     "class": "Strong III",
     "type": "strong",
     "sources": [],
+    "notes": "",
     "forms": {
       "infinitive": "singan",
       "inflected_infinitive": "tō singenne",
@@ -311,6 +319,7 @@
     "class": "Strong V",
     "type": "strong",
     "sources": [],
+    "notes": "",
     "forms": {
       "infinitive": "sprecan",
       "inflected_infinitive": "tō sprecenne",
@@ -348,6 +357,7 @@
     "type": "weak",
     "pattern": "Weak I · geminating",
     "sources": [],
+    "notes": "",
     "forms": {
       "infinitive": "fremman",
       "inflected_infinitive": "tō fremmenne",
@@ -388,6 +398,7 @@
     "related": [
       "gehieran"
     ],
+    "notes": "",
     "forms": {
       "infinitive": "hīeran",
       "inflected_infinitive": "tō hīerenne",
@@ -434,6 +445,7 @@
       "hieran"
     ],
     "review_notes": "Prefixed form of hīeran with perfectivising ġe-. Conjugates identically to hīeran.",
+    "notes": "",
     "forms": {
       "infinitive": "ġehīeran",
       "inflected_infinitive": "tō ġehīerenne",
@@ -470,6 +482,7 @@
     "class": "Weak II",
     "type": "weak",
     "sources": [],
+    "notes": "",
     "forms": {
       "infinitive": "lufian",
       "inflected_infinitive": "tō lufienne",
@@ -512,12 +525,13 @@
         "chapter": 1
       }
     ],
-    "review_notes": "Irregular past: reahte (not *recede). Past participle ġereht.",
+    "review_notes": "Irregular past: reahte (not *recede). Past participle ġereaht.",
+    "notes": "",
     "forms": {
       "infinitive": "reċċan",
       "inflected_infinitive": "tō reċċenne",
       "pres_participle": "reċċende",
-      "past_participle": "ġereht",
+      "past_participle": "ġereaht",
       "imperative_sg": "reċe",
       "imperative_pl": "reċċaþ",
       "pres_ind": {
@@ -528,7 +542,7 @@
       },
       "past_ind": {
         "sg1": "reahte",
-        "sg2": "reahtedest",
+        "sg2": "reahtest",
         "sg3": "reahte",
         "pl": "reahton"
       },
@@ -555,6 +569,7 @@
       }
     ],
     "review_notes": "",
+    "notes": "",
     "forms": {
       "infinitive": "wunian",
       "inflected_infinitive": "tō wunianne",
@@ -586,7 +601,7 @@
   },
   {
     "id": "beon",
-    "oe": "bēon",
+    "oe": "bēon/wesan",
     "gloss": "to be",
     "class": "Irregular",
     "type": "irregular",
@@ -595,8 +610,16 @@
       {
         "text": "osweald-bera",
         "chapter": 1
+      },
+      {
+        "text": "osweald-bera",
+        "chapter": 3
       }
     ],
+    "related": [
+      "wesan"
+    ],
+    "notes": "The bēon forms (bēo, bīst, bīþ, bēoþ) express permanent or habitual truths and future certainty. The wesan forms (eom, eart, is, sind) express immediate or contingent states. The bēon form first appears in Ōsweald Bera Ch. 3.",
     "forms": {
       "infinitive": "bēon / wesan",
       "inflected_infinitive": "tō bēonne",
@@ -605,16 +628,16 @@
       "imperative_sg": "bēo / wes",
       "imperative_pl": "bēoþ / wesaþ",
       "pres_ind": {
-        "sg1": "eom",
-        "sg2": "eart",
-        "sg3": "is",
-        "pl": "sind(on)"
-      },
-      "alt_pres_ind": {
         "sg1": "bēo",
         "sg2": "bīst",
         "sg3": "bīþ",
         "pl": "bēoþ"
+      },
+      "alt_pres_ind": {
+        "sg1": "eom",
+        "sg2": "eart",
+        "sg3": "is",
+        "pl": "sind(on)"
       },
       "past_ind": {
         "sg1": "wæs",
@@ -622,13 +645,17 @@
         "sg3": "wæs",
         "pl": "wǣron"
       },
-      "pres_subj": {
+      "alt_pres_subj": {
         "sg": "sīe",
         "pl": "sīen"
       },
       "past_subj": {
         "sg": "wǣre",
         "pl": "wǣren"
+      },
+      "pres_subj": {
+        "sg": "bēo",
+        "pl": "bēon"
       }
     }
   },
@@ -646,6 +673,7 @@
       }
     ],
     "review_notes": "No imperative or inflected infinitive. Past participle rarely attested.",
+    "notes": "",
     "forms": {
       "infinitive": "willan",
       "inflected_infinitive": null,
@@ -683,6 +711,7 @@
     "type": "preterite-present",
     "pattern": "pret. → pres.",
     "sources": [],
+    "notes": "",
     "forms": {
       "infinitive": "wītan",
       "inflected_infinitive": "tō wītenne",
@@ -698,7 +727,7 @@
       },
       "past_ind": {
         "sg1": "wisse / wiste",
-        "sg2": "wistest",
+        "sg2": "wiste/wisse",
         "sg3": "wisse / wiste",
         "pl": "wiston"
       },
@@ -707,8 +736,1714 @@
         "pl": "witen"
       },
       "past_subj": {
-        "sg": "wisse",
-        "pl": "wissen"
+        "sg": "wisse/wiste",
+        "pl": "wissen/wisten"
+      }
+    }
+  },
+  {
+    "id": "feran",
+    "oe": "fēran",
+    "gloss": "to go, travel",
+    "class": "Weak I",
+    "type": "weak",
+    "pattern": "Weak I · long stem",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 2
+      }
+    ],
+    "notes": "",
+    "forms": {
+      "infinitive": "fēran",
+      "inflected_infinitive": "tō fērenne",
+      "pres_participle": "fērende",
+      "past_participle": "ġefēred",
+      "imperative_sg": "fēr",
+      "imperative_pl": "fēraþ",
+      "pres_ind": {
+        "sg1": "fēre",
+        "sg2": "fērst",
+        "sg3": "fērþ",
+        "pl": "fēraþ"
+      },
+      "past_ind": {
+        "sg1": "fērde",
+        "sg2": "fērdest",
+        "sg3": "fērde",
+        "pl": "fērdon"
+      },
+      "pres_subj": {
+        "sg": "fēre",
+        "pl": "fēren"
+      },
+      "past_subj": {
+        "sg": "fērde",
+        "pl": "fērden"
+      }
+    }
+  },
+  {
+    "id": "findan",
+    "oe": "findan",
+    "gloss": "to find, get",
+    "class": "Strong III",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 2
+      }
+    ],
+    "notes": "",
+    "forms": {
+      "infinitive": "findan",
+      "inflected_infinitive": "tō findenne",
+      "pres_participle": "findende",
+      "past_participle": "ġefunden",
+      "imperative_sg": "find",
+      "imperative_pl": "findaþ",
+      "pres_ind": {
+        "sg1": "finde",
+        "sg2": "fintst",
+        "sg3": "fint",
+        "pl": "findaþ"
+      },
+      "past_ind": {
+        "sg1": "fand",
+        "sg2": "funde",
+        "sg3": "fand",
+        "pl": "fundon"
+      },
+      "pres_subj": {
+        "sg": "finde",
+        "pl": "finden"
+      },
+      "past_subj": {
+        "sg": "funde",
+        "pl": "funden"
+      }
+    }
+  },
+  {
+    "id": "sculan",
+    "oe": "sċulan",
+    "gloss": "should, must, have to; will, shall",
+    "class": "Pret.-Pres.",
+    "type": "preterite-present",
+    "pattern": "pret. → pres.",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 2
+      }
+    ],
+    "notes": "Preterite-present. 1st/3rd sg pres: sċeal; pl: sċulon. Past: scolde.",
+    "forms": {
+      "infinitive": "sċulan",
+      "inflected_infinitive": null,
+      "pres_participle": "sċulende",
+      "past_participle": null,
+      "imperative_sg": null,
+      "imperative_pl": null,
+      "pres_ind": {
+        "sg1": "sċeal",
+        "sg2": "sċealt",
+        "sg3": "sċeal",
+        "pl": "sċulon"
+      },
+      "past_ind": {
+        "sg1": "scolde",
+        "sg2": "scoldest",
+        "sg3": "scolde",
+        "pl": "scoldon"
+      },
+      "pres_subj": {
+        "sg": "sċule",
+        "pl": "sċulen"
+      },
+      "past_subj": {
+        "sg": "scolde",
+        "pl": "scolden"
+      }
+    }
+  },
+  {
+    "id": "etan",
+    "oe": "etan",
+    "gloss": "to eat",
+    "class": "Strong V",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 2
+      }
+    ],
+    "notes": "",
+    "forms": {
+      "infinitive": "etan",
+      "inflected_infinitive": "tō etenne",
+      "pres_participle": "etende",
+      "past_participle": "ġeeten",
+      "imperative_sg": "et",
+      "imperative_pl": "etaþ",
+      "pres_ind": {
+        "sg1": "ete",
+        "sg2": "itst",
+        "sg3": "itt",
+        "pl": "etaþ"
+      },
+      "past_ind": {
+        "sg1": "ǣt",
+        "sg2": "ǣte",
+        "sg3": "ǣt",
+        "pl": "ǣton"
+      },
+      "pres_subj": {
+        "sg": "ete",
+        "pl": "eten"
+      },
+      "past_subj": {
+        "sg": "ǣte",
+        "pl": "ǣten"
+      }
+    }
+  },
+  {
+    "id": "secan",
+    "oe": "sēċan",
+    "gloss": "to seek, look for",
+    "class": "Weak I",
+    "type": "weak",
+    "pattern": "Weak I · long stem",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 2
+      }
+    ],
+    "notes": "Irregular: past sōhte (not *sēċede).",
+    "forms": {
+      "infinitive": "sēċan",
+      "inflected_infinitive": "tō sēċenne",
+      "pres_participle": "sēċende",
+      "past_participle": "ġesōht",
+      "imperative_sg": "sēċ",
+      "imperative_pl": "sēċaþ",
+      "pres_ind": {
+        "sg1": "sēċe",
+        "sg2": "sēċst",
+        "sg3": "sēċþ",
+        "pl": "sēċaþ"
+      },
+      "past_ind": {
+        "sg1": "sōhte",
+        "sg2": "sōhtest",
+        "sg3": "sōhte",
+        "pl": "sōhton"
+      },
+      "pres_subj": {
+        "sg": "sēċe",
+        "pl": "sēċen"
+      },
+      "past_subj": {
+        "sg": "sōhte",
+        "pl": "sōhten"
+      }
+    }
+  },
+  {
+    "id": "wyrcan",
+    "oe": "wyrċan",
+    "gloss": "to make, work, do",
+    "class": "Weak I",
+    "type": "weak",
+    "pattern": "Weak I · geminating",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 2
+      }
+    ],
+    "notes": "Irregular: past worhte.",
+    "forms": {
+      "infinitive": "wyrċan",
+      "inflected_infinitive": "tō wyrċenne",
+      "pres_participle": "wyrċende",
+      "past_participle": "ġeworht",
+      "imperative_sg": "wyrċ",
+      "imperative_pl": "wyrċaþ",
+      "pres_ind": {
+        "sg1": "wyrċe",
+        "sg2": "wyrċst",
+        "sg3": "wyrċþ",
+        "pl": "wyrċaþ"
+      },
+      "past_ind": {
+        "sg1": "worhte",
+        "sg2": "worhtest",
+        "sg3": "worhte",
+        "pl": "worhton"
+      },
+      "pres_subj": {
+        "sg": "wyrċe",
+        "pl": "wyrċen"
+      },
+      "past_subj": {
+        "sg": "worhte",
+        "pl": "worhten"
+      }
+    }
+  },
+  {
+    "id": "magan",
+    "oe": "magan",
+    "gloss": "can, be able",
+    "class": "Pret.-Pres.",
+    "type": "preterite-present",
+    "pattern": "pret. → pres.",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 2
+      }
+    ],
+    "notes": "1st/3rd sg pres: mæġ; pl: magon. Past: meahte / mihte.",
+    "forms": {
+      "infinitive": "magan",
+      "inflected_infinitive": null,
+      "pres_participle": "magende",
+      "past_participle": null,
+      "imperative_sg": null,
+      "imperative_pl": null,
+      "pres_ind": {
+        "sg1": "mæġ",
+        "sg2": "miht",
+        "sg3": "mæġ",
+        "pl": "magon"
+      },
+      "past_ind": {
+        "sg1": "meahte/mihte",
+        "sg2": "meahtest/mihtest",
+        "sg3": "meahte/mihte",
+        "pl": "meahton/mihton"
+      },
+      "pres_subj": {
+        "sg": "mæġe",
+        "pl": "mæġen"
+      },
+      "past_subj": {
+        "sg": "meahte/mihte",
+        "pl": "meahten/mihten"
+      }
+    }
+  },
+  {
+    "id": "sceppan",
+    "oe": "sċeþþan",
+    "gloss": "to injure, harm",
+    "class": "Weak I",
+    "type": "weak",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 2
+      }
+    ],
+    "notes": "Irregular weak (like reċċan). 3rd sg pres sċeþeþ; past sċeþede.",
+    "forms": {
+      "infinitive": "sċeþþan",
+      "inflected_infinitive": "tō sċeþþenne",
+      "pres_participle": "sċeþþende",
+      "past_participle": "ġesċeþed",
+      "imperative_sg": "sċeþe",
+      "imperative_pl": "sċeþþaþ",
+      "pres_ind": {
+        "sg1": "sċeþþe",
+        "sg2": "sċeþest",
+        "sg3": "sċeþeþ",
+        "pl": "sċeþþaþ"
+      },
+      "past_ind": {
+        "sg1": "sċeþede",
+        "sg2": "sċeþedest",
+        "sg3": "sċeþede",
+        "pl": "sċeþedon"
+      },
+      "pres_subj": {
+        "sg": "sċeþþe",
+        "pl": "sċeþþen"
+      },
+      "past_subj": {
+        "sg": "sċeþede",
+        "pl": "sċeþeden"
+      }
+    },
+    "pattern": "Weak I · irregular"
+  },
+  {
+    "id": "giefan",
+    "oe": "ġiefan",
+    "gloss": "to give",
+    "class": "Strong V",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 2
+      }
+    ],
+    "notes": "",
+    "forms": {
+      "infinitive": "ġiefan",
+      "inflected_infinitive": "tō ġiefenne",
+      "pres_participle": "ġiefende",
+      "past_participle": "ġiefen",
+      "imperative_sg": "ġief",
+      "imperative_pl": "ġiefaþ",
+      "pres_ind": {
+        "sg1": "ġiefe",
+        "sg2": "ġiefst",
+        "sg3": "ġiefþ",
+        "pl": "ġiefaþ"
+      },
+      "past_ind": {
+        "sg1": "ġeaf",
+        "sg2": "ġēafe",
+        "sg3": "ġeaf",
+        "pl": "ġēafon"
+      },
+      "pres_subj": {
+        "sg": "ġiefe",
+        "pl": "ġiefen"
+      },
+      "past_subj": {
+        "sg": "ġēafe",
+        "pl": "ġēafen"
+      }
+    }
+  },
+  {
+    "id": "niman",
+    "oe": "niman",
+    "gloss": "to take, hold, carry off",
+    "class": "Strong IV",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 2
+      }
+    ],
+    "notes": "Irregular: past sg nam, pl nōmon.",
+    "forms": {
+      "infinitive": "niman",
+      "inflected_infinitive": "tō nimenne",
+      "pres_participle": "nimende",
+      "past_participle": "ġenumen",
+      "imperative_sg": "nim",
+      "imperative_pl": "nimaþ",
+      "pres_ind": {
+        "sg1": "nime",
+        "sg2": "nimst",
+        "sg3": "nimþ",
+        "pl": "nimaþ"
+      },
+      "past_ind": {
+        "sg1": "nam",
+        "sg2": "nōme",
+        "sg3": "nam",
+        "pl": "nōmon"
+      },
+      "pres_subj": {
+        "sg": "nime",
+        "pl": "nimen"
+      },
+      "past_subj": {
+        "sg": "nōme",
+        "pl": "nōmen"
+      }
+    }
+  },
+  {
+    "id": "wacian",
+    "oe": "wacian",
+    "gloss": "to be awake, stay awake",
+    "class": "Weak II",
+    "type": "weak",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 2
+      }
+    ],
+    "related": [
+      "awacian"
+    ],
+    "notes": "",
+    "forms": {
+      "infinitive": "wacian",
+      "inflected_infinitive": "tō wacianne",
+      "pres_participle": "waciende",
+      "past_participle": "ġewacod",
+      "imperative_sg": "waca",
+      "imperative_pl": "waciaþ",
+      "pres_ind": {
+        "sg1": "wacie",
+        "sg2": "wacast",
+        "sg3": "wacaþ",
+        "pl": "waciaþ"
+      },
+      "past_ind": {
+        "sg1": "wacode",
+        "sg2": "wacodest",
+        "sg3": "wacode",
+        "pl": "wacodon"
+      },
+      "pres_subj": {
+        "sg": "wacie",
+        "pl": "wacien"
+      },
+      "past_subj": {
+        "sg": "wacode",
+        "pl": "wacoden"
+      }
+    }
+  },
+  {
+    "id": "slaepan",
+    "oe": "slæpan",
+    "gloss": "to sleep",
+    "class": "Strong VII",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 2
+      }
+    ],
+    "notes": "",
+    "forms": {
+      "infinitive": "slæpan",
+      "inflected_infinitive": "tō slæpenne",
+      "pres_participle": "slæpende",
+      "past_participle": "ġeslæpen",
+      "imperative_sg": "slæp",
+      "imperative_pl": "slæpaþ",
+      "pres_ind": {
+        "sg1": "slæpe",
+        "sg2": "slæpst",
+        "sg3": "slæpþ",
+        "pl": "slæpaþ"
+      },
+      "past_ind": {
+        "sg1": "slēp",
+        "sg2": "slēpe",
+        "sg3": "slēp",
+        "pl": "slēpon"
+      },
+      "pres_subj": {
+        "sg": "slæpe",
+        "pl": "slæpen"
+      },
+      "past_subj": {
+        "sg": "slēpe",
+        "pl": "slēpen"
+      }
+    }
+  },
+  {
+    "id": "bidan",
+    "oe": "bīdan",
+    "gloss": "to await, wait (for); experience",
+    "class": "Strong I",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 2
+      }
+    ],
+    "notes": "",
+    "forms": {
+      "infinitive": "bīdan",
+      "inflected_infinitive": "tō bīdenne",
+      "pres_participle": "bīdende",
+      "past_participle": "ġebiden",
+      "imperative_sg": "bīd",
+      "imperative_pl": "bīdaþ",
+      "pres_ind": {
+        "sg1": "bīde",
+        "sg2": "bīdst",
+        "sg3": "bīdþ",
+        "pl": "bīdaþ"
+      },
+      "past_ind": {
+        "sg1": "bād",
+        "sg2": "bide",
+        "sg3": "bād",
+        "pl": "bidon"
+      },
+      "pres_subj": {
+        "sg": "bīde",
+        "pl": "bīden"
+      },
+      "past_subj": {
+        "sg": "bide",
+        "pl": "biden"
+      }
+    }
+  },
+  {
+    "id": "habban",
+    "oe": "habban",
+    "gloss": "to have",
+    "class": "Weak I",
+    "type": "weak",
+    "pattern": "Weak I · irregular",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 2
+      }
+    ],
+    "notes": "Irregular weak. 3rd sg pres: hæfþ; past: hæfde.",
+    "forms": {
+      "infinitive": "habban",
+      "inflected_infinitive": "tō habbenne",
+      "pres_participle": "habbende",
+      "past_participle": "ġehæfd",
+      "imperative_sg": "hafa",
+      "imperative_pl": "habbaþ",
+      "pres_ind": {
+        "sg1": "hæbbe",
+        "sg2": "hæfst",
+        "sg3": "hæfþ",
+        "pl": "habbaþ"
+      },
+      "past_ind": {
+        "sg1": "hæfde",
+        "sg2": "hæfdest",
+        "sg3": "hæfde",
+        "pl": "hæfdon"
+      },
+      "pres_subj": {
+        "sg": "hæbbe",
+        "pl": "hæbben"
+      },
+      "past_subj": {
+        "sg": "hæfde",
+        "pl": "hæfden"
+      }
+    }
+  },
+  {
+    "id": "settan",
+    "oe": "settan",
+    "gloss": "to place, put",
+    "class": "Weak I",
+    "type": "weak",
+    "pattern": "Weak I · geminating",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 2
+      }
+    ],
+    "notes": "",
+    "forms": {
+      "infinitive": "settan",
+      "inflected_infinitive": "tō settenne",
+      "pres_participle": "settende",
+      "past_participle": "ġesett",
+      "imperative_sg": "sete",
+      "imperative_pl": "settaþ",
+      "pres_ind": {
+        "sg1": "sette",
+        "sg2": "setest",
+        "sg3": "seteþ",
+        "pl": "settaþ"
+      },
+      "past_ind": {
+        "sg1": "sette",
+        "sg2": "settest",
+        "sg3": "sette",
+        "pl": "setton"
+      },
+      "pres_subj": {
+        "sg": "sette",
+        "pl": "setten"
+      },
+      "past_subj": {
+        "sg": "sette",
+        "pl": "setten"
+      }
+    }
+  },
+  {
+    "id": "fleogan",
+    "oe": "flēogan",
+    "gloss": "to fly",
+    "class": "Strong II",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 2
+      }
+    ],
+    "notes": "",
+    "forms": {
+      "infinitive": "flēogan",
+      "inflected_infinitive": "tō flēogenne",
+      "pres_participle": "flēogende",
+      "past_participle": "ġefloġen",
+      "imperative_sg": "flēoh",
+      "imperative_pl": "flēogaþ",
+      "pres_ind": {
+        "sg1": "flēoge",
+        "sg2": "flīehst",
+        "sg3": "flīehþ",
+        "pl": "flēogaþ"
+      },
+      "past_ind": {
+        "sg1": "flēah",
+        "sg2": "fluġe",
+        "sg3": "flēah",
+        "pl": "fluġon"
+      },
+      "pres_subj": {
+        "sg": "flēoge",
+        "pl": "flēogen"
+      },
+      "past_subj": {
+        "sg": "fluġe",
+        "pl": "fluġen"
+      }
+    }
+  },
+  {
+    "id": "rinnan",
+    "oe": "rinnan",
+    "gloss": "to run",
+    "class": "Strong III",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 2
+      }
+    ],
+    "notes": "",
+    "forms": {
+      "infinitive": "rinnan",
+      "inflected_infinitive": "tō rinnenne",
+      "pres_participle": "rinnende",
+      "past_participle": "ġerunnen",
+      "imperative_sg": "rin",
+      "imperative_pl": "rinnaþ",
+      "pres_ind": {
+        "sg1": "rinne",
+        "sg2": "rinst",
+        "sg3": "rinþ",
+        "pl": "rinnaþ"
+      },
+      "past_ind": {
+        "sg1": "rann",
+        "sg2": "runne",
+        "sg3": "rann",
+        "pl": "runnon"
+      },
+      "pres_subj": {
+        "sg": "rinne",
+        "pl": "rinnen"
+      },
+      "past_subj": {
+        "sg": "runne",
+        "pl": "runnen"
+      }
+    }
+  },
+  {
+    "id": "awacian",
+    "oe": "āwacian",
+    "gloss": "to wake up (intr.)",
+    "class": "Weak II",
+    "type": "weak",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 2
+      }
+    ],
+    "related": [
+      "wacian"
+    ],
+    "notes": "Prefixed form of wacian.",
+    "forms": {
+      "infinitive": "āwacian",
+      "inflected_infinitive": "tō āwacianne",
+      "pres_participle": "āwaciende",
+      "past_participle": "āwacod",
+      "imperative_sg": "āwaca",
+      "imperative_pl": "āwaciaþ",
+      "pres_ind": {
+        "sg1": "āwacie",
+        "sg2": "āwacast",
+        "sg3": "āwacaþ",
+        "pl": "āwaciaþ"
+      },
+      "past_ind": {
+        "sg1": "āwacode",
+        "sg2": "āwacodest",
+        "sg3": "āwacode",
+        "pl": "āwacodon"
+      },
+      "pres_subj": {
+        "sg": "āwacie",
+        "pl": "āwacien"
+      },
+      "past_subj": {
+        "sg": "āwacode",
+        "pl": "āwacoden"
+      }
+    }
+  },
+  {
+    "id": "cuman",
+    "oe": "cuman",
+    "gloss": "to come, go",
+    "class": "Strong IV",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 2
+      }
+    ],
+    "notes": "Irregular: 3rd sg pres cymþ; past sg c(w)ōm, pl c(w)ōman; past part gec(w)umen.",
+    "forms": {
+      "infinitive": "cuman",
+      "inflected_infinitive": "tō cumenne",
+      "pres_participle": "cumende",
+      "past_participle": "ġecumen",
+      "imperative_sg": "cum",
+      "imperative_pl": "cumaþ",
+      "pres_ind": {
+        "sg1": "cume",
+        "sg2": "cymst",
+        "sg3": "cymþ",
+        "pl": "cumaþ"
+      },
+      "past_ind": {
+        "sg1": "c(w)ōm",
+        "sg2": "c(w)ōme",
+        "sg3": "c(w)ōm",
+        "pl": "c(w)ōmon"
+      },
+      "pres_subj": {
+        "sg": "cume",
+        "pl": "cumen"
+      },
+      "past_subj": {
+        "sg": "c(w)ōme",
+        "pl": "c(w)ōmen"
+      }
+    }
+  },
+  {
+    "id": "nillan",
+    "oe": "nillan",
+    "gloss": "to not want",
+    "class": "Irregular",
+    "type": "irregular",
+    "pattern": "anomalous modal",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 2
+      }
+    ],
+    "notes": "Negative contraction of ne + willan. Conjugates as willan with ne- prefix fused. 3rd sg pres: nile; past: nolde.",
+    "forms": {
+      "infinitive": "nillan",
+      "inflected_infinitive": null,
+      "pres_participle": "nillende",
+      "past_participle": null,
+      "imperative_sg": null,
+      "imperative_pl": null,
+      "pres_ind": {
+        "sg1": "nille",
+        "sg2": "nilt",
+        "sg3": "nile",
+        "pl": "nillaþ"
+      },
+      "past_ind": {
+        "sg1": "nolde",
+        "sg2": "noldest",
+        "sg3": "nolde",
+        "pl": "noldon"
+      },
+      "pres_subj": {
+        "sg": "nille",
+        "pl": "nillen"
+      },
+      "past_subj": {
+        "sg": "nolde",
+        "pl": "nolden"
+      }
+    }
+  },
+  {
+    "id": "forhtian",
+    "oe": "forhtian",
+    "gloss": "to be afraid, fear",
+    "class": "Weak II",
+    "type": "weak",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 3
+      }
+    ],
+    "notes": "",
+    "forms": {
+      "infinitive": "forhtian",
+      "inflected_infinitive": "tō forhtienne",
+      "pres_participle": "forhtiende",
+      "past_participle": "ġeforhtod",
+      "imperative_sg": "forhta",
+      "imperative_pl": "forhtiaþ",
+      "pres_ind": {
+        "sg1": "forhtie",
+        "sg2": "forhtast",
+        "sg3": "forhtaþ",
+        "pl": "forhtiaþ"
+      },
+      "past_ind": {
+        "sg1": "forhtode",
+        "sg2": "forhtodest",
+        "sg3": "forhtode",
+        "pl": "forhtodon"
+      },
+      "pres_subj": {
+        "sg": "forhtie",
+        "pl": "forhtien"
+      },
+      "past_subj": {
+        "sg": "forhtode",
+        "pl": "forhtoden"
+      }
+    }
+  },
+  {
+    "id": "bepurfan",
+    "oe": "beþurfan",
+    "gloss": "to need",
+    "class": "Pret.-Pres.",
+    "type": "preterite-present",
+    "pattern": "pret. → pres.",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 3
+      }
+    ],
+    "notes": "1st/3rd sg pres: beþearf; pl: beþurfon.",
+    "forms": {
+      "infinitive": "beþurfan",
+      "inflected_infinitive": null,
+      "pres_participle": "beþurfende",
+      "past_participle": null,
+      "imperative_sg": null,
+      "imperative_pl": null,
+      "pres_ind": {
+        "sg1": "beþearf",
+        "sg2": "beþearft",
+        "sg3": "beþearf",
+        "pl": "beþurfon"
+      },
+      "past_ind": {
+        "sg1": "beþorfte",
+        "sg2": "beþorftest",
+        "sg3": "beþorfte",
+        "pl": "beþorfton"
+      },
+      "pres_subj": {
+        "sg": "beþurfe",
+        "pl": "beþurfen"
+      },
+      "past_subj": {
+        "sg": "beþorfte",
+        "pl": "beþorften"
+      }
+    }
+  },
+  {
+    "id": "wenan",
+    "oe": "wēnan",
+    "gloss": "to think, believe",
+    "class": "Weak I",
+    "type": "weak",
+    "pattern": "Weak I · long stem",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 3
+      }
+    ],
+    "notes": "",
+    "forms": {
+      "infinitive": "wēnan",
+      "inflected_infinitive": "tō wēnenne",
+      "pres_participle": "wēnende",
+      "past_participle": "ġewēned",
+      "imperative_sg": "wēn",
+      "imperative_pl": "wēnaþ",
+      "pres_ind": {
+        "sg1": "wēne",
+        "sg2": "wēnst",
+        "sg3": "wēnþ",
+        "pl": "wēnaþ"
+      },
+      "past_ind": {
+        "sg1": "wēnde",
+        "sg2": "wēndest",
+        "sg3": "wēnde",
+        "pl": "wēndon"
+      },
+      "pres_subj": {
+        "sg": "wēne",
+        "pl": "wēnen"
+      },
+      "past_subj": {
+        "sg": "wēnde",
+        "pl": "wēnden"
+      }
+    }
+  },
+  {
+    "id": "tredan",
+    "oe": "tredan",
+    "gloss": "to step on, trample",
+    "class": "Strong V",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 3
+      }
+    ],
+    "notes": "",
+    "forms": {
+      "infinitive": "tredan",
+      "inflected_infinitive": "tō tredenne",
+      "pres_participle": "tredende",
+      "past_participle": "ġetreden",
+      "imperative_sg": "tred",
+      "imperative_pl": "tredaþ",
+      "pres_ind": {
+        "sg1": "trede",
+        "sg2": "trit(e)st",
+        "sg3": "trit(e)þ",
+        "pl": "tredaþ"
+      },
+      "past_ind": {
+        "sg1": "træd",
+        "sg2": "trǣde",
+        "sg3": "træd",
+        "pl": "trǣdon"
+      },
+      "pres_subj": {
+        "sg": "trede",
+        "pl": "treden"
+      },
+      "past_subj": {
+        "sg": "trǣde",
+        "pl": "trǣden"
+      }
+    }
+  },
+  {
+    "id": "andswarian",
+    "oe": "andswarian",
+    "gloss": "to answer",
+    "class": "Weak II",
+    "type": "weak",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 3
+      }
+    ],
+    "notes": "",
+    "forms": {
+      "infinitive": "andswarian",
+      "inflected_infinitive": "tō andswarienne",
+      "pres_participle": "andswariende",
+      "past_participle": "ġeandswarod",
+      "imperative_sg": "andswara",
+      "imperative_pl": "andswariaþ",
+      "pres_ind": {
+        "sg1": "andswarie",
+        "sg2": "andswarast",
+        "sg3": "andswaraþ",
+        "pl": "andswariaþ"
+      },
+      "past_ind": {
+        "sg1": "andswarode",
+        "sg2": "andswarodest",
+        "sg3": "andswarode",
+        "pl": "andswarodon"
+      },
+      "pres_subj": {
+        "sg": "andswarie",
+        "pl": "andswarien"
+      },
+      "past_subj": {
+        "sg": "andswarode",
+        "pl": "answaroden"
+      }
+    }
+  },
+  {
+    "id": "ridan",
+    "oe": "rīdan",
+    "gloss": "to ride; swing",
+    "class": "Strong I",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 3
+      }
+    ],
+    "notes": "",
+    "forms": {
+      "infinitive": "rīdan",
+      "inflected_infinitive": "tō rīdenne",
+      "pres_participle": "rīdende",
+      "past_participle": "ġeriden",
+      "imperative_sg": "rīd",
+      "imperative_pl": "rīdaþ",
+      "pres_ind": {
+        "sg1": "rīde",
+        "sg2": "rīdst",
+        "sg3": "rīdþ",
+        "pl": "rīdaþ"
+      },
+      "past_ind": {
+        "sg1": "rād",
+        "sg2": "ride",
+        "sg3": "rād",
+        "pl": "ridon"
+      },
+      "pres_subj": {
+        "sg": "rīde",
+        "pl": "rīden"
+      },
+      "past_subj": {
+        "sg": "ride",
+        "pl": "riden"
+      }
+    }
+  },
+  {
+    "id": "motan",
+    "oe": "mōtan",
+    "gloss": "may, be allowed to",
+    "class": "Pret.-Pres.",
+    "type": "preterite-present",
+    "pattern": "pret. → pres.",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 3
+      }
+    ],
+    "notes": "1st/3rd sg pres: mōt; pl: mōton. Past: mōste.",
+    "forms": {
+      "infinitive": "mōtan",
+      "inflected_infinitive": null,
+      "pres_participle": "mōtende",
+      "past_participle": null,
+      "imperative_sg": null,
+      "imperative_pl": null,
+      "pres_ind": {
+        "sg1": "mōt",
+        "sg2": "mōst",
+        "sg3": "mōt",
+        "pl": "mōton"
+      },
+      "past_ind": {
+        "sg1": "mōste",
+        "sg2": "mōstest",
+        "sg3": "mōste",
+        "pl": "mōston"
+      },
+      "pres_subj": {
+        "sg": "mōte",
+        "pl": "mōten"
+      },
+      "past_subj": {
+        "sg": "mōste",
+        "pl": "mōsten"
+      }
+    }
+  },
+  {
+    "id": "weorpan",
+    "oe": "weorþan",
+    "gloss": "to become",
+    "class": "Strong III",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 3
+      }
+    ],
+    "notes": "",
+    "forms": {
+      "infinitive": "weorþan",
+      "inflected_infinitive": "tō weorþenne",
+      "pres_participle": "weorþende",
+      "past_participle": "ġeworden",
+      "imperative_sg": "weorþ",
+      "imperative_pl": "weorþaþ",
+      "pres_ind": {
+        "sg1": "weorþe",
+        "sg2": "wierdst",
+        "sg3": "wierþ",
+        "pl": "weorþaþ"
+      },
+      "past_ind": {
+        "sg1": "wearþ",
+        "sg2": "wurde",
+        "sg3": "wearþ",
+        "pl": "wurdon"
+      },
+      "pres_subj": {
+        "sg": "weorþe",
+        "pl": "weorþen"
+      },
+      "past_subj": {
+        "sg": "wurde",
+        "pl": "wurden"
+      }
+    }
+  },
+  {
+    "id": "cunnan",
+    "oe": "cunnan",
+    "gloss": "to know how to, be familiar with",
+    "class": "Pret.-Pres.",
+    "type": "preterite-present",
+    "pattern": "pret. → pres.",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 3
+      }
+    ],
+    "notes": "1st/3rd sg pres: cann; pl: cunnon. Past: cūþe.",
+    "forms": {
+      "infinitive": "cunnan",
+      "inflected_infinitive": null,
+      "pres_participle": "cunnende",
+      "past_participle": null,
+      "imperative_sg": null,
+      "imperative_pl": null,
+      "pres_ind": {
+        "sg1": "cann",
+        "sg2": "canst",
+        "sg3": "cann",
+        "pl": "cunnon"
+      },
+      "past_ind": {
+        "sg1": "cūþe",
+        "sg2": "cūþest",
+        "sg3": "cūþe",
+        "pl": "cūþon"
+      },
+      "pres_subj": {
+        "sg": "cunne",
+        "pl": "cunnen"
+      },
+      "past_subj": {
+        "sg": "cūþe",
+        "pl": "cūþen"
+      }
+    }
+  },
+  {
+    "id": "hrieman",
+    "oe": "hrīeman",
+    "gloss": "to yell, shout",
+    "class": "Weak I",
+    "type": "weak",
+    "pattern": "Weak I · long stem",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 3
+      }
+    ],
+    "notes": "",
+    "forms": {
+      "infinitive": "hrīeman",
+      "inflected_infinitive": "tō hrīemenne",
+      "pres_participle": "hrīemende",
+      "past_participle": "ġehrīemed",
+      "imperative_sg": "hrīem",
+      "imperative_pl": "hrīemaþ",
+      "pres_ind": {
+        "sg1": "hrīeme",
+        "sg2": "hrīemst",
+        "sg3": "hrīemþ",
+        "pl": "hrīemaþ"
+      },
+      "past_ind": {
+        "sg1": "hrīemde",
+        "sg2": "hrīemdest",
+        "sg3": "hrīemde",
+        "pl": "hrīemdon"
+      },
+      "pres_subj": {
+        "sg": "hrīeme",
+        "pl": "hrīemen"
+      },
+      "past_subj": {
+        "sg": "hrīemde",
+        "pl": "hrīemden"
+      }
+    }
+  },
+  {
+    "id": "windan",
+    "oe": "windan",
+    "gloss": "to move, fly",
+    "class": "Strong III",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 4
+      }
+    ],
+    "notes": "",
+    "forms": {
+      "infinitive": "windan",
+      "inflected_infinitive": "tō windenne",
+      "pres_participle": "windende",
+      "past_participle": "ġewunden",
+      "imperative_sg": "wind",
+      "imperative_pl": "windaþ",
+      "pres_ind": {
+        "sg1": "winde",
+        "sg2": "windst",
+        "sg3": "windþ",
+        "pl": "windaþ"
+      },
+      "past_ind": {
+        "sg1": "wand",
+        "sg2": "wunde",
+        "sg3": "wand",
+        "pl": "wundon"
+      },
+      "pres_subj": {
+        "sg": "winde",
+        "pl": "winden"
+      },
+      "past_subj": {
+        "sg": "wunde",
+        "pl": "wunden"
+      }
+    }
+  },
+  {
+    "id": "sceawian",
+    "oe": "sċēawian",
+    "gloss": "to look at",
+    "class": "Weak II",
+    "type": "weak",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 4
+      }
+    ],
+    "notes": "",
+    "forms": {
+      "infinitive": "sċēawian",
+      "inflected_infinitive": "tō sċēawienne",
+      "pres_participle": "sċēawiende",
+      "past_participle": "ġesċēawod",
+      "imperative_sg": "sċēawa",
+      "imperative_pl": "sċēawiaþ",
+      "pres_ind": {
+        "sg1": "sċēawie",
+        "sg2": "sċēawast",
+        "sg3": "sċēawaþ",
+        "pl": "sċēawiaþ"
+      },
+      "past_ind": {
+        "sg1": "sċēawode",
+        "sg2": "sċēawodest",
+        "sg3": "sċēawode",
+        "pl": "sċēawodon"
+      },
+      "pres_subj": {
+        "sg": "sċēawie",
+        "pl": "sċēawien"
+      },
+      "past_subj": {
+        "sg": "sċēawode",
+        "pl": "sċēawoden"
+      }
+    }
+  },
+  {
+    "id": "ascian",
+    "oe": "āscian",
+    "gloss": "to ask",
+    "class": "Weak II",
+    "type": "weak",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 4
+      }
+    ],
+    "notes": "",
+    "forms": {
+      "infinitive": "āscian",
+      "inflected_infinitive": "tō āscienne",
+      "pres_participle": "āsciende",
+      "past_participle": "āscod",
+      "imperative_sg": "āsca",
+      "imperative_pl": "āsciaþ",
+      "pres_ind": {
+        "sg1": "āscie",
+        "sg2": "āscast",
+        "sg3": "āscaþ",
+        "pl": "āsciaþ"
+      },
+      "past_ind": {
+        "sg1": "āscode",
+        "sg2": "āscodest",
+        "sg3": "āscode",
+        "pl": "āscodon"
+      },
+      "pres_subj": {
+        "sg": "āscie",
+        "pl": "āscien"
+      },
+      "past_subj": {
+        "sg": "āscode",
+        "pl": "āscoden"
+      }
+    }
+  },
+  {
+    "id": "hliehhan",
+    "oe": "hliehhan",
+    "gloss": "to laugh",
+    "class": "Strong VI",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 4
+      }
+    ],
+    "notes": "Irregular: contracted strong VI. Past sg hlōh, pl hlōgon.",
+    "forms": {
+      "infinitive": "hliehhan",
+      "inflected_infinitive": "tō hliehhenne",
+      "pres_participle": "hliehhende",
+      "past_participle": "ġehlæġen",
+      "imperative_sg": "hleh",
+      "imperative_pl": "hliehhaþ",
+      "pres_ind": {
+        "sg1": "hliehhe",
+        "sg2": "hlæhst",
+        "sg3": "hlæhþ",
+        "pl": "hliehhaþ"
+      },
+      "past_ind": {
+        "sg1": "hlōh",
+        "sg2": "hlōġe",
+        "sg3": "hlōh",
+        "pl": "hlōġon"
+      },
+      "pres_subj": {
+        "sg": "hliehhe",
+        "pl": "hliehhen"
+      },
+      "past_subj": {
+        "sg": "hlōġe",
+        "pl": "hlōġen"
+      }
+    }
+  },
+  {
+    "id": "secgan",
+    "oe": "seċġan",
+    "gloss": "to say, tell, declare, proclaim",
+    "class": "Weak I",
+    "type": "weak",
+    "pattern": "Weak I · irregular",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 4
+      }
+    ],
+    "notes": "Irregular: 3rd sg pres sæġþ; past sæġde / sǣde.",
+    "forms": {
+      "infinitive": "seċġan",
+      "inflected_infinitive": "tō seċġenne",
+      "pres_participle": "seċġende",
+      "past_participle": "ġesæġd",
+      "imperative_sg": "seċġ",
+      "imperative_pl": "seċġaþ",
+      "pres_ind": {
+        "sg1": "seċġe",
+        "sg2": "sæġst",
+        "sg3": "sæġþ",
+        "pl": "seċġaþ"
+      },
+      "past_ind": {
+        "sg1": "sæġde/sǣde",
+        "sg2": "sæġdest/sǣdest",
+        "sg3": "sæġde/sǣde",
+        "pl": "sæġdon/sǣdon"
+      },
+      "pres_subj": {
+        "sg": "seċġe",
+        "pl": "seċġen"
+      },
+      "past_subj": {
+        "sg": "sæġde/sǣde",
+        "pl": "sæġden/sǣden"
+      }
+    }
+  },
+  {
+    "id": "lician",
+    "oe": "līcian",
+    "gloss": "to delight, please (+dat.)",
+    "class": "Weak II",
+    "type": "weak",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 4
+      }
+    ],
+    "notes": "",
+    "forms": {
+      "infinitive": "līcian",
+      "inflected_infinitive": "tō līcienne",
+      "pres_participle": "līciende",
+      "past_participle": "ġelīcod",
+      "imperative_sg": "līca",
+      "imperative_pl": "līciaþ",
+      "pres_ind": {
+        "sg1": "līcie",
+        "sg2": "līcast",
+        "sg3": "līcaþ",
+        "pl": "līciaþ"
+      },
+      "past_ind": {
+        "sg1": "līcode",
+        "sg2": "līcodest",
+        "sg3": "līcode",
+        "pl": "līcodon"
+      },
+      "pres_subj": {
+        "sg": "līcie",
+        "pl": "līcien"
+      },
+      "past_subj": {
+        "sg": "līcode",
+        "pl": "līcoden"
+      }
+    }
+  },
+  {
+    "id": "swimman",
+    "oe": "swimman",
+    "gloss": "to swim",
+    "class": "Strong III",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 4
+      }
+    ],
+    "notes": "",
+    "forms": {
+      "infinitive": "swimman",
+      "inflected_infinitive": "tō swimmenne",
+      "pres_participle": "swimmende",
+      "past_participle": "ġeswummen",
+      "imperative_sg": "swim",
+      "imperative_pl": "swimmaþ",
+      "pres_ind": {
+        "sg1": "swimme",
+        "sg2": "swimst",
+        "sg3": "swimþ",
+        "pl": "swimmaþ"
+      },
+      "past_ind": {
+        "sg1": "swamm",
+        "sg2": "swumme",
+        "sg3": "swamm",
+        "pl": "swummon"
+      },
+      "pres_subj": {
+        "sg": "swimme",
+        "pl": "swimmen"
+      },
+      "past_subj": {
+        "sg": "swumme",
+        "pl": "swummen"
+      }
+    }
+  },
+  {
+    "id": "pencan",
+    "oe": "þenċan",
+    "gloss": "to think, consider, intend",
+    "class": "Weak I",
+    "type": "weak",
+    "pattern": "Weak I · irregular",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 4
+      }
+    ],
+    "notes": "Irregular: past þōhte.",
+    "forms": {
+      "infinitive": "þenċan",
+      "inflected_infinitive": "tō þenċenne",
+      "pres_participle": "þenċende",
+      "past_participle": "ġeþōht",
+      "imperative_sg": "þenċ",
+      "imperative_pl": "þenċaþ",
+      "pres_ind": {
+        "sg1": "þenċe",
+        "sg2": "þenċst",
+        "sg3": "þenċþ",
+        "pl": "þenċaþ"
+      },
+      "past_ind": {
+        "sg1": "þōhte",
+        "sg2": "þōhtest",
+        "sg3": "þōhte",
+        "pl": "þōhton"
+      },
+      "pres_subj": {
+        "sg": "þenċe",
+        "pl": "þenċen"
+      },
+      "past_subj": {
+        "sg": "þōhte",
+        "pl": "þōhten"
+      }
+    }
+  },
+  {
+    "id": "sittan",
+    "oe": "sittan",
+    "gloss": "to sit",
+    "class": "Strong V",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 4
+      }
+    ],
+    "notes": "",
+    "forms": {
+      "infinitive": "sittan",
+      "inflected_infinitive": "tō sittenne",
+      "pres_participle": "sittende",
+      "past_participle": "ġeseten",
+      "imperative_sg": "site",
+      "imperative_pl": "sittaþ",
+      "pres_ind": {
+        "sg1": "sitte",
+        "sg2": "sitest",
+        "sg3": "siteþ",
+        "pl": "sittaþ"
+      },
+      "past_ind": {
+        "sg1": "sæt",
+        "sg2": "sǣte",
+        "sg3": "sæt",
+        "pl": "sǣton"
+      },
+      "pres_subj": {
+        "sg": "sitte",
+        "pl": "sitten"
+      },
+      "past_subj": {
+        "sg": "sǣte",
+        "pl": "sǣten"
+      }
+    }
+  },
+  {
+    "id": "wesan",
+    "oe": "wesan",
+    "gloss": "to be",
+    "class": "Irregular",
+    "type": "irregular",
+    "pattern": "suppletive",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 4
+      }
+    ],
+    "related": [
+      "beon"
+    ],
+    "notes": "Suppletive form of bēon. Wesan supplies the infinitive, present participle (wesende), and imperative (wes / wesaþ). The eom/eart/is forms in the present indicative and all wæs/wǣre past forms belong to this paradigm. See bēon.",
+    "forms": {
+      "infinitive": "wesan",
+      "inflected_infinitive": null,
+      "pres_participle": "wesende",
+      "past_participle": null,
+      "imperative_sg": "wes",
+      "imperative_pl": "wesaþ",
+      "pres_ind": {
+        "sg1": "eom",
+        "sg2": "eart",
+        "sg3": "is",
+        "pl": "sind(on)"
+      },
+      "past_ind": {
+        "sg1": "wæs",
+        "sg2": "wǣre",
+        "sg3": "wæs",
+        "pl": "wǣron"
+      },
+      "pres_subj": {
+        "sg": "sīe",
+        "pl": "sīen"
+      },
+      "past_subj": {
+        "sg": "wǣre",
+        "pl": "wǣren"
       }
     }
   }

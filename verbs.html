@@ -1,16 +1,23 @@
 <!-- Serve locally: python3 -m http.server 8000  →  open http://localhost:8000 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231e1508' stroke='%23c4a96a' stroke-width='5'/><circle cx='50' cy='50' r='38' fill='none' stroke='%238b6914' stroke-width='2'/><line x1='18' y1='18' x2='82' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><line x1='82' y1='18' x2='18' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><circle cx='50' cy='50' r='10' fill='%23c4a96a'/><circle cx='50' cy='50' r='5' fill='%231e1508'/></svg>">
-  <link rel="alternate icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231e1508' stroke='%23c4a96a' stroke-width='5'/><circle cx='50' cy='50' r='38' fill='none' stroke='%238b6914' stroke-width='2'/><line x1='18' y1='18' x2='82' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><line x1='82' y1='18' x2='18' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><circle cx='50' cy='50' r='10' fill='%23c4a96a'/><circle cx='50' cy='50' r='5' fill='%231e1508'/></svg>">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231e1508' stroke='%23c4a96a' stroke-width='5'/><circle cx='50' cy='50' r='38' fill='none' stroke='%238b6914' stroke-width='2'/><line x1='18' y1='18' x2='82' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><line x1='82' y1='18' x2='18' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><circle cx='50' cy='50' r='10' fill='%23c4a96a'/><circle cx='50' cy='50' r='5' fill='%231e1508'/></svg>">
+  <link rel="alternate icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231e1508' stroke='%23c4a96a' stroke-width='5'/><circle cx='50' cy='50' r='38' fill='none' stroke='%238b6914' stroke-width='2'/><line x1='18' y1='18' x2='82' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><line x1='82' y1='18' x2='18' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><circle cx='50' cy='50' r='10' fill='%23c4a96a'/><circle cx='50' cy='50' r='5' fill='%231e1508'/></svg>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Verbs — Old English Verbs</title>
   <link rel="stylesheet" href="style.css">
   <style>
     /* ── Verbs page fills the viewport below banner + header ── */
-    html, body { height: 100%; overflow: hidden; }
+    html,
+    body {
+      height: 100%;
+      overflow: hidden;
+    }
 
     /* ── Two-panel layout ── */
     .verbs-layout {
@@ -50,8 +57,13 @@
       transition: border-color 0.15s;
     }
 
-    #search-input:focus { border-color: var(--accent); }
-    #search-input::placeholder { color: var(--muted); }
+    #search-input:focus {
+      border-color: var(--accent);
+    }
+
+    #search-input::placeholder {
+      color: var(--muted);
+    }
 
     #verb-list {
       overflow-y: auto;
@@ -59,7 +71,9 @@
       padding: 8px 0 24px;
     }
 
-    .sidebar-group { margin-bottom: 4px; }
+    .sidebar-group {
+      margin-bottom: 4px;
+    }
 
     .group-label {
       font-size: 0.62rem;
@@ -82,7 +96,9 @@
       transition: background 0.1s;
     }
 
-    .verb-item:hover { background: rgba(139, 105, 20, 0.07); }
+    .verb-item:hover {
+      background: rgba(139, 105, 20, 0.07);
+    }
 
     .verb-item.active {
       border-left-color: var(--accent);
@@ -131,9 +147,13 @@
     }
 
     /* ── Verb view ── */
-    .verb-view { max-width: 740px; }
+    .verb-view {
+      max-width: 740px;
+    }
 
-    .verb-header { margin-bottom: 28px; }
+    .verb-header {
+      margin-bottom: 28px;
+    }
 
     .verb-heading-row {
       display: flex;
@@ -182,7 +202,9 @@
       margin-bottom: 28px;
     }
 
-    .conj-section { min-width: 0; }
+    .conj-section {
+      min-width: 0;
+    }
 
     .section-head {
       font-size: 0.6rem;
@@ -195,10 +217,23 @@
       margin-bottom: 6px;
     }
 
-    .conj-table { width: 100%; border-collapse: collapse; }
-    .conj-table tr { border-bottom: 1px solid #e0d9c8; }
-    .conj-table tr:last-child { border-bottom: none; }
-    .conj-table td { padding: 5px 0; vertical-align: middle; }
+    .conj-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .conj-table tr {
+      border-bottom: 1px solid #e0d9c8;
+    }
+
+    .conj-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .conj-table td {
+      padding: 5px 0;
+      vertical-align: middle;
+    }
 
     .conj-label {
       font-size: 0.72rem;
@@ -209,6 +244,16 @@
       white-space: nowrap;
     }
 
+    .conj-col-head {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 3px 0 5px;
+      border-bottom: 1px solid #e0d9c8;
+    }
+
     .conj-form {
       font-size: 0.95rem;
       font-weight: 700;
@@ -216,7 +261,9 @@
     }
 
     /* ── Non-finite & Imperative tiles ── */
-    .nonfinite-section { margin-top: 4px; }
+    .nonfinite-section {
+      margin-top: 4px;
+    }
 
     .nonfinite-head {
       font-size: 0.6rem;
@@ -314,6 +361,23 @@
       border-radius: 3px;
     }
 
+    /* ── Notes ── */
+    .verb-notes {
+      margin-top: 20px;
+      padding: 12px 16px;
+      background: #f5edd9;
+      border-left: 3px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .verb-notes p {
+      margin: 0;
+      font-size: 0.875rem;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.65;
+    }
+
     /* ── Source tags ── */
     .verb-sources {
       margin-top: 20px;
@@ -344,10 +408,14 @@
 
     /* ── Scrollbars ── */
     #verb-list::-webkit-scrollbar,
-    .verbs-right::-webkit-scrollbar { width: 5px; }
+    .verbs-right::-webkit-scrollbar {
+      width: 5px;
+    }
 
     #verb-list::-webkit-scrollbar-track,
-    .verbs-right::-webkit-scrollbar-track { background: transparent; }
+    .verbs-right::-webkit-scrollbar-track {
+      background: transparent;
+    }
 
     #verb-list::-webkit-scrollbar-thumb,
     .verbs-right::-webkit-scrollbar-thumb {
@@ -359,10 +427,17 @@
     @media (max-width: 768px) {
 
       /* Allow the page to scroll naturally */
-      html, body { height: auto; overflow: auto; }
+      html,
+      body {
+        height: auto;
+        overflow: auto;
+      }
 
       /* Stack sidebar above content */
-      .verbs-layout { flex-direction: column; overflow: visible; }
+      .verbs-layout {
+        flex-direction: column;
+        overflow: visible;
+      }
 
       /* Sidebar: full width, horizontal strip */
       #sidebar {
@@ -374,7 +449,10 @@
       }
 
       /* Search: stretch to full width */
-      .sidebar-search { padding: 10px 16px; border-bottom: none; }
+      .sidebar-search {
+        padding: 10px 16px;
+        border-bottom: none;
+      }
 
       /* Verb strip: horizontal scroll lane */
       #verb-list {
@@ -387,11 +465,19 @@
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
       }
-      #verb-list::-webkit-scrollbar { display: none; }
+
+      #verb-list::-webkit-scrollbar {
+        display: none;
+      }
 
       /* Flatten group structure for strip layout */
-      .sidebar-group { display: contents; }
-      .group-label   { display: none; }
+      .sidebar-group {
+        display: contents;
+      }
+
+      .group-label {
+        display: none;
+      }
 
       /* Compact horizontal verb items */
       .verb-item {
@@ -400,27 +486,55 @@
         border-bottom: 3px solid transparent;
         padding: 6px 12px 5px;
       }
-      .verb-item.active { border-bottom-color: var(--accent); }
-      .verb-item .tag   { display: none; }
+
+      .verb-item.active {
+        border-bottom-color: var(--accent);
+      }
+
+      .verb-item .tag {
+        display: none;
+      }
 
       /* Right panel: full width, natural page scroll */
-      .verbs-right { overflow-y: visible; }
-      #main-content { padding: 24px 16px 40px; }
+      .verbs-right {
+        overflow-y: visible;
+      }
+
+      #main-content {
+        padding: 24px 16px 40px;
+      }
 
       /* Conjugation grid → single column */
-      .conj-grid { grid-template-columns: 1fr; gap: 16px; }
+      .conj-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
 
       /* Tile grid → two columns */
-      .tile-grid { grid-template-columns: 1fr 1fr; }
+      .tile-grid {
+        grid-template-columns: 1fr 1fr;
+      }
 
       /* Typography */
-      .verb-headword { font-size: 1.3rem; }
-      .conj-label    { font-size: 0.76rem; }
-      .conj-form     { font-size: 0.875rem; }
-      .tile-form     { font-size: 0.875rem; }
+      .verb-headword {
+        font-size: 1.3rem;
+      }
+
+      .conj-label {
+        font-size: 0.76rem;
+      }
+
+      .conj-form {
+        font-size: 0.875rem;
+      }
+
+      .tile-form {
+        font-size: 0.875rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <div class="wip-banner">Work in progress — content and features are actively being added.</div>
@@ -469,29 +583,33 @@
       return `<tr><td class="conj-label">${label}</td><td class="conj-form">${form || '—'}</td></tr>`;
     }
 
+    function rowDual(label, form1, form2) {
+      return `<tr><td class="conj-label">${label}</td><td class="conj-form">${form1 || '—'}</td><td class="conj-form">${form2 || '—'}</td></tr>`;
+    }
+
     const TIPS = {
-      pres_ind:   'States facts and real events in the present. The default mood for ordinary statements.',
-      past_ind:   'States facts and real events in the past. The default mood for ordinary past statements.',
-      pres_subj:  'Expresses present possibility, doubt, wishes, or indirect speech. Used where something is not stated as straightforwardly real.',
-      past_subj:  'Expresses past possibility, doubt, wishes, or indirect speech. Often found in hypothetical or reported constructions.',
+      pres_ind: 'States facts and real events in the present. The default mood for ordinary statements.',
+      past_ind: 'States facts and real events in the past. The default mood for ordinary past statements.',
+      pres_subj: 'Expresses present possibility, doubt, wishes, or indirect speech. Used where something is not stated as straightforwardly real.',
+      past_subj: 'Expresses past possibility, doubt, wishes, or indirect speech. Often found in hypothetical or reported constructions.',
       infinitive: "The base verb form. Equivalent to modern 'to sing' in its plain sense — used after verbs of wanting, intending, or ability.",
-      inf_infl:   "Used to express purpose or intention. Formed with tō + the -enne ending. Equivalent to 'in order to sing' or 'for the purpose of singing'.",
-      pres_part:  "Describes an ongoing action, equivalent to the modern -ing form. Used attributively ('the singing man') or adverbially ('he came singing').",
-      past_part:  "Describes a completed action. Used in passive and perfect constructions ('the song was sung', 'he had sung'). Typically formed with the ġe- prefix.",
+      inf_infl: "Used to express purpose or intention. Formed with tō + the -enne ending. Equivalent to 'in order to sing' or 'for the purpose of singing'.",
+      pres_part: "Describes an ongoing action, equivalent to the modern -ing form. Used attributively ('the singing man') or adverbially ('he came singing').",
+      past_part: "Describes a completed action. Used in passive and perfect constructions ('the song was sung', 'he had sung'). Typically formed with the ġe- prefix.",
       imperative: 'The command form. Singular for one person, plural for a group.'
     };
 
     const SOURCE_NAMES = { 'osweald-bera': 'Ōsweald Bera' };
 
     const CLASS_PATTERNS = {
-      'Strong I':   'ī · ā · i · i',
-      'Strong II':  'ēo · ēa · u · o',
+      'Strong I': 'ī · ā · i · i',
+      'Strong II': 'ēo · ēa · u · o',
       'Strong III': 'i · a · u · u',
-      'Strong IV':  'e · æ · ǣ · o',
-      'Strong V':   'e · æ · ǣ · e',
-      'Strong VI':  'a · ō · ō · a',
+      'Strong IV': 'e · æ · ǣ · o',
+      'Strong V': 'e · æ · ǣ · e',
+      'Strong VI': 'a · ō · ō · a',
       'Strong VII': 'ā · ē · ē · ā',
-      'Weak II':    'Weak II · -ian',
+      'Weak II': 'Weak II · -ian',
     };
 
     function section(title, rows, tip) {
@@ -515,48 +633,58 @@
       const patternLabel = verb.type === 'strong' ? 'Ablaut series' : 'Stem pattern';
       const pattern = CLASS_PATTERNS[verb.class] ?? verb.pattern;
 
-      const presIndRows =
-        row('1st sg.', f.pres_ind.sg1) +
+      // Dual-column tables for suppletive verbs (bēon) that have alt_pres_ind
+      const hasDual = !!f.alt_pres_ind;
+
+      const dualColHeader = (col1, col2) =>
+        `<tr>
+          <td class="conj-label"></td>
+          <td class="conj-col-head">${col1}</td>
+          <td class="conj-col-head">${col2}</td>
+        </tr>`;
+
+      const presIndRows = hasDual
+        ? dualColHeader('bēo–', 'eom-') +
+        rowDual('1st sg.', f.pres_ind.sg1, f.alt_pres_ind.sg1) +
+        rowDual('2nd sg.', f.pres_ind.sg2, f.alt_pres_ind.sg2) +
+        rowDual('3rd sg.', f.pres_ind.sg3, f.alt_pres_ind.sg3) +
+        rowDual('plural', f.pres_ind.pl, f.alt_pres_ind.pl)
+        : row('1st sg.', f.pres_ind.sg1) +
         row('2nd sg.', f.pres_ind.sg2) +
         row('3rd sg.', f.pres_ind.sg3) +
-        row('plural',  f.pres_ind.pl);
+        row('plural', f.pres_ind.pl);
 
       const pastIndRows =
         row('1st sg.', f.past_ind.sg1) +
         row('2nd sg.', f.past_ind.sg2) +
         row('3rd sg.', f.past_ind.sg3) +
-        row('plural',  f.past_ind.pl);
+        row('plural', f.past_ind.pl);
 
-      const presSubjRows =
-        row('singular', f.pres_subj.sg) +
-        row('plural',   f.pres_subj.pl);
+      // For bēon, pres subj has sīe/sīen (eom-) and bēo/bēon (bēo-)
+      const presSubjRows = hasDual && f.alt_pres_subj
+        ? dualColHeader('bēo–', 'eom–') +
+        rowDual('singular', f.pres_subj.sg, f.alt_pres_subj.sg) +
+        rowDual('plural', f.pres_subj.pl, f.alt_pres_subj.pl)
+        : row('singular', f.pres_subj.sg) +
+        row('plural', f.pres_subj.pl);
 
       const pastSubjRows =
         row('singular', f.past_subj.sg) +
-        row('plural',   f.past_subj.pl);
+        row('plural', f.past_subj.pl);
 
       let gridSections =
-        section('Present Indicative',  presIndRows,  TIPS.pres_ind) +
-        section('Past Indicative',     pastIndRows,  TIPS.past_ind) +
+        section('Present Indicative', presIndRows, TIPS.pres_ind) +
+        section('Past Indicative', pastIndRows, TIPS.past_ind) +
         section('Present Subjunctive', presSubjRows, TIPS.pres_subj) +
-        section('Past Subjunctive',    pastSubjRows, TIPS.past_subj);
-
-      if (f.alt_pres_ind) {
-        const altRows =
-          row('1st sg.', f.alt_pres_ind.sg1) +
-          row('2nd sg.', f.alt_pres_ind.sg2) +
-          row('3rd sg.', f.alt_pres_ind.sg3) +
-          row('plural',  f.alt_pres_ind.pl);
-        gridSections += section('Pres. Ind. (bēo-)', altRows);
-      }
+        section('Past Subjunctive', pastSubjRows, TIPS.past_subj);
 
       const tiles =
-        tile('Infinitive',           f.infinitive,           TIPS.infinitive) +
+        tile('Infinitive', f.infinitive, TIPS.infinitive) +
         tile('Inflected Infinitive', f.inflected_infinitive, TIPS.inf_infl) +
-        tile('Present Participle',   f.pres_participle,      TIPS.pres_part) +
-        tile('Past Participle',      f.past_participle,      TIPS.past_part) +
-        tile('Imperative Sg.',       f.imperative_sg,        TIPS.imperative) +
-        tile('Imperative Pl.',       f.imperative_pl,        TIPS.imperative);
+        tile('Present Participle', f.pres_participle, TIPS.pres_part) +
+        tile('Past Participle', f.past_participle, TIPS.past_part) +
+        tile('Imperative Sg.', f.imperative_sg, TIPS.imperative) +
+        tile('Imperative Pl.', f.imperative_pl, TIPS.imperative);
 
       return `<div class="verb-view">
         <div class="verb-header">
@@ -577,6 +705,7 @@
           <div class="nonfinite-head">Non-finite &amp; Imperative</div>
           <div class="tile-grid">${tiles}</div>
         </div>
+        ${verb.notes ? `<div class="verb-notes"><p>${verb.notes}</p></div>` : ''}
         ${verb.sources && verb.sources.length ? `<div class="verb-sources">
           <span class="sources-label">Sources</span>
           ${verb.sources.map(s => `<span class="tag-source">${SOURCE_NAMES[s.text] || s.text} · Ch. ${s.chapter}</span>`).join('')}
@@ -588,15 +717,15 @@
       const q = filter.trim().toLowerCase();
       const matched = q
         ? verbs.filter(v =>
-            v.oe.toLowerCase().includes(q) ||
-            v.gloss.toLowerCase().includes(q)
-          )
+          v.oe.toLowerCase().includes(q) ||
+          v.gloss.toLowerCase().includes(q)
+        )
         : verbs;
 
       const groups = [
         { label: 'Strong Verbs', types: ['strong'] },
-        { label: 'Weak Verbs',   types: ['weak'] },
-        { label: 'Other',        types: ['preterite-present', 'irregular'] }
+        { label: 'Weak Verbs', types: ['weak'] },
+        { label: 'Other', types: ['preterite-present', 'irregular'] }
       ];
 
       let html = '';
@@ -697,4 +826,5 @@
   </script>
   <script src="components.js"></script>
 </body>
+
 </html>
