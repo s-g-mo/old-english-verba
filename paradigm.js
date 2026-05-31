@@ -11,34 +11,34 @@ var Paradigm = (function () {
     // e.g. bannan → benþ). extractStemVowel matches 'an'/'am' before bare 'a',
     // so faran/hatan etc. could accidentally mutate. Fix after live test cases.
     'an': 'en', 'am': 'em',
-    'ā':  'ǣ',  'ō':  'ē',  'ū': 'ȳ',
-    'a':  'æ',  'e':  'i',
-    'o':  'e',  'u':  'y',
+    'ā': 'ǣ', 'ō': 'ē', 'ū': 'ȳ',
+    'a': 'æ', 'e': 'i',
+    'o': 'e', 'u': 'y',
   };
 
   // Ordered longest-first for greedy vowel matching
   var VOWEL_LIST = [
-    'ēo','ēa','ea','eo','ān','ām','an','am',
-    'ā','ē','ī','ō','ū','ǣ','æ','a','e','i','o','u','y'
+    'ēo', 'ēa', 'ea', 'eo', 'ān', 'ām', 'an', 'am',
+    'ā', 'ē', 'ī', 'ō', 'ū', 'ǣ', 'æ', 'a', 'e', 'i', 'o', 'u', 'y'
   ];
 
   var ABLAUT_CLASSES = {
-    'ī,ā,i,i':   'I',
+    'ī,ā,i,i': 'I',
     'ēo,ēa,u,o': 'IIa',
-    'ū,ēa,u,o':  'IIb',
-    'i,a,u,u':   'IIIa',
-    'e,æ,u,o':   'IIIb',
+    'ū,ēa,u,o': 'IIb',
+    'i,a,u,u': 'IIIa',
+    'e,æ,u,o': 'IIIb',
     'eo,ea,u,o': 'IIIb',   // weorþan-type: eo/ea before r+C
-    'e,æ,ǣ,o':   'IV',
-    'i,a,ō,u':   'IV',     // niman-type: irregular IV
-    'u,ō,ō,u':   'IV',     // cuman-type: anomalous IV
-    'e,æ,ǣ,e':   'V',
-    'e,ǣ,ǣ,e':   'V',      // etan-type: ǣ in past sg
-    'i,æ,ǣ,e':   'V',      // sittan-type: geminated, i in present
+    'e,æ,ǣ,o': 'IV',
+    'i,a,ō,u': 'IV',     // niman-type: irregular IV
+    'u,ō,ō,u': 'IV',     // cuman-type: anomalous IV
+    'e,æ,ǣ,e': 'V',
+    'e,ǣ,ǣ,e': 'V',      // etan-type: ǣ in past sg
+    'i,æ,ǣ,e': 'V',      // sittan-type: geminated, i in present
     'e,ea,ēa,e': 'V',      // ġiefan-type: palatal + breaking
     'ēo,ea,ā,e': 'V',      // ġesēon-type: contracted
-    'a,ō,ō,a':   'VI',
-    'e,ō,ō,æ':   'VII',   // hliehhan-type: ō past, æ in past participle
+    'a,ō,ō,a': 'VI',
+    'e,ō,ō,æ': 'VII',   // hliehhan-type: ō past, æ in past participle
   };
 
   // ── Helper: set a nested value by dot-notation key ──────────────────────────
@@ -56,14 +56,14 @@ var Paradigm = (function () {
   // ── extractStems ────────────────────────────────────────────────────────────
 
   function extractStems(principalParts) {
-    var inf      = principalParts[0];
-    var pastSg   = principalParts[1];
-    var pastPl   = principalParts[2];
+    var inf = principalParts[0];
+    var pastSg = principalParts[1];
+    var pastPl = principalParts[2];
     var pastPart = principalParts[3];
 
-    var presentStem  = inf.replace(/an$/, '');
-    var pastSgStem   = pastSg;
-    var pastPlStem   = pastPl.replace(/on$/, '');
+    var presentStem = inf.replace(/an$/, '');
+    var pastSgStem = pastSg;
+    var pastPlStem = pastPl.replace(/on$/, '');
     var pastPartStem = pastPart.replace(/^[ġg]e-?/, '').replace(/en$/, '');
 
     return { presentStem, pastSgStem, pastPlStem, pastPartStem };
@@ -104,8 +104,8 @@ var Paradigm = (function () {
       var tail2 = stem.slice(-2);
       var tail1 = stem.slice(-1);
       if (tail2 === 'dþ' || tail1 === 'd') return stem.slice(0, -1) + 'tt';
-      if (tail1 === 't')                   return stem + 't';
-      if (tail1 === 's')                   return stem + 't';
+      if (tail1 === 't') return stem + 't';
+      if (tail1 === 's') return stem + 't';
       return stem + 'þ';
     }
 
@@ -118,7 +118,7 @@ var Paradigm = (function () {
       }
       var tail2 = stem.slice(-2);
       var tail1 = stem.slice(-1);
-      if (tail1 === 'd')  return stem.slice(0, -1) + 'tst';
+      if (tail1 === 'd') return stem.slice(0, -1) + 'tst';
       if (tail2 === 'þs' || tail1 === 'þ') return stem.replace(/þ$/, '') + 'st';
       return stem + 'st';
     }
@@ -191,13 +191,13 @@ var Paradigm = (function () {
         sg1: stems.presentStem + 'e',
         sg2: applyCollision(mutatedStem, 'st'),
         sg3: applyCollision(mutatedStem, 'þ'),
-        pl:  stems.presentStem + 'aþ',
+        pl: stems.presentStem + 'aþ',
       },
       pastInd: {
         sg1: stems.pastSgStem,
         sg2: stems.pastPlStem + 'e',
         sg3: stems.pastSgStem,
-        pl:  stems.pastPlStem + 'on',
+        pl: stems.pastPlStem + 'on',
       },
       presentSubj: {
         sg: stems.presentStem + 'e',
@@ -212,10 +212,10 @@ var Paradigm = (function () {
         pl: stems.presentStem + 'aþ',
       },
       nonFinite: {
-        infinitive:          verb.lemma,
+        infinitive: verb.lemma,
         inflectedInfinitive: 'tō ' + stems.presentStem + 'enne',
-        presentParticiple:   stems.presentStem + 'ende',
-        pastParticiple:      'ġe' + stems.pastPartStem + 'en',
+        presentParticiple: stems.presentStem + 'ende',
+        pastParticiple: 'ġe' + stems.pastPartStem + 'en',
       },
     };
   }
@@ -234,13 +234,13 @@ var Paradigm = (function () {
         sg1: stem + 'iġe',
         sg2: stem + 'ast',
         sg3: stem + 'aþ',
-        pl:  stem + 'iaþ',
+        pl: stem + 'iaþ',
       },
       pastInd: {
         sg1: stem + 'ode',
         sg2: stem + 'odest',
         sg3: stem + 'ode',
-        pl:  stem + 'odon',
+        pl: stem + 'odon',
       },
       presentSubj: {
         sg: stem + 'iġe',
@@ -255,10 +255,10 @@ var Paradigm = (function () {
         pl: stem + 'iaþ',
       },
       nonFinite: {
-        infinitive:          verb.lemma,
+        infinitive: verb.lemma,
         inflectedInfinitive: 'tō ' + stem + 'ianne',
-        presentParticiple:   stem + 'iende',
-        pastParticiple:      'ġe' + stem + 'od',
+        presentParticiple: stem + 'iende',
+        pastParticiple: 'ġe' + stem + 'od',
       },
     };
   }
@@ -297,16 +297,16 @@ var Paradigm = (function () {
         sg1: presentStem + 'e',
         sg2: degeminateAndEpenthesis(presentStem, 'st'),
         sg3: degeminateAndEpenthesis(presentStem, 'þ'),
-        pl:  presentStem + 'aþ',
+        pl: presentStem + 'aþ',
       },
       pastInd: {
         sg1: pastStem + 'e',
         sg2: pastStem + 'est',
         sg3: pastStem + 'e',
-        pl:  pastStem + 'on',
+        pl: pastStem + 'on',
       },
       presentSubj: {
-        sg: degeminateAndEpenthesis(presentStem, 'e'),
+        sg: presentStem + 'e',
         pl: presentStem + 'en',
       },
       pastSubj: {
@@ -318,10 +318,10 @@ var Paradigm = (function () {
         pl: presentStem + 'aþ',
       },
       nonFinite: {
-        infinitive:          verb.lemma,
+        infinitive: verb.lemma,
         inflectedInfinitive: 'tō ' + presentStem + 'enne',
-        presentParticiple:   presentStem + 'ende',
-        pastParticiple:      ppPrefix + pastStem + 'e',
+        presentParticiple: presentStem + 'ende',
+        pastParticiple: ppPrefix + pastStem + 'e',
       },
     };
   }
