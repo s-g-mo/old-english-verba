@@ -81,8 +81,26 @@
       "ġesāwon",
       "ġesewen"
     ],
-    "irregular": false,
-    "irregularForms": {}
+    "irregular": true,
+    "irregularForms": {
+      "presentInd": {
+        "sg1": "ġesēo",
+        "sg2": "ġesiehst",
+        "sg3": "ġesiehþ",
+        "pl": "ġesēoþ"
+      },
+      "presentSubj": {
+        "sg": "ġesēo",
+        "pl": "ġesēon"
+      },
+      "imperative": {
+        "sg": "ġeseoh",
+        "pl": "ġesēoþ"
+      },
+      "nonFinite.infinitive": "ġesēon",
+      "nonFinite.inflectedInfinitive": "tō ġesēonne",
+      "nonFinite.presentParticiple": "ġesēonde"
+    }
   },
   {
     "id": "gewitan",

@@ -118,6 +118,7 @@ var Paradigm = (function () {
       }
       var tail2 = stem.slice(-2);
       var tail1 = stem.slice(-1);
+      if (tail1 === 's') return stem + 't';
       if (tail1 === 'd') return stem.slice(0, -1) + 'tst';
       if (tail2 === 'þs' || tail1 === 'þ') return stem.replace(/þ$/, '') + 'st';
       return stem + 'st';
