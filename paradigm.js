@@ -7,6 +7,9 @@ var Paradigm = (function () {
   var I_MUTATION = {
     'ēo': 'īe', 'ēa': 'īe',
     'ea': 'ie', 'eo': 'ie',
+    // NOTE: 'an'/'am' should only apply to nasal-cluster verbs (class IIIa type,
+    // e.g. bannan → benþ). extractStemVowel matches 'an'/'am' before bare 'a',
+    // so faran/hatan etc. could accidentally mutate. Fix after live test cases.
     'an': 'en', 'am': 'em',
     'ā':  'ǣ',  'ō':  'ē',  'ū': 'ȳ',
     'a':  'æ',  'e':  'i',
@@ -92,21 +95,25 @@ var Paradigm = (function () {
 
   function applyCollision(stem, ending) {
     if (ending === 'þ') {
+      // ċ → c before consonantal endings
+      if (stem.slice(-1) === 'ċ') stem = stem.slice(0, -1) + 'c';
       // Doubled consonants drop one before þ
-      if (/([nmlp])\1$/.test(stem)) {
+      if (/(.)\1$/.test(stem)) {
         stem = stem.slice(0, -1);
       }
       var tail2 = stem.slice(-2);
       var tail1 = stem.slice(-1);
       if (tail2 === 'dþ' || tail1 === 'd') return stem.slice(0, -1) + 'tt';
       if (tail1 === 't')                   return stem + 't';
-      if (tail2 === 'sþ' || tail1 === 's') return stem.slice(0, -1 * (tail2 === 'sþ' ? 1 : 0)) + 'st';
+      if (tail1 === 's')                   return stem + 't';
       return stem + 'þ';
     }
 
     if (ending === 'st') {
+      // ċ → c before consonantal endings
+      if (stem.slice(-1) === 'ċ') stem = stem.slice(0, -1) + 'c';
       // Doubled consonants drop one before st
-      if (/([nmlp])\1$/.test(stem)) {
+      if (/(.)\1$/.test(stem)) {
         stem = stem.slice(0, -1);
       }
       var tail2 = stem.slice(-2);
@@ -304,7 +311,7 @@ var Paradigm = (function () {
         infinitive:          verb.lemma,
         inflectedInfinitive: 'tō ' + presentStem + 'enne',
         presentParticiple:   presentStem + 'ende',
-        pastParticiple:      ppPrefix + pastStem + (pastStem.slice(-1) === 'd' ? 'e' : ''),
+        pastParticiple:      ppPrefix + pastStem + 'e',
       },
     };
   }
@@ -353,3 +360,12 @@ var Paradigm = (function () {
   return { conjugate, inferClass, extractStems };
 
 }());
+
+// Sanity checks:
+// swimman  → 3sg swimþ   (doubled mm drops before þ)
+// rinnan   → 2sg rinst   (doubled nn drops before st)
+// sēċan    → 3sg sēcþ    (ċ → c before þ)
+// sēċan    → 2sg sēcst   (ċ → c before st)
+// rǣsan    → 3sg rǣst    (s + þ → st)
+// settan   → past sette  (t + d → tt, simplified: sette)
+// fremman  → past participle gefremed  (past participle = pastStem + e)
