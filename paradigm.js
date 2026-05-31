@@ -14,11 +14,12 @@ var Paradigm = (function () {
     'ā': 'ǣ', 'ō': 'ē', 'ū': 'ȳ',
     'a': 'æ', 'e': 'i',
     'o': 'e', 'u': 'y',
+    'īe': 'īe', 'ie': 'ie',
   };
 
   // Ordered longest-first for greedy vowel matching
   var VOWEL_LIST = [
-    'ēo', 'ēa', 'ea', 'eo', 'ān', 'ām', 'an', 'am',
+    'ēo', 'ēa', 'īe', 'ie', 'ea', 'eo', 'ān', 'ām', 'an', 'am',
     'ā', 'ē', 'ī', 'ō', 'ū', 'ǣ', 'æ', 'a', 'e', 'i', 'o', 'u', 'y'
   ];
 
@@ -103,8 +104,19 @@ var Paradigm = (function () {
       }
       var tail2 = stem.slice(-2);
       var tail1 = stem.slice(-1);
-      if (tail2 === 'dþ' || tail1 === 'd') return stem.slice(0, -1) + 'tt';
-      if (tail1 === 't') return stem + 't';
+      if (tail1 === 'þ') return stem;
+      if (tail2 === 'dþ' || tail1 === 'd') {
+        var result = stem.slice(0, -1) + 'tt';
+        // Simplify NTT → NT when tt follows a consonant (e.g. wind→wint, find→fint)
+        if (/[^aeiouāēīōūæǣ]tt$/.test(result)) result = result.slice(0, -1);
+        return result;
+      }
+      if (tail1 === 't') {
+        var result = stem + 't';
+        // Simplify NTT → NT when tt follows a consonant
+        if (/[^aeiouāēīōūæǣ]tt$/.test(result)) result = result.slice(0, -1);
+        return result;
+      }
       if (tail1 === 's') return stem + 't';
       return stem + 'þ';
     }
@@ -381,3 +393,6 @@ var Paradigm = (function () {
 // rǣsan    → 3sg rǣst    (s + þ → st)
 // settan   → past sette  (t + d → tt, simplified: sette)
 // fremman  → past participle gefremed  (past participle = pastStem + e)
+// windan   → 3sg wint    (nd + þ → ntt → nt, simplified)
+// findan   → 3sg fint    (nd + þ → ntt → nt, simplified)
+// weorþan  → 3sg wierþ   (þ + þ → þ)
