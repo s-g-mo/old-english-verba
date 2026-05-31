@@ -181,6 +181,7 @@ var Paradigm = (function () {
   function conjugateStrong(verb) {
     var stems = extractStems(verb.principalParts);
     var mutatedStem = applyIMutation(stems.presentStem);
+    var mutatedStemForSg = mutatedStem.replace(/g$/, 'ġ');
 
     return {
       class: 'Strong ' + inferClass(verb.principalParts),
@@ -189,8 +190,8 @@ var Paradigm = (function () {
 
       presentInd: {
         sg1: stems.presentStem + 'e',
-        sg2: applyCollision(mutatedStem, 'st'),
-        sg3: applyCollision(mutatedStem, 'þ'),
+        sg2: applyCollision(mutatedStemForSg, 'st'),
+        sg3: applyCollision(mutatedStemForSg, 'þ'),
         pl: stems.presentStem + 'aþ',
       },
       pastInd: {
