@@ -263,6 +263,16 @@ var Paradigm = (function () {
     };
   }
 
+  // ── degeminateAndEpenthesis ─────────────────────────────────────────────────
+
+  function degeminateAndEpenthesis(stem, ending) {
+    // e.g. reċċ + þ → reċeþ,  reċċ + st → reċest
+    if (/(.)\1$/.test(stem)) {
+      return stem.slice(0, -1) + 'e' + ending;
+    }
+    return applyCollision(stem, ending);
+  }
+
   // ── conjugateWeak1 ──────────────────────────────────────────────────────────
 
   function conjugateWeak1(verb) {
@@ -285,8 +295,8 @@ var Paradigm = (function () {
 
       presentInd: {
         sg1: presentStem + 'e',
-        sg2: applyCollision(presentStem, 'st'),
-        sg3: applyCollision(presentStem, 'þ'),
+        sg2: degeminateAndEpenthesis(presentStem, 'st'),
+        sg3: degeminateAndEpenthesis(presentStem, 'þ'),
         pl:  presentStem + 'aþ',
       },
       pastInd: {
@@ -296,7 +306,7 @@ var Paradigm = (function () {
         pl:  pastStem + 'on',
       },
       presentSubj: {
-        sg: presentStem + 'e',
+        sg: degeminateAndEpenthesis(presentStem, 'e'),
         pl: presentStem + 'en',
       },
       pastSubj: {
@@ -304,7 +314,7 @@ var Paradigm = (function () {
         pl: pastStem + 'en',
       },
       imperative: {
-        sg: presentStem,
+        sg: degeminateAndEpenthesis(presentStem, ''),
         pl: presentStem + 'aþ',
       },
       nonFinite: {

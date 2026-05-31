@@ -221,8 +221,12 @@
       }
     ],
     "notes": "",
-    "irregular": false,
-    "irregularForms": {}
+    "irregular": true,
+    "irregularForms": {
+      "pastInd":  { "sg1": "reahte", "sg2": "reahtest", "sg3": "reahte", "pl": "reahton" },
+      "pastSubj": { "sg": "reahte", "pl": "reahten" },
+      "nonFinite.pastParticiple": "ġereaht"
+    }
   },
   {
     "id": "wunian",
