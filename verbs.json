@@ -58,7 +58,7 @@
       "faran",
       "fōr",
       "fōron",
-      "ġefaren"
+      "ġefæren"
     ],
     "irregular": false,
     "irregularForms": {}
@@ -223,8 +223,16 @@
     "notes": "",
     "irregular": true,
     "irregularForms": {
-      "pastInd":  { "sg1": "reahte", "sg2": "reahtest", "sg3": "reahte", "pl": "reahton" },
-      "pastSubj": { "sg": "reahte", "pl": "reahten" },
+      "pastInd": {
+        "sg1": "reahte",
+        "sg2": "reahtest",
+        "sg3": "reahte",
+        "pl": "reahton"
+      },
+      "pastSubj": {
+        "sg": "reahte",
+        "pl": "reahten"
+      },
       "nonFinite.pastParticiple": "ġereaht"
     }
   },
@@ -296,7 +304,10 @@
         "sg": "bēo",
         "pl": "bēon"
       },
-      "altPresentSubj": { "sg": "sīe", "pl": "sīen" },
+      "altPresentSubj": {
+        "sg": "sīe",
+        "pl": "sīen"
+      },
       "pastSubj": {
         "sg": "wǣre",
         "pl": "wǣren"
@@ -768,8 +779,8 @@
     "principalParts": [
       "flēogan",
       "flēah",
-      "fluġon",
-      "ġefloġen"
+      "flugon",
+      "ġeflogen"
     ],
     "irregular": false,
     "irregularForms": {}
@@ -1216,22 +1227,31 @@
         "sg1": "hliehhe",
         "sg2": "hliehst",
         "sg3": "hliehþ",
-        "pl":  "hliehhaþ"
+        "pl": "hliehhaþ"
       },
       "pastInd": {
         "sg1": "hlōh",
         "sg2": "hlōġe",
         "sg3": "hlōh",
-        "pl":  "hlōġon"
+        "pl": "hlōġon"
       },
-      "presentSubj": { "sg": "hliehhe", "pl": "hliehhen" },
-      "pastSubj":    { "sg": "hlōġe",   "pl": "hlōġen"   },
-      "imperative":  { "sg": "hlieh",   "pl": "hliehhaþ" },
+      "presentSubj": {
+        "sg": "hliehhe",
+        "pl": "hliehhen"
+      },
+      "pastSubj": {
+        "sg": "hlōġe",
+        "pl": "hlōġen"
+      },
+      "imperative": {
+        "sg": "hlieh",
+        "pl": "hliehhaþ"
+      },
       "nonFinite": {
-        "infinitive":          "hliehhan",
+        "infinitive": "hliehhan",
         "inflectedInfinitive": "tō hliehhenne",
-        "presentParticiple":   "hliehhende",
-        "pastParticiple":      "ġehlæġen"
+        "presentParticiple": "hliehhende",
+        "pastParticiple": "ġehlæġen"
       }
     }
   },
