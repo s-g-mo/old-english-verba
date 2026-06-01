@@ -295,11 +295,10 @@ var Paradigm = (function () {
   }
 
   // ── pastDE ──────────────────────────────────────────────────────────────────
-
   function pastDE(stem) {
-    if (/t$/.test(stem)) return stem + 'te';     // set → sette
-    if (isShortRoot(stem)) return stem + 'ede';  // frem → fremede
-    return stem + 'e';                            // hīerd → hīerde
+    if (/t$/.test(stem)) return stem + 'te';      // set → sette
+    if (isShortRoot(stem)) return stem + 'ede';   // frem → fremede
+    return stem + 'de';                            // hīer → hīerde  ← was 'e', needs 'de'
   }
 
   // ── conjugateWeak1 ──────────────────────────────────────────────────────────
@@ -329,13 +328,13 @@ var Paradigm = (function () {
         sg1: presentStem + 'e',
         sg2: sg2PresInd,
         sg3: sg3PresInd,
-        pl:  presentStem + 'aþ',
+        pl: presentStem + 'aþ',
       },
       pastInd: {
         sg1: pastDE(pastStem),
         sg2: pastDE(pastStem).replace(/e$/, 'est'),
         sg3: pastDE(pastStem),
-        pl:  pastDE(pastStem).replace(/e$/, 'on'),
+        pl: pastDE(pastStem).replace(/e$/, 'on'),
       },
       presentSubj: {
         sg: presentStem + 'e',
@@ -350,10 +349,12 @@ var Paradigm = (function () {
         pl: presentStem + 'aþ',
       },
       nonFinite: {
-        infinitive:          verb.lemma,
+        infinitive: verb.lemma,
         inflectedInfinitive: 'tō ' + presentStem + 'enne',
-        presentParticiple:   presentStem + 'ende',
-        pastParticiple:      ppPrefix + pastStem + (isShortRoot(pastStem) && !/t$/.test(pastStem) ? 'ed' : (/t$/.test(pastStem) ? 't' : '')),
+        presentParticiple: presentStem + 'ende',
+        // pastParticiple: ppPrefix + pastStem + (isShortRoot(pastStem) && !/t$/.test(pastStem) ? 'ed' : (/t$/.test(pastStem) ? 't' : '')),
+        // pastParticiple: ppPrefix + (/t$/.test(pastStem) ? pastStem + 't' : isShortRoot(pastStem) ? pastStem + 'ed' : pastStem + 'd'),
+        pastParticiple: ppPrefix + (/t$/.test(pastStem) ? pastStem + 't' : pastStem + 'ed'),
       },
     };
   }
