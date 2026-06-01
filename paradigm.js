@@ -287,18 +287,31 @@ var Paradigm = (function () {
     return applyCollision(stem, ending);
   }
 
+  // ── isShortRoot ─────────────────────────────────────────────────────────────
+
+  function isShortRoot(stem) {
+    // Short root: ends in single consonant preceded directly by a short vowel
+    // i.e. vowel + single consonant at end, no consonant cluster
+    return /[aeiouæy][^aeiouæyāēīōūǣȳ]$/.test(stem);
+  }
+
+  // ── pastDE ──────────────────────────────────────────────────────────────────
+
+  function pastDE(stem) {
+    if (/t$/.test(stem)) return stem + 'te';     // set → sette
+    if (isShortRoot(stem)) return stem + 'ede';  // frem → fremede
+    return stem + 'e';                            // hīerd → hīerde
+  }
+
   // ── conjugateWeak1 ──────────────────────────────────────────────────────────
 
   function conjugateWeak1(verb) {
     var presentStem = verb.lemma.replace(/an$/, '');
     var pastStemBase = /(.)\1$/.test(presentStem) ? presentStem.slice(0, -1) : presentStem;
-    var pastStem = verb.irregularForms.pastStem || applyCollision(pastStemBase, 'd');
+    var pastStem = verb.irregularForms.pastStem || pastStemBase;
 
     // Don't add ġe- if the lemma already has a ge-/ġe- prefix
     var ppPrefix = /^[ġg]e/.test(verb.lemma) ? '' : 'ġe';
-
-    // Degeminate past stem before consonant-initial endings (-de, -don, -dest)
-    var pastStemDegem = /(.)\1$/.test(pastStem) ? pastStem.slice(0, -1) : pastStem;
 
     // Present sg2/sg3: plain degemination (no epenthesis) when verb.noEpenthesis is set
     var sg2PresInd = (verb.noEpenthesis && /(.)\1$/.test(presentStem))
@@ -317,31 +330,31 @@ var Paradigm = (function () {
         sg1: presentStem + 'e',
         sg2: sg2PresInd,
         sg3: sg3PresInd,
-        pl: presentStem + 'aþ',
+        pl:  presentStem + 'aþ',
       },
       pastInd: {
-        sg1: pastStemDegem + 'e',
-        sg2: pastStemDegem + 'est',
-        sg3: pastStemDegem + 'e',
-        pl: pastStemDegem + 'on',
+        sg1: pastDE(pastStem),
+        sg2: pastDE(pastStem).replace(/e$/, 'est'),
+        sg3: pastDE(pastStem),
+        pl:  pastDE(pastStem).replace(/e$/, 'on'),
       },
       presentSubj: {
         sg: presentStem + 'e',
         pl: presentStem + 'en',
       },
       pastSubj: {
-        sg: pastStemDegem + 'e',
-        pl: pastStemDegem + 'en',
+        sg: pastDE(pastStem),
+        pl: pastDE(pastStem).replace(/e$/, 'en'),
       },
       imperative: {
         sg: degeminateAndEpenthesis(presentStem, ''),
         pl: presentStem + 'aþ',
       },
       nonFinite: {
-        infinitive: verb.lemma,
+        infinitive:          verb.lemma,
         inflectedInfinitive: 'tō ' + presentStem + 'enne',
-        presentParticiple: presentStem + 'ende',
-        pastParticiple: ppPrefix + pastStemDegem + 'e',
+        presentParticiple:   presentStem + 'ende',
+        pastParticiple:      ppPrefix + pastStem + (isShortRoot(pastStem) && !/t$/.test(pastStem) ? 'ed' : (/t$/.test(pastStem) ? 't' : '')),
       },
     };
   }
