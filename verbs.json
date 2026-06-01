@@ -621,7 +621,17 @@
     "notes": "Irregular weak (like reċċan). 3rd sg pres sċeþeþ; past sċeþede.",
     "irregular": true,
     "irregularForms": {
-      "pastStem": "sċeþed"
+      "pastInd": {
+        "sg1": "sċeþede",
+        "sg2": "sċeþedest",
+        "sg3": "sċeþede",
+        "pl": "sċeþedon"
+      },
+      "pastSubj": {
+        "sg": "sċeþede",
+        "pl": "sċeþeden"
+      },
+      "nonFinite.pastParticiple": "ġesċeþed"
     }
   },
   {
@@ -1290,10 +1300,34 @@
         "chapter": 4
       }
     ],
-    "notes": "Irregular: 3rd sg pres sæġþ; past sæġde / sǣde.",
+    "notes": "Irregular: 3rd sg pres sæġþ; past sæġde.",
     "irregular": true,
     "irregularForms": {
-      "pastStem": "sæġde/sǣd"
+      "presentInd": {
+        "sg1": "seċġe",
+        "sg2": "sæġst",
+        "sg3": "sæġþ",
+        "pl": "seċġaþ"
+      },
+      "pastInd": {
+        "sg1": "sæġde",
+        "sg2": "sæġdest",
+        "sg3": "sæġde",
+        "pl": "sæġdon"
+      },
+      "presentSubj": {
+        "sg": "seċġe",
+        "pl": "seċġen"
+      },
+      "pastSubj": {
+        "sg": "sæġde",
+        "pl": "sæġden"
+      },
+      "imperative": {
+        "sg": "sæġe",
+        "pl": "seċġaþ"
+      },
+      "nonFinite.pastParticiple": "ġesæġd"
     }
   },
   {
