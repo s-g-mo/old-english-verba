@@ -165,7 +165,12 @@
     "lemma": "sprecan",
     "gloss": "to speak",
     "type": "strong",
-    "sources": [],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 3
+      }
+    ],
     "notes": "",
     "principalParts": [
       "sprecan",
@@ -1375,7 +1380,7 @@
     "sources": [
       {
         "text": "osweald-bera",
-        "chapter": 4
+        "chapter": 1
       }
     ],
     "notes": "Suppletive form of bēon. Wesan supplies the infinitive, present participle (wesende), and imperative (wes / wesaþ). The eom/eart/is forms in the present indicative and all wæs/wǣre past forms belong to this paradigm. See bēon.",
