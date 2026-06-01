@@ -305,6 +305,14 @@ var Paradigm = (function () {
     // Degeminate past stem before consonant-initial endings (-de, -don, -dest)
     var pastStemDegem = /(.)\1$/.test(pastStem) ? pastStem.slice(0, -1) : pastStem;
 
+    // Present sg2/sg3: plain degemination (no epenthesis) when verb.noEpenthesis is set
+    var sg2PresInd = (verb.noEpenthesis && /(.)\1$/.test(presentStem))
+      ? applyCollision(presentStem.slice(0, -1), 'st')
+      : degeminateAndEpenthesis(presentStem, 'st');
+    var sg3PresInd = (verb.noEpenthesis && /(.)\1$/.test(presentStem))
+      ? applyCollision(presentStem.slice(0, -1), 'þ')
+      : degeminateAndEpenthesis(presentStem, 'þ');
+
     return {
       class: 'Weak 1',
       lemma: verb.lemma,
@@ -312,8 +320,8 @@ var Paradigm = (function () {
 
       presentInd: {
         sg1: presentStem + 'e',
-        sg2: degeminateAndEpenthesis(presentStem, 'st'),
-        sg3: degeminateAndEpenthesis(presentStem, 'þ'),
+        sg2: sg2PresInd,
+        sg3: sg3PresInd,
         pl: presentStem + 'aþ',
       },
       pastInd: {
