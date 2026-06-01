@@ -291,13 +291,8 @@ var Paradigm = (function () {
 
   function conjugateWeak1(verb) {
     var presentStem = verb.lemma.replace(/an$/, '');
-    var pastStem;
-
-    if (verb.irregularForms && verb.irregularForms.pastStem !== undefined) {
-      pastStem = verb.irregularForms.pastStem;
-    } else {
-      pastStem = applyCollision(presentStem, 'd');
-    }
+    var pastStemBase = /(.)\1$/.test(presentStem) ? presentStem.slice(0, -1) : presentStem;
+    var pastStem = verb.irregularForms.pastStem || applyCollision(pastStemBase, 'd');
 
     // Don't add ġe- if the lemma already has a ge-/ġe- prefix
     var ppPrefix = /^[ġg]e/.test(verb.lemma) ? '' : 'ġe';
