@@ -36,10 +36,12 @@ var Paradigm = (function () {
     'e,æ,ǣ,e': 'V',
     'e,ǣ,ǣ,e': 'V',      // etan-type: ǣ in past sg
     'i,æ,ǣ,e': 'V',      // sittan-type: geminated, i in present
-    'e,ea,ēa,e': 'V',      // ġiefan-type: palatal + breaking
+    // 'e,ea,ēa,e': 'V',      // ġiefan-type: palatal + breaking
     'ēo,ea,ā,e': 'V',      // ġesēon-type: contracted
     'a,ō,ō,a': 'VI',
-    'e,ō,ō,æ': 'VII',   // hliehhan-type: ō past, æ in past participle
+    // 'e,ō,ō,æ': 'VII',   // hliehhan-type: ō past, æ in past participle
+    'ie,ea,ēa,ie': 'V',     // ġiefan-type: ie in present/past-part (palatal umlaut)
+    'ie,ō,ō,æ': 'VII',    // hliehhan-type: ie in present (breaking before h)
   };
 
   // ── Helper: set a nested value by dot-notation key ──────────────────────────
@@ -355,53 +357,54 @@ var Paradigm = (function () {
         inflectedInfinitive: 'tō ' + presentStem + 'enne',
         presentParticiple: presentStem + 'ende',
         pastParticiple: ppPrefix + (/ht$/.test(pastStem) ? pastStem : pastStemBase + 'ed'),
-      };
+      },
+    };
+  }
+
+  // ── conjugate (dispatcher) ──────────────────────────────────────────────────
+
+  function conjugate(verb) {
+    var result;
+
+    switch (verb.type) {
+      case 'strong':
+        result = conjugateStrong(verb);
+        break;
+      case 'weak2':
+        result = conjugateWeak2(verb);
+        break;
+      case 'weak1':
+        result = conjugateWeak1(verb);
+        break;
+      case 'irregular':
+        result = {
+          class: 'Irregular',
+          lemma: verb.lemma,
+          gloss: verb.gloss,
+        };
+        break;
+      default:
+        throw new Error('Unknown verb type: ' + verb.type);
     }
 
-    // ── conjugate (dispatcher) ──────────────────────────────────────────────────
-
-    function conjugate(verb) {
-      var result;
-
-      switch (verb.type) {
-        case 'strong':
-          result = conjugateStrong(verb);
-          break;
-        case 'weak2':
-          result = conjugateWeak2(verb);
-          break;
-        case 'weak1':
-          result = conjugateWeak1(verb);
-          break;
-        case 'irregular':
-          result = {
-            class: 'Irregular',
-            lemma: verb.lemma,
-            gloss: verb.gloss,
-          };
-          break;
-        default:
-          throw new Error('Unknown verb type: ' + verb.type);
-      }
-
-      // Merge irregularForms overrides (dot-notation keys)
-      if (verb.irregularForms) {
-        Object.keys(verb.irregularForms).forEach(function (key) {
-          // Reserved keys used internally — skip
-          if (key === 'pastStem') return;
-          setPath(result, key, verb.irregularForms[key]);
-        });
-      }
-
-      result.sources = verb.sources || [];
-      return result;
+    // Merge irregularForms overrides (dot-notation keys)
+    if (verb.irregularForms) {
+      Object.keys(verb.irregularForms).forEach(function (key) {
+        // Reserved keys used internally — skip
+        if (key === 'pastStem') return;
+        setPath(result, key, verb.irregularForms[key]);
+      });
     }
 
-    // ── Public API ──────────────────────────────────────────────────────────────
+    result.sources = verb.sources || [];
+    return result;
+  }
 
-    return { conjugate, inferClass, extractStems };
+  // ── Public API ──────────────────────────────────────────────────────────────
 
-  } ());
+  return { conjugate, inferClass, extractStems };
+
+}());
 
 // Sanity checks:
 // swimman  → 3sg swimþ   (doubled mm drops before þ)

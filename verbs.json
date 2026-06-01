@@ -787,7 +787,6 @@
     "lemma": "settan",
     "gloss": "to place, put",
     "type": "weak1",
-    "noEpenthesis": true,
     "sources": [
       {
         "text": "osweald-bera",
@@ -795,8 +794,26 @@
       }
     ],
     "notes": "",
-    "irregular": false,
-    "irregularForms": {}
+    "irregular": true,
+    "irregularForms": {
+      "presentInd": {
+        "sg1": "sette",
+        "sg2": "setst",
+        "sg3": "sett",
+        "pl": "settaþ"
+      },
+      "pastInd": {
+        "sg1": "sette",
+        "sg2": "settest",
+        "sg3": "sette",
+        "pl": "setton"
+      },
+      "pastSubj": {
+        "sg": "sette",
+        "pl": "setten"
+      },
+      "nonFinite.pastParticiple": "ġesett"
+    }
   },
   {
     "id": "fleogan",
