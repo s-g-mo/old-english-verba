@@ -1471,5 +1471,26 @@
         "pl": "wǣren"
       }
     }
+  },
+  {
+    "id": "cwepan",
+    "lemma": "cweþan",
+    "gloss": "to say, speak",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 3
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "cweþan",
+      "cwæþ",
+      "cwǣdon",
+      "ġecweden"
+    ],
+    "irregular": false,
+    "irregularForms": {}
   }
 ]
