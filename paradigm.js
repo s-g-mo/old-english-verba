@@ -7,35 +7,39 @@ var Paradigm = (function () {
   var I_MUTATION = {
     'ēo': 'īe', 'ēa': 'īe',
     'ea': 'ie', 'eo': 'ie',
+    // NOTE: 'an'/'am' should only apply to nasal-cluster verbs (class IIIa type,
+    // e.g. bannan → benþ). extractStemVowel matches 'an'/'am' before bare 'a',
+    // so faran/hatan etc. could accidentally mutate. Fix after live test cases.
     'an': 'en', 'am': 'em',
-    'ā':  'ǣ',  'ō':  'ē',  'ū': 'ȳ',
-    'a':  'æ',  'e':  'i',
-    'o':  'e',  'u':  'y',
+    'ā': 'ǣ', 'ō': 'ē', 'ū': 'ȳ',
+    'a': 'æ', 'e': 'i',
+    'o': 'e', 'u': 'y',
+    'īe': 'īe', 'ie': 'ie',
   };
 
   // Ordered longest-first for greedy vowel matching
   var VOWEL_LIST = [
-    'ēo','ēa','ea','eo','ān','ām','an','am',
-    'ā','ē','ī','ō','ū','ǣ','æ','a','e','i','o','u','y'
+    'ēo', 'ēa', 'īe', 'ie', 'ea', 'eo', 'ān', 'ām', 'an', 'am',
+    'ā', 'ē', 'ī', 'ō', 'ū', 'ǣ', 'æ', 'a', 'e', 'i', 'o', 'u', 'y'
   ];
 
   var ABLAUT_CLASSES = {
-    'ī,ā,i,i':   'I',
+    'ī,ā,i,i': 'I',
     'ēo,ēa,u,o': 'IIa',
-    'ū,ēa,u,o':  'IIb',
-    'i,a,u,u':   'IIIa',
-    'e,æ,u,o':   'IIIb',
+    'ū,ēa,u,o': 'IIb',
+    'i,a,u,u': 'IIIa',
+    'e,æ,u,o': 'IIIb',
     'eo,ea,u,o': 'IIIb',   // weorþan-type: eo/ea before r+C
-    'e,æ,ǣ,o':   'IV',
-    'i,a,ō,u':   'IV',     // niman-type: irregular IV
-    'u,ō,ō,u':   'IV',     // cuman-type: anomalous IV
-    'e,æ,ǣ,e':   'V',
-    'e,ǣ,ǣ,e':   'V',      // etan-type: ǣ in past sg
-    'i,æ,ǣ,e':   'V',      // sittan-type: geminated, i in present
+    'e,æ,ǣ,o': 'IV',
+    'i,a,ō,u': 'IV',     // niman-type: irregular IV
+    'u,ō,ō,u': 'IV',     // cuman-type: anomalous IV
+    'e,æ,ǣ,e': 'V',
+    'e,ǣ,ǣ,e': 'V',      // etan-type: ǣ in past sg
+    'i,æ,ǣ,e': 'V',      // sittan-type: geminated, i in present
     'e,ea,ēa,e': 'V',      // ġiefan-type: palatal + breaking
     'ēo,ea,ā,e': 'V',      // ġesēon-type: contracted
-    'a,ō,ō,a':   'VI',
-    'e,ō,ō,æ':   'VII',   // hliehhan-type: ō past, æ in past participle
+    'a,ō,ō,a': 'VI',
+    'e,ō,ō,æ': 'VII',   // hliehhan-type: ō past, æ in past participle
   };
 
   // ── Helper: set a nested value by dot-notation key ──────────────────────────
@@ -53,14 +57,14 @@ var Paradigm = (function () {
   // ── extractStems ────────────────────────────────────────────────────────────
 
   function extractStems(principalParts) {
-    var inf      = principalParts[0];
-    var pastSg   = principalParts[1];
-    var pastPl   = principalParts[2];
+    var inf = principalParts[0];
+    var pastSg = principalParts[1];
+    var pastPl = principalParts[2];
     var pastPart = principalParts[3];
 
-    var presentStem  = inf.replace(/an$/, '');
-    var pastSgStem   = pastSg;
-    var pastPlStem   = pastPl.replace(/on$/, '');
+    var presentStem = inf.replace(/an$/, '');
+    var pastSgStem = pastSg;
+    var pastPlStem = pastPl.replace(/on$/, '');
     var pastPartStem = pastPart.replace(/^[ġg]e-?/, '').replace(/en$/, '');
 
     return { presentStem, pastSgStem, pastPlStem, pastPartStem };
@@ -92,26 +96,42 @@ var Paradigm = (function () {
 
   function applyCollision(stem, ending) {
     if (ending === 'þ') {
+      // ċ → c before consonantal endings
+      if (stem.slice(-1) === 'ċ') stem = stem.slice(0, -1) + 'c';
       // Doubled consonants drop one before þ
-      if (/([nmlp])\1$/.test(stem)) {
+      if (/(.)\1$/.test(stem)) {
         stem = stem.slice(0, -1);
       }
       var tail2 = stem.slice(-2);
       var tail1 = stem.slice(-1);
-      if (tail2 === 'dþ' || tail1 === 'd') return stem.slice(0, -1) + 'tt';
-      if (tail1 === 't')                   return stem + 't';
-      if (tail2 === 'sþ' || tail1 === 's') return stem.slice(0, -1 * (tail2 === 'sþ' ? 1 : 0)) + 'st';
+      if (tail1 === 'þ') return stem;
+      if (tail2 === 'dþ' || tail1 === 'd') {
+        var result = stem.slice(0, -1) + 'tt';
+        // Simplify NTT → NT when tt follows a consonant (e.g. wind→wint, find→fint)
+        if (/[^aeiouāēīōūæǣ]tt$/.test(result)) result = result.slice(0, -1);
+        return result;
+      }
+      if (tail1 === 't') {
+        var result = stem + 't';
+        // Simplify NTT → NT when tt follows a consonant
+        if (/[^aeiouāēīōūæǣ]tt$/.test(result)) result = result.slice(0, -1);
+        return result;
+      }
+      if (tail1 === 's') return stem + 't';
       return stem + 'þ';
     }
 
     if (ending === 'st') {
+      // ċ → c before consonantal endings
+      if (stem.slice(-1) === 'ċ') stem = stem.slice(0, -1) + 'c';
       // Doubled consonants drop one before st
-      if (/([nmlp])\1$/.test(stem)) {
+      if (/(.)\1$/.test(stem)) {
         stem = stem.slice(0, -1);
       }
       var tail2 = stem.slice(-2);
       var tail1 = stem.slice(-1);
-      if (tail1 === 'd')  return stem.slice(0, -1) + 'tst';
+      if (tail1 === 's') return stem + 't';
+      if (tail1 === 'd') return stem.slice(0, -1) + 'tst';
       if (tail2 === 'þs' || tail1 === 'þ') return stem.replace(/þ$/, '') + 'st';
       return stem + 'st';
     }
@@ -174,6 +194,7 @@ var Paradigm = (function () {
   function conjugateStrong(verb) {
     var stems = extractStems(verb.principalParts);
     var mutatedStem = applyIMutation(stems.presentStem);
+    var mutatedStemForSg = mutatedStem.replace(/g$/, 'ġ');
 
     return {
       class: 'Strong ' + inferClass(verb.principalParts),
@@ -182,15 +203,15 @@ var Paradigm = (function () {
 
       presentInd: {
         sg1: stems.presentStem + 'e',
-        sg2: applyCollision(mutatedStem, 'st'),
-        sg3: applyCollision(mutatedStem, 'þ'),
-        pl:  stems.presentStem + 'aþ',
+        sg2: applyCollision(mutatedStemForSg, 'st'),
+        sg3: applyCollision(mutatedStemForSg, 'þ'),
+        pl: stems.presentStem + 'aþ',
       },
       pastInd: {
         sg1: stems.pastSgStem,
         sg2: stems.pastPlStem + 'e',
         sg3: stems.pastSgStem,
-        pl:  stems.pastPlStem + 'on',
+        pl: stems.pastPlStem + 'on',
       },
       presentSubj: {
         sg: stems.presentStem + 'e',
@@ -205,10 +226,10 @@ var Paradigm = (function () {
         pl: stems.presentStem + 'aþ',
       },
       nonFinite: {
-        infinitive:          verb.lemma,
+        infinitive: verb.lemma,
         inflectedInfinitive: 'tō ' + stems.presentStem + 'enne',
-        presentParticiple:   stems.presentStem + 'ende',
-        pastParticiple:      'ġe' + stems.pastPartStem + 'en',
+        presentParticiple: stems.presentStem + 'ende',
+        pastParticiple: 'ġe' + stems.pastPartStem + 'en',
       },
     };
   }
@@ -227,13 +248,13 @@ var Paradigm = (function () {
         sg1: stem + 'iġe',
         sg2: stem + 'ast',
         sg3: stem + 'aþ',
-        pl:  stem + 'iaþ',
+        pl: stem + 'iaþ',
       },
       pastInd: {
         sg1: stem + 'ode',
         sg2: stem + 'odest',
         sg3: stem + 'ode',
-        pl:  stem + 'odon',
+        pl: stem + 'odon',
       },
       presentSubj: {
         sg: stem + 'iġe',
@@ -248,28 +269,55 @@ var Paradigm = (function () {
         pl: stem + 'iaþ',
       },
       nonFinite: {
-        infinitive:          verb.lemma,
+        infinitive: verb.lemma,
         inflectedInfinitive: 'tō ' + stem + 'ianne',
-        presentParticiple:   stem + 'iende',
-        pastParticiple:      'ġe' + stem + 'od',
+        presentParticiple: stem + 'iende',
+        pastParticiple: 'ġe' + stem + 'od',
       },
     };
+  }
+
+  // ── degeminateAndEpenthesis ─────────────────────────────────────────────────
+
+  function degeminateAndEpenthesis(stem, ending) {
+    // e.g. reċċ + þ → reċeþ,  reċċ + st → reċest
+    if (/(.)\1$/.test(stem)) {
+      return stem.slice(0, -1) + 'e' + ending;
+    }
+    return applyCollision(stem, ending);
+  }
+
+  // ── isShortRoot ─────────────────────────────────────────────────────────────
+
+  function isShortRoot(stem) {
+    if (/āēīōūǣȳ|ēo|ēa|īe|ie|ea|eo/.test(stem)) return false;
+    return /[aeiouæy][^aeiouæyāēīōūǣȳ]$/.test(stem);
+  }
+
+  // ── pastDE ──────────────────────────────────────────────────────────────────
+  function pastDE(stem) {
+    if (/t$/.test(stem)) return stem + 'te';      // set → sette
+    if (isShortRoot(stem)) return stem + 'ede';   // frem → fremede
+    return stem + 'de';                            // hīer → hīerde  ← was 'e', needs 'de'
   }
 
   // ── conjugateWeak1 ──────────────────────────────────────────────────────────
 
   function conjugateWeak1(verb) {
     var presentStem = verb.lemma.replace(/an$/, '');
-    var pastStem;
-
-    if (verb.irregularForms && verb.irregularForms.pastStem !== undefined) {
-      pastStem = verb.irregularForms.pastStem;
-    } else {
-      pastStem = applyCollision(presentStem, 'd');
-    }
+    var pastStemBase = /(.)\1$/.test(presentStem) ? presentStem.slice(0, -1) : presentStem;
+    var pastStem = verb.irregularForms.pastStem || pastStemBase;
 
     // Don't add ġe- if the lemma already has a ge-/ġe- prefix
     var ppPrefix = /^[ġg]e/.test(verb.lemma) ? '' : 'ġe';
+
+    // Present sg2/sg3: plain degemination (no epenthesis) when verb.noEpenthesis is set
+    var sg2PresInd = (verb.noEpenthesis && /(.)\1$/.test(presentStem))
+      ? applyCollision(presentStem.slice(0, -1), 'st')
+      : degeminateAndEpenthesis(presentStem, 'st');
+    var sg3PresInd = (verb.noEpenthesis && /(.)\1$/.test(presentStem))
+      ? applyCollision(presentStem.slice(0, -1), 'þ')
+      : degeminateAndEpenthesis(presentStem, 'þ');
 
     return {
       class: 'Weak 1',
@@ -278,33 +326,35 @@ var Paradigm = (function () {
 
       presentInd: {
         sg1: presentStem + 'e',
-        sg2: applyCollision(presentStem, 'st'),
-        sg3: applyCollision(presentStem, 'þ'),
-        pl:  presentStem + 'aþ',
+        sg2: sg2PresInd,
+        sg3: sg3PresInd,
+        pl: presentStem + 'aþ',
       },
       pastInd: {
-        sg1: pastStem + 'e',
-        sg2: pastStem + 'est',
-        sg3: pastStem + 'e',
-        pl:  pastStem + 'on',
+        sg1: pastDE(pastStem),
+        sg2: pastDE(pastStem).replace(/e$/, 'est'),
+        sg3: pastDE(pastStem),
+        pl: pastDE(pastStem).replace(/e$/, 'on'),
       },
       presentSubj: {
         sg: presentStem + 'e',
         pl: presentStem + 'en',
       },
       pastSubj: {
-        sg: pastStem + 'e',
-        pl: pastStem + 'en',
+        sg: pastDE(pastStem),
+        pl: pastDE(pastStem).replace(/e$/, 'en'),
       },
       imperative: {
-        sg: presentStem,
+        sg: degeminateAndEpenthesis(presentStem, ''),
         pl: presentStem + 'aþ',
       },
       nonFinite: {
-        infinitive:          verb.lemma,
+        infinitive: verb.lemma,
         inflectedInfinitive: 'tō ' + presentStem + 'enne',
-        presentParticiple:   presentStem + 'ende',
-        pastParticiple:      ppPrefix + pastStem + (pastStem.slice(-1) === 'd' ? 'e' : ''),
+        presentParticiple: presentStem + 'ende',
+        // pastParticiple: ppPrefix + pastStem + (isShortRoot(pastStem) && !/t$/.test(pastStem) ? 'ed' : (/t$/.test(pastStem) ? 't' : '')),
+        // pastParticiple: ppPrefix + (/t$/.test(pastStem) ? pastStem + 't' : isShortRoot(pastStem) ? pastStem + 'ed' : pastStem + 'd'),
+        pastParticiple: ppPrefix + (/t$/.test(pastStem) ? pastStem + 't' : pastStem + 'ed'),
       },
     };
   }
@@ -353,3 +403,15 @@ var Paradigm = (function () {
   return { conjugate, inferClass, extractStems };
 
 }());
+
+// Sanity checks:
+// swimman  → 3sg swimþ   (doubled mm drops before þ)
+// rinnan   → 2sg rinst   (doubled nn drops before st)
+// sēċan    → 3sg sēcþ    (ċ → c before þ)
+// sēċan    → 2sg sēcst   (ċ → c before st)
+// rǣsan    → 3sg rǣst    (s + þ → st)
+// settan   → past sette  (t + d → tt, simplified: sette)
+// fremman  → past participle gefremed  (past participle = pastStem + e)
+// windan   → 3sg wint    (nd + þ → ntt → nt, simplified)
+// findan   → 3sg fint    (nd + þ → ntt → nt, simplified)
+// weorþan  → 3sg wierþ   (þ + þ → þ)

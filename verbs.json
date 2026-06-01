@@ -16,15 +16,15 @@
     "irregularForms": {}
   },
   {
-    "id": "ceosan",
-    "lemma": "cēosan",
+    "id": "ċeosan",
+    "lemma": "ċēosan",
     "gloss": "to choose",
     "type": "strong",
     "sources": [],
     "notes": "",
     "principalParts": [
-      "cēosan",
-      "cēas",
+      "ċēosan",
+      "ċēas",
       "curon",
       "ġecoren"
     ],
@@ -81,8 +81,26 @@
       "ġesāwon",
       "ġesewen"
     ],
-    "irregular": false,
-    "irregularForms": {}
+    "irregular": true,
+    "irregularForms": {
+      "presentInd": {
+        "sg1": "ġesēo",
+        "sg2": "ġesiehst",
+        "sg3": "ġesiehþ",
+        "pl": "ġesēoþ"
+      },
+      "presentSubj": {
+        "sg": "ġesēo",
+        "pl": "ġesēon"
+      },
+      "imperative": {
+        "sg": "ġeseoh",
+        "pl": "ġesēoþ"
+      },
+      "nonFinite.infinitive": "ġesēon",
+      "nonFinite.inflectedInfinitive": "tō ġesēonne",
+      "nonFinite.presentParticiple": "ġesēonde"
+    }
   },
   {
     "id": "gewitan",
@@ -221,8 +239,20 @@
       }
     ],
     "notes": "",
-    "irregular": false,
-    "irregularForms": {}
+    "irregular": true,
+    "irregularForms": {
+      "pastInd": {
+        "sg1": "reahte",
+        "sg2": "reahtest",
+        "sg3": "reahte",
+        "pl": "reahton"
+      },
+      "pastSubj": {
+        "sg": "reahte",
+        "pl": "reahten"
+      },
+      "nonFinite.pastParticiple": "ġereaht"
+    }
   },
   {
     "id": "wunian",
@@ -292,7 +322,10 @@
         "sg": "bēo",
         "pl": "bēon"
       },
-      "altPresentSubj": { "sg": "sīe", "pl": "sīen" },
+      "altPresentSubj": {
+        "sg": "sīe",
+        "pl": "sīen"
+      },
       "pastSubj": {
         "sg": "wǣre",
         "pl": "wǣren"
@@ -739,6 +772,7 @@
     "lemma": "settan",
     "gloss": "to place, put",
     "type": "weak1",
+    "noEpenthesis": true,
     "sources": [
       {
         "text": "osweald-bera",
@@ -764,8 +798,8 @@
     "principalParts": [
       "flēogan",
       "flēah",
-      "fluġon",
-      "ġefloġen"
+      "flugon",
+      "ġeflogen"
     ],
     "irregular": false,
     "irregularForms": {}
@@ -1203,7 +1237,7 @@
     "principalParts": [
       "hliehhan",
       "hlōh",
-      "hlōġon",
+      "hlōgon",
       "ġehlæġen"
     ],
     "irregular": true,
@@ -1212,22 +1246,31 @@
         "sg1": "hliehhe",
         "sg2": "hliehst",
         "sg3": "hliehþ",
-        "pl":  "hliehhaþ"
+        "pl": "hliehhaþ"
       },
       "pastInd": {
         "sg1": "hlōh",
-        "sg2": "hlōġe",
+        "sg2": "hlōge",
         "sg3": "hlōh",
-        "pl":  "hlōġon"
+        "pl": "hlōgon"
       },
-      "presentSubj": { "sg": "hliehhe", "pl": "hliehhen" },
-      "pastSubj":    { "sg": "hlōġe",   "pl": "hlōġen"   },
-      "imperative":  { "sg": "hlieh",   "pl": "hliehhaþ" },
+      "presentSubj": {
+        "sg": "hliehhe",
+        "pl": "hliehhen"
+      },
+      "pastSubj": {
+        "sg": "hlōge",
+        "pl": "hlōgen"
+      },
+      "imperative": {
+        "sg": "hlieh",
+        "pl": "hliehhaþ"
+      },
       "nonFinite": {
-        "infinitive":          "hliehhan",
+        "infinitive": "hliehhan",
         "inflectedInfinitive": "tō hliehhenne",
-        "presentParticiple":   "hliehhende",
-        "pastParticiple":      "ġehlæġen"
+        "presentParticiple": "hliehhende",
+        "pastParticiple": "ġehlæġen"
       }
     }
   },
@@ -1320,7 +1363,9 @@
       "ġeseten"
     ],
     "irregular": false,
-    "irregularForms": {}
+    "irregularForms": {
+      "imperative.sg": "site"
+    }
   },
   {
     "id": "wesan",
