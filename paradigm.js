@@ -290,8 +290,7 @@ var Paradigm = (function () {
   // ── isShortRoot ─────────────────────────────────────────────────────────────
 
   function isShortRoot(stem) {
-    // Short root: ends in single consonant preceded directly by a short vowel
-    // i.e. vowel + single consonant at end, no consonant cluster
+    if (/āēīōūǣȳ|ēo|ēa|īe|ie|ea|eo/.test(stem)) return false;
     return /[aeiouæy][^aeiouæyāēīōūǣȳ]$/.test(stem);
   }
 
