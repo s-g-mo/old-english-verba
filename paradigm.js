@@ -302,6 +302,9 @@ var Paradigm = (function () {
     // Don't add ġe- if the lemma already has a ge-/ġe- prefix
     var ppPrefix = /^[ġg]e/.test(verb.lemma) ? '' : 'ġe';
 
+    // Degeminate past stem before consonant-initial endings (-de, -don, -dest)
+    var pastStemDegem = /(.)\1$/.test(pastStem) ? pastStem.slice(0, -1) : pastStem;
+
     return {
       class: 'Weak 1',
       lemma: verb.lemma,
@@ -314,18 +317,18 @@ var Paradigm = (function () {
         pl: presentStem + 'aþ',
       },
       pastInd: {
-        sg1: pastStem + 'e',
-        sg2: pastStem + 'est',
-        sg3: pastStem + 'e',
-        pl: pastStem + 'on',
+        sg1: pastStemDegem + 'e',
+        sg2: pastStemDegem + 'est',
+        sg3: pastStemDegem + 'e',
+        pl: pastStemDegem + 'on',
       },
       presentSubj: {
         sg: presentStem + 'e',
         pl: presentStem + 'en',
       },
       pastSubj: {
-        sg: pastStem + 'e',
-        pl: pastStem + 'en',
+        sg: pastStemDegem + 'e',
+        pl: pastStemDegem + 'en',
       },
       imperative: {
         sg: degeminateAndEpenthesis(presentStem, ''),
@@ -335,7 +338,7 @@ var Paradigm = (function () {
         infinitive: verb.lemma,
         inflectedInfinitive: 'tō ' + presentStem + 'enne',
         presentParticiple: presentStem + 'ende',
-        pastParticiple: ppPrefix + pastStem + 'e',
+        pastParticiple: ppPrefix + pastStemDegem + 'e',
       },
     };
   }
