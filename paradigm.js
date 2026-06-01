@@ -194,7 +194,9 @@ var Paradigm = (function () {
   function conjugateStrong(verb) {
     var stems = extractStems(verb.principalParts);
     var mutatedStem = applyIMutation(stems.presentStem);
-    var mutatedStemForSg = mutatedStem.replace(/g$/, 'ġ');
+    var mutatedStemForSg = (mutatedStem !== stems.presentStem)
+      ? mutatedStem.replace(/g$/, 'ġ')   // only dot g when mutation happened
+      : mutatedStem;
 
     return {
       class: 'Strong ' + inferClass(verb.principalParts),
@@ -296,7 +298,7 @@ var Paradigm = (function () {
 
   // ── pastDE ──────────────────────────────────────────────────────────────────
   function pastDE(stem) {
-    if (/t$/.test(stem)) return stem + 'te';      // set → sette
+    if (/t$/.test(stem)) return stem + 'e';      // set → sette, sōht → sōhte
     if (isShortRoot(stem)) return stem + 'ede';   // frem → fremede
     return stem + 'de';                            // hīer → hīerde  ← was 'e', needs 'de'
   }
@@ -352,57 +354,54 @@ var Paradigm = (function () {
         infinitive: verb.lemma,
         inflectedInfinitive: 'tō ' + presentStem + 'enne',
         presentParticiple: presentStem + 'ende',
-        // pastParticiple: ppPrefix + pastStem + (isShortRoot(pastStem) && !/t$/.test(pastStem) ? 'ed' : (/t$/.test(pastStem) ? 't' : '')),
-        // pastParticiple: ppPrefix + (/t$/.test(pastStem) ? pastStem + 't' : isShortRoot(pastStem) ? pastStem + 'ed' : pastStem + 'd'),
-        pastParticiple: ppPrefix + (/t$/.test(pastStem) ? pastStem + 't' : pastStem + 'ed'),
-      },
-    };
-  }
-
-  // ── conjugate (dispatcher) ──────────────────────────────────────────────────
-
-  function conjugate(verb) {
-    var result;
-
-    switch (verb.type) {
-      case 'strong':
-        result = conjugateStrong(verb);
-        break;
-      case 'weak2':
-        result = conjugateWeak2(verb);
-        break;
-      case 'weak1':
-        result = conjugateWeak1(verb);
-        break;
-      case 'irregular':
-        result = {
-          class: 'Irregular',
-          lemma: verb.lemma,
-          gloss: verb.gloss,
-        };
-        break;
-      default:
-        throw new Error('Unknown verb type: ' + verb.type);
+        pastParticiple: ppPrefix + (/ht$/.test(pastStem) ? pastStem : pastStemBase + 'ed'),
+      };
     }
 
-    // Merge irregularForms overrides (dot-notation keys)
-    if (verb.irregularForms) {
-      Object.keys(verb.irregularForms).forEach(function (key) {
-        // Reserved keys used internally — skip
-        if (key === 'pastStem') return;
-        setPath(result, key, verb.irregularForms[key]);
-      });
+    // ── conjugate (dispatcher) ──────────────────────────────────────────────────
+
+    function conjugate(verb) {
+      var result;
+
+      switch (verb.type) {
+        case 'strong':
+          result = conjugateStrong(verb);
+          break;
+        case 'weak2':
+          result = conjugateWeak2(verb);
+          break;
+        case 'weak1':
+          result = conjugateWeak1(verb);
+          break;
+        case 'irregular':
+          result = {
+            class: 'Irregular',
+            lemma: verb.lemma,
+            gloss: verb.gloss,
+          };
+          break;
+        default:
+          throw new Error('Unknown verb type: ' + verb.type);
+      }
+
+      // Merge irregularForms overrides (dot-notation keys)
+      if (verb.irregularForms) {
+        Object.keys(verb.irregularForms).forEach(function (key) {
+          // Reserved keys used internally — skip
+          if (key === 'pastStem') return;
+          setPath(result, key, verb.irregularForms[key]);
+        });
+      }
+
+      result.sources = verb.sources || [];
+      return result;
     }
 
-    result.sources = verb.sources || [];
-    return result;
-  }
+    // ── Public API ──────────────────────────────────────────────────────────────
 
-  // ── Public API ──────────────────────────────────────────────────────────────
+    return { conjugate, inferClass, extractStems };
 
-  return { conjugate, inferClass, extractStems };
-
-}());
+  } ());
 
 // Sanity checks:
 // swimman  → 3sg swimþ   (doubled mm drops before þ)
