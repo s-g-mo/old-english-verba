@@ -385,17 +385,22 @@
   },
   {
     "id": "witan",
-    "lemma": "wītan",
+    "lemma": "witan",
     "gloss": "to know",
     "type": "preterite-present",
-    "sources": [],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 6
+      }
+    ],
     "notes": "",
     "irregular": true,
     "irregularForms": {
       "nonFinite": {
-        "infinitive": "wītan",
-        "inflectedInfinitive": "tō wītenne",
-        "presentParticiple": "wītende",
+        "infinitive": "witan",
+        "inflectedInfinitive": "tō witenne",
+        "presentParticiple": "witende",
         "pastParticiple": "ġewiten"
       },
       "imperative": {
@@ -409,9 +414,9 @@
         "pl": "witon"
       },
       "pastInd": {
-        "sg1": "wisse / wiste",
-        "sg2": "wiste/wisse",
-        "sg3": "wisse / wiste",
+        "sg1": "wiste",
+        "sg2": "wistest",
+        "sg3": "wiste",
         "pl": "wiston"
       },
       "presentSubj": {
@@ -419,8 +424,8 @@
         "pl": "witen"
       },
       "pastSubj": {
-        "sg": "wisse/wiste",
-        "pl": "wissen/wisten"
+        "sg": "wiste",
+        "pl": "wisten"
       }
     }
   },
@@ -1490,6 +1495,404 @@
       "cwǣdon",
       "ġecweden"
     ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gan",
+    "lemma": "gān",
+    "gloss": "to go",
+    "type": "irregular",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 5
+      }
+    ],
+    "notes": "Irregular: pres iċ gā, þū gǣst, hē gǣþ; past ēode, ēodon.",
+    "irregular": true,
+    "irregularForms": {
+      "nonFinite": {
+        "infinitive": "gān",
+        "inflectedInfinitive": "tō gānne",
+        "presentParticiple": "gānde",
+        "pastParticiple": "ġegān"
+      },
+      "imperative": {
+        "sg": "gā",
+        "pl": "gāþ"
+      },
+      "presentInd": {
+        "sg1": "gā",
+        "sg2": "gǣst",
+        "sg3": "gǣþ",
+        "pl": "gāþ"
+      },
+      "pastInd": {
+        "sg1": "ēode",
+        "sg2": "ēodest",
+        "sg3": "ēode",
+        "pl": "ēodon"
+      },
+      "presentSubj": {
+        "sg": "gā",
+        "pl": "gān"
+      },
+      "pastSubj": {
+        "sg": "ēode",
+        "pl": "ēoden"
+      }
+    }
+  },
+  {
+    "id": "geascian",
+    "lemma": "ġeāscian",
+    "gloss": "to learn by inquiry; be told; hear of; discover",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 5
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "peowian",
+    "lemma": "þēowian",
+    "gloss": "to serve (+dat.); enslave",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 5
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "ongietan",
+    "lemma": "onġietan",
+    "gloss": "to perceive (by seeing, hearing); feel; hear of; recognise",
+    "type": "strong",
+    "principalParts": [
+      "onġietan",
+      "onġēat",
+      "onġēaton",
+      "onġieten"
+    ],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 5
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "atiewan",
+    "lemma": "ætīewan",
+    "gloss": "to show; appear",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 5
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "laeran",
+    "lemma": "lǣran",
+    "gloss": "to teach",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 5
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "onginnan",
+    "lemma": "onġinnan",
+    "gloss": "to begin; attempt; attack",
+    "type": "strong",
+    "principalParts": [
+      "onġinnan",
+      "ongann",
+      "ongunnon",
+      "ongunnen"
+    ],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 5
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "scinan",
+    "lemma": "sċīnan",
+    "gloss": "to shine",
+    "type": "strong",
+    "principalParts": [
+      "sċīnan",
+      "sċān",
+      "sċinon",
+      "sċinen"
+    ],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 5
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "tellan",
+    "lemma": "tellan",
+    "gloss": "to count; reckon; calculate; consider; narrate; tell",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 5
+      }
+    ],
+    "notes": "Irregular: past tealde.",
+    "irregular": true,
+    "irregularForms": {
+      "pastStem": "teald",
+      "pastInd": {
+        "sg1": "tealde",
+        "sg2": "tealdest",
+        "sg3": "tealde",
+        "pl": "tealdon"
+      },
+      "pastSubj": {
+        "sg": "tealde",
+        "pl": "tealden"
+      }
+    }
+  },
+  {
+    "id": "don",
+    "lemma": "dōn",
+    "gloss": "to do; make; cause; put; treat (someone) as",
+    "type": "irregular",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 5
+      }
+    ],
+    "notes": "Irregular: pres iċ dō, þū dēst, hē dēþ; past dyde, dydon.",
+    "irregular": true,
+    "irregularForms": {
+      "nonFinite": {
+        "infinitive": "dōn",
+        "inflectedInfinitive": "tō dōnne",
+        "presentParticiple": "dōnde",
+        "pastParticiple": "ġedōn"
+      },
+      "imperative": {
+        "sg": "dō",
+        "pl": "dōþ"
+      },
+      "presentInd": {
+        "sg1": "dō",
+        "sg2": "dēst",
+        "sg3": "dēþ",
+        "pl": "dōþ"
+      },
+      "pastInd": {
+        "sg1": "dyde",
+        "sg2": "dydest",
+        "sg3": "dyde",
+        "pl": "dydon"
+      },
+      "presentSubj": {
+        "sg": "dō",
+        "pl": "dōn"
+      },
+      "pastSubj": {
+        "sg": "dyde",
+        "pl": "dyden"
+      }
+    }
+  },
+  {
+    "id": "gecnawan",
+    "lemma": "ġecnāwan",
+    "gloss": "to know; understand (language)",
+    "type": "strong",
+    "principalParts": [
+      "ġecnāwan",
+      "ġecnēow",
+      "ġecnēowon",
+      "ġecnāwen"
+    ],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 6
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gescieppan",
+    "lemma": "ġesċieppan",
+    "gloss": "to create",
+    "type": "strong",
+    "principalParts": [
+      "ġesċieppan",
+      "ġesċōp",
+      "ġesċōpon",
+      "ġesċeapen"
+    ],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 6
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "maenan",
+    "lemma": "mǣnan",
+    "gloss": "to mean (signify); intend",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 6
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "fedan",
+    "lemma": "fēdan",
+    "gloss": "to feed",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 6
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gepencan",
+    "lemma": "ġeþenċan",
+    "gloss": "to remember; determine; resolve; devise; invent",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 6
+      }
+    ],
+    "notes": "Irregular: past ġeþōhte.",
+    "irregular": true,
+    "irregularForms": {
+      "pastStem": "ġeþōht"
+    }
+  },
+  {
+    "id": "nytan",
+    "lemma": "nytan",
+    "gloss": "not to know",
+    "type": "preterite-present",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 6
+      }
+    ],
+    "notes": "Negative of witan. 1st/3rd sg pres: nāt; pl: nyton. Past: nyste.",
+    "irregular": true,
+    "irregularForms": {
+      "nonFinite": {
+        "infinitive": "nytan",
+        "inflectedInfinitive": null,
+        "presentParticiple": null,
+        "pastParticiple": "ġenyten"
+      },
+      "imperative": {
+        "sg": null,
+        "pl": null
+      },
+      "presentInd": {
+        "sg1": "nāt",
+        "sg2": "nāst",
+        "sg3": "nāt",
+        "pl": "nyton"
+      },
+      "pastInd": {
+        "sg1": "nyste",
+        "sg2": "nystest",
+        "sg3": "nyste",
+        "pl": "nyston"
+      },
+      "presentSubj": {
+        "sg": "nyte",
+        "pl": "nyten"
+      },
+      "pastSubj": {
+        "sg": "nyste",
+        "pl": "nysten"
+      }
+    }
+  },
+  {
+    "id": "feallan",
+    "lemma": "feallan",
+    "gloss": "to fall; run (of bodies of water)",
+    "type": "strong",
+    "principalParts": [
+      "feallan",
+      "fēoll",
+      "fēollon",
+      "feallen"
+    ],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 6
+      }
+    ],
+    "notes": "",
     "irregular": false,
     "irregularForms": {}
   }

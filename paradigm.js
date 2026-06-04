@@ -42,7 +42,11 @@ var Paradigm = (function () {
     // 'e,ō,ō,æ': 'VII',   // hliehhan-type: ō past, æ in past participle
     'ie,ea,ēa,ie': 'V',     // ġiefan-type: ie in present/past-part (palatal umlaut)
     'ie,ō,ō,æ': 'VII',    // hliehhan-type: ie in present (breaking before h)
+    'ie,ēa,ēa,ie': 'V',    // onġietan-type: on- prefix, ie present, ēa past
+    'ie,ō,ō,ea': 'VI',     // ġesċieppan-type: ie present (i-mutation of a), ō past, ea past part
   };
+
+  var VERB_PREFIX_RE = /^(onġ|on|ā|for|ofer|ymb|wiþ|under)(?=[^aeiouāēīōūæǣ])/;
 
   // ── Helper: set a nested value by dot-notation key ──────────────────────────
 
@@ -151,15 +155,19 @@ var Paradigm = (function () {
 
   function inferClass(principalParts) {
     var stems = extractStems(principalParts);
+    var infStem = principalParts[0].replace(/an$/, '').normalize('NFC');
 
     // Only strip ge-/ġe- if the infinitive itself is genuinely prefixed
     // (e.g. ġesēon, ġewītan). Verbs like ġiefan have root-initial ġ, not a
     // separable prefix — stripping would corrupt their past-stem vowels.
     var isPrefixed = /^[ġg]e/.test(principalParts[0].normalize('NFC'));
+    var prefixMatch = VERB_PREFIX_RE.exec(isPrefixed ? '' : infStem);
+    var otherPrefix = prefixMatch ? prefixMatch[1] : null;
 
     function stemVowel(raw) {
       var s = raw.normalize('NFC');
       if (isPrefixed) s = s.replace(/^[ġg]e-?/, '');
+      if (otherPrefix) s = s.replace(new RegExp('^' + otherPrefix.replace('ġ', '[ġg]')), '');
       var v = extractStemVowel(s);
       // VOWEL_LIST orders 'an'/'am' above 'a'/'ā' (needed for applyIMutation),
       // so sang→'an', swamm→'am' etc. Collapse to the bare vowel for ablaut.
