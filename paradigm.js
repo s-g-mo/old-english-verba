@@ -401,6 +401,13 @@ var Paradigm = (function () {
           gloss: verb.gloss,
         };
         break;
+      case 'preterite-present':
+        result = {
+          class: 'Preterite-Present',
+          lemma: verb.lemma,
+          gloss: verb.gloss,
+        };
+        break;
       default:
         throw new Error('Unknown verb type: ' + verb.type);
     }
@@ -423,6 +430,9 @@ var Paradigm = (function () {
   return { conjugate, inferClass, extractStems };
 
 }());
+
+// Node.js / Jest compatibility
+if (typeof module !== 'undefined') module.exports = { Paradigm };
 
 // Sanity checks:
 // swimman  → 3sg swimþ   (doubled mm drops before þ)
