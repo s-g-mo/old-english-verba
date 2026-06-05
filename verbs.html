@@ -751,6 +751,13 @@
           <div class="tile-grid">${tiles}</div>
         </div>
         ${verb.notes ? `<div class="verb-notes"><p>${verb.notes}</p></div>` : ''}
+        ${verb.related && verb.related.length ? `<div class="verb-sources">
+          <span class="sources-label">Related</span>
+          ${verb.related.map(id => {
+        const rel = verbs.find(v => v.id === id);
+        return `<span class="tag-source tag-related" data-id="${id}" style="cursor:pointer">${rel ? rel.lemma : id}</span>`;
+      }).join('')}
+        </div>` : ''}
         ${verb.sources && verb.sources.length ? `<div class="verb-sources">
           <span class="sources-label">Sources</span>
           ${verb.sources.map(s =>
@@ -813,6 +820,11 @@
       const activeEl = document.querySelector('.verb-item.active');
       if (activeEl) activeEl.scrollIntoView({ block: 'nearest', inline: 'nearest' });
     }
+
+    document.getElementById('main-content').addEventListener('click', e => {
+      const rel = e.target.closest('.tag-related');
+      if (rel) selectVerb(rel.dataset.id);
+    });
 
     document.getElementById('sidebar').addEventListener('click', e => {
       const item = e.target.closest('.verb-item');
