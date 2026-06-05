@@ -106,6 +106,8 @@ var Paradigm = (function () {
 
   function applyCollision(stem, ending) {
     if (ending === 'þ') {
+      // ċġ cluster simplifies to ġ before consonantal endings (e.g. byċġ → byġ)
+      if (stem.slice(-2) === 'ċġ') stem = stem.slice(0, -2) + 'ġ';
       // ċ → c before consonantal endings
       if (stem.slice(-1) === 'ċ') stem = stem.slice(0, -1) + 'c';
       // Doubled consonants drop one before þ
@@ -132,6 +134,8 @@ var Paradigm = (function () {
     }
 
     if (ending === 'st') {
+      // ċġ cluster simplifies to ġ before consonantal endings (e.g. byċġ → byġ)
+      if (stem.slice(-2) === 'ċġ') stem = stem.slice(0, -2) + 'ġ';
       // ċ → c before consonantal endings
       if (stem.slice(-1) === 'ċ') stem = stem.slice(0, -1) + 'c';
       // Doubled consonants drop one before st
