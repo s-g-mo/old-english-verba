@@ -260,7 +260,7 @@ var Paradigm = (function () {
     var stem = verb.lemma.replace(/ian$/, '');
 
     return {
-      class: 'Weak 2',
+      class: 'Weak II',
       lemma: verb.lemma,
       gloss: verb.gloss,
 
@@ -342,7 +342,7 @@ var Paradigm = (function () {
       : degeminateAndEpenthesis(presentStem, 'þ');
 
     return {
-      class: 'Weak 1',
+      class: 'Weak I',
       lemma: verb.lemma,
       gloss: verb.gloss,
 
