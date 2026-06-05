@@ -316,10 +316,11 @@ var Paradigm = (function () {
 
   // ── pastDE ──────────────────────────────────────────────────────────────────
   function pastDE(stem) {
-    if (/t$/.test(stem)) return stem + 'e';      // set → sette, sōht → sōhte
+    if (/t$/.test(stem)) return stem + 'e';           // set → sette, sōht → sōhte
     if (/[pcfsþ]$/.test(stem)) return stem + 'te';    // beċīep → beċīepte
-    if (isShortRoot(stem)) return stem + 'ede';   // frem → fremede
-    return stem + 'de';                            // hīer → hīerde  ← was 'e', needs 'de'
+    if (/[lrn]d$/.test(stem)) return stem + 'e';      // seald → sealde, send → sende
+    if (isShortRoot(stem)) return stem + 'ede';       // frem → fremede
+    return stem + 'de';                               // hīer → hīerde  ← was 'e', needs 'de'
   }
 
   // ── conjugateWeak1 ──────────────────────────────────────────────────────────
