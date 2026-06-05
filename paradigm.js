@@ -313,6 +313,7 @@ var Paradigm = (function () {
   // ── pastDE ──────────────────────────────────────────────────────────────────
   function pastDE(stem) {
     if (/t$/.test(stem)) return stem + 'e';      // set → sette, sōht → sōhte
+    if (/[pcfsþ]$/.test(stem)) return stem + 'te';    // beċīep → beċīepte
     if (isShortRoot(stem)) return stem + 'ede';   // frem → fremede
     return stem + 'de';                            // hīer → hīerde  ← was 'e', needs 'de'
   }
@@ -325,7 +326,7 @@ var Paradigm = (function () {
     var pastStem = verb.irregularForms.pastStem || pastStemBase;
 
     // Don't add ġe- if the lemma already has a ge-/ġe- prefix
-    var ppPrefix = /^[ġg]e/.test(verb.lemma) ? '' : 'ġe';
+    var ppPrefix = /^[ġgb]e/.test(verb.lemma) ? '' : 'ġe';
 
     // Present sg2/sg3: plain degemination (no epenthesis) when verb.noEpenthesis is set
     var sg2PresInd = (verb.noEpenthesis && /(.)\1$/.test(presentStem))
