@@ -131,7 +131,7 @@
     "sources": [
       {
         "text": "osweald-bera",
-        "chapter": 1
+        "chapter": 7
       }
     ],
     "notes": "",
@@ -149,7 +149,12 @@
     "lemma": "singan",
     "gloss": "to sing",
     "type": "strong",
-    "sources": [],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 8
+      }
+    ],
     "notes": "",
     "principalParts": [
       "singan",
@@ -227,7 +232,12 @@
     "lemma": "lufian",
     "gloss": "to love",
     "type": "weak2",
-    "sources": [],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 7
+      }
+    ],
     "notes": "",
     "irregular": false,
     "irregularForms": {}
@@ -1895,5 +1905,516 @@
     "notes": "",
     "irregular": false,
     "irregularForms": {}
+  },
+  {
+    "id": "biddan",
+    "lemma": "biddan",
+    "gloss": "to ask for, beg; order, command",
+    "type": "strong",
+    "principalParts": [
+      "biddan",
+      "bæd",
+      "bǣdon",
+      "ġebeden"
+    ],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 7
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "fleon",
+    "lemma": "flēon",
+    "gloss": "to run away, run from; avoid",
+    "type": "strong",
+    "principalParts": [
+      "flēon",
+      "flēah",
+      "flugon",
+      "ġeflogen"
+    ],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 7
+      }
+    ],
+    "notes": "Irregular: contracted strong II. Present: hē flīehþ.",
+    "irregular": true,
+    "irregularForms": {
+      "nonFinite": {
+        "infinitive": "flēon",
+        "inflectedInfinitive": "tō flēonne",
+        "presentParticiple": "flēonde",
+        "pastParticiple": "ġeflogen"
+      },
+      "imperative": {
+        "sg": "flēoh",
+        "pl": "flēoþ"
+      },
+      "presentInd": {
+        "sg1": "flēo",
+        "sg2": "flīehst",
+        "sg3": "flīehþ",
+        "pl": "flēoþ"
+      },
+      "presentSubj": {
+        "sg": "flēo",
+        "pl": "flēon"
+      }
+    }
+  },
+  {
+    "id": "stigan",
+    "lemma": "stīgan",
+    "gloss": "to go up, climb, ascend",
+    "type": "strong",
+    "principalParts": [
+      "stīgan",
+      "stāh",
+      "stigon",
+      "ġestigen"
+    ],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 7
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "wepan",
+    "lemma": "wēpan",
+    "gloss": "to cry, weep",
+    "type": "strong",
+    "principalParts": [
+      "wēpan",
+      "wēop",
+      "wēopon",
+      "ġewōpen"
+    ],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 7
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "aberan",
+    "lemma": "āberan",
+    "gloss": "to carry, bear; tolerate, endure, suffer",
+    "type": "strong",
+    "principalParts": [
+      "āberan",
+      "ābær",
+      "ābǣron",
+      "āboren"
+    ],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 8
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "ateon",
+    "lemma": "ātēon",
+    "gloss": "to draw out, lead out",
+    "type": "strong",
+    "principalParts": [
+      "ātēon",
+      "ātēah",
+      "ātugon",
+      "ātogen"
+    ],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 8
+      }
+    ],
+    "notes": "Irregular: contracted strong II. Present: hē ātīehþ.",
+    "irregular": true,
+    "irregularForms": {
+      "nonFinite": {
+        "infinitive": "ātēon",
+        "inflectedInfinitive": "tō ātēonne",
+        "presentParticiple": "ātēonde",
+        "pastParticiple": "ātogen"
+      },
+      "imperative": {
+        "sg": "ātēoh",
+        "pl": "ātēoþ"
+      },
+      "presentInd": {
+        "sg1": "ātēo",
+        "sg2": "ātīehst",
+        "sg3": "ātīehþ",
+        "pl": "ātēoþ"
+      },
+      "presentSubj": {
+        "sg": "ātēo",
+        "pl": "ātēon"
+      }
+    }
+  },
+  {
+    "id": "beciepan",
+    "lemma": "beċīepan",
+    "gloss": "to sell",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 8
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "bycgan",
+    "lemma": "byċġan",
+    "gloss": "to buy",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 8
+      }
+    ],
+    "notes": "Irregular: past bohte.",
+    "irregular": true,
+    "irregularForms": {
+      "pastStem": "boht"
+    }
+  },
+  {
+    "id": "clipian",
+    "lemma": "clipian",
+    "gloss": "to call out",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 8
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "freosan",
+    "lemma": "frēosan",
+    "gloss": "to freeze",
+    "type": "strong",
+    "principalParts": [
+      "frēosan",
+      "frēas",
+      "fruron",
+      "ġefroren"
+    ],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 8
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gesecgan",
+    "lemma": "ġeseċġan",
+    "gloss": "to say, tell; declare, proclaim",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 8
+      }
+    ],
+    "notes": "Irregular: past ġesæġde.",
+    "related": [
+      "secgan"
+    ],
+    "irregular": true,
+    "irregularForms": {
+      "presentInd": {
+        "sg1": "ġeseċġe",
+        "sg2": "ġesæġst",
+        "sg3": "ġesæġþ",
+        "pl": "ġeseċġaþ"
+      },
+      "pastInd": {
+        "sg1": "ġesæġde",
+        "sg2": "ġesæġdest",
+        "sg3": "ġesæġde",
+        "pl": "ġesæġdon"
+      },
+      "presentSubj": {
+        "sg": "ġeseċġe",
+        "pl": "ġeseċġen"
+      },
+      "pastSubj": {
+        "sg": "ġesæġde",
+        "pl": "ġesæġden"
+      },
+      "imperative": {
+        "sg": "ġesæġe",
+        "pl": "ġeseċġaþ"
+      },
+      "nonFinite.pastParticiple": "ġesæġd"
+    }
+  },
+  {
+    "id": "hatian",
+    "lemma": "hatian",
+    "gloss": "to hate",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 8
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "hweorfan",
+    "lemma": "hweorfan",
+    "gloss": "to turn, go; return; wander, roam; change",
+    "type": "strong",
+    "principalParts": [
+      "hweorfan",
+      "hwearf",
+      "hwurfon",
+      "ġehworfen"
+    ],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 8
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "hyngran",
+    "lemma": "hyngran",
+    "gloss": "to be hungry",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 8
+      }
+    ],
+    "notes": "Impersonal: typically used as mē hyngreþ 'I am hungry' (lit. 'it hungers me').",
+    "irregular": true,
+    "irregularForms": {
+      "presentInd": {
+        "sg1": "hyngre",
+        "sg2": "hyngrest",
+        "sg3": "hyngreþ",
+        "pl": "hyngraþ"
+      },
+      "pastInd": {
+        "sg1": "hyngrede",
+        "sg2": "hyngredest",
+        "sg3": "hyngrede",
+        "pl": "hyngredon"
+      },
+      "presentSubj": {
+        "sg": "hyngre",
+        "pl": "hyngren"
+      },
+      "pastSubj": {
+        "sg": "hyngrede",
+        "pl": "hyngreden"
+      },
+      "imperative": {
+        "sg": "hyngre",
+        "pl": "hyngraþ"
+      },
+      "nonFinite": {
+        "infinitive": "hyngran",
+        "inflectedInfinitive": "tō hyngrenne",
+        "presentParticiple": "hyngrende",
+        "pastParticiple": "ġehyngred"
+      }
+    }
+  },
+  {
+    "id": "onfon",
+    "lemma": "onfōn",
+    "gloss": "to receive, accept; perceive",
+    "type": "strong",
+    "principalParts": [
+      "onfōn",
+      "onfēng",
+      "onfēngon",
+      "onfangen"
+    ],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 8
+      }
+    ],
+    "notes": "Irregular: contracted strong VII. Present: hē onfēhþ.",
+    "irregular": true,
+    "irregularForms": {
+      "nonFinite": {
+        "infinitive": "onfōn",
+        "inflectedInfinitive": "tō onfōnne",
+        "presentParticiple": "onfōnde",
+        "pastParticiple": "onfangen"
+      },
+      "imperative": {
+        "sg": "onfōh",
+        "pl": "onfōþ"
+      },
+      "presentInd": {
+        "sg1": "onfō",
+        "sg2": "onfēhst",
+        "sg3": "onfēhþ",
+        "pl": "onfōþ"
+      },
+      "presentSubj": {
+        "sg": "onfō",
+        "pl": "onfōn"
+      }
+    }
+  },
+  {
+    "id": "raedan",
+    "lemma": "rǣdan",
+    "gloss": "to read; advise; explain, interpret",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 8
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "sellan",
+    "lemma": "sellan",
+    "gloss": "to give, sell; betray",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 8
+      }
+    ],
+    "notes": "Irregular: past sealde.",
+    "irregular": true,
+    "irregularForms": {
+      "pastStem": "seald",
+      "nonFinite.pastParticiple": "ġeseald"
+    }
+  },
+  {
+    "id": "sorgian",
+    "lemma": "sorgian",
+    "gloss": "to worry; grieve",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 8
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "standan",
+    "lemma": "standan",
+    "gloss": "to stand; stand still, stop",
+    "type": "strong",
+    "principalParts": [
+      "standan",
+      "stōd",
+      "stōdon",
+      "ġestanden"
+    ],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 8
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "wealcan",
+    "lemma": "wealcan",
+    "gloss": "to move around; revolve; roll",
+    "type": "strong",
+    "principalParts": [
+      "wealcan",
+      "wēolc",
+      "wēolcon",
+      "ġewealcen"
+    ],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 8
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "pyncan",
+    "lemma": "þynċan",
+    "gloss": "to seem (to someone)",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 8
+      }
+    ],
+    "notes": "Irregular: past þūhte. Impersonal: typically used with dative experiencer, e.g. mē þyncþ 'it seems to me'.",
+    "irregular": true,
+    "irregularForms": {
+      "pastStem": "þūht"
+    }
   }
 ]

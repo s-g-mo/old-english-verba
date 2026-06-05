@@ -90,10 +90,14 @@ var Paradigm = (function () {
   // ── applyIMutation ──────────────────────────────────────────────────────────
 
   function applyIMutation(stem) {
-    var vowel = extractStemVowel(stem);
+    var prefixMatch = VERB_PREFIX_RE.exec(stem);
+    var prefix = prefixMatch ? prefixMatch[1] : '';
+    var root = prefixMatch ? stem.slice(prefix.length) : stem;
+
+    var vowel = extractStemVowel(root);
     if (vowel && I_MUTATION.hasOwnProperty(vowel)) {
-      var idx = stem.indexOf(vowel);
-      return stem.slice(0, idx) + I_MUTATION[vowel] + stem.slice(idx + vowel.length);
+      var idx = root.indexOf(vowel);
+      return prefix + root.slice(0, idx) + I_MUTATION[vowel] + root.slice(idx + vowel.length);
     }
     return stem;
   }
@@ -102,6 +106,8 @@ var Paradigm = (function () {
 
   function applyCollision(stem, ending) {
     if (ending === 'þ') {
+      // ċġ cluster simplifies to ġ before consonantal endings (e.g. byċġ → byġ)
+      if (stem.slice(-2) === 'ċġ') stem = stem.slice(0, -2) + 'ġ';
       // ċ → c before consonantal endings
       if (stem.slice(-1) === 'ċ') stem = stem.slice(0, -1) + 'c';
       // Doubled consonants drop one before þ
@@ -128,6 +134,8 @@ var Paradigm = (function () {
     }
 
     if (ending === 'st') {
+      // ċġ cluster simplifies to ġ before consonantal endings (e.g. byċġ → byġ)
+      if (stem.slice(-2) === 'ċġ') stem = stem.slice(0, -2) + 'ġ';
       // ċ → c before consonantal endings
       if (stem.slice(-1) === 'ċ') stem = stem.slice(0, -1) + 'c';
       // Doubled consonants drop one before st
@@ -252,7 +260,7 @@ var Paradigm = (function () {
     var stem = verb.lemma.replace(/ian$/, '');
 
     return {
-      class: 'Weak 2',
+      class: 'Weak II',
       lemma: verb.lemma,
       gloss: verb.gloss,
 
@@ -308,9 +316,11 @@ var Paradigm = (function () {
 
   // ── pastDE ──────────────────────────────────────────────────────────────────
   function pastDE(stem) {
-    if (/t$/.test(stem)) return stem + 'e';      // set → sette, sōht → sōhte
-    if (isShortRoot(stem)) return stem + 'ede';   // frem → fremede
-    return stem + 'de';                            // hīer → hīerde  ← was 'e', needs 'de'
+    if (/t$/.test(stem)) return stem + 'e';           // set → sette, sōht → sōhte
+    if (/[pcfsþ]$/.test(stem)) return stem + 'te';    // beċīep → beċīepte
+    if (/[lrn]d$/.test(stem)) return stem + 'e';      // seald → sealde, send → sende
+    if (isShortRoot(stem)) return stem + 'ede';       // frem → fremede
+    return stem + 'de';                               // hīer → hīerde  ← was 'e', needs 'de'
   }
 
   // ── conjugateWeak1 ──────────────────────────────────────────────────────────
@@ -321,7 +331,7 @@ var Paradigm = (function () {
     var pastStem = verb.irregularForms.pastStem || pastStemBase;
 
     // Don't add ġe- if the lemma already has a ge-/ġe- prefix
-    var ppPrefix = /^[ġg]e/.test(verb.lemma) ? '' : 'ġe';
+    var ppPrefix = /^[ġgb]e/.test(verb.lemma) ? '' : 'ġe';
 
     // Present sg2/sg3: plain degemination (no epenthesis) when verb.noEpenthesis is set
     var sg2PresInd = (verb.noEpenthesis && /(.)\1$/.test(presentStem))
@@ -332,7 +342,7 @@ var Paradigm = (function () {
       : degeminateAndEpenthesis(presentStem, 'þ');
 
     return {
-      class: 'Weak 1',
+      class: 'Weak I',
       lemma: verb.lemma,
       gloss: verb.gloss,
 

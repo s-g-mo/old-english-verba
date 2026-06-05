@@ -589,8 +589,8 @@
 
     function typeLabel(verb, classLabel) {
       if (verb.type === 'strong') return classLabel || 'Strong';
-      if (verb.type === 'weak1')  return 'Weak I';
-      if (verb.type === 'weak2')  return 'Weak II';
+      if (verb.type === 'weak1') return 'Weak I';
+      if (verb.type === 'weak2') return 'Weak II';
       if (verb.type === 'preterite-present') return 'Pret.-Pres.';
       if (verb.type === 'irregular') return 'Irregular';
       return verb.type;
@@ -654,32 +654,32 @@
 
       const classLabel = c.class === 'Irregular' && verb.type === 'preterite-present'
         ? 'Preterite-Present'
-        : (c.class || verb.type);
+        : (c.class || typeLabel(verb, null));
       const patternLabel = verb.type === 'strong' ? 'Ablaut series' : 'Stem pattern';
       const CLASS_PATTERNS_LOCAL = {
-        'Strong I':    'ī · ā · i · i',
-        'Strong IIa':  'ēo · ēa · u · o',
-        'Strong IIb':  'ū · ēa · u · o',
+        'Strong I': 'ī · ā · i · i',
+        'Strong IIa': 'ēo · ēa · u · o',
+        'Strong IIb': 'ū · ēa · u · o',
         'Strong IIIa': 'i · a · u · u',
         'Strong IIIb': 'e · æ · u · o',
-        'Strong IV':   'e · æ · ǣ · o',
-        'Strong V':    'e · æ · ǣ · e',
-        'Strong VI':   'a · ō · ō · a',
-        'Strong VII':  'ā/ō · ē/ēo · ē/ēo · ā/ō',
-        'Weak 1':      '-de / -te past',
-        'Weak 2':      '-ode past · -ian infinitive',
+        'Strong IV': 'e · æ · ǣ · o',
+        'Strong V': 'e · æ · ǣ · e',
+        'Strong VI': 'a · ō · ō · a',
+        'Strong VII': 'ā/ō · ē/ēo · ē/ēo · ā/ō',
+        'Weak I': '-de / -te past',
+        'Weak II': '-ode past · -ian infinitive',
       };
       const pattern = CLASS_PATTERNS_LOCAL[classLabel] || '';
 
-      const pi  = c.presentInd  || {};
-      const pai = c.pastInd     || {};
-      const ps  = c.presentSubj || {};
-      const pas = c.pastSubj    || {};
-      const imp = c.imperative  || {};
-      const nf  = c.nonFinite   || {};
+      const pi = c.presentInd || {};
+      const pai = c.pastInd || {};
+      const ps = c.presentSubj || {};
+      const pas = c.pastSubj || {};
+      const imp = c.imperative || {};
+      const nf = c.nonFinite || {};
 
-      const altPi  = c.altPresentInd  || null;
-      const altPs  = c.altPresentSubj || null;
+      const altPi = c.altPresentInd || null;
+      const altPs = c.altPresentSubj || null;
       const hasDual = !!altPi;
 
       const dualColHeader = (col1, col2) =>
@@ -691,45 +691,45 @@
 
       const presIndRows = hasDual
         ? dualColHeader('bēo–', 'eom–') +
-          rowDual('1st sg.', pi.sg1, altPi.sg1) +
-          rowDual('2nd sg.', pi.sg2, altPi.sg2) +
-          rowDual('3rd sg.', pi.sg3, altPi.sg3) +
-          rowDual('plural',  pi.pl,  altPi.pl)
+        rowDual('1st sg.', pi.sg1, altPi.sg1) +
+        rowDual('2nd sg.', pi.sg2, altPi.sg2) +
+        rowDual('3rd sg.', pi.sg3, altPi.sg3) +
+        rowDual('plural', pi.pl, altPi.pl)
         : row('1st sg.', pi.sg1) +
-          row('2nd sg.', pi.sg2) +
-          row('3rd sg.', pi.sg3) +
-          row('plural',  pi.pl);
+        row('2nd sg.', pi.sg2) +
+        row('3rd sg.', pi.sg3) +
+        row('plural', pi.pl);
 
       const pastIndRows =
         row('1st sg.', pai.sg1) +
         row('2nd sg.', pai.sg2) +
         row('3rd sg.', pai.sg3) +
-        row('plural',  pai.pl);
+        row('plural', pai.pl);
 
       const presSubjRows = hasDual && altPs
         ? dualColHeader('bēo–', 'eom–') +
-          rowDual('singular', ps.sg, altPs.sg) +
-          rowDual('plural',   ps.pl, altPs.pl)
+        rowDual('singular', ps.sg, altPs.sg) +
+        rowDual('plural', ps.pl, altPs.pl)
         : row('singular', ps.sg) +
-          row('plural',   ps.pl);
+        row('plural', ps.pl);
 
       const pastSubjRows =
         row('singular', pas.sg) +
-        row('plural',   pas.pl);
+        row('plural', pas.pl);
 
       const gridSections =
-        section('Present Indicative',  presIndRows,  TIPS.pres_ind)  +
-        section('Past Indicative',     pastIndRows,  TIPS.past_ind)  +
+        section('Present Indicative', presIndRows, TIPS.pres_ind) +
+        section('Past Indicative', pastIndRows, TIPS.past_ind) +
         section('Present Subjunctive', presSubjRows, TIPS.pres_subj) +
-        section('Past Subjunctive',    pastSubjRows, TIPS.past_subj);
+        section('Past Subjunctive', pastSubjRows, TIPS.past_subj);
 
       const tiles =
-        tile('Infinitive',           nf.infinitive,          TIPS.infinitive) +
-        tile('Inflected Infinitive', nf.inflectedInfinitive, TIPS.inf_infl)   +
-        tile('Present Participle',   nf.presentParticiple,   TIPS.pres_part)  +
-        tile('Past Participle',      nf.pastParticiple,      TIPS.past_part)  +
-        tile('Imperative Sg.',       imp.sg,                 TIPS.imperative) +
-        tile('Imperative Pl.',       imp.pl,                 TIPS.imperative);
+        tile('Infinitive', nf.infinitive, TIPS.infinitive) +
+        tile('Inflected Infinitive', nf.inflectedInfinitive, TIPS.inf_infl) +
+        tile('Present Participle', nf.presentParticiple, TIPS.pres_part) +
+        tile('Past Participle', nf.pastParticiple, TIPS.past_part) +
+        tile('Imperative Sg.', imp.sg, TIPS.imperative) +
+        tile('Imperative Pl.', imp.pl, TIPS.imperative);
 
       return `<div class="verb-view">
         <div class="verb-header">
@@ -751,11 +751,18 @@
           <div class="tile-grid">${tiles}</div>
         </div>
         ${verb.notes ? `<div class="verb-notes"><p>${verb.notes}</p></div>` : ''}
+        ${verb.related && verb.related.length ? `<div class="verb-sources">
+          <span class="sources-label">Related</span>
+          ${verb.related.map(id => {
+        const rel = verbs.find(v => v.id === id);
+        return `<span class="tag-source tag-related" data-id="${id}" style="cursor:pointer">${rel ? rel.lemma : id}</span>`;
+      }).join('')}
+        </div>` : ''}
         ${verb.sources && verb.sources.length ? `<div class="verb-sources">
           <span class="sources-label">Sources</span>
           ${verb.sources.map(s =>
-            `<span class="tag-source">${SOURCE_NAMES[s.text] || s.text} · Ch. ${s.chapter}</span>`
-          ).join('')}
+        `<span class="tag-source">${SOURCE_NAMES[s.text] || s.text} · Ch. ${s.chapter}</span>`
+      ).join('')}
         </div>` : ''}
       </div>`;
     }
@@ -770,9 +777,9 @@
         : verbs;
 
       const groups = [
-        { label: 'Strong Verbs',  types: ['strong'] },
-        { label: 'Weak Verbs',    types: ['weak1', 'weak2'] },
-        { label: 'Other',         types: ['preterite-present', 'irregular'] }
+        { label: 'Strong Verbs', types: ['strong'] },
+        { label: 'Weak Verbs', types: ['weak1', 'weak2'] },
+        { label: 'Other', types: ['preterite-present', 'irregular'] }
       ];
 
       let html = '';
@@ -783,14 +790,13 @@
         for (const v of items) {
           html += `<div class="verb-item${activeId === v.id ? ' active' : ''}" data-id="${v.id}">
             <span class="verb-oe">${v.lemma}</span>
-            <span class="tag ${tagClass(v.type)}">${
-    v.type === 'strong'
-      ? ('Strong ' + (Paradigm.inferClass(v.principalParts) || ''))
-      : v.type === 'weak1' ? 'Weak I'
-      : v.type === 'weak2' ? 'Weak II'
-      : v.type === 'preterite-present' ? 'Pret.-Pres.'
-      : 'Irregular'
-  }</span>
+            <span class="tag ${tagClass(v.type)}">${v.type === 'strong'
+              ? ('Strong ' + (Paradigm.inferClass(v.principalParts) || ''))
+              : v.type === 'weak1' ? 'Weak I'
+                : v.type === 'weak2' ? 'Weak II'
+                  : v.type === 'preterite-present' ? 'Pret.-Pres.'
+                    : 'Irregular'
+            }</span>
           </div>`;
         }
         html += `</div>`;
@@ -814,6 +820,11 @@
       const activeEl = document.querySelector('.verb-item.active');
       if (activeEl) activeEl.scrollIntoView({ block: 'nearest', inline: 'nearest' });
     }
+
+    document.getElementById('main-content').addEventListener('click', e => {
+      const rel = e.target.closest('.tag-related');
+      if (rel) selectVerb(rel.dataset.id);
+    });
 
     document.getElementById('sidebar').addEventListener('click', e => {
       const item = e.target.closest('.verb-item');
