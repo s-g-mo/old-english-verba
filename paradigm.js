@@ -90,10 +90,14 @@ var Paradigm = (function () {
   // ── applyIMutation ──────────────────────────────────────────────────────────
 
   function applyIMutation(stem) {
-    var vowel = extractStemVowel(stem);
+    var prefixMatch = VERB_PREFIX_RE.exec(stem);
+    var prefix = prefixMatch ? prefixMatch[1] : '';
+    var root = prefixMatch ? stem.slice(prefix.length) : stem;
+
+    var vowel = extractStemVowel(root);
     if (vowel && I_MUTATION.hasOwnProperty(vowel)) {
-      var idx = stem.indexOf(vowel);
-      return stem.slice(0, idx) + I_MUTATION[vowel] + stem.slice(idx + vowel.length);
+      var idx = root.indexOf(vowel);
+      return prefix + root.slice(0, idx) + I_MUTATION[vowel] + root.slice(idx + vowel.length);
     }
     return stem;
   }
