@@ -161,7 +161,7 @@ var Paradigm = (function () {
 
   // ── inferClass ──────────────────────────────────────────────────────────────
 
-  function inferClass(principalParts) {
+  function inferClass(principalParts, verb) {
     var stems = extractStems(principalParts);
     var infStem = principalParts[0].replace(/an$/, '').normalize('NFC');
 
@@ -169,8 +169,9 @@ var Paradigm = (function () {
     // (e.g. ġesēon, ġewītan). Verbs like ġiefan have root-initial ġ, not a
     // separable prefix — stripping would corrupt their past-stem vowels.
     var isPrefixed = /^[ġg]e/.test(principalParts[0].normalize('NFC'));
+    var verbPrefix = verb && verb.verbPrefix ? verb.verbPrefix : null;
     var prefixMatch = VERB_PREFIX_RE.exec(isPrefixed ? '' : infStem);
-    var otherPrefix = prefixMatch ? prefixMatch[1] : null;
+    var otherPrefix = verbPrefix || (prefixMatch ? prefixMatch[1] : null);
 
     function stemVowel(raw) {
       var s = raw.normalize('NFC');
@@ -217,7 +218,7 @@ var Paradigm = (function () {
       : mutatedStem;
 
     return {
-      class: 'Strong ' + inferClass(verb.principalParts),
+      class: 'Strong ' + inferClass(verb.principalParts, verb),
       lemma: verb.lemma,
       gloss: verb.gloss,
 

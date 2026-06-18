@@ -187,3 +187,31 @@ def test_strong_verb_infinitive_matches_lemma():
                 f"{vid}: lemma={lemma!r} but principalParts[0]={inf!r}"
             )
     assert not failures, "Infinitive/lemma mismatches:\n" + "\n".join(failures)
+
+
+# ── Test 11 ─────────────────────────────────────────────────────────────────
+
+def test_strong_verbs_infer_known_class():
+    """All strong verbs should resolve to a known ablaut class via the engine."""
+    import subprocess
+
+    verbs = load_verbs()
+    strong = [v for v in verbs if v.get('type') == 'strong']
+
+    failures = []
+    for verb in strong:
+        result = subprocess.run(
+            ['node', '-e', f"""
+                const {{ Paradigm }} = require('./paradigm.js');
+                const verb = {json.dumps(verb)};
+                const result = Paradigm.conjugate(verb);
+                console.log(result.class);
+                """
+            ],
+            capture_output=True, text=True, cwd='.'
+        )
+        cls = result.stdout.strip()
+        if 'unknown' in cls.lower():
+            failures.append(f"{verb['id']}: inferred '{cls}' — add verbPrefix or new ABLAUT_CLASSES entry")
+
+    assert not failures, 'Strong verbs with unknown class:\n' + '\n'.join(failures)
