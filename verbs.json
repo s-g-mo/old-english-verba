@@ -2416,5 +2416,546 @@
     "irregularForms": {
       "pastStem": "þūht"
     }
+  },
+  {
+    "id": "swigian",
+    "lemma": "swīgian",
+    "gloss": "to be silent",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 9
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "weorpian",
+    "lemma": "weorþian",
+    "gloss": "to value, worship, honour, praise",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 9
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "beswican",
+    "lemma": "beswīcan",
+    "gloss": "to deceive, seduce",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 9
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "beswīcan",
+      "beswāc",
+      "beswicon",
+      "beswicen"
+    ],
+    "irregular": false,
+    "irregularForms": {},
+    "verbPrefix": "be"
+  },
+  {
+    "id": "eacnian",
+    "lemma": "ēacnian",
+    "gloss": "to be increased; bring forth",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 9
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gelician",
+    "lemma": "ġelīcian",
+    "gloss": "to delight, please",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 9
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "geseman",
+    "lemma": "ġesēman",
+    "gloss": "to settle, make peace with",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 9
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gesettan",
+    "lemma": "ġesettan",
+    "gloss": "to set, appoint",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 9
+      }
+    ],
+    "notes": "",
+    "irregular": true,
+    "noEpenthesis": true,
+    "irregularForms": {
+      "presentInd": {
+        "sg1": "ġesette",
+        "sg2": "ġesetst",
+        "sg3": "ġesett",
+        "pl": "ġesettaþ"
+      },
+      "pastInd": {
+        "sg1": "ġesette",
+        "sg2": "ġesettest",
+        "sg3": "ġesette",
+        "pl": "ġesetton"
+      },
+      "pastSubj": {
+        "sg": "ġesette",
+        "pl": "ġesetten"
+      },
+      "nonFinite.pastParticiple": "ġesett"
+    }
+  },
+  {
+    "id": "gepwarian",
+    "lemma": "ġeþwǣrian",
+    "gloss": "to agree",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 9
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "haelan",
+    "lemma": "hǣlan",
+    "gloss": "to heal, save",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 9
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "healdan",
+    "lemma": "healdan",
+    "gloss": "to hold, keep, protect, preserve",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 9
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "healdan",
+      "hēold",
+      "hēoldon",
+      "ġehealden"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "leornian",
+    "lemma": "leornian",
+    "gloss": "to learn",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 9
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "libban",
+    "lemma": "libban",
+    "gloss": "to live, remain",
+    "type": "irregular",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 9
+      }
+    ],
+    "notes": "Class 3 weak verb. Present stem alternates libb-/leof-.",
+    "irregular": true,
+    "irregularForms": {
+      "nonFinite": {
+        "infinitive": "libban",
+        "inflectedInfinitive": "tō libbanne",
+        "presentParticiple": "libbende",
+        "pastParticiple": "ġelīfd"
+      },
+      "imperative": {
+        "sg": "leofa",
+        "pl": "leofiaþ"
+      },
+      "presentInd": {
+        "sg1": "libbe",
+        "sg2": "leofast",
+        "sg3": "leofaþ",
+        "pl": "libbaþ"
+      },
+      "pastInd": {
+        "sg1": "lifde",
+        "sg2": "lifdest",
+        "sg3": "lifde",
+        "pl": "lifdon"
+      },
+      "presentSubj": {
+        "sg": "libbe",
+        "pl": "libben"
+      },
+      "pastSubj": {
+        "sg": "lifde",
+        "pl": "lifden"
+      }
+    }
+  },
+  {
+    "id": "murcnian",
+    "lemma": "murcnian",
+    "gloss": "to complain, murmur",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 9
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "becuman",
+    "lemma": "becuman",
+    "gloss": "to arrive at, reach; happen, occur, befall",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 10
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "becuman",
+      "becōm",
+      "becōmon",
+      "becumen"
+    ],
+    "irregular": false,
+    "irregularForms": {},
+    "verbPrefix": "be"
+  },
+  {
+    "id": "began",
+    "lemma": "begān",
+    "gloss": "to visit, occupy, inhabit; practise, go about",
+    "type": "irregular",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 10
+      }
+    ],
+    "notes": "Compound of gān. Present uses bē- + gān forms; past uses -ēode (weak past of gān).",
+    "irregular": true,
+    "irregularForms": {
+      "nonFinite": {
+        "infinitive": "begān",
+        "inflectedInfinitive": "tō begānne",
+        "presentParticiple": "begānde",
+        "pastParticiple": "begān"
+      },
+      "imperative": {
+        "sg": "begā",
+        "pl": "begāþ"
+      },
+      "presentInd": {
+        "sg1": "begā",
+        "sg2": "begǣst",
+        "sg3": "begǣþ",
+        "pl": "begāþ"
+      },
+      "pastInd": {
+        "sg1": "beēode",
+        "sg2": "beēodest",
+        "sg3": "beēode",
+        "pl": "beēodon"
+      },
+      "presentSubj": {
+        "sg": "begā",
+        "pl": "begān"
+      },
+      "pastSubj": {
+        "sg": "beēode",
+        "pl": "beēoden"
+      }
+    }
+  },
+  {
+    "id": "beswingan",
+    "lemma": "beswingan",
+    "gloss": "to beat",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 10
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "beswingan",
+      "beswang",
+      "beswungon",
+      "beswungen"
+    ],
+    "irregular": false,
+    "irregularForms": {},
+    "verbPrefix": "be"
+  },
+  {
+    "id": "bringan",
+    "lemma": "bringan",
+    "gloss": "to bring",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 10
+      }
+    ],
+    "notes": "",
+    "irregular": true,
+    "irregularForms": {
+      "pastStem": "brōht",
+      "nonFinite.pastParticiple": "ġebrōht"
+    }
+  },
+  {
+    "id": "drincan",
+    "lemma": "drincan",
+    "gloss": "to drink",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 10
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "drincan",
+      "dranc",
+      "druncon",
+      "ġedruncen"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "durran",
+    "lemma": "durran",
+    "gloss": "to dare",
+    "type": "preterite-present",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 10
+      }
+    ],
+    "notes": "Preterite-present. 1st/3rd sg pres: dearr; 2nd sg: dearst; pl: durron. Past: dorste.",
+    "irregular": true,
+    "irregularForms": {
+      "nonFinite": {
+        "infinitive": "durran",
+        "inflectedInfinitive": null,
+        "presentParticiple": "durrende",
+        "pastParticiple": null
+      },
+      "imperative": {
+        "sg": null,
+        "pl": null
+      },
+      "presentInd": {
+        "sg1": "dearr",
+        "sg2": "dearst",
+        "sg3": "dearr",
+        "pl": "durron"
+      },
+      "pastInd": {
+        "sg1": "dorste",
+        "sg2": "dorstest",
+        "sg3": "dorste",
+        "pl": "dorston"
+      },
+      "presentSubj": {
+        "sg": "durre",
+        "pl": "durren"
+      },
+      "pastSubj": {
+        "sg": "dorste",
+        "pl": "dorsten"
+      }
+    }
+  },
+  {
+    "id": "erian",
+    "lemma": "erian",
+    "gloss": "to plough",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 10
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "forgietan",
+    "lemma": "forġietan",
+    "gloss": "to forget",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 10
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "forġietan",
+      "forġeat",
+      "forġēaton",
+      "forġieten"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "forlatan",
+    "lemma": "forlǣtan",
+    "gloss": "to leave, abandon; allow, permit",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 10
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "forlǣtan",
+      "forlēt",
+      "forlēton",
+      "forlǣten"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "geocian",
+    "lemma": "ġeocian",
+    "gloss": "to yoke, join",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 10
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "swincan",
+    "lemma": "swincan",
+    "gloss": "to toil, struggle",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 10
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "swincan",
+      "swanc",
+      "swuncon",
+      "ġeswuncen"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "piewan",
+    "lemma": "þīewan",
+    "gloss": "to press, drive, subjugate",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 10
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
   }
 ]

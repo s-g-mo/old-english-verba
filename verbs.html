@@ -791,7 +791,7 @@
           html += `<div class="verb-item${activeId === v.id ? ' active' : ''}" data-id="${v.id}">
             <span class="verb-oe">${v.lemma}</span>
             <span class="tag ${tagClass(v.type)}">${v.type === 'strong'
-              ? ('Strong ' + (Paradigm.inferClass(v.principalParts) || ''))
+              ? ('Strong ' + (Paradigm.inferClass(v.principalParts, v) || ''))
               : v.type === 'weak1' ? 'Weak I'
                 : v.type === 'weak2' ? 'Weak II'
                   : v.type === 'preterite-present' ? 'Pret.-Pres.'
