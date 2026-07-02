@@ -888,7 +888,8 @@
       "wacian"
     ],
     "irregular": false,
-    "irregularForms": {}
+    "irregularForms": {},
+    "verbPrefix": "ā"
   },
   {
     "id": "cuman",
@@ -1618,7 +1619,8 @@
     ],
     "notes": "",
     "irregular": false,
-    "irregularForms": {}
+    "irregularForms": {},
+    "verbPrefix": "æt"
   },
   {
     "id": "laeran",
@@ -2952,6 +2954,598 @@
       {
         "text": "osweald-bera",
         "chapter": 10
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "arisan",
+    "lemma": "ārīsan",
+    "gloss": "to arise, rise up; get up",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 11
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "ārīsan",
+      "ārās",
+      "ārison",
+      "ārisen"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "brucan",
+    "lemma": "brūcan",
+    "gloss": "to use, enjoy; benefit from",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 11
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "brūcan",
+      "brēac",
+      "brucon",
+      "ġebrocen"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "forbeodan",
+    "lemma": "forbēodan",
+    "gloss": "to forbid; restrain",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 11
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "forbēodan",
+      "forbēad",
+      "forbudon",
+      "forboden"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "forsittan",
+    "lemma": "forsittan",
+    "gloss": "to be absent from; neglect",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 11
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "forsittan",
+      "forsæt",
+      "forsǣton",
+      "forseten"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gecypan",
+    "lemma": "ġecȳþan",
+    "gloss": "to make known, announce, proclaim",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 11
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gesawan",
+    "lemma": "ġesāwan",
+    "gloss": "to sow",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 11
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "ġesāwan",
+      "ġesēow",
+      "ġesēowon",
+      "ġesāwen"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "laetan",
+    "lemma": "lǣtan",
+    "gloss": "to allow, cause; leave (undone); suppose, consider",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 11
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "lǣtan",
+      "lēt",
+      "lēton",
+      "ġelǣten"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "macian",
+    "lemma": "macian",
+    "gloss": "to make",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 11
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "tholian",
+    "lemma": "þolian",
+    "gloss": "to suffer, endure; put up with, tolerate; miss (a person)",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 11
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "aefterfylgan",
+    "lemma": "æfterfylġan",
+    "gloss": "to pursue",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 12
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "verbPrefix": "æfter"
+  },
+  {
+    "id": "aetstandan",
+    "lemma": "ætstandan",
+    "gloss": "to stand still, stop, cease",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 12
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "ætstandan",
+      "ætstōd",
+      "ætstōdon",
+      "ætstanden"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "aetwindan",
+    "lemma": "ætwindan",
+    "gloss": "to escape (from)",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 12
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "ætwindan",
+      "ætwand",
+      "ætwundon",
+      "ætwunden"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "beorgan",
+    "lemma": "beorgan",
+    "gloss": "to guard, protect",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 12
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "beorgan",
+      "bearg",
+      "burgon",
+      "ġeborgen"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "besargian",
+    "lemma": "besārgian",
+    "gloss": "to lament, mourn; be sorry",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 12
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "flitan",
+    "lemma": "flītan",
+    "gloss": "to quarrel, contend, strive",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 12
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "flītan",
+      "flāt",
+      "fliton",
+      "ġefliten"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "forgiefan",
+    "lemma": "forġiefan",
+    "gloss": "to give, grant; forgive",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 12
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "forġiefan",
+      "forġeaf",
+      "forġēafon",
+      "forġiefen"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gebidan",
+    "lemma": "ġebīdan",
+    "gloss": "to await, wait for; experience",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 12
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "ġebīdan",
+      "ġebād",
+      "ġebidon",
+      "ġebiden"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gefeallan",
+    "lemma": "ġefeallan",
+    "gloss": "to fall",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 12
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "ġefeallan",
+      "ġefēoll",
+      "ġefēollon",
+      "ġefeallen"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "geliefan",
+    "lemma": "ġelīefan",
+    "gloss": "to believe; believe in",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 12
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "genealaecan",
+    "lemma": "ġenēalǣċan",
+    "gloss": "to approach, draw near",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 12
+      }
+    ],
+    "notes": "Irregular past: ġenēalǣhte.",
+    "irregular": true,
+    "irregularForms": {
+      "pastStem": "ġenēalǣht"
+    }
+  },
+  {
+    "id": "gesittan",
+    "lemma": "ġesittan",
+    "gloss": "to come to rest, sit down; occupy",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 12
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "ġesittan",
+      "ġesæt",
+      "ġesǣton",
+      "ġeseten"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gewunian",
+    "lemma": "ġewunian",
+    "gloss": "to remain, stay",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 12
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "hlystan",
+    "lemma": "hlystan",
+    "gloss": "to listen, hear",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 12
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "hreran",
+    "lemma": "hrēran",
+    "gloss": "to move, shake, stir",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 12
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "laedan",
+    "lemma": "lǣdan",
+    "gloss": "to lead, bring",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 12
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "leogan",
+    "lemma": "lēogan",
+    "gloss": "to lie, deceive",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 12
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "lēogan",
+      "lēag",
+      "lugon",
+      "ġelogen"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "ofslean",
+    "lemma": "ofslēan",
+    "gloss": "to kill, slay",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 12
+      }
+    ],
+    "notes": "Contracted strong verb (of- + slēan, Class VI). Fully irregular paradigm due to h-loss contraction.",
+    "principalParts": [
+      "ofslēan",
+      "ofslōh",
+      "ofslōgon",
+      "ofslæġen"
+    ],
+    "irregular": true,
+    "irregularForms": {
+      "nonFinite": {
+        "infinitive": "ofslēan",
+        "inflectedInfinitive": "tō ofslēanne",
+        "presentParticiple": "ofslēande",
+        "pastParticiple": "ofslæġen"
+      },
+      "imperative": {
+        "sg": "ofsleah",
+        "pl": "ofslēaþ"
+      },
+      "presentInd": {
+        "sg1": "ofslēa",
+        "sg2": "ofsliehst",
+        "sg3": "ofsliehþ",
+        "pl": "ofslēaþ"
+      },
+      "pastInd": {
+        "sg1": "ofslōh",
+        "sg2": "ofslōge",
+        "sg3": "ofslōh",
+        "pl": "ofslōgon"
+      },
+      "presentSubj": {
+        "sg": "ofslēa",
+        "pl": "ofslēan"
+      },
+      "pastSubj": {
+        "sg": "ofslōge",
+        "pl": "ofslōgen"
+      }
+    }
+  },
+  {
+    "id": "understandan",
+    "lemma": "understandan",
+    "gloss": "to understand",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 12
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "understandan",
+      "understōd",
+      "understōdon",
+      "understanden"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "wadan",
+    "lemma": "wadan",
+    "gloss": "to go, advance, travel",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 12
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "wadan",
+      "wōd",
+      "wōdon",
+      "ġewæden"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "wenian",
+    "lemma": "wenian",
+    "gloss": "to accustom, train",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 12
       }
     ],
     "notes": "",
