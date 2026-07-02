@@ -39,6 +39,8 @@ var Paradigm = (function () {
     // 'e,ea,ēa,e': 'V',      // ġiefan-type: palatal + breaking
     'ēo,ea,ā,e': 'V',      // ġesēon-type: contracted
     'a,ō,ō,a': 'VI',
+    'a,ō,ō,æ': 'VI',     // wadan-type: æ in past participle
+    'ē,ō,ō,æ': 'VI',     // slēan-type: contracted (h-loss)
     // 'e,ō,ō,æ': 'VII',   // hliehhan-type: ō past, æ in past participle
     'ie,ea,ēa,ie': 'V',     // ġiefan-type: ie in present/past-part (palatal umlaut)
     'ie,ō,ō,æ': 'VII',    // hliehhan-type: ie in present (breaking before h)
@@ -46,7 +48,7 @@ var Paradigm = (function () {
     'ie,ō,ō,ea': 'VI',     // ġesċieppan-type: ie present (i-mutation of a), ō past, ea past part
   };
 
-  var VERB_PREFIX_RE = /^(onġ|on|ā|for|ofer|ymb|wiþ|under)(?=[^aeiouāēīōūæǣ])/;
+  var VERB_PREFIX_RE = /^(onġ|on|ā|for|ofer|of|ymb|wiþ|under|æt)(?=[^aeiouāēīōūæǣ])/;
 
   // ── Helper: set a nested value by dot-notation key ──────────────────────────
 
@@ -144,6 +146,7 @@ var Paradigm = (function () {
       }
       var tail2 = stem.slice(-2);
       var tail1 = stem.slice(-1);
+      if (tail2 === 'st') return stem;   // hlyst + st → hlyst
       if (tail1 === 's') return stem + 't';
       if (tail1 === 'd') return stem.slice(0, -1) + 'tst';
       if (tail2 === 'þs' || tail1 === 'þ') return stem.replace(/þ$/, '') + 'st';
@@ -250,7 +253,7 @@ var Paradigm = (function () {
         infinitive: verb.lemma,
         inflectedInfinitive: 'tō ' + stems.presentStem + 'enne',
         presentParticiple: stems.presentStem + 'ende',
-        pastParticiple: 'ġe' + stems.pastPartStem + 'en',
+        pastParticiple: (verb.verbPrefix || VERB_PREFIX_RE.test(verb.lemma.normalize('NFC')) ? '' : 'ġe') + stems.pastPartStem + 'en',
       },
     };
   }
@@ -293,7 +296,7 @@ var Paradigm = (function () {
         infinitive: verb.lemma,
         inflectedInfinitive: 'tō ' + stem + 'ianne',
         presentParticiple: stem + 'iende',
-        pastParticiple: 'ġe' + stem + 'od',
+        pastParticiple: ((verb.verbPrefix || /^[ġgb]e(?!o)/.test(verb.lemma.normalize('NFC'))) ? '' : 'ġe') + stem + 'od',
       },
     };
   }
@@ -318,7 +321,7 @@ var Paradigm = (function () {
   // ── pastDE ──────────────────────────────────────────────────────────────────
   function pastDE(stem) {
     if (/t$/.test(stem)) return stem + 'e';           // set → sette, sōht → sōhte
-    if (/[pcfsþ]$/.test(stem)) return stem + 'te';    // beċīep → beċīepte
+    if (/[pcs]$/.test(stem)) return stem + 'te';      // beċīep → beċīepte (f/þ voiced → -de)
     if (/[lrn]d$/.test(stem)) return stem + 'e';      // seald → sealde, send → sende
     if (isShortRoot(stem)) return stem + 'ede';       // frem → fremede
     return stem + 'de';                               // hīer → hīerde  ← was 'e', needs 'de'
@@ -332,7 +335,7 @@ var Paradigm = (function () {
     var pastStem = verb.irregularForms.pastStem || pastStemBase;
 
     // Don't add ġe- if the lemma already has a ge-/ġe- prefix
-    var ppPrefix = /^[ġgb]e/.test(verb.lemma) ? '' : 'ġe';
+    var ppPrefix = (verb.verbPrefix || /^[ġgb]e(?!o)/.test(verb.lemma.normalize('NFC'))) ? '' : 'ġe';
 
     // Present sg2/sg3: plain degemination (no epenthesis) when verb.noEpenthesis is set
     var sg2PresInd = (verb.noEpenthesis && /(.)\1$/.test(presentStem))
@@ -446,3 +449,8 @@ if (typeof module !== 'undefined') module.exports = { Paradigm };
 // windan   → 3sg wint    (nd + þ → ntt → nt, simplified)
 // findan   → 3sg fint    (nd + þ → ntt → nt, simplified)
 // weorþan  → 3sg wierþ   (þ + þ → þ)
+// ġecȳþan  → past ġecȳþde  (þ voiced intervocalically → -de)
+// ġelīefan → past ġelīefde (f voiced intervocalically → -de)
+// hlystan  → 2sg hlyst     (st + st → st)
+// forlǣtan → pp forlǣten   (prefixed verbs take no additional ġe-)
+// ġeocian  → pp ġeġeocod   (ġeo- is root, not prefix — keeps ġe-)
