@@ -767,12 +767,22 @@
       </div>`;
     }
 
+    function foldDiacritics(str) {
+      return (str || '')
+        .toLowerCase()
+        .normalize('NFD')                 // ā→a+◌̄, ġ→g+◌̇, ǣ→æ+◌̄, ȳ→y+◌̄, etc.
+        .replace(/[\u0300-\u036f]/g, '')  // strip combining marks (macrons, dots)
+        .replace(/æ/g, 'ae')              // ash → ae (also catches decomposed ǣ)
+        .replace(/þ/g, 'th')              // thorn → th
+        .replace(/ð/g, 'th');             // eth  → th
+    }
+
     function renderSidebar(filter) {
-      const q = filter.trim().toLowerCase();
+      const q = foldDiacritics(filter.trim());
       const matched = q
         ? verbs.filter(v =>
-          v.lemma.toLowerCase().includes(q) ||
-          v.gloss.toLowerCase().includes(q)
+          foldDiacritics(v.lemma).includes(q) ||
+          foldDiacritics(v.gloss).includes(q)
         )
         : verbs;
 
