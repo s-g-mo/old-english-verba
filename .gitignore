@@ -1,3 +1,5 @@
 .claude/
 node_modules/
 tests/__pycache__/
+docs/*.md
+CLAUDE.md
