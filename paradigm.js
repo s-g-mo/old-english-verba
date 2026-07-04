@@ -30,6 +30,9 @@ var Paradigm = (function () {
     'i,a,u,u': 'IIIa',
     'e,æ,u,o': 'IIIb',
     'eo,ea,u,o': 'IIIb',   // weorþan-type: eo/ea before r+C
+    'e,ea,u,o': 'IIIb',   // helpan/delfan-type
+    'ie,ea,u,o': 'IIIb',  // gieldan-type
+    'u,ea,u,o': 'IIIb',   // murnan-type
     'e,æ,ǣ,o': 'IV',
     'i,a,ō,u': 'IV',     // niman-type: irregular IV
     'u,ō,ō,u': 'IV',     // cuman-type: anomalous IV
@@ -41,6 +44,7 @@ var Paradigm = (function () {
     'a,ō,ō,a': 'VI',
     'a,ō,ō,æ': 'VI',     // wadan-type: æ in past participle
     'ē,ō,ō,æ': 'VI',     // slēan-type: contracted (h-loss)
+    'æ,ō,ō,a': 'VI',     // stæppan-type: j-present fronts a->æ, participle keeps plain a
     // 'e,ō,ō,æ': 'VII',   // hliehhan-type: ō past, æ in past participle
     'ie,ea,ēa,ie': 'V',     // ġiefan-type: ie in present/past-part (palatal umlaut)
     'ie,ō,ō,æ': 'VII',    // hliehhan-type: ie in present (breaking before h)
@@ -91,11 +95,17 @@ var Paradigm = (function () {
 
   // ── applyIMutation ──────────────────────────────────────────────────────────
 
-  function applyIMutation(stem) {
-    var prefixMatch = VERB_PREFIX_RE.exec(stem);
-    var prefix = prefixMatch ? prefixMatch[1] : '';
-    var root = prefixMatch ? stem.slice(prefix.length) : stem;
-
+  function applyIMutation(stem, explicitPrefix) {
+    var prefix = '';
+    var root = stem;
+    if (explicitPrefix && stem.indexOf(explicitPrefix) === 0) {
+      prefix = explicitPrefix;
+      root = stem.slice(prefix.length);
+    } else {
+      var prefixMatch = VERB_PREFIX_RE.exec(stem);
+      prefix = prefixMatch ? prefixMatch[1] : '';
+      root = prefixMatch ? stem.slice(prefix.length) : stem;
+    }
     var vowel = extractStemVowel(root);
     if (vowel && I_MUTATION.hasOwnProperty(vowel)) {
       var idx = root.indexOf(vowel);
@@ -215,7 +225,7 @@ var Paradigm = (function () {
 
   function conjugateStrong(verb) {
     var stems = extractStems(verb.principalParts);
-    var mutatedStem = applyIMutation(stems.presentStem);
+    var mutatedStem = applyIMutation(stems.presentStem, verb.verbPrefix);
     var mutatedStemForSg = (mutatedStem !== stems.presentStem)
       ? mutatedStem.replace(/g$/, 'ġ')   // only dot g when mutation happened
       : mutatedStem;
@@ -307,6 +317,11 @@ var Paradigm = (function () {
     // e.g. reċċ + þ → reċeþ,  reċċ + st → reċest
     if (/(.)\1$/.test(stem)) {
       return stem.slice(0, -1) + 'e' + ending;
+    }
+    // lecgan-type: ċġ acts as a geminate cluster for the bare/imperative ending
+    // only (st/þ already route correctly through applyCollision's own ċġ→ġ rule).
+    if (ending === '' && /ċġ$/.test(stem)) {
+      return stem.slice(0, -2) + 'ġe';
     }
     return applyCollision(stem, ending);
   }

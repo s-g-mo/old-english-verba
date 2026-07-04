@@ -3551,5 +3551,1116 @@
     "notes": "",
     "irregular": false,
     "irregularForms": {}
+  },
+  {
+    "id": "befon",
+    "lemma": "befōn",
+    "gloss": "to catch, seize",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 13
+      }
+    ],
+    "notes": "Contracted strong VII (be- + fōn). Present contracted: hē befēhþ.",
+    "principalParts": [
+      "befōn",
+      "befēng",
+      "befēngon",
+      "befangen"
+    ],
+    "irregular": true,
+    "irregularForms": {
+      "nonFinite": {
+        "infinitive": "befōn",
+        "inflectedInfinitive": "tō befōnne",
+        "presentParticiple": "befōnde",
+        "pastParticiple": "befangen"
+      },
+      "imperative": {
+        "sg": "befōh",
+        "pl": "befōþ"
+      },
+      "presentInd": {
+        "sg1": "befō",
+        "sg2": "befēhst",
+        "sg3": "befēhþ",
+        "pl": "befōþ"
+      },
+      "presentSubj": {
+        "sg": "befō",
+        "pl": "befōn"
+      }
+    },
+    "verbPrefix": "be"
+  },
+  {
+    "id": "bugan",
+    "lemma": "būgan",
+    "gloss": "to bow; bend; turn aside",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 13
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "būgan",
+      "bēah",
+      "bugon",
+      "ġebogen"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "cringan",
+    "lemma": "cringan",
+    "gloss": "to fall (in battle), die",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 13
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "cringan",
+      "crang",
+      "crungon",
+      "ġecrungen"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gefeohtan",
+    "lemma": "ġefeohtan",
+    "gloss": "to fight; gain by fighting",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 13
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "ġefeohtan",
+      "ġefeaht",
+      "ġefuhton",
+      "ġefohten"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gieldan",
+    "lemma": "ġieldan",
+    "gloss": "to pay; reward",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 13
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "ġieldan",
+      "ġeald",
+      "guldon",
+      "ġegolden"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "neotan",
+    "lemma": "nēotan",
+    "gloss": "to use; enjoy",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 13
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "nēotan",
+      "nēat",
+      "nuton",
+      "ġenoten"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "staeppan",
+    "lemma": "stæppan",
+    "gloss": "to step, go",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 13
+      }
+    ],
+    "notes": "Class VI with j-present gemination.",
+    "principalParts": [
+      "stæppan",
+      "stōp",
+      "stōpon",
+      "ġestapen"
+    ],
+    "irregular": true,
+    "irregularForms": {
+      "presentInd.sg2": "stæpest",
+      "presentInd.sg3": "stæpeþ",
+      "imperative.sg": "stæpe"
+    }
+  },
+  {
+    "id": "wealdan",
+    "lemma": "wealdan",
+    "gloss": "to wield; rule, control",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 13
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "wealdan",
+      "wēold",
+      "wēoldon",
+      "ġewealden"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "getellan",
+    "lemma": "ġetellan",
+    "gloss": "to count, tell",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 13
+      }
+    ],
+    "notes": "Conjugated as tellan; irregular past ġetealde.",
+    "irregular": true,
+    "irregularForms": {
+      "pastStem": "ġeteald",
+      "pastInd": {
+        "sg1": "ġetealde",
+        "sg2": "ġetealdest",
+        "sg3": "ġetealde",
+        "pl": "ġetealdon"
+      },
+      "pastSubj": {
+        "sg": "ġetealde",
+        "pl": "ġetealden"
+      }
+    }
+  },
+  {
+    "id": "trymman",
+    "lemma": "trymman",
+    "gloss": "to strengthen; comfort; arrange, set in order",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 13
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "alecgan",
+    "lemma": "āleċġan",
+    "gloss": "to lay, put; set aside",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 13
+      }
+    ],
+    "notes": "lecgan-type; irregular past āleġde, past participle āleġd.",
+    "irregular": true,
+    "irregularForms": {
+      "pastStem": "āleġ",
+      "presentInd": {
+        "sg1": "āleċge",
+        "sg2": "āleġst",
+        "sg3": "āleġþ",
+        "pl": "āleċgaþ"
+      },
+      "nonFinite.pastParticiple": "āleġd",
+      "pastInd": {
+        "sg1": "āleġde",
+        "sg2": "āleġdest",
+        "sg3": "āleġde",
+        "pl": "āleġdon"
+      },
+      "pastSubj": {
+        "sg": "āleġde",
+        "pl": "āleġden"
+      }
+    },
+    "verbPrefix": "ā"
+  },
+  {
+    "id": "pancian",
+    "lemma": "þancian",
+    "gloss": "to thank",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 13
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "belucan",
+    "lemma": "belūcan",
+    "gloss": "to enclose; close, lock",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 14
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "belūcan",
+      "belēac",
+      "belucon",
+      "belocen"
+    ],
+    "irregular": false,
+    "irregularForms": {},
+    "verbPrefix": "be"
+  },
+  {
+    "id": "helpan",
+    "lemma": "helpan",
+    "gloss": "to help",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 14
+      }
+    ],
+    "notes": "Takes its object in the dative or genitive.",
+    "principalParts": [
+      "helpan",
+      "healp",
+      "hulpon",
+      "ġeholpen"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "misfaran",
+    "lemma": "misfaran",
+    "gloss": "to go astray; turn out poorly",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 14
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "misfaran",
+      "misfōr",
+      "misfōron",
+      "misfaren"
+    ],
+    "irregular": false,
+    "irregularForms": {},
+    "verbPrefix": "mis"
+  },
+  {
+    "id": "murnan",
+    "lemma": "murnan",
+    "gloss": "to mourn; worry about",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 14
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "murnan",
+      "mearn",
+      "murnon",
+      "ġemornen"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gedon",
+    "lemma": "ġedōn",
+    "gloss": "to do; make; cause; put",
+    "type": "irregular",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 14
+      }
+    ],
+    "notes": "Conjugated as dōn (ġe- + dōn).",
+    "irregular": true,
+    "irregularForms": {
+      "nonFinite": {
+        "infinitive": "ġedōn",
+        "inflectedInfinitive": "tō ġedōnne",
+        "presentParticiple": "ġedōnde",
+        "pastParticiple": "ġedōn"
+      },
+      "imperative": {
+        "sg": "ġedō",
+        "pl": "ġedōþ"
+      },
+      "presentInd": {
+        "sg1": "ġedō",
+        "sg2": "ġedēst",
+        "sg3": "ġedēþ",
+        "pl": "ġedōþ"
+      },
+      "pastInd": {
+        "sg1": "ġedyde",
+        "sg2": "ġedydest",
+        "sg3": "ġedyde",
+        "pl": "ġedydon"
+      },
+      "presentSubj": {
+        "sg": "ġedō",
+        "pl": "ġedōn"
+      },
+      "pastSubj": {
+        "sg": "ġedyde",
+        "pl": "ġedyden"
+      }
+    }
+  },
+  {
+    "id": "gewieldan",
+    "lemma": "ġewieldan",
+    "gloss": "to subdue, rule over",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 14
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "forpferan",
+    "lemma": "forþfēran",
+    "gloss": "to depart, pass by; die",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 14
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "verbPrefix": "forþ"
+  },
+  {
+    "id": "recan",
+    "lemma": "rēċan",
+    "gloss": "to care",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 14
+      }
+    ],
+    "notes": "The 'care' verb (distinct from reċċan 'to tell'); irregular past rōhte.",
+    "irregular": true,
+    "irregularForms": {
+      "pastStem": "rōht"
+    }
+  },
+  {
+    "id": "purhwunian",
+    "lemma": "þurhwunian",
+    "gloss": "to continue, persist, remain",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 14
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "verbPrefix": "þurh"
+  },
+  {
+    "id": "asendan",
+    "lemma": "āsendan",
+    "gloss": "to send forth",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 15
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "verbPrefix": "ā"
+  },
+  {
+    "id": "aweorpan",
+    "lemma": "āweorpan",
+    "gloss": "to throw away, cast off; reject",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 15
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "āweorpan",
+      "āwearp",
+      "āwurpon",
+      "āworpen"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "behealdan",
+    "lemma": "behealdan",
+    "gloss": "to behold, watch",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 15
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "behealdan",
+      "behēold",
+      "behēoldon",
+      "behealden"
+    ],
+    "irregular": false,
+    "irregularForms": {},
+    "verbPrefix": "be"
+  },
+  {
+    "id": "feohtan",
+    "lemma": "feohtan",
+    "gloss": "to fight",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 15
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "feohtan",
+      "feaht",
+      "fuhton",
+      "ġefohten"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gebiegan",
+    "lemma": "ġebīeġan",
+    "gloss": "to bend; turn",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 15
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "geendian",
+    "lemma": "ġeendian",
+    "gloss": "to end, finish",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 15
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gegearwian",
+    "lemma": "ġeġearwian",
+    "gloss": "to prepare, make ready",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 15
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gehyhtan",
+    "lemma": "ġehyhtan",
+    "gloss": "to trust, hope",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 15
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gewinnan",
+    "lemma": "ġewinnan",
+    "gloss": "to conquer, win, gain, obtain",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 15
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "ġewinnan",
+      "ġewann",
+      "ġewunnon",
+      "ġewunnen"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "ontynan",
+    "lemma": "ontȳnan",
+    "gloss": "to open",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 15
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "verbPrefix": "on"
+  },
+  {
+    "id": "tocnawan",
+    "lemma": "tōcnāwan",
+    "gloss": "to distinguish, tell apart",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 15
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "tōcnāwan",
+      "tōcnēow",
+      "tōcnēowon",
+      "tōcnāwen"
+    ],
+    "irregular": false,
+    "irregularForms": {},
+    "verbPrefix": "tō"
+  },
+  {
+    "id": "warian",
+    "lemma": "warian",
+    "gloss": "to beware, be on guard; guard",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 15
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "wendan",
+    "lemma": "wendan",
+    "gloss": "to turn; go; change",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 15
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "aetbregdan",
+    "lemma": "ætbreġdan",
+    "gloss": "to take away, deprive",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 16
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "ætbreġdan",
+      "ætbræġd",
+      "ætbrugdon",
+      "ætbrogden"
+    ],
+    "irregular": true,
+    "irregularForms": {
+      "presentInd.sg2": "ætbreġdest",
+      "presentInd.sg3": "ætbreġdeþ"
+    }
+  },
+  {
+    "id": "animan",
+    "lemma": "āniman",
+    "gloss": "to take away, remove",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 16
+      }
+    ],
+    "notes": "niman-type class IV (ā- + niman); irregular past ānam / ānōmon.",
+    "principalParts": [
+      "āniman",
+      "ānam",
+      "ānōmon",
+      "ānumen"
+    ],
+    "irregular": true,
+    "irregularForms": {
+      "presentInd": {
+        "sg1": "ānime",
+        "sg2": "ānimst",
+        "sg3": "ānimþ",
+        "pl": "ānimaþ"
+      }
+    },
+    "verbPrefix": "ā"
+  },
+  {
+    "id": "aspendan",
+    "lemma": "āspendan",
+    "gloss": "to squander; expend",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 16
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "verbPrefix": "ā"
+  },
+  {
+    "id": "bedelfan",
+    "lemma": "bedelfan",
+    "gloss": "to bury",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 16
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "bedelfan",
+      "bedealf",
+      "bedulfon",
+      "bedolfen"
+    ],
+    "irregular": false,
+    "irregularForms": {},
+    "verbPrefix": "be"
+  },
+  {
+    "id": "befaestan",
+    "lemma": "befæstan",
+    "gloss": "to keep safe; entrust",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 16
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "verbPrefix": "be"
+  },
+  {
+    "id": "behydan",
+    "lemma": "behȳdan",
+    "gloss": "to hide, conceal",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 16
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "verbPrefix": "be"
+  },
+  {
+    "id": "betaecan",
+    "lemma": "betǣċan",
+    "gloss": "to entrust; hand over",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 16
+      }
+    ],
+    "notes": "-ċan type; irregular past betǣhte.",
+    "irregular": true,
+    "irregularForms": {
+      "pastStem": "betǣht"
+    }
+  },
+  {
+    "id": "blissian",
+    "lemma": "blissian",
+    "gloss": "to rejoice, be glad",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 16
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "dihtan",
+    "lemma": "dihtan",
+    "gloss": "to set in order, arrange, compose",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 16
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gebyrian",
+    "lemma": "ġebyrian",
+    "gloss": "to happen; be fitting, befit",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 16
+      }
+    ],
+    "notes": "",
+    "irregular": true,
+    "irregularForms": {
+      "presentInd.sg2": "ġebyrest",
+      "presentInd.sg3": "ġebyreþ",
+      "pastInd": {
+        "sg1": "ġebyrede",
+        "sg2": "ġebyredest",
+        "sg3": "ġebyrede",
+        "pl": "ġebyredon"
+      },
+      "pastSubj": {
+        "sg": "ġebyrede",
+        "pl": "ġebyreden"
+      },
+      "imperative.sg": "ġebyre",
+      "nonFinite.pastParticiple": "ġebyred"
+    }
+  },
+  {
+    "id": "gadrian",
+    "lemma": "gadrian",
+    "gloss": "to gather, collect",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 16
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "geopenian",
+    "lemma": "ġeopenian",
+    "gloss": "to open; show, reveal",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 16
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "verbPrefix": "ġe"
+  },
+  {
+    "id": "gestrienan",
+    "lemma": "ġestrīenan",
+    "gloss": "to gain, get, acquire",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 16
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "getacnian",
+    "lemma": "ġetācnian",
+    "gloss": "to signify; represent",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 16
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "ripan",
+    "lemma": "rīpan",
+    "gloss": "to reap",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 16
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "rīpan",
+      "rāp",
+      "ripon",
+      "ġeripen"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "sawan",
+    "lemma": "sāwan",
+    "gloss": "to sow (seed)",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 16
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "sāwan",
+      "sēow",
+      "sēowon",
+      "ġesāwen"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "smeocan",
+    "lemma": "smēocan",
+    "gloss": "to smoke",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 16
+      }
+    ],
+    "notes": "",
+    "principalParts": [
+      "smēocan",
+      "smēac",
+      "smucon",
+      "ġesmocen"
+    ],
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "sprengan",
+    "lemma": "sprenġan",
+    "gloss": "to sprinkle, scatter",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 16
+      }
+    ],
+    "notes": "",
+    "irregular": true,
+    "irregularForms": {
+      "presentInd.sg2": "sprenġest",
+      "presentInd.sg3": "sprenġeþ",
+      "pastStem": "spreng"
+    }
+  },
+  {
+    "id": "underfon",
+    "lemma": "underfōn",
+    "gloss": "to receive, accept",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 16
+      }
+    ],
+    "notes": "Contracted strong VII (under- + fōn). Present contracted: hē underfēhþ.",
+    "principalParts": [
+      "underfōn",
+      "underfēng",
+      "underfēngon",
+      "underfangen"
+    ],
+    "irregular": true,
+    "irregularForms": {
+      "nonFinite": {
+        "infinitive": "underfōn",
+        "inflectedInfinitive": "tō underfōnne",
+        "presentParticiple": "underfōnde",
+        "pastParticiple": "underfangen"
+      },
+      "imperative": {
+        "sg": "underfōh",
+        "pl": "underfōþ"
+      },
+      "presentInd": {
+        "sg1": "underfō",
+        "sg2": "underfēhst",
+        "sg3": "underfēhþ",
+        "pl": "underfōþ"
+      },
+      "presentSubj": {
+        "sg": "underfō",
+        "pl": "underfōn"
+      }
+    }
+  },
+  {
+    "id": "pearfian",
+    "lemma": "þearfian",
+    "gloss": "to be in need",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 16
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
   }
 ]
