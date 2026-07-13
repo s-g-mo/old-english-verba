@@ -130,6 +130,32 @@
       <article class="entry">
         <div class="entry-date">13 Jul 2026</div>
         <div class="entry-body">
+          <div class="entry-title">New verbs from Ōsweald Bera Chapters 21–25, and engine fixes</div>
+          <ul class="entry-items">
+            <li>Added 61 verbs from Ōsweald Bera Chapters 21 through 25, including iernan, tēon, ġebiddan,
+              oþstandan, ġemunan, āgān, styrian, bewerian, and others</li>
+            <li>Fixed prefixed weak verbs incorrectly receiving an additional ġe- on their past participles —
+              corrects 11 verbs including āflīeman, āsettan, forbærnan, ācwellan, and ūtian</li>
+            <li>Fixed styrian and bewerian misclassified as Weak II — both are light-stem -rian verbs like
+              ġebyrian and needed the same manual treatment</li>
+            <li>Fixed tēon missing its contracted present tense (tīehþ, not the regular-pattern tīenþ), matching
+              the already-correct ātēon</li>
+            <li>Fixed several dental-assimilation and consonant-gemination irregularities in new verbs' past
+              tense and past participles (ġeswenċan, ġemētan, ġesǣlan, ġestillan, mǣtan, ċierran, ēhtan,
+              ōleċċan)</li>
+            <li>Fixed ġebiddan's 2nd/3rd person present indicative, where i-mutation was corrupting the ġe-
+              prefix itself (ġibitst) instead of mutating only the root vowel (ġebitst)</li>
+            <li>Fixed missing macrons on berēafian and ġesǣlan</li>
+            <li>Added a classOverride field for verbs whose class can't be inferred automatically, such as
+              double-prefix compounds like forþġewītan, and a new Class IIIa ablaut row for the iernan-type
+              breaking pattern</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-date">13 Jul 2026</div>
+        <div class="entry-body">
           <div class="entry-title">New verbs from Ōsweald Bera Chapters 17–20, and small quality-of-life improvements</div>
           <ul class="entry-items">
             <li>Added 49 verbs from Ōsweald Bera Chapters 17 through 20, including āgan, slēan, besēon,

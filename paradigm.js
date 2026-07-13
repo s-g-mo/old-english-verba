@@ -28,6 +28,7 @@ var Paradigm = (function () {
     'ēo,ēa,u,o': 'IIa',
     'ū,ēa,u,o': 'IIb',
     'i,a,u,u': 'IIIa',
+    'ie,a,u,u': 'IIIa',   // iernan-type: breaking before r+consonant
     'e,æ,u,o': 'IIIb',
     'eo,ea,u,o': 'IIIb',   // weorþan-type: eo/ea before r+C
     'e,ea,u,o': 'IIIb',   // helpan/delfan-type
@@ -209,6 +210,8 @@ var Paradigm = (function () {
   // ── inferClass ──────────────────────────────────────────────────────────────
 
   function inferClass(principalParts, verb) {
+    if (verb && verb.classOverride) return verb.classOverride;
+
     var v = computeSeriesVowels(principalParts, verb);
     var tuple = v.join(',');
 
