@@ -4,7 +4,12 @@
     "lemma": "beran",
     "gloss": "to carry, bear",
     "type": "strong",
-    "sources": [],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 24
+      }
+    ],
     "notes": "",
     "principalParts": [
       "beran",
@@ -4686,7 +4691,8 @@
     ],
     "notes": "",
     "irregular": false,
-    "irregularForms": {}
+    "irregularForms": {},
+    "verbPrefix": "ā"
   },
   {
     "id": "agan",
@@ -4765,8 +4771,9 @@
         "sg": "āsette",
         "pl": "āsetten"
       },
-      "nonFinite.pastParticiple": "ġeāsett"
-    }
+      "nonFinite.pastParticiple": "āsett"
+    },
+    "verbPrefix": "ā"
   },
   {
     "id": "forbaernan",
@@ -4781,7 +4788,8 @@
     ],
     "notes": "",
     "irregular": false,
-    "irregularForms": {}
+    "irregularForms": {},
+    "verbPrefix": "for"
   },
   {
     "id": "forleosan",
@@ -5227,7 +5235,8 @@
     "irregular": true,
     "irregularForms": {
       "pastStem": "ācwenct"
-    }
+    },
+    "verbPrefix": "ā"
   },
   {
     "id": "awyrtwalian",
@@ -5242,7 +5251,8 @@
     ],
     "notes": "",
     "irregular": false,
-    "irregularForms": {}
+    "irregularForms": {},
+    "verbPrefix": "ā"
   },
   {
     "id": "besittan",
@@ -5441,7 +5451,8 @@
     ],
     "notes": "Wordhoard glosses this via its past participle: ābisgod, 'troubled (by), worried (about).'",
     "irregular": false,
-    "irregularForms": {}
+    "irregularForms": {},
+    "verbPrefix": "ā"
   },
   {
     "id": "acwellan",
@@ -5458,8 +5469,9 @@
     "irregular": true,
     "irregularForms": {
       "pastStem": "ācweald",
-      "nonFinite.pastParticiple": "ġeācweald"
-    }
+      "nonFinite.pastParticiple": "ācweald"
+    },
+    "verbPrefix": "ā"
   },
   {
     "id": "afyrhtan",
@@ -5474,7 +5486,8 @@
     ],
     "notes": "",
     "irregular": false,
-    "irregularForms": {}
+    "irregularForms": {},
+    "verbPrefix": "ā"
   },
   {
     "id": "aliefan",
@@ -5489,7 +5502,8 @@
     ],
     "notes": "",
     "irregular": false,
-    "irregularForms": {}
+    "irregularForms": {},
+    "verbPrefix": "ā"
   },
   {
     "id": "awritan",
@@ -5580,7 +5594,8 @@
     ],
     "notes": "",
     "irregular": false,
-    "irregularForms": {}
+    "irregularForms": {},
+    "verbPrefix": "for"
   },
   {
     "id": "gelaestan",
@@ -5636,6 +5651,1176 @@
       {
         "text": "osweald-bera",
         "chapter": 20
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "verbPrefix": "ūt"
+  },
+  {
+    "id": "bebeodan",
+    "lemma": "bebēodan",
+    "gloss": "command",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 21
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "bebēodan",
+      "bebēad",
+      "bebudon",
+      "beboden"
+    ],
+    "verbPrefix": "be"
+  },
+  {
+    "id": "bifian",
+    "lemma": "bifian",
+    "gloss": "tremble",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 21
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "bodian",
+    "lemma": "bodian",
+    "gloss": "announce",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 21
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "forwyrcan",
+    "lemma": "forwyrċan",
+    "gloss": "do wrong",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 21
+      }
+    ],
+    "notes": "Irregular: past forworhte (mirrors wyrċan's worht- past).",
+    "irregular": true,
+    "irregularForms": {
+      "pastStem": "forworht"
+    },
+    "verbPrefix": "for"
+  },
+  {
+    "id": "fylgan",
+    "lemma": "fylġan",
+    "gloss": "follow",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 21
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "fylstan",
+    "lemma": "fylstan",
+    "gloss": "help",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 21
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "geswencan",
+    "lemma": "ġeswenċan",
+    "gloss": "mistreat; cause distress",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 21
+      }
+    ],
+    "notes": "nc cluster devoices before the dental preterite: past ġeswencte (not ġeswenċde), mirrors ācwenċan.",
+    "irregular": true,
+    "irregularForms": {
+      "pastStem": "ġeswenct"
+    }
+  },
+  {
+    "id": "geweorpan",
+    "lemma": "ġeweorþan",
+    "gloss": "arise, come to pass; turn, become; happen; get, be (passive)",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 21
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "ġeweorþan",
+      "ġewearþ",
+      "ġewurdon",
+      "ġeworden"
+    ]
+  },
+  {
+    "id": "gepreatian",
+    "lemma": "ġeþrēatian",
+    "gloss": "threaten; oppress",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 21
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "licgan",
+    "lemma": "liċġan",
+    "gloss": "lie; run, lead (roads, rivers)",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 21
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "liċġan",
+      "læġ",
+      "lǣgon",
+      "leġen"
+    ]
+  },
+  {
+    "id": "maetan",
+    "lemma": "mǣtan",
+    "gloss": "dream",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 21
+      }
+    ],
+    "notes": "Past gemination: mǣtte (not mǣte). Impersonal in OE (dreams happen to the dreamer, e.g. 'mē mǣtte' = 'I dreamed', lit. 'it dreamed to me') — Wiktionary documents only 3rd-person forms accordingly, but the full paradigm is shown here for consistency, mirroring the same choice already made for the impersonal verb lystan in this batch.",
+    "irregular": true,
+    "irregularForms": {
+      "pastStem": "mǣtt"
+    }
+  },
+  {
+    "id": "sceamian",
+    "lemma": "sċeamian",
+    "gloss": "be ashamed",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 21
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "sendan",
+    "lemma": "sendan",
+    "gloss": "send",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 21
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "wundrian",
+    "lemma": "wundrian",
+    "gloss": "marvel; be surprised; wonder",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 21
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "amierran",
+    "lemma": "āmierran",
+    "gloss": "hinder",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 22
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "verbPrefix": "ā"
+  },
+  {
+    "id": "bereafian",
+    "lemma": "berēafian",
+    "gloss": "deprive, seize",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 22
+      }
+    ],
+    "notes": "Long ē confirmed independently on both Wiktionary and Bosworth-Toller (as 'be-reáfian', BT's convention marks the ēa diphthong on its second element); OB's wordhoard spelling omits the macron.",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "cierran",
+    "lemma": "ċierran",
+    "gloss": "turn",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 22
+      }
+    ],
+    "notes": "Past participle keeps the doubled r: ġeċierred (not ġeċiered).",
+    "irregular": true,
+    "irregularForms": {
+      "nonFinite.pastParticiple": "ġeċierred"
+    }
+  },
+  {
+    "id": "ehtan",
+    "lemma": "ēhtan",
+    "gloss": "chase; persecute",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 22
+      }
+    ],
+    "notes": "Past participle ġeēhted (with the -ed suffix), not ġeēht: the engine's '/ht$/' irregular-stem shortcut (meant for þenċan-type verbs whose past stem already ends in the assimilated -ht) misfires here because ēhtan's regular root just happens to end in 'ht' too, wrongly suppressing the suffix; overridden directly rather than changing that engine heuristic.",
+    "irregular": true,
+    "irregularForms": {
+      "nonFinite.pastParticiple": "ġeēhted"
+    }
+  },
+  {
+    "id": "faegnian",
+    "lemma": "fæġnian",
+    "gloss": "rejoice",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 22
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "forniman",
+    "lemma": "forniman",
+    "gloss": "consume",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 22
+      }
+    ],
+    "notes": "niman-type irregular IV, mirrors existing niman entry.",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "forniman",
+      "fornam",
+      "fornōmon",
+      "fornumen"
+    ]
+  },
+  {
+    "id": "forwiernan",
+    "lemma": "forwiernan",
+    "gloss": "prohibit, deny; prevent",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 22
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "verbPrefix": "for"
+  },
+  {
+    "id": "forpgewitan",
+    "lemma": "forþġewītan",
+    "gloss": "go forth, pass; pass away, die",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 22
+      }
+    ],
+    "notes": "Compound of forþ- + ġewītan (itself ġe- + wītan, class I). The engine's ablaut classifier only strips one prefix layer, so it can't see past the embedded ġe- to find the root vowel; classOverride forces the correct class (all actual conjugated forms were already correct and match ġewītan's own paradigm with forþ- prepended, verified independently).",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "forþġewītan",
+      "forþġewāt",
+      "forþġewiton",
+      "forþġewiten"
+    ],
+    "classOverride": "I"
+  },
+  {
+    "id": "gebiddan",
+    "lemma": "ġebiddan",
+    "gloss": "pray, worship",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 22
+      }
+    ],
+    "notes": "presentInd sg2/sg3 overridden: the engine's i-mutation logic doesn't strip a leading ġe- before scanning for the vowel to mutate, so it was corrupting the prefix itself into ġi- (ġibitst/ġibitt) instead of mutating the root vowel of biddan (which correctly yields bitst/bitt on its own). Overridden directly rather than changing the engine; see the flagged follow-up on this class of bug.",
+    "irregular": true,
+    "irregularForms": {
+      "presentInd.sg2": "ġebitst",
+      "presentInd.sg3": "ġebitt"
+    },
+    "principalParts": [
+      "ġebiddan",
+      "ġebæd",
+      "ġebǣdon",
+      "ġebeden"
+    ]
+  },
+  {
+    "id": "geearnian",
+    "lemma": "ġeearnian",
+    "gloss": "earn, deserve",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 22
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gemetan",
+    "lemma": "ġemētan",
+    "gloss": "find; meet",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 22
+      }
+    ],
+    "notes": "Single dental assimilates to a geminate before the past suffix: past ġemētte (not ġemēte).",
+    "irregular": true,
+    "irregularForms": {
+      "pastStem": "ġemētt"
+    }
+  },
+  {
+    "id": "gemunan",
+    "lemma": "ġemunan",
+    "gloss": "bear in mind, consider; remember",
+    "type": "preterite-present",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 22
+      }
+    ],
+    "notes": "Preterite-present, mirrors witan. Present sg1/3 ġeman, sg2 ġemanst, pl ġemunon; past sg ġemunde, pl ġemundon; pp ġemunen. pastInd sg2 inferred (not given in wordhoard) as ġemundest; verify on Wiktionary.",
+    "irregular": true,
+    "irregularForms": {
+      "nonFinite": {
+        "infinitive": "ġemunan",
+        "inflectedInfinitive": "tō ġemunenne",
+        "presentParticiple": "ġemunende",
+        "pastParticiple": "ġemunen"
+      },
+      "imperative": {
+        "sg": "ġeman",
+        "pl": "ġemunaþ"
+      },
+      "presentInd": {
+        "sg1": "ġeman",
+        "sg2": "ġemanst",
+        "sg3": "ġeman",
+        "pl": "ġemunon"
+      },
+      "pastInd": {
+        "sg1": "ġemunde",
+        "sg2": "ġemundest",
+        "sg3": "ġemunde",
+        "pl": "ġemundon"
+      },
+      "presentSubj": {
+        "sg": "ġemune",
+        "pl": "ġemunen"
+      },
+      "pastSubj": {
+        "sg": "ġemunde",
+        "pl": "ġemunden"
+      }
+    }
+  },
+  {
+    "id": "ryman",
+    "lemma": "rȳman",
+    "gloss": "make room; enlarge, expand",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 22
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "betynan",
+    "lemma": "betȳnan",
+    "gloss": "close, shut",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 23
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "eglan",
+    "lemma": "eġlan",
+    "gloss": "trouble, torment; grieve",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 23
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "iernan",
+    "lemma": "iernan",
+    "gloss": "run",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 23
+      }
+    ],
+    "notes": "Breaks to ie in the present (ie,a,u,u), distinct from the plain IIIa i,a,u,u pattern (rinnan-type). Needs a new, provably-additive ABLAUT_CLASSES key ('ie,a,u,u': 'IIIa') in paradigm.js or this will classify as unknown -- see engine-change step.",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "iernan",
+      "arn",
+      "urnon",
+      "urnen"
+    ]
+  },
+  {
+    "id": "plegian",
+    "lemma": "plegian",
+    "gloss": "play, frolic, dance; play (instrument)",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 23
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "styrian",
+    "lemma": "styrian",
+    "gloss": "move (tr. or intr.)",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 23
+      }
+    ],
+    "notes": "Reclassified weak1 (not weak2, per Wiktionary: 3sg pres styreþ, past styrede). Light-stem -rian verb, same manual-override pattern as sibling ġebyrian.",
+    "irregular": true,
+    "irregularForms": {
+      "presentInd.sg2": "styrest",
+      "presentInd.sg3": "styreþ",
+      "pastInd": {
+        "sg1": "styrede",
+        "sg2": "styredest",
+        "sg3": "styrede",
+        "pl": "styredon"
+      },
+      "pastSubj": {
+        "sg": "styrede",
+        "pl": "styreden"
+      },
+      "imperative.sg": "styre",
+      "nonFinite.pastParticiple": "ġestyred"
+    }
+  },
+  {
+    "id": "wagian",
+    "lemma": "wagian",
+    "gloss": "to wag, wave, shake",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 23
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "wrecan",
+    "lemma": "wrecan",
+    "gloss": "take revenge, avenge; punish; expel, drive out",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 23
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "wrecan",
+      "wræc",
+      "wrǣcon",
+      "wrecen"
+    ]
+  },
+  {
+    "id": "adreogan",
+    "lemma": "ādrēogan",
+    "gloss": "pass (life, time); tolerate, put up with",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 24
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "ādrēogan",
+      "ādrēah",
+      "ādrugon",
+      "ādrogen"
+    ]
+  },
+  {
+    "id": "brecan",
+    "lemma": "brecan",
+    "gloss": "break",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 24
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "brecan",
+      "bræc",
+      "brǣcon",
+      "ġebrocen"
+    ]
+  },
+  {
+    "id": "cidan",
+    "lemma": "cīdan",
+    "gloss": "chide, rebuke, criticize",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 24
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gediegan",
+    "lemma": "ġedīeġan",
+    "gloss": "carry out with safety; survive (danger, illness)",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 24
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "geniman",
+    "lemma": "ġeniman",
+    "gloss": "as niman (take, seize)",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 24
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "ġeniman",
+      "ġenam",
+      "ġenōmon",
+      "ġenumen"
+    ]
+  },
+  {
+    "id": "gesaelan",
+    "lemma": "ġesǣlan",
+    "gloss": "happen",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 24
+      }
+    ],
+    "notes": "Missing macron on the ash corrected (ġesǣlan, not ġesælan). Past ġesǣlde (no epenthetic vowel), not the regular-pattern ġesælede.",
+    "irregular": true,
+    "irregularForms": {
+      "pastStem": "ġesǣld"
+    }
+  },
+  {
+    "id": "gestillan",
+    "lemma": "ġestillan",
+    "gloss": "make still; mute, quiet",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 24
+      }
+    ],
+    "notes": "Past ġestilde (no epenthesis, single l), not the regular-pattern ġestilede; present ġestilst/ġestilþ (no epenthesis) via noEpenthesis, not the hybrid ġestileþ; past participle keeps the doubled l before the vowel-initial suffix, ġestilled (not ġestiled) — same gemination-before-vowel pattern as cierran's ġeċierred.",
+    "irregular": true,
+    "noEpenthesis": true,
+    "irregularForms": {
+      "pastStem": "ġestild",
+      "nonFinite.pastParticiple": "ġestilled"
+    }
+  },
+  {
+    "id": "gretan",
+    "lemma": "grētan",
+    "gloss": "greet, welcome; address; take leave of; approach",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 24
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "liefan",
+    "lemma": "līefan",
+    "gloss": "allow; believe, trust",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 24
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "oleccan",
+    "lemma": "ōleċċan",
+    "gloss": "treat gently, soothe; flatter",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 24
+      }
+    ],
+    "notes": "Irregular past ōlehte, pp (ġe)ōleht: same -ċċan → -ht assimilation subfamily as þenċan/sēċan/wyrċan.",
+    "irregular": true,
+    "irregularForms": {
+      "pastStem": "ōleht"
+    }
+  },
+  {
+    "id": "slitan",
+    "lemma": "slītan",
+    "gloss": "tear, rend",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 24
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "slītan",
+      "slāt",
+      "sliton",
+      "sliten"
+    ]
+  },
+  {
+    "id": "sweltan",
+    "lemma": "sweltan",
+    "gloss": "die",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 24
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "sweltan",
+      "swealt",
+      "swulton",
+      "swolten"
+    ]
+  },
+  {
+    "id": "witnian",
+    "lemma": "wītnian",
+    "gloss": "punish",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 24
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "acwelan",
+    "lemma": "ācwelan",
+    "gloss": "die",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 25
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "ācwelan",
+      "ācwæl",
+      "ācwǣlon",
+      "ācwolen"
+    ]
+  },
+  {
+    "id": "agangan",
+    "lemma": "āgān",
+    "gloss": "pass by, come to pass",
+    "type": "irregular",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 25
+      }
+    ],
+    "notes": "Compound of gān ('to go'); id disambiguated from the existing preterite-present āgan ('possess, own', id: agan) which collides once macrons strip. Mirrors gan's irregularForms with ā- prefixed throughout; pastInd sg2 inferred (not given in wordhoard) as āēodest, confirmed on Wiktionary. presentInd sg2/sg3 corrected to āgǣst/āgǣþ (long ǣ, matching gān's own gǣst/gǣþ carried through the prefix).",
+    "irregular": true,
+    "irregularForms": {
+      "nonFinite": {
+        "infinitive": "āgān",
+        "inflectedInfinitive": "tō āgānne",
+        "presentParticiple": "āgānde",
+        "pastParticiple": "āgān"
+      },
+      "imperative": {
+        "sg": "āgā",
+        "pl": "āgāþ"
+      },
+      "presentInd": {
+        "sg1": "āgā",
+        "sg2": "āgǣst",
+        "sg3": "āgǣþ",
+        "pl": "āgāþ"
+      },
+      "pastInd": {
+        "sg1": "āēode",
+        "sg2": "āēodest",
+        "sg3": "āēode",
+        "pl": "āēodon"
+      },
+      "presentSubj": {
+        "sg": "āgā",
+        "pl": "āgān"
+      },
+      "pastSubj": {
+        "sg": "āēode",
+        "pl": "āēoden"
+      }
+    }
+  },
+  {
+    "id": "agiefan",
+    "lemma": "āġiefan",
+    "gloss": "give up; give back",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 25
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "āġiefan",
+      "āġeaf",
+      "āġēafon",
+      "āġiefen"
+    ]
+  },
+  {
+    "id": "bewerian",
+    "lemma": "bewerian",
+    "gloss": "defend",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 25
+      }
+    ],
+    "notes": "Reclassified weak1 (not weak2, per Wiktionary: 3sg pres bewereþ, past bewerede, pp bewered). Light-stem -rian verb, same manual-override pattern as sibling ġebyrian; be- prefix already auto-detected so pp takes no additional ġe-.",
+    "irregular": true,
+    "irregularForms": {
+      "presentInd.sg2": "bewerest",
+      "presentInd.sg3": "bewereþ",
+      "pastInd": {
+        "sg1": "bewerede",
+        "sg2": "beweredest",
+        "sg3": "bewerede",
+        "pl": "beweredon"
+      },
+      "pastSubj": {
+        "sg": "bewerede",
+        "pl": "bewereden"
+      },
+      "imperative.sg": "bewere",
+      "nonFinite.pastParticiple": "bewered"
+    }
+  },
+  {
+    "id": "gehatan",
+    "lemma": "ġehātan",
+    "gloss": "promise, vow; command; call, name",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 25
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "ġehātan",
+      "ġehēt",
+      "ġehēton",
+      "ġehāten"
+    ]
+  },
+  {
+    "id": "gesecan",
+    "lemma": "ġesēċan",
+    "gloss": "look for, seek",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 25
+      }
+    ],
+    "notes": "Irregular past sōhte (mirrors sēċan's -ċan/sōhte subfamily); full stem includes the ġe- prefix since it's lexical here, not a participle marker.",
+    "irregular": true,
+    "irregularForms": {
+      "pastStem": "ġesōht"
+    }
+  },
+  {
+    "id": "hearpian",
+    "lemma": "hearpian",
+    "gloss": "to play the harp",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 25
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "losian",
+    "lemma": "losian",
+    "gloss": "be lost, stray; die, be destroyed; escape",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 25
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "lystan",
+    "lemma": "lystan",
+    "gloss": "like; want",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 25
+      }
+    ],
+    "notes": "Impersonal construction (hine lyst).",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "onfaegnian",
+    "lemma": "onfæġnian",
+    "gloss": "to show gladness",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 25
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "verbPrefix": "on"
+  },
+  {
+    "id": "onscunian",
+    "lemma": "onsċunian",
+    "gloss": "abhor, detest; reject, shun",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 25
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "verbPrefix": "on"
+  },
+  {
+    "id": "opstandan",
+    "lemma": "oþstandan",
+    "gloss": "to stop in one's tracks; to remain standing; to remain standing and prove an obstacle",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 25
+      }
+    ],
+    "notes": "'oþ-' isn't in paradigm.js's VERB_PREFIX_RE (unlike æt-/under-/wiþ-), so verbPrefix is set explicitly to avoid an incorrect extra ġe- on the past participle.",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "oþstandan",
+      "oþstōd",
+      "oþstōdon",
+      "oþstanden"
+    ],
+    "verbPrefix": "oþ"
+  },
+  {
+    "id": "teon",
+    "lemma": "tēon",
+    "gloss": "draw, drag, pull; bring, lead",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 25
+      }
+    ],
+    "notes": "Irregular: contracted strong II, same family as ateon. Present: hē tīehþ (not the regular-pattern tīenþ). OB gives principal parts as teon/tiehth; teah; tugon; (ġe)togen.",
+    "irregular": true,
+    "irregularForms": {
+      "nonFinite": {
+        "infinitive": "tēon",
+        "inflectedInfinitive": "tō tēonne",
+        "presentParticiple": "tēonde",
+        "pastParticiple": "ġetogen"
+      },
+      "imperative": {
+        "sg": "tēoh",
+        "pl": "tēoþ"
+      },
+      "presentInd": {
+        "sg1": "tēo",
+        "sg2": "tīehst",
+        "sg3": "tīehþ",
+        "pl": "tēoþ"
+      },
+      "presentSubj": {
+        "sg": "tēo",
+        "pl": "tēon"
+      }
+    },
+    "principalParts": [
+      "tēon",
+      "tēah",
+      "tugon",
+      "togen"
+    ]
+  },
+  {
+    "id": "wilnian",
+    "lemma": "wilnian",
+    "gloss": "want, desire; seek out",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 25
       }
     ],
     "notes": "",
