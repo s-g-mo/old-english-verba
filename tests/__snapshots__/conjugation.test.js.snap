@@ -44,6 +44,138 @@ exports[`conjugation snapshots aberan conjugation matches snapshot 1`] = `
 }
 `;
 
+exports[`conjugation snapshots abisgian conjugation matches snapshot 1`] = `
+{
+  "class": "Weak II",
+  "gloss": "to trouble, worry",
+  "imperative": {
+    "pl": "ābisgiaþ",
+    "sg": "ābisga",
+  },
+  "lemma": "ābisgian",
+  "nonFinite": {
+    "infinitive": "ābisgian",
+    "inflectedInfinitive": "tō ābisgianne",
+    "pastParticiple": "ġeābisgod",
+    "presentParticiple": "ābisgiende",
+  },
+  "pastInd": {
+    "pl": "ābisgodon",
+    "sg1": "ābisgode",
+    "sg2": "ābisgodest",
+    "sg3": "ābisgode",
+  },
+  "pastSubj": {
+    "pl": "ābisgoden",
+    "sg": "ābisgode",
+  },
+  "presentInd": {
+    "pl": "ābisgiaþ",
+    "sg1": "ābisgiġe",
+    "sg2": "ābisgast",
+    "sg3": "ābisgaþ",
+  },
+  "presentSubj": {
+    "pl": "ābisgiġen",
+    "sg": "ābisgiġe",
+  },
+  "sources": [
+    {
+      "chapter": 20,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots acwellan conjugation matches snapshot 1`] = `
+{
+  "class": "Weak I",
+  "gloss": "kill, destroy",
+  "imperative": {
+    "pl": "ācwellaþ",
+    "sg": "ācwele",
+  },
+  "lemma": "ācwellan",
+  "nonFinite": {
+    "infinitive": "ācwellan",
+    "inflectedInfinitive": "tō ācwellenne",
+    "pastParticiple": "ġeācweald",
+    "presentParticiple": "ācwellende",
+  },
+  "pastInd": {
+    "pl": "ācwealdon",
+    "sg1": "ācwealde",
+    "sg2": "ācwealdest",
+    "sg3": "ācwealde",
+  },
+  "pastSubj": {
+    "pl": "ācwealden",
+    "sg": "ācwealde",
+  },
+  "presentInd": {
+    "pl": "ācwellaþ",
+    "sg1": "ācwelle",
+    "sg2": "ācwelest",
+    "sg3": "ācweleþ",
+  },
+  "presentSubj": {
+    "pl": "ācwellen",
+    "sg": "ācwelle",
+  },
+  "sources": [
+    {
+      "chapter": 20,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots acwencan conjugation matches snapshot 1`] = `
+{
+  "class": "Weak I",
+  "gloss": "quench, extinguish",
+  "imperative": {
+    "pl": "ācwenċaþ",
+    "sg": "ācwenċ",
+  },
+  "lemma": "ācwenċan",
+  "nonFinite": {
+    "infinitive": "ācwenċan",
+    "inflectedInfinitive": "tō ācwenċenne",
+    "pastParticiple": "ġeācwenċed",
+    "presentParticiple": "ācwenċende",
+  },
+  "pastInd": {
+    "pl": "ācwencton",
+    "sg1": "ācwencte",
+    "sg2": "ācwenctest",
+    "sg3": "ācwencte",
+  },
+  "pastSubj": {
+    "pl": "ācwencten",
+    "sg": "ācwencte",
+  },
+  "presentInd": {
+    "pl": "ācwenċaþ",
+    "sg1": "ācwenċe",
+    "sg2": "ācwencst",
+    "sg3": "ācwencþ",
+  },
+  "presentSubj": {
+    "pl": "ācwenċen",
+    "sg": "ācwenċe",
+  },
+  "sources": [
+    {
+      "chapter": 19,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
 exports[`conjugation snapshots aefterfylgan conjugation matches snapshot 1`] = `
 {
   "class": "Weak I",
@@ -220,6 +352,138 @@ exports[`conjugation snapshots aetwindan conjugation matches snapshot 1`] = `
 }
 `;
 
+exports[`conjugation snapshots aflieman conjugation matches snapshot 1`] = `
+{
+  "class": "Weak I",
+  "gloss": "expel, banish; cause to flee, put to flight",
+  "imperative": {
+    "pl": "āflīemaþ",
+    "sg": "āflīem",
+  },
+  "lemma": "āflīeman",
+  "nonFinite": {
+    "infinitive": "āflīeman",
+    "inflectedInfinitive": "tō āflīemenne",
+    "pastParticiple": "ġeāflīemed",
+    "presentParticiple": "āflīemende",
+  },
+  "pastInd": {
+    "pl": "āflīemdon",
+    "sg1": "āflīemde",
+    "sg2": "āflīemdest",
+    "sg3": "āflīemde",
+  },
+  "pastSubj": {
+    "pl": "āflīemden",
+    "sg": "āflīemde",
+  },
+  "presentInd": {
+    "pl": "āflīemaþ",
+    "sg1": "āflīeme",
+    "sg2": "āflīemst",
+    "sg3": "āflīemþ",
+  },
+  "presentSubj": {
+    "pl": "āflīemen",
+    "sg": "āflīeme",
+  },
+  "sources": [
+    {
+      "chapter": 17,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots afyrhtan conjugation matches snapshot 1`] = `
+{
+  "class": "Weak I",
+  "gloss": "make afraid",
+  "imperative": {
+    "pl": "āfyrhtaþ",
+    "sg": "āfyrht",
+  },
+  "lemma": "āfyrhtan",
+  "nonFinite": {
+    "infinitive": "āfyrhtan",
+    "inflectedInfinitive": "tō āfyrhtenne",
+    "pastParticiple": "ġeāfyrht",
+    "presentParticiple": "āfyrhtende",
+  },
+  "pastInd": {
+    "pl": "āfyrhton",
+    "sg1": "āfyrhte",
+    "sg2": "āfyrhtest",
+    "sg3": "āfyrhte",
+  },
+  "pastSubj": {
+    "pl": "āfyrhten",
+    "sg": "āfyrhte",
+  },
+  "presentInd": {
+    "pl": "āfyrhtaþ",
+    "sg1": "āfyrhte",
+    "sg2": "āfyrhtst",
+    "sg3": "āfyrht",
+  },
+  "presentSubj": {
+    "pl": "āfyrhten",
+    "sg": "āfyrhte",
+  },
+  "sources": [
+    {
+      "chapter": 20,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots agan conjugation matches snapshot 1`] = `
+{
+  "class": "Preterite-Present",
+  "gloss": "possess, own; ought, have to",
+  "imperative": {
+    "pl": "āgaþ",
+    "sg": "āge",
+  },
+  "lemma": "āgan",
+  "nonFinite": {
+    "infinitive": "āgan",
+    "inflectedInfinitive": "tō āgenne",
+    "pastParticiple": "āgen",
+    "presentParticiple": "āgende",
+  },
+  "pastInd": {
+    "pl": "āhton",
+    "sg1": "āhte",
+    "sg2": "āhtest",
+    "sg3": "āhte",
+  },
+  "pastSubj": {
+    "pl": "āhten",
+    "sg": "āhte",
+  },
+  "presentInd": {
+    "pl": "āgon",
+    "sg1": "āh",
+    "sg2": "āhst",
+    "sg3": "āh",
+  },
+  "presentSubj": {
+    "pl": "āgen",
+    "sg": "āge",
+  },
+  "sources": [
+    {
+      "chapter": 17,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
 exports[`conjugation snapshots alecgan conjugation matches snapshot 1`] = `
 {
   "class": "Weak I",
@@ -258,6 +522,50 @@ exports[`conjugation snapshots alecgan conjugation matches snapshot 1`] = `
   "sources": [
     {
       "chapter": 13,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots aliefan conjugation matches snapshot 1`] = `
+{
+  "class": "Weak I",
+  "gloss": "allow, grant; be permitted",
+  "imperative": {
+    "pl": "ālīefaþ",
+    "sg": "ālīef",
+  },
+  "lemma": "ālīefan",
+  "nonFinite": {
+    "infinitive": "ālīefan",
+    "inflectedInfinitive": "tō ālīefenne",
+    "pastParticiple": "ġeālīefed",
+    "presentParticiple": "ālīefende",
+  },
+  "pastInd": {
+    "pl": "ālīefdon",
+    "sg1": "ālīefde",
+    "sg2": "ālīefdest",
+    "sg3": "ālīefde",
+  },
+  "pastSubj": {
+    "pl": "ālīefden",
+    "sg": "ālīefde",
+  },
+  "presentInd": {
+    "pl": "ālīefaþ",
+    "sg1": "ālīefe",
+    "sg2": "ālīefst",
+    "sg3": "ālīefþ",
+  },
+  "presentSubj": {
+    "pl": "ālīefen",
+    "sg": "ālīefe",
+  },
+  "sources": [
+    {
+      "chapter": 20,
       "text": "osweald-bera",
     },
   ],
@@ -484,6 +792,50 @@ exports[`conjugation snapshots asendan conjugation matches snapshot 1`] = `
 }
 `;
 
+exports[`conjugation snapshots asettan conjugation matches snapshot 1`] = `
+{
+  "class": "Weak I",
+  "gloss": "set, place",
+  "imperative": {
+    "pl": "āsettaþ",
+    "sg": "āsete",
+  },
+  "lemma": "āsettan",
+  "nonFinite": {
+    "infinitive": "āsettan",
+    "inflectedInfinitive": "tō āsettenne",
+    "pastParticiple": "ġeāsett",
+    "presentParticiple": "āsettende",
+  },
+  "pastInd": {
+    "pl": "āsetton",
+    "sg1": "āsette",
+    "sg2": "āsettest",
+    "sg3": "āsette",
+  },
+  "pastSubj": {
+    "pl": "āsetten",
+    "sg": "āsette",
+  },
+  "presentInd": {
+    "pl": "āsettaþ",
+    "sg1": "āsette",
+    "sg2": "āsetst",
+    "sg3": "āsett",
+  },
+  "presentSubj": {
+    "pl": "āsetten",
+    "sg": "āsette",
+  },
+  "sources": [
+    {
+      "chapter": 17,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
 exports[`conjugation snapshots aspendan conjugation matches snapshot 1`] = `
 {
   "class": "Weak I",
@@ -698,6 +1050,94 @@ exports[`conjugation snapshots aweorpan conjugation matches snapshot 1`] = `
   "sources": [
     {
       "chapter": 15,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots awritan conjugation matches snapshot 1`] = `
+{
+  "class": "Strong I",
+  "gloss": "describe; write down; write",
+  "imperative": {
+    "pl": "āwrītaþ",
+    "sg": "āwrīt",
+  },
+  "lemma": "āwrītan",
+  "nonFinite": {
+    "infinitive": "āwrītan",
+    "inflectedInfinitive": "tō āwrītenne",
+    "pastParticiple": "āwriten",
+    "presentParticiple": "āwrītende",
+  },
+  "pastInd": {
+    "pl": "āwriton",
+    "sg1": "āwrāt",
+    "sg2": "āwrite",
+    "sg3": "āwrāt",
+  },
+  "pastSubj": {
+    "pl": "āwriten",
+    "sg": "āwrite",
+  },
+  "presentInd": {
+    "pl": "āwrītaþ",
+    "sg1": "āwrīte",
+    "sg2": "āwrītst",
+    "sg3": "āwrītt",
+  },
+  "presentSubj": {
+    "pl": "āwrīten",
+    "sg": "āwrīte",
+  },
+  "sources": [
+    {
+      "chapter": 20,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots awyrtwalian conjugation matches snapshot 1`] = `
+{
+  "class": "Weak II",
+  "gloss": "root out",
+  "imperative": {
+    "pl": "āwyrtwaliaþ",
+    "sg": "āwyrtwala",
+  },
+  "lemma": "āwyrtwalian",
+  "nonFinite": {
+    "infinitive": "āwyrtwalian",
+    "inflectedInfinitive": "tō āwyrtwalianne",
+    "pastParticiple": "ġeāwyrtwalod",
+    "presentParticiple": "āwyrtwaliende",
+  },
+  "pastInd": {
+    "pl": "āwyrtwalodon",
+    "sg1": "āwyrtwalode",
+    "sg2": "āwyrtwalodest",
+    "sg3": "āwyrtwalode",
+  },
+  "pastSubj": {
+    "pl": "āwyrtwaloden",
+    "sg": "āwyrtwalode",
+  },
+  "presentInd": {
+    "pl": "āwyrtwaliaþ",
+    "sg1": "āwyrtwaliġe",
+    "sg2": "āwyrtwalast",
+    "sg3": "āwyrtwalaþ",
+  },
+  "presentSubj": {
+    "pl": "āwyrtwaliġen",
+    "sg": "āwyrtwaliġe",
+  },
+  "sources": [
+    {
+      "chapter": 19,
       "text": "osweald-bera",
     },
   ],
@@ -962,6 +1402,50 @@ exports[`conjugation snapshots began conjugation matches snapshot 1`] = `
   "sources": [
     {
       "chapter": 10,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots begietan conjugation matches snapshot 1`] = `
+{
+  "class": "Strong V",
+  "gloss": "get, take, acquire, obtain",
+  "imperative": {
+    "pl": "beġietaþ",
+    "sg": "beġiet",
+  },
+  "lemma": "beġietan",
+  "nonFinite": {
+    "infinitive": "beġietan",
+    "inflectedInfinitive": "tō beġietenne",
+    "pastParticiple": "ġebeġieten",
+    "presentParticiple": "beġietende",
+  },
+  "pastInd": {
+    "pl": "beġēaton",
+    "sg1": "beġeat",
+    "sg2": "beġēate",
+    "sg3": "beġeat",
+  },
+  "pastSubj": {
+    "pl": "beġēaten",
+    "sg": "beġēate",
+  },
+  "presentInd": {
+    "pl": "beġietaþ",
+    "sg1": "beġiete",
+    "sg2": "beġietst",
+    "sg3": "beġiett",
+  },
+  "presentSubj": {
+    "pl": "beġieten",
+    "sg": "beġiete",
+  },
+  "sources": [
+    {
+      "chapter": 18,
       "text": "osweald-bera",
     },
   ],
@@ -1329,6 +1813,94 @@ exports[`conjugation snapshots besargian conjugation matches snapshot 1`] = `
 }
 `;
 
+exports[`conjugation snapshots beseon conjugation matches snapshot 1`] = `
+{
+  "class": "Strong V",
+  "gloss": "look; go to see, visit",
+  "imperative": {
+    "pl": "besēoþ",
+    "sg": "beseoh",
+  },
+  "lemma": "besēon",
+  "nonFinite": {
+    "infinitive": "besēon",
+    "inflectedInfinitive": "tō besēonne",
+    "pastParticiple": "besewen",
+    "presentParticiple": "besēonde",
+  },
+  "pastInd": {
+    "pl": "besāwon",
+    "sg1": "beseah",
+    "sg2": "besāwe",
+    "sg3": "beseah",
+  },
+  "pastSubj": {
+    "pl": "besāwen",
+    "sg": "besāwe",
+  },
+  "presentInd": {
+    "pl": "besēoþ",
+    "sg1": "besēo",
+    "sg2": "besiehst",
+    "sg3": "besiehþ",
+  },
+  "presentSubj": {
+    "pl": "besēon",
+    "sg": "besēo",
+  },
+  "sources": [
+    {
+      "chapter": 20,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots besittan conjugation matches snapshot 1`] = `
+{
+  "class": "Strong V",
+  "gloss": "surround, beset",
+  "imperative": {
+    "pl": "besittaþ",
+    "sg": "besite",
+  },
+  "lemma": "besittan",
+  "nonFinite": {
+    "infinitive": "besittan",
+    "inflectedInfinitive": "tō besittenne",
+    "pastParticiple": "beseten",
+    "presentParticiple": "besittende",
+  },
+  "pastInd": {
+    "pl": "besǣton",
+    "sg1": "besæt",
+    "sg2": "besǣte",
+    "sg3": "besæt",
+  },
+  "pastSubj": {
+    "pl": "besǣten",
+    "sg": "besǣte",
+  },
+  "presentInd": {
+    "pl": "besittaþ",
+    "sg1": "besitte",
+    "sg2": "besitst",
+    "sg3": "besitt",
+  },
+  "presentSubj": {
+    "pl": "besitten",
+    "sg": "besitte",
+  },
+  "sources": [
+    {
+      "chapter": 19,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
 exports[`conjugation snapshots beswican conjugation matches snapshot 1`] = `
 {
   "class": "Strong I",
@@ -1543,6 +2115,50 @@ exports[`conjugation snapshots biddan conjugation matches snapshot 1`] = `
   "sources": [
     {
       "chapter": 7,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots bindan conjugation matches snapshot 1`] = `
+{
+  "class": "Strong IIIa",
+  "gloss": "bind",
+  "imperative": {
+    "pl": "bindaþ",
+    "sg": "bind",
+  },
+  "lemma": "bindan",
+  "nonFinite": {
+    "infinitive": "bindan",
+    "inflectedInfinitive": "tō bindenne",
+    "pastParticiple": "ġebunden",
+    "presentParticiple": "bindende",
+  },
+  "pastInd": {
+    "pl": "bundon",
+    "sg1": "band",
+    "sg2": "bunde",
+    "sg3": "band",
+  },
+  "pastSubj": {
+    "pl": "bunden",
+    "sg": "bunde",
+  },
+  "presentInd": {
+    "pl": "bindaþ",
+    "sg1": "binde",
+    "sg2": "bintst",
+    "sg3": "bint",
+  },
+  "presentSubj": {
+    "pl": "binden",
+    "sg": "binde",
+  },
+  "sources": [
+    {
+      "chapter": 19,
       "text": "osweald-bera",
     },
   ],
@@ -1769,6 +2385,50 @@ exports[`conjugation snapshots bycgan conjugation matches snapshot 1`] = `
 }
 `;
 
+exports[`conjugation snapshots ciepan conjugation matches snapshot 1`] = `
+{
+  "class": "Weak I",
+  "gloss": "sell",
+  "imperative": {
+    "pl": "ċīepaþ",
+    "sg": "ċīep",
+  },
+  "lemma": "ċīepan",
+  "nonFinite": {
+    "infinitive": "ċīepan",
+    "inflectedInfinitive": "tō ċīepenne",
+    "pastParticiple": "ġeċīeped",
+    "presentParticiple": "ċīepende",
+  },
+  "pastInd": {
+    "pl": "ċīepton",
+    "sg1": "ċīepte",
+    "sg2": "ċīeptest",
+    "sg3": "ċīepte",
+  },
+  "pastSubj": {
+    "pl": "ċīepten",
+    "sg": "ċīepte",
+  },
+  "presentInd": {
+    "pl": "ċīepaþ",
+    "sg1": "ċīepe",
+    "sg2": "ċīepst",
+    "sg3": "ċīepþ",
+  },
+  "presentSubj": {
+    "pl": "ċīepen",
+    "sg": "ċīepe",
+  },
+  "sources": [
+    {
+      "chapter": 19,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
 exports[`conjugation snapshots clipian conjugation matches snapshot 1`] = `
 {
   "class": "Weak II",
@@ -1983,6 +2643,94 @@ exports[`conjugation snapshots cwepan conjugation matches snapshot 1`] = `
   "sources": [
     {
       "chapter": 3,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots cypan conjugation matches snapshot 1`] = `
+{
+  "class": "Weak I",
+  "gloss": "reveal; proclaim, announce",
+  "imperative": {
+    "pl": "cȳþaþ",
+    "sg": "cȳþ",
+  },
+  "lemma": "cȳþan",
+  "nonFinite": {
+    "infinitive": "cȳþan",
+    "inflectedInfinitive": "tō cȳþenne",
+    "pastParticiple": "ġecȳþed",
+    "presentParticiple": "cȳþende",
+  },
+  "pastInd": {
+    "pl": "cȳþdon",
+    "sg1": "cȳþde",
+    "sg2": "cȳþdest",
+    "sg3": "cȳþde",
+  },
+  "pastSubj": {
+    "pl": "cȳþden",
+    "sg": "cȳþde",
+  },
+  "presentInd": {
+    "pl": "cȳþaþ",
+    "sg1": "cȳþe",
+    "sg2": "cȳst",
+    "sg3": "cȳþ",
+  },
+  "presentSubj": {
+    "pl": "cȳþen",
+    "sg": "cȳþe",
+  },
+  "sources": [
+    {
+      "chapter": 18,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots deman conjugation matches snapshot 1`] = `
+{
+  "class": "Weak I",
+  "gloss": "judge; deem, think, consider",
+  "imperative": {
+    "pl": "dēmaþ",
+    "sg": "dēm",
+  },
+  "lemma": "dēman",
+  "nonFinite": {
+    "infinitive": "dēman",
+    "inflectedInfinitive": "tō dēmenne",
+    "pastParticiple": "ġedēmed",
+    "presentParticiple": "dēmende",
+  },
+  "pastInd": {
+    "pl": "dēmdon",
+    "sg1": "dēmde",
+    "sg2": "dēmdest",
+    "sg3": "dēmde",
+  },
+  "pastSubj": {
+    "pl": "dēmden",
+    "sg": "dēmde",
+  },
+  "presentInd": {
+    "pl": "dēmaþ",
+    "sg1": "dēme",
+    "sg2": "dēmst",
+    "sg3": "dēmþ",
+  },
+  "presentSubj": {
+    "pl": "dēmen",
+    "sg": "dēme",
+  },
+  "sources": [
+    {
+      "chapter": 20,
       "text": "osweald-bera",
     },
   ],
@@ -2371,7 +3119,12 @@ exports[`conjugation snapshots faran conjugation matches snapshot 1`] = `
     "pl": "faren",
     "sg": "fare",
   },
-  "sources": [],
+  "sources": [
+    {
+      "chapter": 17,
+      "text": "osweald-bera",
+    },
+  ],
 }
 `;
 
@@ -2727,6 +3480,50 @@ exports[`conjugation snapshots flitan conjugation matches snapshot 1`] = `
 }
 `;
 
+exports[`conjugation snapshots forbaernan conjugation matches snapshot 1`] = `
+{
+  "class": "Weak I",
+  "gloss": "burn down, burn up",
+  "imperative": {
+    "pl": "forbærnaþ",
+    "sg": "forbærn",
+  },
+  "lemma": "forbærnan",
+  "nonFinite": {
+    "infinitive": "forbærnan",
+    "inflectedInfinitive": "tō forbærnenne",
+    "pastParticiple": "ġeforbærned",
+    "presentParticiple": "forbærnende",
+  },
+  "pastInd": {
+    "pl": "forbærndon",
+    "sg1": "forbærnde",
+    "sg2": "forbærndest",
+    "sg3": "forbærnde",
+  },
+  "pastSubj": {
+    "pl": "forbærnden",
+    "sg": "forbærnde",
+  },
+  "presentInd": {
+    "pl": "forbærnaþ",
+    "sg1": "forbærne",
+    "sg2": "forbærnst",
+    "sg3": "forbærnþ",
+  },
+  "presentSubj": {
+    "pl": "forbærnen",
+    "sg": "forbærne",
+  },
+  "sources": [
+    {
+      "chapter": 17,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
 exports[`conjugation snapshots forbeodan conjugation matches snapshot 1`] = `
 {
   "class": "Strong IIa",
@@ -2765,6 +3562,50 @@ exports[`conjugation snapshots forbeodan conjugation matches snapshot 1`] = `
   "sources": [
     {
       "chapter": 11,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots fordeman conjugation matches snapshot 1`] = `
+{
+  "class": "Weak I",
+  "gloss": "condemn",
+  "imperative": {
+    "pl": "fordēmaþ",
+    "sg": "fordēm",
+  },
+  "lemma": "fordēman",
+  "nonFinite": {
+    "infinitive": "fordēman",
+    "inflectedInfinitive": "tō fordēmenne",
+    "pastParticiple": "ġefordēmed",
+    "presentParticiple": "fordēmende",
+  },
+  "pastInd": {
+    "pl": "fordēmdon",
+    "sg1": "fordēmde",
+    "sg2": "fordēmdest",
+    "sg3": "fordēmde",
+  },
+  "pastSubj": {
+    "pl": "fordēmden",
+    "sg": "fordēmde",
+  },
+  "presentInd": {
+    "pl": "fordēmaþ",
+    "sg1": "fordēme",
+    "sg2": "fordēmst",
+    "sg3": "fordēmþ",
+  },
+  "presentSubj": {
+    "pl": "fordēmen",
+    "sg": "fordēme",
+  },
+  "sources": [
+    {
+      "chapter": 20,
       "text": "osweald-bera",
     },
   ],
@@ -2947,6 +3788,50 @@ exports[`conjugation snapshots forlatan conjugation matches snapshot 1`] = `
 }
 `;
 
+exports[`conjugation snapshots forleosan conjugation matches snapshot 1`] = `
+{
+  "class": "Strong IIa",
+  "gloss": "lose",
+  "imperative": {
+    "pl": "forlēosaþ",
+    "sg": "forlēos",
+  },
+  "lemma": "forlēosan",
+  "nonFinite": {
+    "infinitive": "forlēosan",
+    "inflectedInfinitive": "tō forlēosenne",
+    "pastParticiple": "forloren",
+    "presentParticiple": "forlēosende",
+  },
+  "pastInd": {
+    "pl": "forluron",
+    "sg1": "forlēas",
+    "sg2": "forlure",
+    "sg3": "forlēas",
+  },
+  "pastSubj": {
+    "pl": "forluren",
+    "sg": "forlure",
+  },
+  "presentInd": {
+    "pl": "forlēosaþ",
+    "sg1": "forlēose",
+    "sg2": "forlīest",
+    "sg3": "forlīest",
+  },
+  "presentSubj": {
+    "pl": "forlēosen",
+    "sg": "forlēose",
+  },
+  "sources": [
+    {
+      "chapter": 17,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
 exports[`conjugation snapshots forpferan conjugation matches snapshot 1`] = `
 {
   "class": "Weak I",
@@ -3035,6 +3920,50 @@ exports[`conjugation snapshots forsittan conjugation matches snapshot 1`] = `
 }
 `;
 
+exports[`conjugation snapshots forstelan conjugation matches snapshot 1`] = `
+{
+  "class": "Strong IV",
+  "gloss": "steal",
+  "imperative": {
+    "pl": "forstelaþ",
+    "sg": "forstel",
+  },
+  "lemma": "forstelan",
+  "nonFinite": {
+    "infinitive": "forstelan",
+    "inflectedInfinitive": "tō forstelenne",
+    "pastParticiple": "forstolen",
+    "presentParticiple": "forstelende",
+  },
+  "pastInd": {
+    "pl": "forstǣlon",
+    "sg1": "forstæl",
+    "sg2": "forstǣle",
+    "sg3": "forstæl",
+  },
+  "pastSubj": {
+    "pl": "forstǣlen",
+    "sg": "forstǣle",
+  },
+  "presentInd": {
+    "pl": "forstelaþ",
+    "sg1": "forstele",
+    "sg2": "forstilst",
+    "sg3": "forstilþ",
+  },
+  "presentSubj": {
+    "pl": "forstelen",
+    "sg": "forstele",
+  },
+  "sources": [
+    {
+      "chapter": 17,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
 exports[`conjugation snapshots fremman conjugation matches snapshot 1`] = `
 {
   "class": "Weak I",
@@ -3070,7 +3999,12 @@ exports[`conjugation snapshots fremman conjugation matches snapshot 1`] = `
     "pl": "fremmen",
     "sg": "fremme",
   },
-  "sources": [],
+  "sources": [
+    {
+      "chapter": 20,
+      "text": "osweald-bera",
+    },
+  ],
 }
 `;
 
@@ -3382,6 +4316,50 @@ exports[`conjugation snapshots gebyrian conjugation matches snapshot 1`] = `
 }
 `;
 
+exports[`conjugation snapshots geceosan conjugation matches snapshot 1`] = `
+{
+  "class": "Strong IIa",
+  "gloss": "choose; elect",
+  "imperative": {
+    "pl": "ġeċēosaþ",
+    "sg": "ġeċēos",
+  },
+  "lemma": "ġeċēosan",
+  "nonFinite": {
+    "infinitive": "ġeċēosan",
+    "inflectedInfinitive": "tō ġeċēosenne",
+    "pastParticiple": "ġecoren",
+    "presentParticiple": "ġeċēosende",
+  },
+  "pastInd": {
+    "pl": "ġecuron",
+    "sg1": "ġeċēas",
+    "sg2": "ġecure",
+    "sg3": "ġeċēas",
+  },
+  "pastSubj": {
+    "pl": "ġecuren",
+    "sg": "ġecure",
+  },
+  "presentInd": {
+    "pl": "ġeċēosaþ",
+    "sg1": "ġeċēose",
+    "sg2": "ġeċīest",
+    "sg3": "ġeċīest",
+  },
+  "presentSubj": {
+    "pl": "ġeċēosen",
+    "sg": "ġeċēose",
+  },
+  "sources": [
+    {
+      "chapter": 18,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
 exports[`conjugation snapshots gecnawan conjugation matches snapshot 1`] = `
 {
   "class": "Strong VII",
@@ -3646,6 +4624,50 @@ exports[`conjugation snapshots gefeohtan conjugation matches snapshot 1`] = `
 }
 `;
 
+exports[`conjugation snapshots gegadrian conjugation matches snapshot 1`] = `
+{
+  "class": "Weak II",
+  "gloss": "gather",
+  "imperative": {
+    "pl": "ġegadriaþ",
+    "sg": "ġegadra",
+  },
+  "lemma": "ġegadrian",
+  "nonFinite": {
+    "infinitive": "ġegadrian",
+    "inflectedInfinitive": "tō ġegadrianne",
+    "pastParticiple": "ġegadrod",
+    "presentParticiple": "ġegadriende",
+  },
+  "pastInd": {
+    "pl": "ġegadrodon",
+    "sg1": "ġegadrode",
+    "sg2": "ġegadrodest",
+    "sg3": "ġegadrode",
+  },
+  "pastSubj": {
+    "pl": "ġegadroden",
+    "sg": "ġegadrode",
+  },
+  "presentInd": {
+    "pl": "ġegadriaþ",
+    "sg1": "ġegadriġe",
+    "sg2": "ġegadrast",
+    "sg3": "ġegadraþ",
+  },
+  "presentSubj": {
+    "pl": "ġegadriġen",
+    "sg": "ġegadriġe",
+  },
+  "sources": [
+    {
+      "chapter": 17,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
 exports[`conjugation snapshots gegearwian conjugation matches snapshot 1`] = `
 {
   "class": "Weak II",
@@ -3734,6 +4756,50 @@ exports[`conjugation snapshots gehieran conjugation matches snapshot 1`] = `
 }
 `;
 
+exports[`conjugation snapshots gehweorfan conjugation matches snapshot 1`] = `
+{
+  "class": "Strong IIIb",
+  "gloss": "turn, go; return; wander, roam; change",
+  "imperative": {
+    "pl": "ġehweorfaþ",
+    "sg": "ġehweorf",
+  },
+  "lemma": "ġehweorfan",
+  "nonFinite": {
+    "infinitive": "ġehweorfan",
+    "inflectedInfinitive": "tō ġehweorfenne",
+    "pastParticiple": "ġehworfen",
+    "presentParticiple": "ġehweorfende",
+  },
+  "pastInd": {
+    "pl": "ġehwurfon",
+    "sg1": "ġehwearf",
+    "sg2": "ġehwurfe",
+    "sg3": "ġehwearf",
+  },
+  "pastSubj": {
+    "pl": "ġehwurfen",
+    "sg": "ġehwurfe",
+  },
+  "presentInd": {
+    "pl": "ġehweorfaþ",
+    "sg1": "ġehweorfe",
+    "sg2": "ġehweorfest",
+    "sg3": "ġehwierfþ",
+  },
+  "presentSubj": {
+    "pl": "ġehweorfen",
+    "sg": "ġehweorfe",
+  },
+  "sources": [
+    {
+      "chapter": 18,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
 exports[`conjugation snapshots gehyhtan conjugation matches snapshot 1`] = `
 {
   "class": "Weak I",
@@ -3772,6 +4838,94 @@ exports[`conjugation snapshots gehyhtan conjugation matches snapshot 1`] = `
   "sources": [
     {
       "chapter": 15,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots gelaeran conjugation matches snapshot 1`] = `
+{
+  "class": "Weak I",
+  "gloss": "teach",
+  "imperative": {
+    "pl": "ġelǣraþ",
+    "sg": "ġelǣr",
+  },
+  "lemma": "ġelǣran",
+  "nonFinite": {
+    "infinitive": "ġelǣran",
+    "inflectedInfinitive": "tō ġelǣrenne",
+    "pastParticiple": "ġelǣred",
+    "presentParticiple": "ġelǣrende",
+  },
+  "pastInd": {
+    "pl": "ġelǣrdon",
+    "sg1": "ġelǣrde",
+    "sg2": "ġelǣrdest",
+    "sg3": "ġelǣrde",
+  },
+  "pastSubj": {
+    "pl": "ġelǣrden",
+    "sg": "ġelǣrde",
+  },
+  "presentInd": {
+    "pl": "ġelǣraþ",
+    "sg1": "ġelǣre",
+    "sg2": "ġelǣrst",
+    "sg3": "ġelǣrþ",
+  },
+  "presentSubj": {
+    "pl": "ġelǣren",
+    "sg": "ġelǣre",
+  },
+  "sources": [
+    {
+      "chapter": 18,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots gelaestan conjugation matches snapshot 1`] = `
+{
+  "class": "Weak I",
+  "gloss": "follow; perform, carry out",
+  "imperative": {
+    "pl": "ġelǣstaþ",
+    "sg": "ġelǣst",
+  },
+  "lemma": "ġelǣstan",
+  "nonFinite": {
+    "infinitive": "ġelǣstan",
+    "inflectedInfinitive": "tō ġelǣstenne",
+    "pastParticiple": "ġelǣsted",
+    "presentParticiple": "ġelǣstende",
+  },
+  "pastInd": {
+    "pl": "ġelǣston",
+    "sg1": "ġelǣste",
+    "sg2": "ġelǣstest",
+    "sg3": "ġelǣste",
+  },
+  "pastSubj": {
+    "pl": "ġelǣsten",
+    "sg": "ġelǣste",
+  },
+  "presentInd": {
+    "pl": "ġelǣstaþ",
+    "sg1": "ġelǣste",
+    "sg2": "ġelǣst",
+    "sg3": "ġelǣst",
+  },
+  "presentSubj": {
+    "pl": "ġelǣsten",
+    "sg": "ġelǣste",
+  },
+  "sources": [
+    {
+      "chapter": 20,
       "text": "osweald-bera",
     },
   ],
@@ -3866,6 +5020,50 @@ exports[`conjugation snapshots geliefan conjugation matches snapshot 1`] = `
 }
 `;
 
+exports[`conjugation snapshots gelimpan conjugation matches snapshot 1`] = `
+{
+  "class": "Strong IIIa",
+  "gloss": "happen, befall",
+  "imperative": {
+    "pl": "ġelimpaþ",
+    "sg": "ġelimp",
+  },
+  "lemma": "ġelimpan",
+  "nonFinite": {
+    "infinitive": "ġelimpan",
+    "inflectedInfinitive": "tō ġelimpenne",
+    "pastParticiple": "ġelumpen",
+    "presentParticiple": "ġelimpende",
+  },
+  "pastInd": {
+    "pl": "ġelumpon",
+    "sg1": "ġelamp",
+    "sg2": "ġelumpe",
+    "sg3": "ġelamp",
+  },
+  "pastSubj": {
+    "pl": "ġelumpen",
+    "sg": "ġelumpe",
+  },
+  "presentInd": {
+    "pl": "ġelimpaþ",
+    "sg1": "ġelimpe",
+    "sg2": "ġilimpst",
+    "sg3": "ġilimpþ",
+  },
+  "presentSubj": {
+    "pl": "ġelimpen",
+    "sg": "ġelimpe",
+  },
+  "sources": [
+    {
+      "chapter": 17,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
 exports[`conjugation snapshots genealaecan conjugation matches snapshot 1`] = `
 {
   "class": "Weak I",
@@ -3948,6 +5146,50 @@ exports[`conjugation snapshots geocian conjugation matches snapshot 1`] = `
   "sources": [
     {
       "chapter": 10,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots geomrian conjugation matches snapshot 1`] = `
+{
+  "class": "Weak II",
+  "gloss": "mourn, complain",
+  "imperative": {
+    "pl": "ġeōmriaþ",
+    "sg": "ġeōmra",
+  },
+  "lemma": "ġeōmrian",
+  "nonFinite": {
+    "infinitive": "ġeōmrian",
+    "inflectedInfinitive": "tō ġeōmrianne",
+    "pastParticiple": "ġeōmrod",
+    "presentParticiple": "ġeōmriende",
+  },
+  "pastInd": {
+    "pl": "ġeōmrodon",
+    "sg1": "ġeōmrode",
+    "sg2": "ġeōmrodest",
+    "sg3": "ġeōmrode",
+  },
+  "pastSubj": {
+    "pl": "ġeōmroden",
+    "sg": "ġeōmrode",
+  },
+  "presentInd": {
+    "pl": "ġeōmriaþ",
+    "sg1": "ġeōmriġe",
+    "sg2": "ġeōmrast",
+    "sg3": "ġeōmraþ",
+  },
+  "presentSubj": {
+    "pl": "ġeōmriġen",
+    "sg": "ġeōmriġe",
+  },
+  "sources": [
+    {
+      "chapter": 20,
       "text": "osweald-bera",
     },
   ],
@@ -4080,6 +5322,50 @@ exports[`conjugation snapshots gepwarian conjugation matches snapshot 1`] = `
   "sources": [
     {
       "chapter": 9,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots gesamnian conjugation matches snapshot 1`] = `
+{
+  "class": "Weak II",
+  "gloss": "collect, bring together, unite",
+  "imperative": {
+    "pl": "ġesamniaþ",
+    "sg": "ġesamna",
+  },
+  "lemma": "ġesamnian",
+  "nonFinite": {
+    "infinitive": "ġesamnian",
+    "inflectedInfinitive": "tō ġesamnianne",
+    "pastParticiple": "ġesamnod",
+    "presentParticiple": "ġesamniende",
+  },
+  "pastInd": {
+    "pl": "ġesamnodon",
+    "sg1": "ġesamnode",
+    "sg2": "ġesamnodest",
+    "sg3": "ġesamnode",
+  },
+  "pastSubj": {
+    "pl": "ġesamnoden",
+    "sg": "ġesamnode",
+  },
+  "presentInd": {
+    "pl": "ġesamniaþ",
+    "sg1": "ġesamniġe",
+    "sg2": "ġesamnast",
+    "sg3": "ġesamnaþ",
+  },
+  "presentSubj": {
+    "pl": "ġesamniġen",
+    "sg": "ġesamniġe",
+  },
+  "sources": [
+    {
+      "chapter": 17,
       "text": "osweald-bera",
     },
   ],
@@ -4438,6 +5724,50 @@ exports[`conjugation snapshots gestrienan conjugation matches snapshot 1`] = `
 }
 `;
 
+exports[`conjugation snapshots geswican conjugation matches snapshot 1`] = `
+{
+  "class": "Strong I",
+  "gloss": "stop",
+  "imperative": {
+    "pl": "ġeswīcaþ",
+    "sg": "ġeswīc",
+  },
+  "lemma": "ġeswīcan",
+  "nonFinite": {
+    "infinitive": "ġeswīcan",
+    "inflectedInfinitive": "tō ġeswīcenne",
+    "pastParticiple": "ġeswicen",
+    "presentParticiple": "ġeswīcende",
+  },
+  "pastInd": {
+    "pl": "ġeswicon",
+    "sg1": "ġeswāc",
+    "sg2": "ġeswice",
+    "sg3": "ġeswāc",
+  },
+  "pastSubj": {
+    "pl": "ġeswicen",
+    "sg": "ġeswice",
+  },
+  "presentInd": {
+    "pl": "ġeswīcaþ",
+    "sg1": "ġeswīce",
+    "sg2": "ġeswīcst",
+    "sg3": "ġeswīcþ",
+  },
+  "presentSubj": {
+    "pl": "ġeswīcen",
+    "sg": "ġeswīce",
+  },
+  "sources": [
+    {
+      "chapter": 17,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
 exports[`conjugation snapshots getacnian conjugation matches snapshot 1`] = `
 {
   "class": "Weak II",
@@ -4746,6 +6076,50 @@ exports[`conjugation snapshots giefan conjugation matches snapshot 1`] = `
 }
 `;
 
+exports[`conjugation snapshots giefian conjugation matches snapshot 1`] = `
+{
+  "class": "Weak II",
+  "gloss": "bestow gifts upon",
+  "imperative": {
+    "pl": "ġiefiaþ",
+    "sg": "ġiefa",
+  },
+  "lemma": "ġiefian",
+  "nonFinite": {
+    "infinitive": "ġiefian",
+    "inflectedInfinitive": "tō ġiefianne",
+    "pastParticiple": "ġeġiefod",
+    "presentParticiple": "ġiefiende",
+  },
+  "pastInd": {
+    "pl": "ġiefodon",
+    "sg1": "ġiefode",
+    "sg2": "ġiefodest",
+    "sg3": "ġiefode",
+  },
+  "pastSubj": {
+    "pl": "ġiefoden",
+    "sg": "ġiefode",
+  },
+  "presentInd": {
+    "pl": "ġiefiaþ",
+    "sg1": "ġiefiġe",
+    "sg2": "ġiefast",
+    "sg3": "ġiefaþ",
+  },
+  "presentSubj": {
+    "pl": "ġiefiġen",
+    "sg": "ġiefiġe",
+  },
+  "sources": [
+    {
+      "chapter": 17,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
 exports[`conjugation snapshots gieldan conjugation matches snapshot 1`] = `
 {
   "class": "Strong IIIb",
@@ -4784,6 +6158,94 @@ exports[`conjugation snapshots gieldan conjugation matches snapshot 1`] = `
   "sources": [
     {
       "chapter": 13,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots gieman conjugation matches snapshot 1`] = `
+{
+  "class": "Weak I",
+  "gloss": "care for; heed; observe",
+  "imperative": {
+    "pl": "ġīemaþ",
+    "sg": "ġīem",
+  },
+  "lemma": "ġīeman",
+  "nonFinite": {
+    "infinitive": "ġīeman",
+    "inflectedInfinitive": "tō ġīemenne",
+    "pastParticiple": "ġeġīemed",
+    "presentParticiple": "ġīemende",
+  },
+  "pastInd": {
+    "pl": "ġīemdon",
+    "sg1": "ġīemde",
+    "sg2": "ġīemdest",
+    "sg3": "ġīemde",
+  },
+  "pastSubj": {
+    "pl": "ġīemden",
+    "sg": "ġīemde",
+  },
+  "presentInd": {
+    "pl": "ġīemaþ",
+    "sg1": "ġīeme",
+    "sg2": "ġīemst",
+    "sg3": "ġīemþ",
+  },
+  "presentSubj": {
+    "pl": "ġīemen",
+    "sg": "ġīeme",
+  },
+  "sources": [
+    {
+      "chapter": 20,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots glengan conjugation matches snapshot 1`] = `
+{
+  "class": "Weak I",
+  "gloss": "adorn, decorate; arrange gracefully",
+  "imperative": {
+    "pl": "glenġaþ",
+    "sg": "glenġ",
+  },
+  "lemma": "glenġan",
+  "nonFinite": {
+    "infinitive": "glenġan",
+    "inflectedInfinitive": "tō glenġenne",
+    "pastParticiple": "ġeglenġed",
+    "presentParticiple": "glenġende",
+  },
+  "pastInd": {
+    "pl": "glengdon",
+    "sg1": "glengde",
+    "sg2": "glengdest",
+    "sg3": "glengde",
+  },
+  "pastSubj": {
+    "pl": "glengden",
+    "sg": "glengde",
+  },
+  "presentInd": {
+    "pl": "glenġaþ",
+    "sg1": "glenġe",
+    "sg2": "glengst",
+    "sg3": "glengþ",
+  },
+  "presentSubj": {
+    "pl": "glenġen",
+    "sg": "glenġe",
+  },
+  "sources": [
+    {
+      "chapter": 19,
       "text": "osweald-bera",
     },
   ],
@@ -5010,6 +6472,50 @@ exports[`conjugation snapshots healdan conjugation matches snapshot 1`] = `
 }
 `;
 
+exports[`conjugation snapshots healsian conjugation matches snapshot 1`] = `
+{
+  "class": "Weak II",
+  "gloss": "persuade",
+  "imperative": {
+    "pl": "healsiaþ",
+    "sg": "healsa",
+  },
+  "lemma": "healsian",
+  "nonFinite": {
+    "infinitive": "healsian",
+    "inflectedInfinitive": "tō healsianne",
+    "pastParticiple": "ġehealsod",
+    "presentParticiple": "healsiende",
+  },
+  "pastInd": {
+    "pl": "healsodon",
+    "sg1": "healsode",
+    "sg2": "healsodest",
+    "sg3": "healsode",
+  },
+  "pastSubj": {
+    "pl": "healsoden",
+    "sg": "healsode",
+  },
+  "presentInd": {
+    "pl": "healsiaþ",
+    "sg1": "healsiġe",
+    "sg2": "healsast",
+    "sg3": "healsaþ",
+  },
+  "presentSubj": {
+    "pl": "healsiġen",
+    "sg": "healsiġe",
+  },
+  "sources": [
+    {
+      "chapter": 19,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
 exports[`conjugation snapshots helpan conjugation matches snapshot 1`] = `
 {
   "class": "Strong IIIb",
@@ -5048,6 +6554,50 @@ exports[`conjugation snapshots helpan conjugation matches snapshot 1`] = `
   "sources": [
     {
       "chapter": 14,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots hergian conjugation matches snapshot 1`] = `
+{
+  "class": "Weak II",
+  "gloss": "pillage, plunder",
+  "imperative": {
+    "pl": "hergiaþ",
+    "sg": "herga",
+  },
+  "lemma": "hergian",
+  "nonFinite": {
+    "infinitive": "hergian",
+    "inflectedInfinitive": "tō hergianne",
+    "pastParticiple": "ġehergod",
+    "presentParticiple": "hergiende",
+  },
+  "pastInd": {
+    "pl": "hergodon",
+    "sg1": "hergode",
+    "sg2": "hergodest",
+    "sg3": "hergode",
+  },
+  "pastSubj": {
+    "pl": "hergoden",
+    "sg": "hergode",
+  },
+  "presentInd": {
+    "pl": "hergiaþ",
+    "sg1": "hergiġe",
+    "sg2": "hergast",
+    "sg3": "hergaþ",
+  },
+  "presentSubj": {
+    "pl": "hergiġen",
+    "sg": "hergiġe",
+  },
+  "sources": [
+    {
+      "chapter": 17,
       "text": "osweald-bera",
     },
   ],
@@ -5175,6 +6725,50 @@ exports[`conjugation snapshots hlystan conjugation matches snapshot 1`] = `
   "sources": [
     {
       "chapter": 12,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots hnappian conjugation matches snapshot 1`] = `
+{
+  "class": "Weak II",
+  "gloss": "sleep, doze",
+  "imperative": {
+    "pl": "hnappiaþ",
+    "sg": "hnappa",
+  },
+  "lemma": "hnappian",
+  "nonFinite": {
+    "infinitive": "hnappian",
+    "inflectedInfinitive": "tō hnappianne",
+    "pastParticiple": "ġehnappod",
+    "presentParticiple": "hnappiende",
+  },
+  "pastInd": {
+    "pl": "hnappodon",
+    "sg1": "hnappode",
+    "sg2": "hnappodest",
+    "sg3": "hnappode",
+  },
+  "pastSubj": {
+    "pl": "hnappoden",
+    "sg": "hnappode",
+  },
+  "presentInd": {
+    "pl": "hnappiaþ",
+    "sg1": "hnappiġe",
+    "sg2": "hnappast",
+    "sg3": "hnappaþ",
+  },
+  "presentSubj": {
+    "pl": "hnappiġen",
+    "sg": "hnappiġe",
+  },
+  "sources": [
+    {
+      "chapter": 19,
       "text": "osweald-bera",
     },
   ],
@@ -5351,6 +6945,50 @@ exports[`conjugation snapshots hyngran conjugation matches snapshot 1`] = `
   "sources": [
     {
       "chapter": 8,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots ieldan conjugation matches snapshot 1`] = `
+{
+  "class": "Weak I",
+  "gloss": "delay, tarry, procrastinate",
+  "imperative": {
+    "pl": "ieldaþ",
+    "sg": "ield",
+  },
+  "lemma": "ieldan",
+  "nonFinite": {
+    "infinitive": "ieldan",
+    "inflectedInfinitive": "tō ieldenne",
+    "pastParticiple": "ġeielded",
+    "presentParticiple": "ieldende",
+  },
+  "pastInd": {
+    "pl": "ieldon",
+    "sg1": "ielde",
+    "sg2": "ieldest",
+    "sg3": "ielde",
+  },
+  "pastSubj": {
+    "pl": "ielden",
+    "sg": "ielde",
+  },
+  "presentInd": {
+    "pl": "ieldaþ",
+    "sg1": "ielde",
+    "sg2": "ieltst",
+    "sg3": "ielt",
+  },
+  "presentSubj": {
+    "pl": "ielden",
+    "sg": "ielde",
+  },
+  "sources": [
+    {
+      "chapter": 18,
       "text": "osweald-bera",
     },
   ],
@@ -6017,6 +7655,50 @@ exports[`conjugation snapshots murnan conjugation matches snapshot 1`] = `
 }
 `;
 
+exports[`conjugation snapshots nemnan conjugation matches snapshot 1`] = `
+{
+  "class": "Weak I",
+  "gloss": "name, call",
+  "imperative": {
+    "pl": "nemnaþ",
+    "sg": "nemne",
+  },
+  "lemma": "nemnan",
+  "nonFinite": {
+    "infinitive": "nemnan",
+    "inflectedInfinitive": "tō nemnenne",
+    "pastParticiple": "ġenemned",
+    "presentParticiple": "nemnende",
+  },
+  "pastInd": {
+    "pl": "nemdon",
+    "sg1": "nemde",
+    "sg2": "nemdest",
+    "sg3": "nemde",
+  },
+  "pastSubj": {
+    "pl": "nemden",
+    "sg": "nemde",
+  },
+  "presentInd": {
+    "pl": "nemnaþ",
+    "sg1": "nemne",
+    "sg2": "nemnest",
+    "sg3": "nemneþ",
+  },
+  "presentSubj": {
+    "pl": "nemnen",
+    "sg": "nemne",
+  },
+  "sources": [
+    {
+      "chapter": 17,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
 exports[`conjugation snapshots neotan conjugation matches snapshot 1`] = `
 {
   "class": "Strong IIa",
@@ -6187,6 +7869,94 @@ exports[`conjugation snapshots nytan conjugation matches snapshot 1`] = `
   "sources": [
     {
       "chapter": 6,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots ofersawan conjugation matches snapshot 1`] = `
+{
+  "class": "Strong VII",
+  "gloss": "sow (a seed) over (another seed)",
+  "imperative": {
+    "pl": "ofersāwaþ",
+    "sg": "ofersāw",
+  },
+  "lemma": "ofersāwan",
+  "nonFinite": {
+    "infinitive": "ofersāwan",
+    "inflectedInfinitive": "tō ofersāwenne",
+    "pastParticiple": "ofersāwen",
+    "presentParticiple": "ofersāwende",
+  },
+  "pastInd": {
+    "pl": "ofersēowon",
+    "sg1": "ofersēow",
+    "sg2": "ofersēowe",
+    "sg3": "ofersēow",
+  },
+  "pastSubj": {
+    "pl": "ofersēowen",
+    "sg": "ofersēowe",
+  },
+  "presentInd": {
+    "pl": "ofersāwaþ",
+    "sg1": "ofersāwe",
+    "sg2": "ofersǣwst",
+    "sg3": "ofersǣwþ",
+  },
+  "presentSubj": {
+    "pl": "ofersāwen",
+    "sg": "ofersāwe",
+  },
+  "sources": [
+    {
+      "chapter": 19,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots oferwinnan conjugation matches snapshot 1`] = `
+{
+  "class": "Strong IIIa",
+  "gloss": "overcome, vanquish, conquer",
+  "imperative": {
+    "pl": "oferwinnaþ",
+    "sg": "oferwinn",
+  },
+  "lemma": "oferwinnan",
+  "nonFinite": {
+    "infinitive": "oferwinnan",
+    "inflectedInfinitive": "tō oferwinnenne",
+    "pastParticiple": "oferwunnen",
+    "presentParticiple": "oferwinnende",
+  },
+  "pastInd": {
+    "pl": "oferwunnon",
+    "sg1": "oferwann",
+    "sg2": "oferwunne",
+    "sg3": "oferwann",
+  },
+  "pastSubj": {
+    "pl": "oferwunnen",
+    "sg": "oferwunne",
+  },
+  "presentInd": {
+    "pl": "oferwinnaþ",
+    "sg1": "oferwinne",
+    "sg2": "oferwinst",
+    "sg3": "oferwinþ",
+  },
+  "presentSubj": {
+    "pl": "oferwinnen",
+    "sg": "oferwinne",
+  },
+  "sources": [
+    {
+      "chapter": 18,
       "text": "osweald-bera",
     },
   ],
@@ -6627,6 +8397,50 @@ exports[`conjugation snapshots piewan conjugation matches snapshot 1`] = `
   "sources": [
     {
       "chapter": 10,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots pingian conjugation matches snapshot 1`] = `
+{
+  "class": "Weak II",
+  "gloss": "settle; come to terms",
+  "imperative": {
+    "pl": "þingiaþ",
+    "sg": "þinga",
+  },
+  "lemma": "þingian",
+  "nonFinite": {
+    "infinitive": "þingian",
+    "inflectedInfinitive": "tō þingianne",
+    "pastParticiple": "ġeþingod",
+    "presentParticiple": "þingiende",
+  },
+  "pastInd": {
+    "pl": "þingodon",
+    "sg1": "þingode",
+    "sg2": "þingodest",
+    "sg3": "þingode",
+  },
+  "pastSubj": {
+    "pl": "þingoden",
+    "sg": "þingode",
+  },
+  "presentInd": {
+    "pl": "þingiaþ",
+    "sg1": "þingiġe",
+    "sg2": "þingast",
+    "sg3": "þingaþ",
+  },
+  "presentSubj": {
+    "pl": "þingiġen",
+    "sg": "þingiġe",
+  },
+  "sources": [
+    {
+      "chapter": 17,
       "text": "osweald-bera",
     },
   ],
@@ -7513,6 +9327,50 @@ exports[`conjugation snapshots slaepan conjugation matches snapshot 1`] = `
 }
 `;
 
+exports[`conjugation snapshots slean conjugation matches snapshot 1`] = `
+{
+  "class": "Strong VI",
+  "gloss": "strike, hit, beat",
+  "imperative": {
+    "pl": "slēaþ",
+    "sg": "sleah",
+  },
+  "lemma": "slēan",
+  "nonFinite": {
+    "infinitive": "slēan",
+    "inflectedInfinitive": "tō slēanne",
+    "pastParticiple": "ġeslæġen",
+    "presentParticiple": "slēande",
+  },
+  "pastInd": {
+    "pl": "slōgon",
+    "sg1": "slōh",
+    "sg2": "slōge",
+    "sg3": "slōh",
+  },
+  "pastSubj": {
+    "pl": "slōgen",
+    "sg": "slōge",
+  },
+  "presentInd": {
+    "pl": "slēaþ",
+    "sg1": "slēa",
+    "sg2": "sliehst",
+    "sg3": "sliehþ",
+  },
+  "presentSubj": {
+    "pl": "slēan",
+    "sg": "slēa",
+  },
+  "sources": [
+    {
+      "chapter": 17,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
 exports[`conjugation snapshots smeocan conjugation matches snapshot 1`] = `
 {
   "class": "Strong IIa",
@@ -7815,6 +9673,50 @@ exports[`conjugation snapshots stigan conjugation matches snapshot 1`] = `
   "sources": [
     {
       "chapter": 7,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots swican conjugation matches snapshot 1`] = `
+{
+  "class": "Strong I",
+  "gloss": "wander; deceive",
+  "imperative": {
+    "pl": "swīcaþ",
+    "sg": "swīc",
+  },
+  "lemma": "swīcan",
+  "nonFinite": {
+    "infinitive": "swīcan",
+    "inflectedInfinitive": "tō swīcenne",
+    "pastParticiple": "ġeswicen",
+    "presentParticiple": "swīcende",
+  },
+  "pastInd": {
+    "pl": "swicon",
+    "sg1": "swāc",
+    "sg2": "swice",
+    "sg3": "swāc",
+  },
+  "pastSubj": {
+    "pl": "swicen",
+    "sg": "swice",
+  },
+  "presentInd": {
+    "pl": "swīcaþ",
+    "sg1": "swīce",
+    "sg2": "swīcst",
+    "sg3": "swīcþ",
+  },
+  "presentSubj": {
+    "pl": "swīcen",
+    "sg": "swīce",
+  },
+  "sources": [
+    {
+      "chapter": 18,
       "text": "osweald-bera",
     },
   ],
@@ -8129,6 +10031,50 @@ exports[`conjugation snapshots tredan conjugation matches snapshot 1`] = `
 }
 `;
 
+exports[`conjugation snapshots truwian conjugation matches snapshot 1`] = `
+{
+  "class": "Weak II",
+  "gloss": "trust",
+  "imperative": {
+    "pl": "trūwiaþ",
+    "sg": "trūwa",
+  },
+  "lemma": "trūwian",
+  "nonFinite": {
+    "infinitive": "trūwian",
+    "inflectedInfinitive": "tō trūwianne",
+    "pastParticiple": "ġetrūwod",
+    "presentParticiple": "trūwiende",
+  },
+  "pastInd": {
+    "pl": "trūwodon",
+    "sg1": "trūwode",
+    "sg2": "trūwodest",
+    "sg3": "trūwode",
+  },
+  "pastSubj": {
+    "pl": "trūwoden",
+    "sg": "trūwode",
+  },
+  "presentInd": {
+    "pl": "trūwiaþ",
+    "sg1": "trūwiġe",
+    "sg2": "trūwast",
+    "sg3": "trūwaþ",
+  },
+  "presentSubj": {
+    "pl": "trūwiġen",
+    "sg": "trūwiġe",
+  },
+  "sources": [
+    {
+      "chapter": 19,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
 exports[`conjugation snapshots trymman conjugation matches snapshot 1`] = `
 {
   "class": "Weak I",
@@ -8255,6 +10201,50 @@ exports[`conjugation snapshots understandan conjugation matches snapshot 1`] = `
   "sources": [
     {
       "chapter": 12,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots utian conjugation matches snapshot 1`] = `
+{
+  "class": "Weak II",
+  "gloss": "expel",
+  "imperative": {
+    "pl": "ūtiaþ",
+    "sg": "ūta",
+  },
+  "lemma": "ūtian",
+  "nonFinite": {
+    "infinitive": "ūtian",
+    "inflectedInfinitive": "tō ūtianne",
+    "pastParticiple": "ġeūtod",
+    "presentParticiple": "ūtiende",
+  },
+  "pastInd": {
+    "pl": "ūtodon",
+    "sg1": "ūtode",
+    "sg2": "ūtodest",
+    "sg3": "ūtode",
+  },
+  "pastSubj": {
+    "pl": "ūtoden",
+    "sg": "ūtode",
+  },
+  "presentInd": {
+    "pl": "ūtiaþ",
+    "sg1": "ūtiġe",
+    "sg2": "ūtast",
+    "sg3": "ūtaþ",
+  },
+  "presentSubj": {
+    "pl": "ūtiġen",
+    "sg": "ūtiġe",
+  },
+  "sources": [
+    {
+      "chapter": 20,
       "text": "osweald-bera",
     },
   ],
@@ -8393,6 +10383,50 @@ exports[`conjugation snapshots warian conjugation matches snapshot 1`] = `
 }
 `;
 
+exports[`conjugation snapshots warnian conjugation matches snapshot 1`] = `
+{
+  "class": "Weak II",
+  "gloss": "beware, be on guard; warn",
+  "imperative": {
+    "pl": "warniaþ",
+    "sg": "warna",
+  },
+  "lemma": "warnian",
+  "nonFinite": {
+    "infinitive": "warnian",
+    "inflectedInfinitive": "tō warnianne",
+    "pastParticiple": "ġewarnod",
+    "presentParticiple": "warniende",
+  },
+  "pastInd": {
+    "pl": "warnodon",
+    "sg1": "warnode",
+    "sg2": "warnodest",
+    "sg3": "warnode",
+  },
+  "pastSubj": {
+    "pl": "warnoden",
+    "sg": "warnode",
+  },
+  "presentInd": {
+    "pl": "warniaþ",
+    "sg1": "warniġe",
+    "sg2": "warnast",
+    "sg3": "warnaþ",
+  },
+  "presentSubj": {
+    "pl": "warniġen",
+    "sg": "warniġe",
+  },
+  "sources": [
+    {
+      "chapter": 19,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
 exports[`conjugation snapshots wealcan conjugation matches snapshot 1`] = `
 {
   "class": "Strong VII",
@@ -8475,6 +10509,50 @@ exports[`conjugation snapshots wealdan conjugation matches snapshot 1`] = `
   "sources": [
     {
       "chapter": 13,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots weaxan conjugation matches snapshot 1`] = `
+{
+  "class": "Strong VII",
+  "gloss": "grow",
+  "imperative": {
+    "pl": "weaxaþ",
+    "sg": "weax",
+  },
+  "lemma": "weaxan",
+  "nonFinite": {
+    "infinitive": "weaxan",
+    "inflectedInfinitive": "tō weaxenne",
+    "pastParticiple": "ġeweaxen",
+    "presentParticiple": "weaxende",
+  },
+  "pastInd": {
+    "pl": "wēoxon",
+    "sg1": "wēox",
+    "sg2": "wēoxe",
+    "sg3": "wēox",
+  },
+  "pastSubj": {
+    "pl": "wēoxen",
+    "sg": "wēoxe",
+  },
+  "presentInd": {
+    "pl": "weaxaþ",
+    "sg1": "weaxe",
+    "sg2": "wiext",
+    "sg3": "wiext",
+  },
+  "presentSubj": {
+    "pl": "weaxen",
+    "sg": "weaxe",
+  },
+  "sources": [
+    {
+      "chapter": 19,
       "text": "osweald-bera",
     },
   ],
@@ -8789,6 +10867,50 @@ exports[`conjugation snapshots wesan conjugation matches snapshot 1`] = `
 }
 `;
 
+exports[`conjugation snapshots wifian conjugation matches snapshot 1`] = `
+{
+  "class": "Weak II",
+  "gloss": "marry (a woman)",
+  "imperative": {
+    "pl": "wīfiaþ",
+    "sg": "wīfa",
+  },
+  "lemma": "wīfian",
+  "nonFinite": {
+    "infinitive": "wīfian",
+    "inflectedInfinitive": "tō wīfianne",
+    "pastParticiple": "ġewīfod",
+    "presentParticiple": "wīfiende",
+  },
+  "pastInd": {
+    "pl": "wīfodon",
+    "sg1": "wīfode",
+    "sg2": "wīfodest",
+    "sg3": "wīfode",
+  },
+  "pastSubj": {
+    "pl": "wīfoden",
+    "sg": "wīfode",
+  },
+  "presentInd": {
+    "pl": "wīfiaþ",
+    "sg1": "wīfiġe",
+    "sg2": "wīfast",
+    "sg3": "wīfaþ",
+  },
+  "presentSubj": {
+    "pl": "wīfiġen",
+    "sg": "wīfiġe",
+  },
+  "sources": [
+    {
+      "chapter": 18,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
 exports[`conjugation snapshots willan conjugation matches snapshot 1`] = `
 {
   "class": "Irregular",
@@ -8871,6 +10993,50 @@ exports[`conjugation snapshots windan conjugation matches snapshot 1`] = `
   "sources": [
     {
       "chapter": 4,
+      "text": "osweald-bera",
+    },
+  ],
+}
+`;
+
+exports[`conjugation snapshots wipstandan conjugation matches snapshot 1`] = `
+{
+  "class": "Strong VI",
+  "gloss": "stand against; obstruct",
+  "imperative": {
+    "pl": "wiþstandaþ",
+    "sg": "wiþstand",
+  },
+  "lemma": "wiþstandan",
+  "nonFinite": {
+    "infinitive": "wiþstandan",
+    "inflectedInfinitive": "tō wiþstandenne",
+    "pastParticiple": "wiþstanden",
+    "presentParticiple": "wiþstandende",
+  },
+  "pastInd": {
+    "pl": "wiþstōdon",
+    "sg1": "wiþstōd",
+    "sg2": "wiþstōde",
+    "sg3": "wiþstōd",
+  },
+  "pastSubj": {
+    "pl": "wiþstōden",
+    "sg": "wiþstōde",
+  },
+  "presentInd": {
+    "pl": "wiþstandaþ",
+    "sg1": "wiþstande",
+    "sg2": "wiþstentst",
+    "sg3": "wiþstent",
+  },
+  "presentSubj": {
+    "pl": "wiþstanden",
+    "sg": "wiþstande",
+  },
+  "sources": [
+    {
+      "chapter": 17,
       "text": "osweald-bera",
     },
   ],
