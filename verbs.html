@@ -618,17 +618,6 @@
 
     const SOURCE_NAMES = { 'osweald-bera': 'Ōsweald Bera' };
 
-    const CLASS_PATTERNS = {
-      'Strong I': 'ī · ā · i · i',
-      'Strong II': 'ēo · ēa · u · o',
-      'Strong III': 'i · a · u · u',
-      'Strong IV': 'e · æ · ǣ · o',
-      'Strong V': 'e · æ · ǣ · e',
-      'Strong VI': 'a · ō · ō · a',
-      'Strong VII': 'ā · ē · ē · ā',
-      'Weak II': 'Weak II · -ian',
-    };
-
     function section(title, rows, tip) {
       const tipAttr = tip ? ` data-tip="${tip}"` : '';
       return `<div class="conj-section">
@@ -645,6 +634,18 @@
       </div>`;
     }
 
+    // Computed from this verb's own principalParts (same vowel-extraction
+    // logic Paradigm.inferClass uses internally) rather than looked up by
+    // class label — several classes (IIIb, IV, V, VI, VII) don't have one
+    // uniform vowel series across every verb in the class.
+    function seriesVowelsLabel(verb) {
+      const vowels = Paradigm.computeSeriesVowels(verb.principalParts, verb);
+      if (vowels.some(v => v == null)) {
+        console.warn('computeSeriesVowels returned a null/undefined vowel for', verb.id, vowels);
+      }
+      return vowels.join(' · ');
+    }
+
     function renderVerb(verb) {
       // Treat preterite-present the same as irregular for rendering
       const verbForConjugate = verb.type === 'preterite-present'
@@ -656,20 +657,13 @@
         ? 'Preterite-Present'
         : (c.class || typeLabel(verb, null));
       const patternLabel = verb.type === 'strong' ? 'Ablaut series' : 'Stem pattern';
-      const CLASS_PATTERNS_LOCAL = {
-        'Strong I': 'ī · ā · i · i',
-        'Strong IIa': 'ēo · ēa · u · o',
-        'Strong IIb': 'ū · ēa · u · o',
-        'Strong IIIa': 'i · a · u · u',
-        'Strong IIIb': 'e · æ · u · o',
-        'Strong IV': 'e · æ · ǣ · o',
-        'Strong V': 'e · æ · ǣ · e',
-        'Strong VI': 'a · ō · ō · a',
-        'Strong VII': 'ā/ō · ē/ēo · ē/ēo · ā/ō',
+      const STEM_PATTERNS = {
         'Weak I': '-de / -te past',
         'Weak II': '-ode past · -ian infinitive',
       };
-      const pattern = CLASS_PATTERNS_LOCAL[classLabel] || '';
+      const pattern = verb.type === 'strong'
+        ? seriesVowelsLabel(verb)
+        : (STEM_PATTERNS[classLabel] || '');
 
       const pi = c.presentInd || {};
       const pai = c.pastInd || {};
