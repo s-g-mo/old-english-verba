@@ -172,9 +172,9 @@ var Paradigm = (function () {
     return stem + ending;
   }
 
-  // ── inferClass ──────────────────────────────────────────────────────────────
+  // ── computeSeriesVowels ─────────────────────────────────────────────────────
 
-  function inferClass(principalParts, verb) {
+  function computeSeriesVowels(principalParts, verb) {
     var stems = extractStems(principalParts);
     var infStem = principalParts[0].replace(/an$/, '').normalize('NFC');
 
@@ -198,12 +198,18 @@ var Paradigm = (function () {
       return v;
     }
 
-    var v = [
+    return [
       stemVowel(stems.presentStem),
       stemVowel(stems.pastSgStem),
       stemVowel(stems.pastPlStem),
       stemVowel(stems.pastPartStem),
     ];
+  }
+
+  // ── inferClass ──────────────────────────────────────────────────────────────
+
+  function inferClass(principalParts, verb) {
+    var v = computeSeriesVowels(principalParts, verb);
     var tuple = v.join(',');
 
     var normalizedTuple = tuple.normalize('NFC');
@@ -446,7 +452,7 @@ var Paradigm = (function () {
 
   // ── Public API ──────────────────────────────────────────────────────────────
 
-  return { conjugate, inferClass, extractStems };
+  return { conjugate, inferClass, extractStems, computeSeriesVowels };
 
 }());
 
