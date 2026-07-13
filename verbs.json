@@ -52,7 +52,12 @@
     "lemma": "faran",
     "gloss": "to travel, go",
     "type": "strong",
-    "sources": [],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 17
+      }
+    ],
     "notes": "",
     "principalParts": [
       "faran",
@@ -191,7 +196,12 @@
     "lemma": "fremman",
     "gloss": "to do, perform",
     "type": "weak1",
-    "sources": [],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 20
+      }
+    ],
     "notes": "",
     "irregular": false,
     "irregularForms": {}
@@ -4657,6 +4667,975 @@
       {
         "text": "osweald-bera",
         "chapter": 16
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "aflieman",
+    "lemma": "āflīeman",
+    "gloss": "expel, banish; cause to flee, put to flight",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 17
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "agan",
+    "lemma": "āgan",
+    "gloss": "possess, own; ought, have to",
+    "type": "preterite-present",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 17
+      }
+    ],
+    "notes": "Preterite-present. Present sg1/3 āh, sg2 āhst, pl āgon; past sg āhte, pl āhton; pp (ġe)āgen. Wordhoard doesn't give pastInd sg2 or presentSubj/imperative forms — inferred below by regular preterite-present pattern (cf. beþurfan); verify on Wiktionary.",
+    "irregular": true,
+    "irregularForms": {
+      "nonFinite": {
+        "infinitive": "āgan",
+        "inflectedInfinitive": "tō āgenne",
+        "presentParticiple": "āgende",
+        "pastParticiple": "āgen"
+      },
+      "imperative": {
+        "sg": "āge",
+        "pl": "āgaþ"
+      },
+      "presentInd": {
+        "sg1": "āh",
+        "sg2": "āhst",
+        "sg3": "āh",
+        "pl": "āgon"
+      },
+      "pastInd": {
+        "sg1": "āhte",
+        "sg2": "āhtest",
+        "sg3": "āhte",
+        "pl": "āhton"
+      },
+      "presentSubj": {
+        "sg": "āge",
+        "pl": "āgen"
+      },
+      "pastSubj": {
+        "sg": "āhte",
+        "pl": "āhten"
+      }
+    }
+  },
+  {
+    "id": "asettan",
+    "lemma": "āsettan",
+    "gloss": "set, place",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 17
+      }
+    ],
+    "notes": "Gemination pattern like settan/gesettan: present āsette/āsetst/āsett/āsettaþ, past āsette/āsettest/āsette/āsetton.",
+    "irregular": true,
+    "noEpenthesis": true,
+    "irregularForms": {
+      "presentInd": {
+        "sg1": "āsette",
+        "sg2": "āsetst",
+        "sg3": "āsett",
+        "pl": "āsettaþ"
+      },
+      "pastInd": {
+        "sg1": "āsette",
+        "sg2": "āsettest",
+        "sg3": "āsette",
+        "pl": "āsetton"
+      },
+      "pastSubj": {
+        "sg": "āsette",
+        "pl": "āsetten"
+      },
+      "nonFinite.pastParticiple": "ġeāsett"
+    }
+  },
+  {
+    "id": "forbaernan",
+    "lemma": "forbærnan",
+    "gloss": "burn down, burn up",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 17
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "forleosan",
+    "lemma": "forlēosan",
+    "gloss": "lose",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 17
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "forlēosan",
+      "forlēas",
+      "forluron",
+      "forloren"
+    ]
+  },
+  {
+    "id": "forstelan",
+    "lemma": "forstelan",
+    "gloss": "steal",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 17
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "forstelan",
+      "forstæl",
+      "forstǣlon",
+      "forstolen"
+    ]
+  },
+  {
+    "id": "gegadrian",
+    "lemma": "ġegadrian",
+    "gloss": "gather",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 17
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gelimpan",
+    "lemma": "ġelimpan",
+    "gloss": "happen, befall",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 17
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "ġelimpan",
+      "ġelamp",
+      "ġelumpon",
+      "ġelumpen"
+    ]
+  },
+  {
+    "id": "gesamnian",
+    "lemma": "ġesamnian",
+    "gloss": "collect, bring together, unite",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 17
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "geswican",
+    "lemma": "ġeswīcan",
+    "gloss": "stop",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 17
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "ġeswīcan",
+      "ġeswāc",
+      "ġeswicon",
+      "ġeswicen"
+    ]
+  },
+  {
+    "id": "giefian",
+    "lemma": "ġiefian",
+    "gloss": "bestow gifts upon",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 17
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "hergian",
+    "lemma": "hergian",
+    "gloss": "pillage, plunder",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 17
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "nemnan",
+    "lemma": "nemnan",
+    "gloss": "name, call",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 17
+      }
+    ],
+    "notes": "-mn cluster blocks contraction: present nemnest/nemneþ/nemne (not nemnst/nemnþ/nemn), and simplifies before the dental preterite: past nemde (not nemnde).",
+    "irregular": true,
+    "irregularForms": {
+      "pastStem": "nemd",
+      "presentInd.sg2": "nemnest",
+      "presentInd.sg3": "nemneþ",
+      "imperative.sg": "nemne",
+      "pastInd": {
+        "sg1": "nemde",
+        "sg2": "nemdest",
+        "sg3": "nemde",
+        "pl": "nemdon"
+      },
+      "pastSubj": {
+        "sg": "nemde",
+        "pl": "nemden"
+      }
+    }
+  },
+  {
+    "id": "slean",
+    "lemma": "slēan",
+    "gloss": "strike, hit, beat",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 17
+      }
+    ],
+    "notes": "Contracted strong VI (h-loss), like ofslēan. Mirrors ofslēan's paradigm minus the of- prefix.",
+    "irregular": true,
+    "irregularForms": {
+      "nonFinite": {
+        "infinitive": "slēan",
+        "inflectedInfinitive": "tō slēanne",
+        "presentParticiple": "slēande",
+        "pastParticiple": "ġeslæġen"
+      },
+      "imperative": {
+        "sg": "sleah",
+        "pl": "slēaþ"
+      },
+      "presentInd": {
+        "sg1": "slēa",
+        "sg2": "sliehst",
+        "sg3": "sliehþ",
+        "pl": "slēaþ"
+      },
+      "pastInd": {
+        "sg1": "slōh",
+        "sg2": "slōge",
+        "sg3": "slōh",
+        "pl": "slōgon"
+      },
+      "presentSubj": {
+        "sg": "slēa",
+        "pl": "slēan"
+      },
+      "pastSubj": {
+        "sg": "slōge",
+        "pl": "slōgen"
+      }
+    },
+    "principalParts": [
+      "slēan",
+      "slōh",
+      "slōgon",
+      "ġeslæġen"
+    ]
+  },
+  {
+    "id": "pingian",
+    "lemma": "þingian",
+    "gloss": "settle; come to terms",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 17
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "wipstandan",
+    "lemma": "wiþstandan",
+    "gloss": "stand against; obstruct",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 17
+      }
+    ],
+    "notes": "Mirrors standan/ætstandan/understandan (all strong, unprefixed pp). Verify inferClass auto-detects the wiþ- prefix; add verbPrefix if not.",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "wiþstandan",
+      "wiþstōd",
+      "wiþstōdon",
+      "wiþstanden"
+    ]
+  },
+  {
+    "id": "begietan",
+    "lemma": "beġietan",
+    "gloss": "get, take, acquire, obtain",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 18
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "beġietan",
+      "beġeat",
+      "beġēaton",
+      "beġieten"
+    ]
+  },
+  {
+    "id": "cypan",
+    "lemma": "cȳþan",
+    "gloss": "reveal; proclaim, announce",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 18
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "geceosan",
+    "lemma": "ġeċēosan",
+    "gloss": "choose; elect",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 18
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "ġeċēosan",
+      "ġeċēas",
+      "ġecuron",
+      "ġecoren"
+    ]
+  },
+  {
+    "id": "gehweorfan",
+    "lemma": "ġehweorfan",
+    "gloss": "turn, go; return; wander, roam; change",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 18
+      }
+    ],
+    "notes": "2sg present is unmutated (ġehweorfest), unlike 3sg which does mutate (ġehwierfþ).",
+    "irregular": true,
+    "irregularForms": {
+      "presentInd.sg2": "ġehweorfest"
+    },
+    "principalParts": [
+      "ġehweorfan",
+      "ġehwearf",
+      "ġehwurfon",
+      "ġehworfen"
+    ]
+  },
+  {
+    "id": "gelaeran",
+    "lemma": "ġelǣran",
+    "gloss": "teach",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 18
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "ieldan",
+    "lemma": "ieldan",
+    "gloss": "delay, tarry, procrastinate",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 18
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "oferwinnan",
+    "lemma": "oferwinnan",
+    "gloss": "overcome, vanquish, conquer",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 18
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "oferwinnan",
+      "oferwann",
+      "oferwunnon",
+      "oferwunnen"
+    ]
+  },
+  {
+    "id": "swican",
+    "lemma": "swīcan",
+    "gloss": "wander; deceive",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 18
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "swīcan",
+      "swāc",
+      "swicon",
+      "ġeswicen"
+    ]
+  },
+  {
+    "id": "wifian",
+    "lemma": "wīfian",
+    "gloss": "marry (a woman)",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 18
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "acwencan",
+    "lemma": "ācwenċan",
+    "gloss": "quench, extinguish",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 19
+      }
+    ],
+    "notes": "nc cluster devoices before the dental preterite: past ācwencte (not ācwenċde).",
+    "irregular": true,
+    "irregularForms": {
+      "pastStem": "ācwenct"
+    }
+  },
+  {
+    "id": "awyrtwalian",
+    "lemma": "āwyrtwalian",
+    "gloss": "root out",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 19
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "besittan",
+    "lemma": "besittan",
+    "gloss": "surround, beset",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 19
+      }
+    ],
+    "notes": "Geminated class V imperative, like sittan: besite (not besitt).",
+    "irregular": true,
+    "irregularForms": {
+      "imperative.sg": "besite"
+    },
+    "principalParts": [
+      "besittan",
+      "besæt",
+      "besǣton",
+      "beseten"
+    ],
+    "verbPrefix": "be"
+  },
+  {
+    "id": "bindan",
+    "lemma": "bindan",
+    "gloss": "bind",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 19
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "bindan",
+      "band",
+      "bundon",
+      "ġebunden"
+    ]
+  },
+  {
+    "id": "ciepan",
+    "lemma": "ċīepan",
+    "gloss": "sell",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 19
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "glengan",
+    "lemma": "glenġan",
+    "gloss": "adorn, decorate; arrange gracefully",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 19
+      }
+    ],
+    "notes": "Dot drops before a following consonant: 2sg/3sg present glengst/glengþ, and past glengde (not glenġde), like sprengan.",
+    "irregular": true,
+    "irregularForms": {
+      "pastStem": "gleng",
+      "presentInd.sg2": "glengst",
+      "presentInd.sg3": "glengþ"
+    }
+  },
+  {
+    "id": "healsian",
+    "lemma": "healsian",
+    "gloss": "persuade",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 19
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "hnappian",
+    "lemma": "hnappian",
+    "gloss": "sleep, doze",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 19
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "ofersawan",
+    "lemma": "ofersāwan",
+    "gloss": "sow (a seed) over (another seed)",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 19
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "ofersāwan",
+      "ofersēow",
+      "ofersēowon",
+      "ofersāwen"
+    ]
+  },
+  {
+    "id": "truwian",
+    "lemma": "trūwian",
+    "gloss": "trust",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 19
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "warnian",
+    "lemma": "warnian",
+    "gloss": "beware, be on guard; warn",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 19
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "weaxan",
+    "lemma": "weaxan",
+    "gloss": "grow",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 19
+      }
+    ],
+    "notes": "2sg/3sg present syncopate to the same form: wiext.",
+    "irregular": true,
+    "irregularForms": {
+      "presentInd.sg2": "wiext",
+      "presentInd.sg3": "wiext"
+    },
+    "principalParts": [
+      "weaxan",
+      "wēox",
+      "wēoxon",
+      "ġeweaxen"
+    ]
+  },
+  {
+    "id": "abisgian",
+    "lemma": "ābisgian",
+    "gloss": "to trouble, worry",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 20
+      }
+    ],
+    "notes": "Wordhoard glosses this via its past participle: ābisgod, 'troubled (by), worried (about).'",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "acwellan",
+    "lemma": "ācwellan",
+    "gloss": "kill, destroy",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 20
+      }
+    ],
+    "notes": "Breaking pattern like sellan/tellan: past ācwealde (not ācwelede), pp ācweald.",
+    "irregular": true,
+    "irregularForms": {
+      "pastStem": "ācweald",
+      "nonFinite.pastParticiple": "ġeācweald"
+    }
+  },
+  {
+    "id": "afyrhtan",
+    "lemma": "āfyrhtan",
+    "gloss": "make afraid",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 20
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "aliefan",
+    "lemma": "ālīefan",
+    "gloss": "allow, grant; be permitted",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 20
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "awritan",
+    "lemma": "āwrītan",
+    "gloss": "describe; write down; write",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 20
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "principalParts": [
+      "āwrītan",
+      "āwrāt",
+      "āwriton",
+      "āwriten"
+    ]
+  },
+  {
+    "id": "beseon",
+    "lemma": "besēon",
+    "gloss": "look; go to see, visit",
+    "type": "strong",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 20
+      }
+    ],
+    "notes": "Contracted strong V (h-loss), like ġesēon. Mirrors ġesēon's paradigm with be- instead of ġe-.",
+    "irregular": true,
+    "irregularForms": {
+      "presentInd": {
+        "sg1": "besēo",
+        "sg2": "besiehst",
+        "sg3": "besiehþ",
+        "pl": "besēoþ"
+      },
+      "presentSubj": {
+        "sg": "besēo",
+        "pl": "besēon"
+      },
+      "imperative": {
+        "sg": "beseoh",
+        "pl": "besēoþ"
+      },
+      "nonFinite.infinitive": "besēon",
+      "nonFinite.inflectedInfinitive": "tō besēonne",
+      "nonFinite.presentParticiple": "besēonde"
+    },
+    "verbPrefix": "be",
+    "principalParts": [
+      "besēon",
+      "beseah",
+      "besāwon",
+      "besewen"
+    ]
+  },
+  {
+    "id": "deman",
+    "lemma": "dēman",
+    "gloss": "judge; deem, think, consider",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 20
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "fordeman",
+    "lemma": "fordēman",
+    "gloss": "condemn",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 20
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gelaestan",
+    "lemma": "ġelǣstan",
+    "gloss": "follow; perform, carry out",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 20
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "geomrian",
+    "lemma": "ġeōmrian",
+    "gloss": "mourn, complain",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 20
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gieman",
+    "lemma": "ġīeman",
+    "gloss": "care for; heed; observe",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 20
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "utian",
+    "lemma": "ūtian",
+    "gloss": "expel",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 20
       }
     ],
     "notes": "",
