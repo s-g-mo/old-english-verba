@@ -140,13 +140,13 @@
       color: var(--muted);
     }
 
-    .form-cells-sub {
+    .sub-block {
       margin-left: 24px;
       margin-top: 2px;
       transition: opacity 0.15s;
     }
 
-    .form-cells-sub.disabled {
+    .sub-block.disabled {
       opacity: 0.45;
       pointer-events: none;
     }
@@ -155,6 +155,13 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px 20px;
+    }
+
+    .mode-hint {
+      font-size: 0.78rem;
+      font-style: italic;
+      color: var(--muted);
+      margin-top: 10px;
     }
 
     /* ── Buttons ── */
@@ -326,6 +333,13 @@
       background: #ece5d1;
     }
 
+    .fib-hint {
+      font-size: 0.78rem;
+      font-style: italic;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
     .quiz-feedback {
       margin-top: 16px;
       font-size: 0.9rem;
@@ -455,7 +469,7 @@
 
         <div class="filter-panel">
           <div class="filter-panel-title">
-            <span>Chapters</span>
+            <span>Chapters <span class="check-sub" style="text-transform:none; letter-spacing:normal;">(Ōsweald Bera)</span></span>
             <label class="all-toggle"><input type="checkbox" id="chapter-all" checked> All chapters</label>
           </div>
           <div id="chapter-checks" class="checkbox-grid"><!-- populated at load --></div>
@@ -479,11 +493,16 @@
 
         <div class="filter-panel">
           <div class="filter-panel-title">Quiz Content</div>
-          <label class="check-item block"><input type="checkbox" id="content-meaning" checked> Meaning
-            <span class="check-sub">— lemma ↔ gloss, mixed both directions</span></label>
-          <label class="check-item block"><input type="checkbox" id="content-forms" checked> Conjugated
-            Forms</label>
-          <div id="form-cells" class="checkbox-grid form-cells-sub"><!-- populated at load --></div>
+          <label class="check-item block"><input type="checkbox" id="content-meaning" checked> Meaning</label>
+          <div id="meaning-direction" class="radio-row sub-block">
+            <label class="check-item"><input type="radio" name="meaningDir" value="both" checked> Both directions
+              (mixed)</label>
+            <label class="check-item"><input type="radio" name="meaningDir" value="g2l"> Gloss → Lemma</label>
+            <label class="check-item"><input type="radio" name="meaningDir" value="l2g"> Lemma → Gloss</label>
+          </div>
+          <label class="check-item block" style="margin-top: 10px;"><input type="checkbox" id="content-forms"
+              checked> Conjugated Forms</label>
+          <div id="form-cells" class="checkbox-grid sub-block"><!-- populated at load --></div>
         </div>
 
         <div class="filter-panel">
@@ -493,6 +512,8 @@
             <label class="check-item"><input type="radio" name="mode" value="fib"> Fill-in-the-Blank</label>
             <label class="check-item"><input type="radio" name="mode" value="mixed"> Mixed</label>
           </div>
+          <p class="mode-hint">Fill-in-the-Blank tip: answers are macron-insensitive, and you may type "th" for þ/ð
+            and "ae" for æ.</p>
         </div>
 
         <div class="filter-panel">
@@ -553,6 +574,10 @@
     let roundState = null; // { questions, index, score, missed, filters }
 
     // ── Cell definitions (conjugated-form quiz content) ─────────────────────
+    // 'infinitive' is kept in CELLS (it's a legitimate near-miss distractor for
+    // other cells) but excluded from QUESTION_CELLS — nonFinite.infinitive is
+    // always identical to verb.lemma, which is already shown as the card's
+    // prompt, so asking for it as its own question is trivial by construction.
     const CELLS = {
       infinitive: { label: 'Infinitive', get: c => c.nonFinite && c.nonFinite.infinitive },
       pres3sg: { label: '3rd sg. present indicative', get: c => c.presentInd && c.presentInd.sg3 },
@@ -560,6 +585,7 @@
       pastPl: { label: 'Past indicative (plural)', get: c => c.pastInd && c.pastInd.pl },
       pastPart: { label: 'Past participle', get: c => c.nonFinite && c.nonFinite.pastParticiple },
     };
+    const QUESTION_CELLS = ['pres3sg', 'pastSg', 'pastPl', 'pastPart'];
 
     function getConj(verb) {
       if (!conjCache.has(verb.id)) conjCache.set(verb.id, Paradigm.conjugate(verb));
@@ -575,6 +601,30 @@
         .replace(/æ/g, 'ae')
         .replace(/þ/g, 'th')
         .replace(/ð/g, 'th');
+    }
+
+    // Glosses often list multiple senses ("to be afraid, fear") and an
+    // optional grammatical note ("(intr.)"); accept any one sense, with or
+    // without a leading "to ", rather than requiring the literal full string.
+    function normalizeGlossText(str) {
+      return (str || '')
+        .toLowerCase()
+        .replace(/\([^)]*\)/g, '')
+        .replace(/[.,;]+$/g, '')
+        .trim();
+    }
+
+    function glossAlternatives(correctGloss) {
+      return normalizeGlossText(correctGloss)
+        .split(/[,;]/)
+        .map(s => s.trim().replace(/^to\s+/, ''))
+        .filter(Boolean);
+    }
+
+    function glossMatches(typed, correctGloss) {
+      const typedNorm = normalizeGlossText(typed).replace(/^to\s+/, '');
+      if (!typedNorm) return false;
+      return glossAlternatives(correctGloss).includes(typedNorm);
     }
 
     function pickRandom(arr) {
@@ -619,7 +669,7 @@
 
     function buildFormCellChecks() {
       const container = document.getElementById('form-cells');
-      container.innerHTML = Object.keys(CELLS).map(key =>
+      container.innerHTML = QUESTION_CELLS.map(key =>
         `<label class="check-item"><input type="checkbox" class="cell-check" value="${key}" checked> ${CELLS[key].label}</label>`
       ).join('');
 
@@ -632,6 +682,13 @@
       syncDisabled();
     }
 
+    function syncMeaningDirection() {
+      const container = document.getElementById('meaning-direction');
+      const enabled = document.getElementById('content-meaning').checked;
+      container.classList.toggle('disabled', !enabled);
+      container.querySelectorAll('input').forEach(b => (b.disabled = !enabled));
+    }
+
     // ── Filter gathering ─────────────────────────────────────────────────────
     function getCurrentFilters() {
       const chapterBoxes = [...document.querySelectorAll('.chapter-check')];
@@ -641,6 +698,7 @@
       const types = [...document.querySelectorAll('#type-checks input:checked')].map(b => b.value);
 
       const includeMeaning = document.getElementById('content-meaning').checked;
+      const meaningDir = document.querySelector('input[name="meaningDir"]:checked').value;
       const includeForms = document.getElementById('content-forms').checked;
       const cells = includeForms
         ? [...document.querySelectorAll('.cell-check:checked')].map(b => b.value)
@@ -653,6 +711,7 @@
         chapters: allChaptersSelected ? null : checkedChapters,
         types,
         includeMeaning,
+        meaningDir,
         includeForms,
         cells,
         mode,
@@ -679,6 +738,7 @@
         chapters: filters.chapters === null ? 'all' : [...filters.chapters].sort((a, b) => a - b),
         types: [...filters.types].sort(),
         meaning: filters.includeMeaning,
+        meaningDir: filters.includeMeaning ? filters.meaningDir : null,
         cells: [...filters.cells].sort(),
         mode: filters.mode,
         length: filters.length,
@@ -723,9 +783,9 @@
     }
 
     // ── Question generation ─────────────────────────────────────────────────
-    function buildMeaningQuestion(pool) {
+    function buildMeaningQuestion(pool, meaningDir) {
       const verb = pickRandom(pool);
-      const dir = Math.random() < 0.5 ? 'g2l' : 'l2g';
+      const dir = meaningDir === 'both' ? (Math.random() < 0.5 ? 'g2l' : 'l2g') : meaningDir;
       return {
         qType: 'meaning',
         dir,
@@ -790,7 +850,7 @@
       for (let i = 0; i < filters.length; i++) {
         const kind = pickRandom(qKinds);
         const q = kind === 'meaning'
-          ? buildMeaningQuestion(pool)
+          ? buildMeaningQuestion(pool, filters.meaningDir)
           : buildFormQuestion(pool, kind.slice(5));
         q.mode = filters.mode === 'mixed' ? (Math.random() < 0.5 ? 'mc' : 'fib') : filters.mode;
         if (q.mode === 'mc') q.options = buildOptions(q, pool);
@@ -899,12 +959,9 @@
             <input type="text" id="fib-input" autocomplete="off" spellcheck="false" placeholder="Type your answer…" />
             <button type="button" id="fib-submit" class="btn-primary">Submit</button>
           </div>
+          <p class="fib-hint">Macrons optional — you may type "th" for þ/ð and "ae" for æ.</p>
         `;
-        const input = document.getElementById('fib-input');
-        input.focus();
-        input.addEventListener('keydown', e => {
-          if (e.key === 'Enter') gradeFib();
-        });
+        document.getElementById('fib-input').focus();
         document.getElementById('fib-submit').addEventListener('click', gradeFib);
       }
     }
@@ -931,7 +988,12 @@
       const input = document.getElementById('fib-input');
       const typed = input.value;
       const q = roundState.questions[roundState.index];
-      const correct = foldDiacritics(typed).trim() === foldDiacritics(q.correctAnswer).trim();
+      // Gloss answers (Lemma → Gloss) are graded fuzzily — see glossMatches —
+      // since a gloss may list several senses ("to be afraid, fear"). Every
+      // other answer (Old English forms) is graded via diacritic-folding only.
+      const correct = (q.qType === 'meaning' && q.dir === 'l2g')
+        ? glossMatches(typed, q.correctAnswer)
+        : foldDiacritics(typed).trim() === foldDiacritics(q.correctAnswer).trim();
       input.disabled = true;
       document.getElementById('fib-submit').disabled = true;
       finishCard(correct, typed);
@@ -1008,6 +1070,8 @@
         VERBS = await res.json();
         buildChapterChecks();
         buildFormCellChecks();
+        document.getElementById('content-meaning').addEventListener('change', syncMeaningDirection);
+        syncMeaningDirection();
         updateBestScoreNote();
         document.getElementById('setup-screen').addEventListener('change', updateBestScoreNote);
       } catch (err) {
@@ -1029,6 +1093,23 @@
     document.getElementById('change-filters-btn').addEventListener('click', () => {
       updateBestScoreNote();
       showScreen('setup-screen');
+    });
+
+    // Enter advances past a graded card, or submits the current Fill-in-the-Blank answer.
+    document.addEventListener('keydown', e => {
+      if (e.key !== 'Enter') return;
+      if (document.getElementById('quiz-screen').hidden) return;
+      const nextBtn = document.getElementById('next-btn');
+      if (!nextBtn.hidden) {
+        e.preventDefault();
+        handleNext();
+        return;
+      }
+      const fibInput = document.getElementById('fib-input');
+      if (fibInput && !fibInput.disabled) {
+        e.preventDefault();
+        gradeFib();
+      }
     });
 
     init();
