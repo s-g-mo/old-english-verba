@@ -283,6 +283,8 @@
       border-radius: 5px;
       padding: 10px 14px;
       cursor: pointer;
+      display: flex;
+      align-items: center;
       transition: background 0.12s, border-color 0.12s;
     }
 
@@ -304,6 +306,45 @@
       background: #fde8e0;
       border-color: #d0907a;
       color: #7a3020;
+    }
+
+    .mc-key {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      border-radius: 4px;
+      background: var(--accent);
+      color: #fdf8ec;
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin-right: 10px;
+    }
+
+    .mc-option.correct .mc-key {
+      background: #4d8f66;
+    }
+
+    .mc-option.incorrect .mc-key {
+      background: #d0907a;
+    }
+
+    .mc-hint {
+      font-size: 0.78rem;
+      font-style: italic;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    /* Keyboard shortcuts are meaningless on touch devices — keep MC buttons
+       plain there and skip the "press A–D" hint. */
+    @media (max-width: 768px) {
+      .mc-key,
+      .mc-hint {
+        display: none;
+      }
     }
 
     .fib-row {
@@ -512,6 +553,7 @@
             <label class="check-item"><input type="radio" name="mode" value="fib"> Fill-in-the-Blank</label>
             <label class="check-item"><input type="radio" name="mode" value="mixed"> Mixed</label>
           </div>
+          <p class="mode-hint">Multiple Choice tip (desktop): press A–D to pick an answer, Enter to continue.</p>
           <p class="mode-hint">Fill-in-the-Blank tip: answers are macron-insensitive, and you may type "th" for þ/ð
             and "ae" for æ.</p>
         </div>
@@ -586,6 +628,12 @@
       pastPart: { label: 'Past participle', get: c => c.nonFinite && c.nonFinite.pastParticiple },
     };
     const QUESTION_CELLS = ['pres3sg', 'pastSg', 'pastPl', 'pastPart'];
+    const MC_LETTERS = ['A', 'B', 'C', 'D'];
+    // The Chapters filter is scoped to this one source. Every verb currently
+    // in verbs.json is osweald-bera, but a verb added from a different work
+    // later would have no chapter here at all — buildPool() below treats that
+    // as "not constrained by this filter" rather than excluding it outright.
+    const CHAPTER_SOURCE_TEXT = 'osweald-bera';
 
     function getConj(verb) {
       if (!conjCache.has(verb.id)) conjCache.set(verb.id, Paradigm.conjugate(verb));
@@ -647,7 +695,9 @@
     // ── Setup screen: dynamic checkbox lists ────────────────────────────────
     function buildChapterChecks() {
       const chapterSet = new Set();
-      VERBS.forEach(v => (v.sources || []).forEach(s => chapterSet.add(s.chapter)));
+      VERBS.forEach(v => (v.sources || []).forEach(s => {
+        if (s.text === CHAPTER_SOURCE_TEXT) chapterSet.add(s.chapter);
+      }));
       CHAPTERS = [...chapterSet].sort((a, b) => a - b);
 
       const container = document.getElementById('chapter-checks');
@@ -723,8 +773,12 @@
       return VERBS.filter(v => {
         if (!filters.types.includes(v.type)) return false;
         if (filters.chapters !== null) {
-          const chs = (v.sources || []).map(s => s.chapter);
-          if (!chs.some(c => filters.chapters.includes(c))) return false;
+          const obChapters = (v.sources || [])
+            .filter(s => s.text === CHAPTER_SOURCE_TEXT)
+            .map(s => s.chapter);
+          // A verb with no Ōsweald Bera chapter at all isn't constrained by
+          // this filter — only verbs actually sourced from it are.
+          if (obChapters.length && !obChapters.some(c => filters.chapters.includes(c))) return false;
         }
         return true;
       });
@@ -918,10 +972,14 @@
           ? { kind: 'Meaning → Old English', main: q.verb.gloss, sub: 'What is the Old English verb?', isOe: false }
           : { kind: 'Old English → Meaning', main: q.verb.lemma, sub: 'What does this verb mean?', isOe: true };
       }
+      // The gloss is included here (not just the lemma) because a small
+      // number of verbs are near-homographs distinguished only by a macron
+      // or dotted consonant (reċċan "tell" vs. rēċan "care") — without it
+      // there'd be no way to tell which verb's paradigm is being asked about.
       return {
         kind: 'Conjugated Form',
         main: q.verb.lemma,
-        sub: `Give the ${CELLS[q.cellKey].label.toLowerCase()}.`,
+        sub: `${q.verb.gloss} — give the ${CELLS[q.cellKey].label.toLowerCase()}.`,
         isOe: true,
       };
     }
@@ -947,9 +1005,10 @@
       document.getElementById('next-btn').hidden = true;
 
       if (q.mode === 'mc') {
-        answerArea.innerHTML = `<div class="mc-options">${q.options.map(opt =>
-          `<button type="button" class="mc-option" data-value="${escapeHtml(opt)}">${opt}</button>`
-        ).join('')}</div>`;
+        answerArea.innerHTML = `<div class="mc-options">${q.options.map((opt, i) =>
+          `<button type="button" class="mc-option" data-value="${escapeHtml(opt)}"><span class="mc-key">${MC_LETTERS[i]}</span>${opt}</button>`
+        ).join('')}</div>
+        <p class="mc-hint">Press A–D to choose, Enter to continue.</p>`;
         answerArea.querySelectorAll('.mc-option').forEach(btn => {
           btn.addEventListener('click', () => gradeMc(btn));
         });
@@ -1004,8 +1063,11 @@
       if (correct) {
         roundState.score++;
       } else {
+        const p = promptFor(q);
         roundState.missed.push({
-          question: `${promptFor(q).kind}: ${promptFor(q).main}`,
+          question: q.qType === 'form'
+            ? `${q.verb.lemma} (${q.verb.gloss}) — ${CELLS[q.cellKey].label}`
+            : `${p.kind}: ${p.main}`,
           yourAnswer: userAnswer || '(no answer)',
           correctAnswer: q.correctAnswer,
         });
@@ -1095,20 +1157,37 @@
       showScreen('setup-screen');
     });
 
-    // Enter advances past a graded card, or submits the current Fill-in-the-Blank answer.
+    // Enter advances past a graded card, or submits the current Fill-in-the-Blank
+    // answer. A–D picks a multiple-choice option outright — the same effect as
+    // clicking it — so a round can be played without touching the mouse.
     document.addEventListener('keydown', e => {
-      if (e.key !== 'Enter') return;
       if (document.getElementById('quiz-screen').hidden) return;
-      const nextBtn = document.getElementById('next-btn');
-      if (!nextBtn.hidden) {
-        e.preventDefault();
-        handleNext();
+
+      if (e.key === 'Enter') {
+        const nextBtn = document.getElementById('next-btn');
+        if (!nextBtn.hidden) {
+          e.preventDefault();
+          handleNext();
+          return;
+        }
+        const fibInput = document.getElementById('fib-input');
+        if (fibInput && !fibInput.disabled) {
+          e.preventDefault();
+          gradeFib();
+        }
         return;
       }
-      const fibInput = document.getElementById('fib-input');
-      if (fibInput && !fibInput.disabled) {
+
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      const letterIdx = MC_LETTERS.indexOf(e.key.toUpperCase());
+      if (letterIdx === -1) return;
+      // .mc-option only exists in the DOM on MC cards, so this is a silent
+      // no-op on Fill-in-the-Blank cards even though the listener is global.
+      const options = document.querySelectorAll('.mc-option');
+      const btn = options[letterIdx];
+      if (btn && !btn.disabled) {
         e.preventDefault();
-        gradeFib();
+        gradeMc(btn);
       }
     });
 
