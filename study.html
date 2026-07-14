@@ -1,0 +1,1039 @@
+<!-- Serve locally: python3 -m http.server 8000  →  open http://localhost:8000 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231e1508' stroke='%23c4a96a' stroke-width='5'/><circle cx='50' cy='50' r='38' fill='none' stroke='%238b6914' stroke-width='2'/><line x1='18' y1='18' x2='82' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><line x1='82' y1='18' x2='18' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><circle cx='50' cy='50' r='10' fill='%23c4a96a'/><circle cx='50' cy='50' r='5' fill='%231e1508'/></svg>">
+  <link rel="alternate icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231e1508' stroke='%23c4a96a' stroke-width='5'/><circle cx='50' cy='50' r='38' fill='none' stroke='%238b6914' stroke-width='2'/><line x1='18' y1='18' x2='82' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><line x1='82' y1='18' x2='18' y2='82' stroke='%23c4a96a' stroke-width='7' stroke-linecap='round'/><circle cx='50' cy='50' r='10' fill='%23c4a96a'/><circle cx='50' cy='50' r='5' fill='%231e1508'/></svg>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study — Old English Verbs</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Study page layout ── */
+    .study-main {
+      flex: 1;
+      padding: 48px 28px 64px;
+      max-width: 820px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .study-main {
+        padding: 28px 16px 48px;
+      }
+    }
+
+    .study-screen[hidden] {
+      display: none;
+    }
+
+    .study-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .study-intro {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--muted);
+      margin-bottom: 28px;
+      max-width: 620px;
+    }
+
+    /* ── Messages ── */
+    .setup-message {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      padding: 10px 14px;
+      border-radius: 0 4px 4px 0;
+      margin-bottom: 20px;
+    }
+
+    .setup-message-error {
+      background: #fde8e0;
+      color: #7a3020;
+      border-left: 3px solid #d0907a;
+    }
+
+    .setup-message-warning {
+      background: #f5e6c4;
+      color: #7a4f10;
+      border-left: 3px solid #d4b06a;
+    }
+
+    /* ── Filter panels ── */
+    .filter-panels {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .filter-panel {
+      border: 1px solid var(--border);
+      background: var(--sidebar-bg);
+      border-radius: 4px;
+      padding: 14px 18px 18px;
+    }
+
+    .filter-panel-title {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--accent);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .all-toggle {
+      text-transform: none;
+      letter-spacing: normal;
+      font-weight: 600;
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .checkbox-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: var(--text);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .check-item.block {
+      display: flex;
+      margin-bottom: 8px;
+    }
+
+    .check-item input {
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    .check-sub {
+      font-size: 0.78rem;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .form-cells-sub {
+      margin-left: 24px;
+      margin-top: 2px;
+      transition: opacity 0.15s;
+    }
+
+    .form-cells-sub.disabled {
+      opacity: 0.45;
+      pointer-events: none;
+    }
+
+    .radio-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+    }
+
+    /* ── Buttons ── */
+    .btn-primary,
+    .btn-secondary {
+      font-family: var(--font);
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 4px;
+      padding: 9px 20px;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fdf8ec;
+      border: 1px solid var(--accent);
+    }
+
+    .btn-primary:hover {
+      background: #77590f;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+    }
+
+    .setup-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .best-score-note {
+      font-size: 0.8rem;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    /* ── Quiz screen ── */
+    .quiz-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    #quiz-score {
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .quiz-card {
+      border: 1px solid var(--border);
+      background: var(--sidebar-bg);
+      border-radius: 6px;
+      padding: 32px 28px;
+      margin-bottom: 20px;
+    }
+
+    .quiz-prompt-kind {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .quiz-prompt-main {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .quiz-prompt-main.is-oe {
+      font-style: italic;
+    }
+
+    .quiz-prompt-sub {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .mc-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    @media (max-width: 560px) {
+      .mc-options {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .mc-option {
+      font-family: var(--font);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-align: left;
+      background: #ece5d1;
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 5px;
+      padding: 10px 14px;
+      cursor: pointer;
+      transition: background 0.12s, border-color 0.12s;
+    }
+
+    .mc-option:hover:not(:disabled) {
+      border-color: var(--accent);
+    }
+
+    .mc-option:disabled {
+      cursor: default;
+    }
+
+    .mc-option.correct {
+      background: #dff0e8;
+      border-color: #4d8f66;
+      color: #1a4a2e;
+    }
+
+    .mc-option.incorrect {
+      background: #fde8e0;
+      border-color: #d0907a;
+      color: #7a3020;
+    }
+
+    .fib-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    #fib-input {
+      font-family: var(--font);
+      font-size: 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 9px 12px;
+      color: var(--text);
+      flex: 1;
+      min-width: 180px;
+      outline: none;
+    }
+
+    #fib-input:focus {
+      border-color: var(--accent);
+    }
+
+    #fib-input:disabled {
+      background: #ece5d1;
+    }
+
+    .quiz-feedback {
+      margin-top: 16px;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      padding: 10px 14px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .quiz-feedback.right {
+      background: #dff0e8;
+      color: #1a4a2e;
+      border-left: 3px solid #4d8f66;
+    }
+
+    .quiz-feedback.wrong {
+      background: #fde8e0;
+      color: #7a3020;
+      border-left: 3px solid #d0907a;
+    }
+
+    .quiz-feedback .correct-form {
+      font-style: italic;
+      font-weight: 700;
+    }
+
+    .quiz-actions {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    /* ── Results screen ── */
+    .results-score {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .results-pct {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .missed-heading {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .missed-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .missed-item {
+      border-left: 2px solid var(--border);
+      padding-left: 14px;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .missed-q {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .missed-you {
+      color: #a04030;
+    }
+
+    .missed-correct {
+      color: #2a5c3a;
+      font-style: italic;
+    }
+
+    .no-missed {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wip-banner">Work in progress — content and features are actively being added.</div>
+
+  <header class="site-header">
+    <a href="index.html" class="site-brand">
+      <span class="site-name">Old English Verbs</span>
+      <span class="site-subtitle">A verb conjugation reference</span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="verbs.html" class="nav-link">Verbs</a>
+      <a href="basics.html" class="nav-link">Grammar</a>
+      <a href="rules.html" class="nav-link">Rules</a>
+      <a href="study.html" class="nav-link active">Study</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="changelog.html" class="nav-link">Changelog</a>
+    </nav>
+  </header>
+
+  <main class="study-main">
+
+    <!-- ── Setup screen ── -->
+    <section id="setup-screen" class="study-screen">
+      <h1 class="study-title">Study Mode</h1>
+      <p class="study-intro">Drill verb meanings and conjugated forms from the verbs currently in the reference.
+        Everything runs locally in your browser — nothing is sent anywhere, and nothing is saved beyond your best
+        score on this device.</p>
+
+      <div id="setup-error" class="setup-message setup-message-error" hidden></div>
+      <div id="setup-warning" class="setup-message setup-message-warning" hidden></div>
+
+      <div class="filter-panels">
+
+        <div class="filter-panel">
+          <div class="filter-panel-title">
+            <span>Chapters</span>
+            <label class="all-toggle"><input type="checkbox" id="chapter-all" checked> All chapters</label>
+          </div>
+          <div id="chapter-checks" class="checkbox-grid"><!-- populated at load --></div>
+        </div>
+
+        <div class="filter-panel">
+          <div class="filter-panel-title">Verb Type</div>
+          <div id="type-checks" class="checkbox-grid">
+            <label class="check-item"><input type="checkbox" value="strong" checked> <span
+                class="tag tag-strong">Strong</span></label>
+            <label class="check-item"><input type="checkbox" value="weak1" checked> <span
+                class="tag tag-weak">Weak I</span></label>
+            <label class="check-item"><input type="checkbox" value="weak2" checked> <span
+                class="tag tag-weak">Weak II</span></label>
+            <label class="check-item"><input type="checkbox" value="preterite-present" checked> <span
+                class="tag tag-pret">Preterite-Present</span></label>
+            <label class="check-item"><input type="checkbox" value="irregular" checked> <span
+                class="tag tag-irreg">Irregular</span></label>
+          </div>
+        </div>
+
+        <div class="filter-panel">
+          <div class="filter-panel-title">Quiz Content</div>
+          <label class="check-item block"><input type="checkbox" id="content-meaning" checked> Meaning
+            <span class="check-sub">— lemma ↔ gloss, mixed both directions</span></label>
+          <label class="check-item block"><input type="checkbox" id="content-forms" checked> Conjugated
+            Forms</label>
+          <div id="form-cells" class="checkbox-grid form-cells-sub"><!-- populated at load --></div>
+        </div>
+
+        <div class="filter-panel">
+          <div class="filter-panel-title">Mode</div>
+          <div class="radio-row">
+            <label class="check-item"><input type="radio" name="mode" value="mc" checked> Multiple Choice</label>
+            <label class="check-item"><input type="radio" name="mode" value="fib"> Fill-in-the-Blank</label>
+            <label class="check-item"><input type="radio" name="mode" value="mixed"> Mixed</label>
+          </div>
+        </div>
+
+        <div class="filter-panel">
+          <div class="filter-panel-title">Round Length</div>
+          <div class="radio-row">
+            <label class="check-item"><input type="radio" name="length" value="10" checked> 10 cards</label>
+            <label class="check-item"><input type="radio" name="length" value="20"> 20 cards</label>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="setup-actions">
+        <button id="start-btn" class="btn-primary">Start Studying</button>
+        <span id="best-score-note" class="best-score-note"></span>
+      </div>
+    </section>
+
+    <!-- ── Quiz screen ── -->
+    <section id="quiz-screen" class="study-screen" hidden>
+      <div class="quiz-topbar">
+        <span id="quiz-progress">Card 1 of 10</span>
+        <span id="quiz-score">Score: 0 / 0</span>
+      </div>
+      <div class="quiz-card">
+        <div id="quiz-prompt"></div>
+        <div id="quiz-answer-area"></div>
+        <div id="quiz-feedback" class="quiz-feedback" hidden></div>
+      </div>
+      <div class="quiz-actions">
+        <button id="next-btn" class="btn-primary" hidden>Next →</button>
+      </div>
+    </section>
+
+    <!-- ── Results screen ── -->
+    <section id="results-screen" class="study-screen" hidden>
+      <h1 class="study-title">Results</h1>
+      <div id="results-score" class="results-score"></div>
+      <div id="results-pct" class="results-pct"></div>
+      <div id="results-missed"></div>
+      <div class="setup-actions">
+        <button id="play-again-btn" class="btn-primary">Play Again</button>
+        <button id="change-filters-btn" class="btn-secondary">Change Filters</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer"></footer>
+
+  <script src="paradigm.js"></script>
+  <script>
+    // ── State ──────────────────────────────────────────────────────────────
+    let VERBS = [];
+    let CHAPTERS = [];
+    const conjCache = new Map();
+
+    let roundState = null; // { questions, index, score, missed, filters }
+
+    // ── Cell definitions (conjugated-form quiz content) ─────────────────────
+    const CELLS = {
+      infinitive: { label: 'Infinitive', get: c => c.nonFinite && c.nonFinite.infinitive },
+      pres3sg: { label: '3rd sg. present indicative', get: c => c.presentInd && c.presentInd.sg3 },
+      pastSg: { label: 'Past indicative (singular)', get: c => c.pastInd && c.pastInd.sg1 },
+      pastPl: { label: 'Past indicative (plural)', get: c => c.pastInd && c.pastInd.pl },
+      pastPart: { label: 'Past participle', get: c => c.nonFinite && c.nonFinite.pastParticiple },
+    };
+
+    function getConj(verb) {
+      if (!conjCache.has(verb.id)) conjCache.set(verb.id, Paradigm.conjugate(verb));
+      return conjCache.get(verb.id);
+    }
+
+    // ── Small helpers ────────────────────────────────────────────────────────
+    function foldDiacritics(str) {
+      return (str || '')
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/æ/g, 'ae')
+        .replace(/þ/g, 'th')
+        .replace(/ð/g, 'th');
+    }
+
+    function pickRandom(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function shuffle(arr) {
+      const a = arr.slice();
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    function dedupe(arr) {
+      return [...new Set(arr)];
+    }
+
+    // ── Setup screen: dynamic checkbox lists ────────────────────────────────
+    function buildChapterChecks() {
+      const chapterSet = new Set();
+      VERBS.forEach(v => (v.sources || []).forEach(s => chapterSet.add(s.chapter)));
+      CHAPTERS = [...chapterSet].sort((a, b) => a - b);
+
+      const container = document.getElementById('chapter-checks');
+      container.innerHTML = CHAPTERS.map(ch =>
+        `<label class="check-item"><input type="checkbox" class="chapter-check" value="${ch}" checked> Ch. ${ch}</label>`
+      ).join('');
+
+      const allBox = document.getElementById('chapter-all');
+      const chapterBoxes = () => [...container.querySelectorAll('.chapter-check')];
+
+      allBox.addEventListener('change', () => {
+        chapterBoxes().forEach(b => (b.checked = allBox.checked));
+      });
+
+      container.addEventListener('change', () => {
+        allBox.checked = chapterBoxes().every(b => b.checked);
+      });
+    }
+
+    function buildFormCellChecks() {
+      const container = document.getElementById('form-cells');
+      container.innerHTML = Object.keys(CELLS).map(key =>
+        `<label class="check-item"><input type="checkbox" class="cell-check" value="${key}" checked> ${CELLS[key].label}</label>`
+      ).join('');
+
+      const formsBox = document.getElementById('content-forms');
+      function syncDisabled() {
+        container.classList.toggle('disabled', !formsBox.checked);
+        container.querySelectorAll('.cell-check').forEach(b => (b.disabled = !formsBox.checked));
+      }
+      formsBox.addEventListener('change', syncDisabled);
+      syncDisabled();
+    }
+
+    // ── Filter gathering ─────────────────────────────────────────────────────
+    function getCurrentFilters() {
+      const chapterBoxes = [...document.querySelectorAll('.chapter-check')];
+      const checkedChapters = chapterBoxes.filter(b => b.checked).map(b => Number(b.value));
+      const allChaptersSelected = checkedChapters.length === CHAPTERS.length;
+
+      const types = [...document.querySelectorAll('#type-checks input:checked')].map(b => b.value);
+
+      const includeMeaning = document.getElementById('content-meaning').checked;
+      const includeForms = document.getElementById('content-forms').checked;
+      const cells = includeForms
+        ? [...document.querySelectorAll('.cell-check:checked')].map(b => b.value)
+        : [];
+
+      const mode = document.querySelector('input[name="mode"]:checked').value;
+      const length = Number(document.querySelector('input[name="length"]:checked').value);
+
+      return {
+        chapters: allChaptersSelected ? null : checkedChapters,
+        types,
+        includeMeaning,
+        includeForms,
+        cells,
+        mode,
+        length,
+      };
+    }
+
+    function buildPool(filters) {
+      return VERBS.filter(v => {
+        if (!filters.types.includes(v.type)) return false;
+        if (filters.chapters !== null) {
+          const chs = (v.sources || []).map(s => s.chapter);
+          if (!chs.some(c => filters.chapters.includes(c))) return false;
+        }
+        return true;
+      });
+    }
+
+    // ── Best-score tracking (localStorage, per filter combination) ─────────
+    const BEST_SCORE_KEY = 'study-mode-best-scores';
+
+    function filterSignature(filters) {
+      return JSON.stringify({
+        chapters: filters.chapters === null ? 'all' : [...filters.chapters].sort((a, b) => a - b),
+        types: [...filters.types].sort(),
+        meaning: filters.includeMeaning,
+        cells: [...filters.cells].sort(),
+        mode: filters.mode,
+        length: filters.length,
+      });
+    }
+
+    function loadBestScores() {
+      try {
+        return JSON.parse(localStorage.getItem(BEST_SCORE_KEY)) || {};
+      } catch (e) {
+        return {};
+      }
+    }
+
+    function getBestScore(filters) {
+      const scores = loadBestScores();
+      return scores[filterSignature(filters)] || null;
+    }
+
+    function maybeSaveBestScore(filters, score, total) {
+      const scores = loadBestScores();
+      const key = filterSignature(filters);
+      const pct = total ? Math.round((score / total) * 100) : 0;
+      const prev = scores[key];
+      if (!prev || pct > prev.pct || (pct === prev.pct && score > prev.score)) {
+        scores[key] = { score, total, pct };
+        try {
+          localStorage.setItem(BEST_SCORE_KEY, JSON.stringify(scores));
+        } catch (e) { /* localStorage unavailable — skip silently */ }
+        return true;
+      }
+      return false;
+    }
+
+    function updateBestScoreNote() {
+      const filters = getCurrentFilters();
+      const best = getBestScore(filters);
+      const note = document.getElementById('best-score-note');
+      note.textContent = best
+        ? `Your best with these filters: ${best.score} / ${best.total} (${best.pct}%)`
+        : '';
+    }
+
+    // ── Question generation ─────────────────────────────────────────────────
+    function buildMeaningQuestion(pool) {
+      const verb = pickRandom(pool);
+      const dir = Math.random() < 0.5 ? 'g2l' : 'l2g';
+      return {
+        qType: 'meaning',
+        dir,
+        verb,
+        correctAnswer: dir === 'g2l' ? verb.lemma : verb.gloss,
+      };
+    }
+
+    function buildFormQuestion(pool, cellKey) {
+      const cellDef = CELLS[cellKey];
+      const candidates = pool.filter(v => cellDef.get(getConj(v)));
+      const usable = candidates.length ? candidates : pool;
+      const verb = pickRandom(usable);
+      return {
+        qType: 'form',
+        cellKey,
+        verb,
+        correctAnswer: cellDef.get(getConj(verb)),
+      };
+    }
+
+    function buildOptions(q, pool) {
+      let distractors;
+      if (q.qType === 'meaning') {
+        const valueOf = v => (q.dir === 'g2l' ? v.lemma : v.gloss);
+        const others = pool.filter(v => v.id !== q.verb.id).map(valueOf).filter(v => v && v !== q.correctAnswer);
+        distractors = shuffle(dedupe(others)).slice(0, 3);
+      } else {
+        const conj = getConj(q.verb);
+        const sameVerbVals = Object.keys(CELLS)
+          .filter(k => k !== q.cellKey)
+          .map(k => CELLS[k].get(conj))
+          .filter(v => v && v !== q.correctAnswer);
+        distractors = shuffle(dedupe(sameVerbVals)).slice(0, 3);
+
+        if (distractors.length < 3) {
+          const cellDef = CELLS[q.cellKey];
+          const otherVerbs = shuffle(pool.filter(v => v.id !== q.verb.id));
+          for (const v of otherVerbs) {
+            if (distractors.length >= 3) break;
+            const val = cellDef.get(getConj(v));
+            if (val && val !== q.correctAnswer && !distractors.includes(val)) distractors.push(val);
+          }
+        }
+      }
+      return shuffle([q.correctAnswer, ...distractors]);
+    }
+
+    function activeCells(filters, pool) {
+      // Drop any selected cell that has no non-empty value anywhere in the pool
+      // (e.g. past participle is unattested for a handful of modal verbs).
+      return filters.cells.filter(key => pool.some(v => CELLS[key].get(getConj(v))));
+    }
+
+    function buildQuestions(pool, filters) {
+      const cells = activeCells(filters, pool);
+      const qKinds = [];
+      if (filters.includeMeaning) qKinds.push('meaning');
+      cells.forEach(key => qKinds.push('form:' + key));
+
+      const questions = [];
+      for (let i = 0; i < filters.length; i++) {
+        const kind = pickRandom(qKinds);
+        const q = kind === 'meaning'
+          ? buildMeaningQuestion(pool)
+          : buildFormQuestion(pool, kind.slice(5));
+        q.mode = filters.mode === 'mixed' ? (Math.random() < 0.5 ? 'mc' : 'fib') : filters.mode;
+        if (q.mode === 'mc') q.options = buildOptions(q, pool);
+        questions.push(q);
+      }
+      return questions;
+    }
+
+    // ── Screen switching ─────────────────────────────────────────────────────
+    function showScreen(id) {
+      ['setup-screen', 'quiz-screen', 'results-screen'].forEach(s => {
+        document.getElementById(s).hidden = s !== id;
+      });
+    }
+
+    // ── Start / validation ───────────────────────────────────────────────────
+    function handleStart() {
+      const errorBox = document.getElementById('setup-error');
+      const warningBox = document.getElementById('setup-warning');
+      errorBox.hidden = true;
+      warningBox.hidden = true;
+
+      const filters = getCurrentFilters();
+
+      if (!filters.includeMeaning && !filters.includeForms) {
+        errorBox.textContent = 'Select at least one quiz-content type: Meaning or Conjugated Forms.';
+        errorBox.hidden = false;
+        return;
+      }
+      if (filters.includeForms && !filters.cells.length) {
+        errorBox.textContent = 'Select at least one conjugated-form cell, or uncheck Conjugated Forms.';
+        errorBox.hidden = false;
+        return;
+      }
+      if (!filters.types.length) {
+        errorBox.textContent = 'Select at least one verb type.';
+        errorBox.hidden = false;
+        return;
+      }
+
+      const pool = buildPool(filters);
+      if (!pool.length) {
+        errorBox.textContent = 'No verbs match the current chapter/type filters.';
+        errorBox.hidden = false;
+        return;
+      }
+      if ((filters.mode === 'mc' || filters.mode === 'mixed') && pool.length < 6) {
+        warningBox.textContent =
+          `Only ${pool.length} verb(s) match these filters — too few to generate multiple-choice distractors. ` +
+          `Widen the chapter/type filters, or switch to Fill-in-the-Blank mode.`;
+        warningBox.hidden = false;
+        return;
+      }
+
+      const questions = buildQuestions(pool, filters);
+      roundState = { questions, index: 0, score: 0, missed: [], filters };
+      showScreen('quiz-screen');
+      renderCard();
+    }
+
+    // ── Quiz card rendering ───────────────────────────────────────────────────
+    function promptFor(q) {
+      if (q.qType === 'meaning') {
+        return q.dir === 'g2l'
+          ? { kind: 'Meaning → Old English', main: q.verb.gloss, sub: 'What is the Old English verb?', isOe: false }
+          : { kind: 'Old English → Meaning', main: q.verb.lemma, sub: 'What does this verb mean?', isOe: true };
+      }
+      return {
+        kind: 'Conjugated Form',
+        main: q.verb.lemma,
+        sub: `Give the ${CELLS[q.cellKey].label.toLowerCase()}.`,
+        isOe: true,
+      };
+    }
+
+    function renderCard() {
+      const { questions, index, score } = roundState;
+      const q = questions[index];
+
+      document.getElementById('quiz-progress').textContent = `Card ${index + 1} of ${questions.length}`;
+      document.getElementById('quiz-score').textContent = `Score: ${score} / ${index}`;
+
+      const p = promptFor(q);
+      document.getElementById('quiz-prompt').innerHTML = `
+        <div class="quiz-prompt-kind">${p.kind}</div>
+        <div class="quiz-prompt-main${p.isOe ? ' is-oe' : ''}">${p.main}</div>
+        <div class="quiz-prompt-sub">${p.sub}</div>
+      `;
+
+      const answerArea = document.getElementById('quiz-answer-area');
+      const feedback = document.getElementById('quiz-feedback');
+      feedback.hidden = true;
+      feedback.textContent = '';
+      document.getElementById('next-btn').hidden = true;
+
+      if (q.mode === 'mc') {
+        answerArea.innerHTML = `<div class="mc-options">${q.options.map(opt =>
+          `<button type="button" class="mc-option" data-value="${escapeHtml(opt)}">${opt}</button>`
+        ).join('')}</div>`;
+        answerArea.querySelectorAll('.mc-option').forEach(btn => {
+          btn.addEventListener('click', () => gradeMc(btn));
+        });
+      } else {
+        answerArea.innerHTML = `
+          <div class="fib-row">
+            <input type="text" id="fib-input" autocomplete="off" spellcheck="false" placeholder="Type your answer…" />
+            <button type="button" id="fib-submit" class="btn-primary">Submit</button>
+          </div>
+        `;
+        const input = document.getElementById('fib-input');
+        input.focus();
+        input.addEventListener('keydown', e => {
+          if (e.key === 'Enter') gradeFib();
+        });
+        document.getElementById('fib-submit').addEventListener('click', gradeFib);
+      }
+    }
+
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    function gradeMc(btn) {
+      const q = roundState.questions[roundState.index];
+      const picked = btn.dataset.value;
+      const correct = picked === q.correctAnswer;
+      document.querySelectorAll('.mc-option').forEach(b => {
+        b.disabled = true;
+        if (b.dataset.value === q.correctAnswer) b.classList.add('correct');
+        else if (b === btn) b.classList.add('incorrect');
+      });
+      finishCard(correct, picked);
+    }
+
+    function gradeFib() {
+      const input = document.getElementById('fib-input');
+      const typed = input.value;
+      const q = roundState.questions[roundState.index];
+      const correct = foldDiacritics(typed).trim() === foldDiacritics(q.correctAnswer).trim();
+      input.disabled = true;
+      document.getElementById('fib-submit').disabled = true;
+      finishCard(correct, typed);
+    }
+
+    function finishCard(correct, userAnswer) {
+      const q = roundState.questions[roundState.index];
+      if (correct) {
+        roundState.score++;
+      } else {
+        roundState.missed.push({
+          question: `${promptFor(q).kind}: ${promptFor(q).main}`,
+          yourAnswer: userAnswer || '(no answer)',
+          correctAnswer: q.correctAnswer,
+        });
+      }
+
+      const feedback = document.getElementById('quiz-feedback');
+      feedback.hidden = false;
+      feedback.className = 'quiz-feedback ' + (correct ? 'right' : 'wrong');
+      feedback.innerHTML = correct
+        ? `Correct — <span class="correct-form">${q.correctAnswer}</span>`
+        : `Not quite. The correct form is <span class="correct-form">${q.correctAnswer}</span>`;
+
+      document.getElementById('quiz-score').textContent = `Score: ${roundState.score} / ${roundState.index + 1}`;
+      document.getElementById('next-btn').hidden = false;
+    }
+
+    function handleNext() {
+      roundState.index++;
+      if (roundState.index >= roundState.questions.length) {
+        renderResults();
+        showScreen('results-screen');
+      } else {
+        renderCard();
+      }
+    }
+
+    // ── Results screen ───────────────────────────────────────────────────────
+    function renderResults() {
+      const { score, questions, missed, filters } = roundState;
+      const total = questions.length;
+      const pct = Math.round((score / total) * 100);
+      const isNewBest = maybeSaveBestScore(filters, score, total);
+
+      document.getElementById('results-score').textContent = `${score} / ${total}`;
+      document.getElementById('results-pct').textContent =
+        `${pct}%` + (isNewBest ? ' — new best for these filters!' : '');
+
+      const missedContainer = document.getElementById('results-missed');
+      if (!missed.length) {
+        missedContainer.innerHTML = `<p class="no-missed">No misses — every card correct.</p>`;
+      } else {
+        missedContainer.innerHTML = `
+          <div class="missed-heading">Missed Cards</div>
+          <ul class="missed-list">
+            ${missed.map(m => `
+              <li class="missed-item">
+                <div class="missed-q">${m.question}</div>
+                <div>You answered: <span class="missed-you">${m.yourAnswer}</span></div>
+                <div>Correct: <span class="missed-correct">${m.correctAnswer}</span></div>
+              </li>
+            `).join('')}
+          </ul>
+        `;
+      }
+    }
+
+    // ── Init ──────────────────────────────────────────────────────────────────
+    async function init() {
+      try {
+        const res = await fetch('verbs.json');
+        if (!res.ok) throw new Error(res.statusText);
+        VERBS = await res.json();
+        buildChapterChecks();
+        buildFormCellChecks();
+        updateBestScoreNote();
+        document.getElementById('setup-screen').addEventListener('change', updateBestScoreNote);
+      } catch (err) {
+        document.getElementById('setup-error').textContent = 'Could not load verbs.json. Run "python3 -m http.server 8000" in this directory, then open http://localhost:8000/study.html.';
+        document.getElementById('setup-error').hidden = false;
+        document.getElementById('start-btn').disabled = true;
+      }
+    }
+
+    document.getElementById('start-btn').addEventListener('click', handleStart);
+    document.getElementById('next-btn').addEventListener('click', handleNext);
+    document.getElementById('play-again-btn').addEventListener('click', () => {
+      const filters = roundState.filters;
+      const pool = buildPool(filters);
+      roundState = { questions: buildQuestions(pool, filters), index: 0, score: 0, missed: [], filters };
+      showScreen('quiz-screen');
+      renderCard();
+    });
+    document.getElementById('change-filters-btn').addEventListener('click', () => {
+      updateBestScoreNote();
+      showScreen('setup-screen');
+    });
+
+    init();
+  </script>
+  <script src="components.js"></script>
+</body>
+
+</html>
