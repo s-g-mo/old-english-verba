@@ -572,7 +572,7 @@ exports[`conjugation snapshots agan conjugation matches snapshot 1`] = `
 }
 `;
 
-exports[`conjugation snapshots agangan conjugation matches snapshot 1`] = `
+exports[`conjugation snapshots agan-2 conjugation matches snapshot 1`] = `
 {
   "class": "Irregular",
   "gloss": "pass by, come to pass",
@@ -2915,6 +2915,45 @@ exports[`conjugation snapshots bycgan conjugation matches snapshot 1`] = `
       "text": "osweald-bera",
     },
   ],
+}
+`;
+
+exports[`conjugation snapshots ceosan conjugation matches snapshot 1`] = `
+{
+  "class": "Strong IIa",
+  "gloss": "to choose",
+  "imperative": {
+    "pl": "ċēosaþ",
+    "sg": "ċēos",
+  },
+  "lemma": "ċēosan",
+  "nonFinite": {
+    "infinitive": "ċēosan",
+    "inflectedInfinitive": "tō ċēosenne",
+    "pastParticiple": "ġecoren",
+    "presentParticiple": "ċēosende",
+  },
+  "pastInd": {
+    "pl": "curon",
+    "sg1": "ċēas",
+    "sg2": "cure",
+    "sg3": "ċēas",
+  },
+  "pastSubj": {
+    "pl": "curen",
+    "sg": "cure",
+  },
+  "presentInd": {
+    "pl": "ċēosaþ",
+    "sg1": "ċēose",
+    "sg2": "ċīest",
+    "sg3": "ċīest",
+  },
+  "presentSubj": {
+    "pl": "ċēosen",
+    "sg": "ċēose",
+  },
+  "sources": [],
 }
 `;
 
@@ -13861,44 +13900,5 @@ exports[`conjugation snapshots wyrcan conjugation matches snapshot 1`] = `
       "text": "osweald-bera",
     },
   ],
-}
-`;
-
-exports[`conjugation snapshots ċeosan conjugation matches snapshot 1`] = `
-{
-  "class": "Strong IIa",
-  "gloss": "to choose",
-  "imperative": {
-    "pl": "ċēosaþ",
-    "sg": "ċēos",
-  },
-  "lemma": "ċēosan",
-  "nonFinite": {
-    "infinitive": "ċēosan",
-    "inflectedInfinitive": "tō ċēosenne",
-    "pastParticiple": "ġecoren",
-    "presentParticiple": "ċēosende",
-  },
-  "pastInd": {
-    "pl": "curon",
-    "sg1": "ċēas",
-    "sg2": "cure",
-    "sg3": "ċēas",
-  },
-  "pastSubj": {
-    "pl": "curen",
-    "sg": "cure",
-  },
-  "presentInd": {
-    "pl": "ċēosaþ",
-    "sg1": "ċēose",
-    "sg2": "ċīest",
-    "sg3": "ċīest",
-  },
-  "presentSubj": {
-    "pl": "ċēosen",
-    "sg": "ċēose",
-  },
-  "sources": [],
 }
 `;
