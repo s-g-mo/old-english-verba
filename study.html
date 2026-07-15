@@ -164,6 +164,59 @@
       margin-top: 10px;
     }
 
+    /* ── Toggle switch (Hard Mode) ── */
+    .switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      user-select: none;
+      margin-bottom: 8px;
+    }
+
+    .switch input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .switch-track {
+      width: 40px;
+      height: 22px;
+      background: var(--border);
+      border-radius: 999px;
+      position: relative;
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+
+    .switch-thumb {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 18px;
+      height: 18px;
+      background: #fdf8ec;
+      border-radius: 50%;
+      transition: left 0.15s;
+      box-shadow: 0 1px 2px rgba(30, 21, 8, 0.3);
+    }
+
+    .switch input:checked+.switch-track {
+      background: var(--accent);
+    }
+
+    .switch input:checked+.switch-track .switch-thumb {
+      left: 20px;
+    }
+
+    .switch-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
     /* ── Buttons ── */
     .btn-primary,
     .btn-secondary {
@@ -543,7 +596,28 @@
           </div>
           <label class="check-item block" style="margin-top: 10px;"><input type="checkbox" id="content-forms"
               checked> Conjugated Forms</label>
-          <div id="form-cells" class="checkbox-grid sub-block"><!-- populated at load --></div>
+          <div id="forms-direction" class="radio-row sub-block">
+            <label class="check-item"><input type="radio" name="formsDir" value="both" checked> Both directions
+              (mixed)</label>
+            <label class="check-item"><input type="radio" name="formsDir" value="fwd"> Infinitive → Form</label>
+            <label class="check-item"><input type="radio" name="formsDir" value="rev"> Form → Infinitive</label>
+          </div>
+          <div id="form-cells" class="checkbox-grid sub-block" style="margin-top: 8px;"><!-- populated at load -->
+          </div>
+        </div>
+
+        <div class="filter-panel">
+          <div class="filter-panel-title">Difficulty</div>
+          <div id="hard-mode-body" class="sub-block" style="margin-left: 0;">
+            <label class="switch">
+              <input type="checkbox" id="hard-mode-toggle">
+              <span class="switch-track"><span class="switch-thumb"></span></span>
+              <span class="switch-label">Hard Mode</span>
+            </label>
+            <p class="mode-hint" style="margin-top: 4px;">Multiple-choice questions get 6–8 options instead of 4,
+              biased toward verbs of the same class or type — meant to trip you up. No effect in Fill-in-the-Blank
+              rounds.</p>
+          </div>
         </div>
 
         <div class="filter-panel">
@@ -553,7 +627,8 @@
             <label class="check-item"><input type="radio" name="mode" value="fib"> Fill-in-the-Blank</label>
             <label class="check-item"><input type="radio" name="mode" value="mixed"> Mixed</label>
           </div>
-          <p class="mode-hint">Multiple Choice tip (desktop): press A–D to pick an answer, Enter to continue.</p>
+          <p class="mode-hint">Multiple Choice tip (desktop): press the option's letter to pick it, Enter to
+            continue.</p>
           <p class="mode-hint">Fill-in-the-Blank tip: answers are macron-insensitive, and you may type "th" for þ/ð
             and "ae" for æ.</p>
         </div>
@@ -628,7 +703,7 @@
       pastPart: { label: 'Past participle', get: c => c.nonFinite && c.nonFinite.pastParticiple },
     };
     const QUESTION_CELLS = ['pres3sg', 'pastSg', 'pastPl', 'pastPart'];
-    const MC_LETTERS = ['A', 'B', 'C', 'D'];
+    const MC_LETTERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
     // The Chapters filter is scoped to this one source. Every verb currently
     // in verbs.json is osweald-bera, but a verb added from a different work
     // later would have no chapter here at all — buildPool() below treats that
@@ -638,6 +713,41 @@
     function getConj(verb) {
       if (!conjCache.has(verb.id)) conjCache.set(verb.id, Paradigm.conjugate(verb));
       return conjCache.get(verb.id);
+    }
+
+    // ── Form → Infinitive uniqueness index ──────────────────────────────────
+    // A handful of conjugated forms are shared by two different verbs (e.g.
+    // pastSg "wæs" belongs to both bēon and wesan; several past participles
+    // are identical between a prefixed verb and its base, like ġecoren for
+    // both ċēosan and ġeċēosan). Asking "what's the infinitive?" for one of
+    // those would unfairly mark an equally-correct guess wrong, so the reverse
+    // direction only ever draws on forms that resolve to exactly one verb.
+    let FORM_INDEX = null;
+
+    function buildFormIndex() {
+      FORM_INDEX = {};
+      QUESTION_CELLS.forEach(key => { FORM_INDEX[key] = new Map(); });
+      VERBS.forEach(v => {
+        const conj = getConj(v);
+        QUESTION_CELLS.forEach(key => {
+          const val = CELLS[key].get(conj);
+          if (!val) return;
+          if (!FORM_INDEX[key].has(val)) FORM_INDEX[key].set(val, []);
+          FORM_INDEX[key].get(val).push(v.id);
+        });
+      });
+    }
+
+    function isFormUnique(cellKey, formValue) {
+      const ids = FORM_INDEX[cellKey].get(formValue);
+      return !!ids && ids.length === 1;
+    }
+
+    // ── Hard Mode: verb "class" used to bias distractors toward look-alikes ──
+    function verbClassKey(verb) {
+      return verb.type === 'strong'
+        ? 'strong:' + Paradigm.inferClass(verb.principalParts, verb)
+        : verb.type;
     }
 
     // ── Small helpers ────────────────────────────────────────────────────────
@@ -724,9 +834,13 @@
       ).join('');
 
       const formsBox = document.getElementById('content-forms');
+      const dirContainer = document.getElementById('forms-direction');
       function syncDisabled() {
-        container.classList.toggle('disabled', !formsBox.checked);
-        container.querySelectorAll('.cell-check').forEach(b => (b.disabled = !formsBox.checked));
+        const enabled = formsBox.checked;
+        container.classList.toggle('disabled', !enabled);
+        container.querySelectorAll('.cell-check').forEach(b => (b.disabled = !enabled));
+        dirContainer.classList.toggle('disabled', !enabled);
+        dirContainer.querySelectorAll('input').forEach(b => (b.disabled = !enabled));
       }
       formsBox.addEventListener('change', syncDisabled);
       syncDisabled();
@@ -737,6 +851,13 @@
       const enabled = document.getElementById('content-meaning').checked;
       container.classList.toggle('disabled', !enabled);
       container.querySelectorAll('input').forEach(b => (b.disabled = !enabled));
+    }
+
+    function syncHardModeAvailability() {
+      const mode = document.querySelector('input[name="mode"]:checked').value;
+      const disabled = mode === 'fib';
+      document.getElementById('hard-mode-toggle').disabled = disabled;
+      document.getElementById('hard-mode-body').classList.toggle('disabled', disabled);
     }
 
     // ── Filter gathering ─────────────────────────────────────────────────────
@@ -750,11 +871,13 @@
       const includeMeaning = document.getElementById('content-meaning').checked;
       const meaningDir = document.querySelector('input[name="meaningDir"]:checked').value;
       const includeForms = document.getElementById('content-forms').checked;
+      const formsDir = document.querySelector('input[name="formsDir"]:checked').value;
       const cells = includeForms
         ? [...document.querySelectorAll('.cell-check:checked')].map(b => b.value)
         : [];
 
       const mode = document.querySelector('input[name="mode"]:checked').value;
+      const hardMode = document.getElementById('hard-mode-toggle').checked;
       const length = Number(document.querySelector('input[name="length"]:checked').value);
 
       return {
@@ -763,8 +886,10 @@
         includeMeaning,
         meaningDir,
         includeForms,
+        formsDir,
         cells,
         mode,
+        hardMode,
         length,
       };
     }
@@ -793,8 +918,10 @@
         types: [...filters.types].sort(),
         meaning: filters.includeMeaning,
         meaningDir: filters.includeMeaning ? filters.meaningDir : null,
+        formsDir: filters.includeForms ? filters.formsDir : null,
         cells: [...filters.cells].sort(),
         mode: filters.mode,
+        hardMode: filters.mode !== 'fib' ? filters.hardMode : null,
         length: filters.length,
       });
     }
@@ -848,66 +975,134 @@
       };
     }
 
-    function buildFormQuestion(pool, cellKey) {
+    // bēon is stored with the composite lemma "bēon/wesan" (it's suppletive —
+    // genuinely two stems for one verb); that's fine as a forward-direction
+    // prompt, matching how verbs.html shows it, but it's not a fair
+    // fill-in-the-blank "infinitive" answer, so the reverse direction skips it.
+    function hasCleanLemma(verb) {
+      return !verb.lemma.includes('/');
+    }
+
+    function buildFormQuestion(pool, cellKey, dir) {
       const cellDef = CELLS[cellKey];
+      if (dir === 'rev') {
+        const candidates = pool.filter(v => {
+          const val = cellDef.get(getConj(v));
+          return val && hasCleanLemma(v) && isFormUnique(cellKey, val);
+        });
+        const verb = pickRandom(candidates);
+        return {
+          qType: 'form',
+          dir: 'rev',
+          cellKey,
+          verb,
+          promptForm: cellDef.get(getConj(verb)),
+          correctAnswer: verb.lemma,
+        };
+      }
       const candidates = pool.filter(v => cellDef.get(getConj(v)));
       const usable = candidates.length ? candidates : pool;
       const verb = pickRandom(usable);
       return {
         qType: 'form',
+        dir: 'fwd',
         cellKey,
         verb,
         correctAnswer: cellDef.get(getConj(verb)),
       };
     }
 
-    function buildOptions(q, pool) {
+    // Gathers up to `count` distinct distractor values, excluding anything in
+    // `exclude`. In Hard Mode, verbs sharing the target's class/type (e.g.
+    // other Strong IV verbs) are tried first, since those produce the most
+    // plausible near-misses; the rest of the pool fills in behind them.
+    function gatherDistractors(pool, targetVerb, exclude, valueOf, count, hardMode) {
+      const others = pool.filter(v => v.id !== targetVerb.id);
+      const ordered = [];
+      if (hardMode) {
+        const key = verbClassKey(targetVerb);
+        ordered.push(...shuffle(others.filter(v => verbClassKey(v) === key)));
+      }
+      ordered.push(...shuffle(others));
+
+      const seen = new Set(exclude);
+      const result = [];
+      for (const v of ordered) {
+        const val = valueOf(v);
+        if (val && !seen.has(val)) {
+          seen.add(val);
+          result.push(val);
+          if (result.length >= count) break;
+        }
+      }
+      return result;
+    }
+
+    function buildOptions(q, pool, hardMode) {
+      const count = hardMode ? 7 : 3;
       let distractors;
       if (q.qType === 'meaning') {
         const valueOf = v => (q.dir === 'g2l' ? v.lemma : v.gloss);
-        const others = pool.filter(v => v.id !== q.verb.id).map(valueOf).filter(v => v && v !== q.correctAnswer);
-        distractors = shuffle(dedupe(others)).slice(0, 3);
+        distractors = gatherDistractors(pool, q.verb, [q.correctAnswer], valueOf, count, hardMode);
+      } else if (q.dir === 'rev') {
+        distractors = gatherDistractors(pool, q.verb, [q.correctAnswer], v => v.lemma, count, hardMode);
       } else {
         const conj = getConj(q.verb);
         const sameVerbVals = Object.keys(CELLS)
           .filter(k => k !== q.cellKey)
           .map(k => CELLS[k].get(conj))
           .filter(v => v && v !== q.correctAnswer);
-        distractors = shuffle(dedupe(sameVerbVals)).slice(0, 3);
+        distractors = shuffle(dedupe(sameVerbVals)).slice(0, count);
 
-        if (distractors.length < 3) {
+        if (distractors.length < count) {
           const cellDef = CELLS[q.cellKey];
-          const otherVerbs = shuffle(pool.filter(v => v.id !== q.verb.id));
-          for (const v of otherVerbs) {
-            if (distractors.length >= 3) break;
-            const val = cellDef.get(getConj(v));
-            if (val && val !== q.correctAnswer && !distractors.includes(val)) distractors.push(val);
-          }
+          const topUp = gatherDistractors(
+            pool, q.verb, [q.correctAnswer, ...distractors],
+            v => cellDef.get(getConj(v)),
+            count - distractors.length,
+            hardMode
+          );
+          distractors = distractors.concat(topUp);
         }
       }
       return shuffle([q.correctAnswer, ...distractors]);
     }
 
-    function activeCells(filters, pool) {
-      // Drop any selected cell that has no non-empty value anywhere in the pool
-      // (e.g. past participle is unattested for a handful of modal verbs).
-      return filters.cells.filter(key => pool.some(v => CELLS[key].get(getConj(v))));
+    function activeCellsForDir(cells, pool, dir) {
+      // Drop any selected cell with no usable value anywhere in the pool (e.g.
+      // past participle is unattested for a handful of modal verbs) — and for
+      // the reverse direction, only count values that resolve to one verb.
+      return cells.filter(key => pool.some(v => {
+        const val = CELLS[key].get(getConj(v));
+        if (!val) return false;
+        return dir === 'rev' ? (hasCleanLemma(v) && isFormUnique(key, val)) : true;
+      }));
     }
 
     function buildQuestions(pool, filters) {
-      const cells = activeCells(filters, pool);
       const qKinds = [];
       if (filters.includeMeaning) qKinds.push('meaning');
-      cells.forEach(key => qKinds.push('form:' + key));
+      if (filters.includeForms) {
+        if (filters.formsDir !== 'rev') {
+          activeCellsForDir(filters.cells, pool, 'fwd').forEach(key => qKinds.push('form:' + key + ':fwd'));
+        }
+        if (filters.formsDir !== 'fwd') {
+          activeCellsForDir(filters.cells, pool, 'rev').forEach(key => qKinds.push('form:' + key + ':rev'));
+        }
+      }
 
       const questions = [];
-      for (let i = 0; i < filters.length; i++) {
+      for (let i = 0; i < filters.length && qKinds.length; i++) {
         const kind = pickRandom(qKinds);
-        const q = kind === 'meaning'
-          ? buildMeaningQuestion(pool, filters.meaningDir)
-          : buildFormQuestion(pool, kind.slice(5));
+        let q;
+        if (kind === 'meaning') {
+          q = buildMeaningQuestion(pool, filters.meaningDir);
+        } else {
+          const [, cellKey, dir] = kind.split(':');
+          q = buildFormQuestion(pool, cellKey, dir);
+        }
         q.mode = filters.mode === 'mixed' ? (Math.random() < 0.5 ? 'mc' : 'fib') : filters.mode;
-        if (q.mode === 'mc') q.options = buildOptions(q, pool);
+        if (q.mode === 'mc') q.options = buildOptions(q, pool, filters.hardMode);
         questions.push(q);
       }
       return questions;
@@ -951,15 +1146,26 @@
         errorBox.hidden = false;
         return;
       }
-      if ((filters.mode === 'mc' || filters.mode === 'mixed') && pool.length < 6) {
-        warningBox.textContent =
-          `Only ${pool.length} verb(s) match these filters — too few to generate multiple-choice distractors. ` +
+      const mcInPlay = filters.mode === 'mc' || filters.mode === 'mixed';
+      const hardModeInPlay = filters.hardMode && filters.mode !== 'fib';
+      const minPool = hardModeInPlay ? 12 : 6;
+      if (mcInPlay && pool.length < minPool) {
+        warningBox.textContent = hardModeInPlay
+          ? `Only ${pool.length} verb(s) match these filters — Hard Mode needs at least ${minPool} to build 6–8 ` +
+          `plausible options. Widen the chapter/type filters, turn off Hard Mode, or switch to Fill-in-the-Blank.`
+          : `Only ${pool.length} verb(s) match these filters — too few to generate multiple-choice distractors. ` +
           `Widen the chapter/type filters, or switch to Fill-in-the-Blank mode.`;
         warningBox.hidden = false;
         return;
       }
 
       const questions = buildQuestions(pool, filters);
+      if (!questions.length) {
+        errorBox.textContent = 'No valid questions could be generated from these filters — try a different ' +
+          'Conjugated Forms direction, or broaden the chapter/type filters.';
+        errorBox.hidden = false;
+        return;
+      }
       roundState = { questions, index: 0, score: 0, missed: [], filters };
       showScreen('quiz-screen');
       renderCard();
@@ -971,6 +1177,14 @@
         return q.dir === 'g2l'
           ? { kind: 'Meaning → Old English', main: q.verb.gloss, sub: 'What is the Old English verb?', isOe: false }
           : { kind: 'Old English → Meaning', main: q.verb.lemma, sub: 'What does this verb mean?', isOe: true };
+      }
+      if (q.dir === 'rev') {
+        return {
+          kind: 'Conjugated Form → Infinitive',
+          main: q.promptForm,
+          sub: `${CELLS[q.cellKey].label} — give the infinitive.`,
+          isOe: true,
+        };
       }
       // The gloss is included here (not just the lemma) because a small
       // number of verbs are near-homographs distinguished only by a macron
@@ -1005,10 +1219,11 @@
       document.getElementById('next-btn').hidden = true;
 
       if (q.mode === 'mc') {
+        const lastLetter = MC_LETTERS[q.options.length - 1];
         answerArea.innerHTML = `<div class="mc-options">${q.options.map((opt, i) =>
           `<button type="button" class="mc-option" data-value="${escapeHtml(opt)}"><span class="mc-key">${MC_LETTERS[i]}</span>${opt}</button>`
         ).join('')}</div>
-        <p class="mc-hint">Press A–D to choose, Enter to continue.</p>`;
+        <p class="mc-hint">Press A–${lastLetter} to choose, Enter to continue.</p>`;
         answerArea.querySelectorAll('.mc-option').forEach(btn => {
           btn.addEventListener('click', () => gradeMc(btn));
         });
@@ -1060,16 +1275,28 @@
 
     function finishCard(correct, userAnswer) {
       const q = roundState.questions[roundState.index];
+      const isRevForm = q.qType === 'form' && q.dir === 'rev';
+      // Showing the gloss alongside the revealed lemma (both here and in the
+      // missed-cards list) lets the user confirm which verb it was — the
+      // prompt itself only shows the inflected form, not the headword.
+      const answerDisplay = isRevForm ? `${q.correctAnswer} (${q.verb.gloss})` : q.correctAnswer;
+
       if (correct) {
         roundState.score++;
       } else {
         const p = promptFor(q);
+        let question;
+        if (isRevForm) {
+          question = `${CELLS[q.cellKey].label}: ${q.promptForm} → infinitive`;
+        } else if (q.qType === 'form') {
+          question = `${q.verb.lemma} (${q.verb.gloss}) — ${CELLS[q.cellKey].label}`;
+        } else {
+          question = `${p.kind}: ${p.main}`;
+        }
         roundState.missed.push({
-          question: q.qType === 'form'
-            ? `${q.verb.lemma} (${q.verb.gloss}) — ${CELLS[q.cellKey].label}`
-            : `${p.kind}: ${p.main}`,
+          question,
           yourAnswer: userAnswer || '(no answer)',
-          correctAnswer: q.correctAnswer,
+          correctAnswer: answerDisplay,
         });
       }
 
@@ -1077,8 +1304,8 @@
       feedback.hidden = false;
       feedback.className = 'quiz-feedback ' + (correct ? 'right' : 'wrong');
       feedback.innerHTML = correct
-        ? `Correct — <span class="correct-form">${q.correctAnswer}</span>`
-        : `Not quite. The correct form is <span class="correct-form">${q.correctAnswer}</span>`;
+        ? `Correct — <span class="correct-form">${answerDisplay}</span>`
+        : `Not quite. The correct form is <span class="correct-form">${answerDisplay}</span>`;
 
       document.getElementById('quiz-score').textContent = `Score: ${roundState.score} / ${roundState.index + 1}`;
       document.getElementById('next-btn').hidden = false;
@@ -1130,10 +1357,14 @@
         const res = await fetch('verbs.json');
         if (!res.ok) throw new Error(res.statusText);
         VERBS = await res.json();
+        buildFormIndex();
         buildChapterChecks();
         buildFormCellChecks();
         document.getElementById('content-meaning').addEventListener('change', syncMeaningDirection);
         syncMeaningDirection();
+        document.querySelectorAll('input[name="mode"]').forEach(r =>
+          r.addEventListener('change', syncHardModeAvailability));
+        syncHardModeAvailability();
         updateBestScoreNote();
         document.getElementById('setup-screen').addEventListener('change', updateBestScoreNote);
       } catch (err) {
