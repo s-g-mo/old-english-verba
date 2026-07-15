@@ -164,59 +164,6 @@
       margin-top: 10px;
     }
 
-    /* ── Toggle switch (Hard Mode) ── */
-    .switch {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-      user-select: none;
-      margin-bottom: 8px;
-    }
-
-    .switch input {
-      position: absolute;
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-
-    .switch-track {
-      width: 40px;
-      height: 22px;
-      background: var(--border);
-      border-radius: 999px;
-      position: relative;
-      flex-shrink: 0;
-      transition: background 0.15s;
-    }
-
-    .switch-thumb {
-      position: absolute;
-      top: 2px;
-      left: 2px;
-      width: 18px;
-      height: 18px;
-      background: #fdf8ec;
-      border-radius: 50%;
-      transition: left 0.15s;
-      box-shadow: 0 1px 2px rgba(30, 21, 8, 0.3);
-    }
-
-    .switch input:checked+.switch-track {
-      background: var(--accent);
-    }
-
-    .switch input:checked+.switch-track .switch-thumb {
-      left: 20px;
-    }
-
-    .switch-label {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text);
-    }
-
     /* ── Buttons ── */
     .btn-primary,
     .btn-secondary {
@@ -607,28 +554,13 @@
         </div>
 
         <div class="filter-panel">
-          <div class="filter-panel-title">Difficulty</div>
-          <div id="hard-mode-body" class="sub-block" style="margin-left: 0;">
-            <label class="switch">
-              <input type="checkbox" id="hard-mode-toggle">
-              <span class="switch-track"><span class="switch-thumb"></span></span>
-              <span class="switch-label">Hard Mode</span>
-            </label>
-            <p class="mode-hint" style="margin-top: 4px;">Multiple-choice questions get 6–8 options instead of 4,
-              biased toward verbs of the same class or type — meant to trip you up. No effect in Fill-in-the-Blank
-              rounds.</p>
-          </div>
-        </div>
-
-        <div class="filter-panel">
           <div class="filter-panel-title">Mode</div>
           <div class="radio-row">
             <label class="check-item"><input type="radio" name="mode" value="mc" checked> Multiple Choice</label>
             <label class="check-item"><input type="radio" name="mode" value="fib"> Fill-in-the-Blank</label>
             <label class="check-item"><input type="radio" name="mode" value="mixed"> Mixed</label>
           </div>
-          <p class="mode-hint">Multiple Choice tip (desktop): press the option's letter to pick it, Enter to
-            continue.</p>
+          <p class="mode-hint">Multiple Choice tip (desktop): press A–D to pick an answer, Enter to continue.</p>
           <p class="mode-hint">Fill-in-the-Blank tip: answers are macron-insensitive, and you may type "th" for þ/ð
             and "ae" for æ.</p>
         </div>
@@ -703,7 +635,7 @@
       pastPart: { label: 'Past participle', get: c => c.nonFinite && c.nonFinite.pastParticiple },
     };
     const QUESTION_CELLS = ['pres3sg', 'pastSg', 'pastPl', 'pastPart'];
-    const MC_LETTERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+    const MC_LETTERS = ['A', 'B', 'C', 'D'];
     // The Chapters filter is scoped to this one source. Every verb currently
     // in verbs.json is osweald-bera, but a verb added from a different work
     // later would have no chapter here at all — buildPool() below treats that
@@ -741,13 +673,6 @@
     function isFormUnique(cellKey, formValue) {
       const ids = FORM_INDEX[cellKey].get(formValue);
       return !!ids && ids.length === 1;
-    }
-
-    // ── Hard Mode: verb "class" used to bias distractors toward look-alikes ──
-    function verbClassKey(verb) {
-      return verb.type === 'strong'
-        ? 'strong:' + Paradigm.inferClass(verb.principalParts, verb)
-        : verb.type;
     }
 
     // ── Small helpers ────────────────────────────────────────────────────────
@@ -853,13 +778,6 @@
       container.querySelectorAll('input').forEach(b => (b.disabled = !enabled));
     }
 
-    function syncHardModeAvailability() {
-      const mode = document.querySelector('input[name="mode"]:checked').value;
-      const disabled = mode === 'fib';
-      document.getElementById('hard-mode-toggle').disabled = disabled;
-      document.getElementById('hard-mode-body').classList.toggle('disabled', disabled);
-    }
-
     // ── Filter gathering ─────────────────────────────────────────────────────
     function getCurrentFilters() {
       const chapterBoxes = [...document.querySelectorAll('.chapter-check')];
@@ -877,7 +795,6 @@
         : [];
 
       const mode = document.querySelector('input[name="mode"]:checked').value;
-      const hardMode = document.getElementById('hard-mode-toggle').checked;
       const length = Number(document.querySelector('input[name="length"]:checked').value);
 
       return {
@@ -889,7 +806,6 @@
         formsDir,
         cells,
         mode,
-        hardMode,
         length,
       };
     }
@@ -921,7 +837,6 @@
         formsDir: filters.includeForms ? filters.formsDir : null,
         cells: [...filters.cells].sort(),
         mode: filters.mode,
-        hardMode: filters.mode !== 'fib' ? filters.hardMode : null,
         length: filters.length,
       });
     }
@@ -1012,22 +927,14 @@
       };
     }
 
-    // Gathers up to `count` distinct distractor values, excluding anything in
-    // `exclude`. In Hard Mode, verbs sharing the target's class/type (e.g.
-    // other Strong IV verbs) are tried first, since those produce the most
-    // plausible near-misses; the rest of the pool fills in behind them.
-    function gatherDistractors(pool, targetVerb, exclude, valueOf, count, hardMode) {
-      const others = pool.filter(v => v.id !== targetVerb.id);
-      const ordered = [];
-      if (hardMode) {
-        const key = verbClassKey(targetVerb);
-        ordered.push(...shuffle(others.filter(v => verbClassKey(v) === key)));
-      }
-      ordered.push(...shuffle(others));
+    // Gathers up to `count` distinct distractor values from other verbs in the
+    // pool, excluding anything in `exclude`.
+    function gatherDistractors(pool, targetVerb, exclude, valueOf, count) {
+      const others = shuffle(pool.filter(v => v.id !== targetVerb.id));
 
       const seen = new Set(exclude);
       const result = [];
-      for (const v of ordered) {
+      for (const v of others) {
         const val = valueOf(v);
         if (val && !seen.has(val)) {
           seen.add(val);
@@ -1038,14 +945,14 @@
       return result;
     }
 
-    function buildOptions(q, pool, hardMode) {
-      const count = hardMode ? 7 : 3;
+    function buildOptions(q, pool) {
+      const count = 3;
       let distractors;
       if (q.qType === 'meaning') {
         const valueOf = v => (q.dir === 'g2l' ? v.lemma : v.gloss);
-        distractors = gatherDistractors(pool, q.verb, [q.correctAnswer], valueOf, count, hardMode);
+        distractors = gatherDistractors(pool, q.verb, [q.correctAnswer], valueOf, count);
       } else if (q.dir === 'rev') {
-        distractors = gatherDistractors(pool, q.verb, [q.correctAnswer], v => v.lemma, count, hardMode);
+        distractors = gatherDistractors(pool, q.verb, [q.correctAnswer], v => v.lemma, count);
       } else {
         const conj = getConj(q.verb);
         const sameVerbVals = Object.keys(CELLS)
@@ -1059,8 +966,7 @@
           const topUp = gatherDistractors(
             pool, q.verb, [q.correctAnswer, ...distractors],
             v => cellDef.get(getConj(v)),
-            count - distractors.length,
-            hardMode
+            count - distractors.length
           );
           distractors = distractors.concat(topUp);
         }
@@ -1102,7 +1008,7 @@
           q = buildFormQuestion(pool, cellKey, dir);
         }
         q.mode = filters.mode === 'mixed' ? (Math.random() < 0.5 ? 'mc' : 'fib') : filters.mode;
-        if (q.mode === 'mc') q.options = buildOptions(q, pool, filters.hardMode);
+        if (q.mode === 'mc') q.options = buildOptions(q, pool);
         questions.push(q);
       }
       return questions;
@@ -1146,14 +1052,9 @@
         errorBox.hidden = false;
         return;
       }
-      const mcInPlay = filters.mode === 'mc' || filters.mode === 'mixed';
-      const hardModeInPlay = filters.hardMode && filters.mode !== 'fib';
-      const minPool = hardModeInPlay ? 12 : 6;
-      if (mcInPlay && pool.length < minPool) {
-        warningBox.textContent = hardModeInPlay
-          ? `Only ${pool.length} verb(s) match these filters — Hard Mode needs at least ${minPool} to build 6–8 ` +
-          `plausible options. Widen the chapter/type filters, turn off Hard Mode, or switch to Fill-in-the-Blank.`
-          : `Only ${pool.length} verb(s) match these filters — too few to generate multiple-choice distractors. ` +
+      if ((filters.mode === 'mc' || filters.mode === 'mixed') && pool.length < 6) {
+        warningBox.textContent =
+          `Only ${pool.length} verb(s) match these filters — too few to generate multiple-choice distractors. ` +
           `Widen the chapter/type filters, or switch to Fill-in-the-Blank mode.`;
         warningBox.hidden = false;
         return;
@@ -1219,11 +1120,10 @@
       document.getElementById('next-btn').hidden = true;
 
       if (q.mode === 'mc') {
-        const lastLetter = MC_LETTERS[q.options.length - 1];
         answerArea.innerHTML = `<div class="mc-options">${q.options.map((opt, i) =>
           `<button type="button" class="mc-option" data-value="${escapeHtml(opt)}"><span class="mc-key">${MC_LETTERS[i]}</span>${opt}</button>`
         ).join('')}</div>
-        <p class="mc-hint">Press A–${lastLetter} to choose, Enter to continue.</p>`;
+        <p class="mc-hint">Press A–D to choose, Enter to continue.</p>`;
         answerArea.querySelectorAll('.mc-option').forEach(btn => {
           btn.addEventListener('click', () => gradeMc(btn));
         });
@@ -1362,9 +1262,6 @@
         buildFormCellChecks();
         document.getElementById('content-meaning').addEventListener('change', syncMeaningDirection);
         syncMeaningDirection();
-        document.querySelectorAll('input[name="mode"]').forEach(r =>
-          r.addEventListener('change', syncHardModeAvailability));
-        syncHardModeAvailability();
         updateBestScoreNote();
         document.getElementById('setup-screen').addEventListener('change', updateBestScoreNote);
       } catch (err) {
