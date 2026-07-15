@@ -114,6 +114,23 @@ body {
   border-bottom-color: var(--accent);
 }
 
+/* Temporary "just shipped" flag — remove the span (and this rule) once
+   Study Mode isn't new anymore; no expiry logic by design. */
+.nav-badge-new {
+  font-family: var(--font);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--accent);
+  color: #fdf8ec;
+  border-radius: 99px;
+  padding: 1px 6px;
+  margin-left: 4px;
+  vertical-align: 2px;
+  line-height: 1.4;
+}
+
 /* ── Footer ── */
 .site-footer {
   background: var(--header-bg);

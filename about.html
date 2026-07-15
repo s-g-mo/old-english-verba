@@ -110,6 +110,15 @@
       color: var(--muted);
     }
 
+    .cc-note a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .cc-note a:hover {
+      text-decoration: underline;
+    }
+
     /* Future directions */
     .future-note {
       font-size: 0.85rem;
@@ -249,6 +258,7 @@
       <a href="verbs.html" class="nav-link">Verbs</a>
       <a href="basics.html" class="nav-link">Grammar</a>
       <a href="rules.html" class="nav-link">Rules</a>
+      <a href="study.html" class="nav-link">Study <span class="nav-badge-new">New</span></a>
       <a href="about.html" class="nav-link active">About</a>
       <a href="changelog.html" class="nav-link">Changelog</a>
     </nav>
@@ -308,8 +318,8 @@
           <p class="future-note">Some ideas being considered for future development — no promises, just thinking out
             loud.</p>
           <ul class="future-list">
-            <li>A testing and drilling mode — flashcards, fill-in-the-blank conjugation, or multiple-choice paradigm
-              practice</li>
+            <li><s>A testing and drilling mode — flashcards, fill-in-the-blank conjugation, or multiple-choice
+                paradigm practice</s> <span class="cc-note">— underway, see <a href="study.html">Study</a></span></li>
             <li>Attested example sentences for individual verbs, drawn from primary Old English sources</li>
             <li>Frequency data — ranking verbs by how often they appear in the Old English corpus, to help prioritize
               study</li>
