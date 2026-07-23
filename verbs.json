@@ -736,7 +736,7 @@
   },
   {
     "id": "slaepan",
-    "lemma": "slæpan",
+    "lemma": "slǣpan",
     "gloss": "to sleep",
     "type": "strong",
     "sources": [
@@ -747,10 +747,10 @@
     ],
     "notes": "",
     "principalParts": [
-      "slæpan",
+      "slǣpan",
       "slēp",
       "slēpon",
-      "ġeslæpen"
+      "ġeslǣpen"
     ],
     "irregular": false,
     "irregularForms": {}
@@ -1617,7 +1617,7 @@
     "type": "strong",
     "principalParts": [
       "onġietan",
-      "onġēat",
+      "onġeat",
       "onġēaton",
       "onġieten"
     ],
@@ -1728,7 +1728,8 @@
       "pastSubj": {
         "sg": "tealde",
         "pl": "tealden"
-      }
+      },
+      "nonFinite.pastParticiple": "ġeteald"
     }
   },
   {
@@ -1815,9 +1816,12 @@
         "chapter": 6
       }
     ],
-    "notes": "",
+    "notes": "Class VI with j-present gemination: epenthesized sg2 and imperative, like stæppan.",
     "irregular": false,
-    "irregularForms": {}
+    "irregularForms": {
+      "presentInd.sg2": "ġesċiepest",
+      "imperative.sg": "ġesċiepe"
+    }
   },
   {
     "id": "maenan",
@@ -1952,7 +1956,9 @@
     ],
     "notes": "",
     "irregular": false,
-    "irregularForms": {}
+    "irregularForms": {
+      "imperative.sg": "bide"
+    }
   },
   {
     "id": "fleon",
@@ -2659,7 +2665,7 @@
         "infinitive": "libban",
         "inflectedInfinitive": "tō libbanne",
         "presentParticiple": "libbende",
-        "pastParticiple": "ġelīfd"
+        "pastParticiple": "ġelifd"
       },
       "imperative": {
         "sg": "leofa",
@@ -2881,16 +2887,31 @@
     "id": "erian",
     "lemma": "erian",
     "gloss": "to plough",
-    "type": "weak2",
+    "type": "weak1",
     "sources": [
       {
         "text": "osweald-bera",
         "chapter": 10
       }
     ],
-    "notes": "",
-    "irregular": false,
-    "irregularForms": {}
+    "notes": "Reclassified weak1 (not weak2, per Wiktionary: 3sg pres ereþ, past erede). Light-stem -rian verb, same manual-override pattern as sibling styrian.",
+    "irregular": true,
+    "irregularForms": {
+      "presentInd.sg2": "erest",
+      "presentInd.sg3": "ereþ",
+      "pastInd": {
+        "sg1": "erede",
+        "sg2": "eredest",
+        "sg3": "erede",
+        "pl": "eredon"
+      },
+      "pastSubj": {
+        "sg": "erede",
+        "pl": "ereden"
+      },
+      "imperative.sg": "ere",
+      "nonFinite.pastParticiple": "ġeered"
+    }
   },
   {
     "id": "forgietan",
@@ -3067,7 +3088,9 @@
       "forseten"
     ],
     "irregular": false,
-    "irregularForms": {}
+    "irregularForms": {
+      "imperative.sg": "forsite"
+    }
   },
   {
     "id": "gecypan",
@@ -3385,7 +3408,9 @@
       "ġeseten"
     ],
     "irregular": false,
-    "irregularForms": {}
+    "irregularForms": {
+      "imperative.sg": "ġesite"
+    }
   },
   {
     "id": "gewunian",
@@ -3557,7 +3582,7 @@
       "wadan",
       "wōd",
       "wōdon",
-      "ġewæden"
+      "ġewaden"
     ],
     "irregular": false,
     "irregularForms": {}
@@ -5082,7 +5107,8 @@
       "beġeat",
       "beġēaton",
       "beġieten"
-    ]
+    ],
+    "verbPrefix": "be"
   },
   {
     "id": "cypan",
@@ -5834,7 +5860,9 @@
     ],
     "notes": "",
     "irregular": false,
-    "irregularForms": {},
+    "irregularForms": {
+      "imperative.sg": "liġe"
+    },
     "principalParts": [
       "liċġan",
       "læġ",
@@ -6054,11 +6082,10 @@
         "chapter": 22
       }
     ],
-    "notes": "presentInd sg2/sg3 overridden: the engine's i-mutation logic doesn't strip a leading ġe- before scanning for the vowel to mutate, so it was corrupting the prefix itself into ġi- (ġibitst/ġibitt) instead of mutating the root vowel of biddan (which correctly yields bitst/bitt on its own). Overridden directly rather than changing the engine; see the flagged follow-up on this class of bug.",
-    "irregular": true,
+    "notes": "Engine strips the ġe- prefix before i-mutation (fix from the Jul 2026 Wiktionary audit), so sg2/sg3 ġebitst/ġebitt now derive automatically.",
+    "irregular": false,
     "irregularForms": {
-      "presentInd.sg2": "ġebitst",
-      "presentInd.sg3": "ġebitt"
+      "imperative.sg": "ġebide"
     },
     "principalParts": [
       "ġebiddan",
@@ -6186,9 +6213,13 @@
         "chapter": 23
       }
     ],
-    "notes": "",
-    "irregular": false,
-    "irregularForms": {}
+    "notes": "Syllabic-l stem takes epenthetic e in sg2/sg3 and the imperative (eġlest, eġleþ, eġle).",
+    "irregular": true,
+    "irregularForms": {
+      "presentInd.sg2": "eġlest",
+      "presentInd.sg3": "eġleþ",
+      "imperative.sg": "eġle"
+    }
   },
   {
     "id": "iernan",
@@ -6336,7 +6367,7 @@
   },
   {
     "id": "cidan",
-    "lemma": "cīdan",
+    "lemma": "ċīdan",
     "gloss": "chide, rebuke, criticize",
     "type": "weak1",
     "sources": [
@@ -6432,9 +6463,11 @@
         "chapter": 24
       }
     ],
-    "notes": "",
-    "irregular": false,
-    "irregularForms": {}
+    "notes": "Single dental assimilates to a geminate before the past suffix: past grētte (not grēte).",
+    "irregular": true,
+    "irregularForms": {
+      "pastStem": "grētt"
+    }
   },
   {
     "id": "liefan",

@@ -102,6 +102,12 @@ var Paradigm = (function () {
     if (explicitPrefix && stem.indexOf(explicitPrefix) === 0) {
       prefix = explicitPrefix;
       root = stem.slice(prefix.length);
+    } else if (/^[ġg]e(?=[^aeiouāēīōūæǣ])/.test(stem)) {
+      // A leading ġe- is never the mutation target: strip it before scanning
+      // for the root vowel (ġesittan → ġe + sitt → ġesitst, not ġisitst).
+      // The consonant lookahead keeps ġeo-/ġea- roots intact.
+      prefix = stem.slice(0, 2);
+      root = stem.slice(2);
     } else {
       var prefixMatch = VERB_PREFIX_RE.exec(stem);
       prefix = prefixMatch ? prefixMatch[1] : '';
