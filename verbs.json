@@ -41,7 +41,12 @@
     "lemma": "drīfan",
     "gloss": "to drive",
     "type": "strong",
-    "sources": [],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 9
+      }
+    ],
     "notes": "",
     "principalParts": [
       "drīfan",
@@ -216,7 +221,12 @@
     "lemma": "hīeran",
     "gloss": "to hear",
     "type": "weak1",
-    "sources": [],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 8
+      }
+    ],
     "notes": "",
     "related": [
       "gehieran"
@@ -6824,6 +6834,247 @@
       }
     ],
     "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "aliesan",
+    "lemma": "ālīesan",
+    "gloss": "free",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 26
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "verbPrefix": "ā"
+  },
+  {
+    "id": "ceapian",
+    "lemma": "ċēapian",
+    "gloss": "buy",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 26
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "ciegan",
+    "lemma": "ċīeġan",
+    "gloss": "invoke, call forth",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 26
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gedrefan",
+    "lemma": "ġedrēfan",
+    "gloss": "vex, disturb, trouble",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 26
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gehaeftan",
+    "lemma": "ġehæftan",
+    "gloss": "take captive",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 26
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gehydan",
+    "lemma": "ġehȳdan",
+    "gloss": "hide, conceal; bury",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 26
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "ondraedan",
+    "lemma": "ondrǣdan",
+    "gloss": "be afraid, dread",
+    "type": "strong",
+    "principalParts": [
+      "ondrǣdan",
+      "ondrēd",
+      "ondrēdon",
+      "ondrǣden"
+    ],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 26
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "onliesan",
+    "lemma": "onlīesan",
+    "gloss": "release, untie",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 26
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {},
+    "verbPrefix": "on"
+  },
+  {
+    "id": "ahebban",
+    "lemma": "āhebban",
+    "gloss": "raise, lift; exalt",
+    "type": "strong",
+    "principalParts": [
+      "āhebban",
+      "āhōf",
+      "āhōfon",
+      "āhæfen"
+    ],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 27
+      }
+    ],
+    "notes": "Class VI with j-present gemination, like stæppan. OB gives 3sg āhefeþ (epenthetic e). Ablaut tuple e/ō/ō/æ is not in ABLAUT_CLASSES, so classOverride forces VI.",
+    "irregular": true,
+    "irregularForms": {
+      "presentInd.sg2": "āhefest",
+      "presentInd.sg3": "āhefeþ",
+      "imperative.sg": "āhefe"
+    },
+    "classOverride": "VI"
+  },
+  {
+    "id": "forgieldan",
+    "lemma": "forġieldan",
+    "gloss": "pay for; repay; buy off",
+    "type": "strong",
+    "principalParts": [
+      "forġieldan",
+      "forġeald",
+      "forguldon",
+      "forgolden"
+    ],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 27
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "gefetian",
+    "lemma": "ġefetian",
+    "gloss": "fetch, bring",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 27
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "iersian",
+    "lemma": "iersian",
+    "gloss": "get angry",
+    "type": "weak2",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 27
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "laefan",
+    "lemma": "lǣfan",
+    "gloss": "leave; remain",
+    "type": "weak1",
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 27
+      }
+    ],
+    "notes": "",
+    "irregular": false,
+    "irregularForms": {}
+  },
+  {
+    "id": "wipsacan",
+    "lemma": "wiþsacan",
+    "gloss": "deny, refuse; reject",
+    "type": "strong",
+    "principalParts": [
+      "wiþsacan",
+      "wiþsōc",
+      "wiþsōcon",
+      "wiþsacen"
+    ],
+    "sources": [
+      {
+        "text": "osweald-bera",
+        "chapter": 27
+      }
+    ],
+    "notes": "OB prints past participle -sæcen; standard wiþsacen kept per Wiktionary.",
     "irregular": false,
     "irregularForms": {}
   }

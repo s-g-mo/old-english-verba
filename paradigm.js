@@ -345,7 +345,10 @@ var Paradigm = (function () {
   // ── pastDE ──────────────────────────────────────────────────────────────────
   function pastDE(stem) {
     if (/t$/.test(stem)) return stem + 'e';           // set → sette, sōht → sōhte
-    if (/[pcs]$/.test(stem)) return stem + 'te';      // beċīep → beċīepte (f/þ voiced → -de)
+    if (/[pc]$/.test(stem)) return stem + 'te';       // beċīep → beċīepte (f/þ voiced → -de)
+    // Single intervocalic s was voiced, so s-final stems take -de via the default
+    // below (ālīes → ālīesde, as attested). A degeminated ss stem (cyssan → cys →
+    // cyste) would need -te; refine this if such a verb is ever added.
     if (/[lrn]d$/.test(stem)) return stem + 'e';      // seald → sealde, send → sende
     if (isShortRoot(stem)) return stem + 'ede';       // frem → fremede
     return stem + 'de';                               // hīer → hīerde  ← was 'e', needs 'de'
