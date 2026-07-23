@@ -1772,7 +1772,7 @@ exports[`conjugation snapshots begietan conjugation matches snapshot 1`] = `
   "nonFinite": {
     "infinitive": "beġietan",
     "inflectedInfinitive": "tō beġietenne",
-    "pastParticiple": "ġebeġieten",
+    "pastParticiple": "beġieten",
     "presentParticiple": "beġietende",
   },
   "pastInd": {
@@ -2572,7 +2572,7 @@ exports[`conjugation snapshots biddan conjugation matches snapshot 1`] = `
   "gloss": "to ask for, beg; order, command",
   "imperative": {
     "pl": "biddaþ",
-    "sg": "bidd",
+    "sg": "bide",
   },
   "lemma": "biddan",
   "nonFinite": {
@@ -3094,35 +3094,35 @@ exports[`conjugation snapshots cidan conjugation matches snapshot 1`] = `
   "class": "Weak I",
   "gloss": "chide, rebuke, criticize",
   "imperative": {
-    "pl": "cīdaþ",
-    "sg": "cīd",
+    "pl": "ċīdaþ",
+    "sg": "ċīd",
   },
-  "lemma": "cīdan",
+  "lemma": "ċīdan",
   "nonFinite": {
-    "infinitive": "cīdan",
-    "inflectedInfinitive": "tō cīdenne",
-    "pastParticiple": "ġecīded",
-    "presentParticiple": "cīdende",
+    "infinitive": "ċīdan",
+    "inflectedInfinitive": "tō ċīdenne",
+    "pastParticiple": "ġeċīded",
+    "presentParticiple": "ċīdende",
   },
   "pastInd": {
-    "pl": "cīddon",
-    "sg1": "cīdde",
-    "sg2": "cīddest",
-    "sg3": "cīdde",
+    "pl": "ċīddon",
+    "sg1": "ċīdde",
+    "sg2": "ċīddest",
+    "sg3": "ċīdde",
   },
   "pastSubj": {
-    "pl": "cīdden",
-    "sg": "cīdde",
+    "pl": "ċīdden",
+    "sg": "ċīdde",
   },
   "presentInd": {
-    "pl": "cīdaþ",
-    "sg1": "cīde",
-    "sg2": "cītst",
-    "sg3": "cītt",
+    "pl": "ċīdaþ",
+    "sg1": "ċīde",
+    "sg2": "ċītst",
+    "sg3": "ċītt",
   },
   "presentSubj": {
-    "pl": "cīden",
-    "sg": "cīde",
+    "pl": "ċīden",
+    "sg": "ċīde",
   },
   "sources": [
     {
@@ -3843,7 +3843,7 @@ exports[`conjugation snapshots eglan conjugation matches snapshot 1`] = `
   "gloss": "trouble, torment; grieve",
   "imperative": {
     "pl": "eġlaþ",
-    "sg": "eġl",
+    "sg": "eġle",
   },
   "lemma": "eġlan",
   "nonFinite": {
@@ -3865,8 +3865,8 @@ exports[`conjugation snapshots eglan conjugation matches snapshot 1`] = `
   "presentInd": {
     "pl": "eġlaþ",
     "sg1": "eġle",
-    "sg2": "eġlst",
-    "sg3": "eġlþ",
+    "sg2": "eġlest",
+    "sg3": "eġleþ",
   },
   "presentSubj": {
     "pl": "eġlen",
@@ -3927,38 +3927,38 @@ exports[`conjugation snapshots ehtan conjugation matches snapshot 1`] = `
 
 exports[`conjugation snapshots erian conjugation matches snapshot 1`] = `
 {
-  "class": "Weak II",
+  "class": "Weak I",
   "gloss": "to plough",
   "imperative": {
     "pl": "eriaþ",
-    "sg": "era",
+    "sg": "ere",
   },
   "lemma": "erian",
   "nonFinite": {
     "infinitive": "erian",
-    "inflectedInfinitive": "tō erianne",
-    "pastParticiple": "ġeerod",
+    "inflectedInfinitive": "tō erienne",
+    "pastParticiple": "ġeered",
     "presentParticiple": "eriende",
   },
   "pastInd": {
-    "pl": "erodon",
-    "sg1": "erode",
-    "sg2": "erodest",
-    "sg3": "erode",
+    "pl": "eredon",
+    "sg1": "erede",
+    "sg2": "eredest",
+    "sg3": "erede",
   },
   "pastSubj": {
-    "pl": "eroden",
-    "sg": "erode",
+    "pl": "ereden",
+    "sg": "erede",
   },
   "presentInd": {
     "pl": "eriaþ",
-    "sg1": "eriġe",
-    "sg2": "erast",
-    "sg3": "eraþ",
+    "sg1": "erie",
+    "sg2": "erest",
+    "sg3": "ereþ",
   },
   "presentSubj": {
-    "pl": "eriġen",
-    "sg": "eriġe",
+    "pl": "erien",
+    "sg": "erie",
   },
   "sources": [
     {
@@ -4987,7 +4987,7 @@ exports[`conjugation snapshots forsittan conjugation matches snapshot 1`] = `
   "gloss": "to be absent from; neglect",
   "imperative": {
     "pl": "forsittaþ",
-    "sg": "forsitt",
+    "sg": "forsite",
   },
   "lemma": "forsittan",
   "nonFinite": {
@@ -5515,7 +5515,7 @@ exports[`conjugation snapshots gebiddan conjugation matches snapshot 1`] = `
   "gloss": "pray, worship",
   "imperative": {
     "pl": "ġebiddaþ",
-    "sg": "ġebidd",
+    "sg": "ġebide",
   },
   "lemma": "ġebiddan",
   "nonFinite": {
@@ -6681,8 +6681,8 @@ exports[`conjugation snapshots gelimpan conjugation matches snapshot 1`] = `
   "presentInd": {
     "pl": "ġelimpaþ",
     "sg1": "ġelimpe",
-    "sg2": "ġilimpst",
-    "sg3": "ġilimpþ",
+    "sg2": "ġelimpst",
+    "sg3": "ġelimpþ",
   },
   "presentSubj": {
     "pl": "ġelimpen",
@@ -6857,8 +6857,8 @@ exports[`conjugation snapshots geniman conjugation matches snapshot 1`] = `
   "presentInd": {
     "pl": "ġenimaþ",
     "sg1": "ġenime",
-    "sg2": "ġinimst",
-    "sg3": "ġinimþ",
+    "sg2": "ġenimst",
+    "sg3": "ġenimþ",
   },
   "presentSubj": {
     "pl": "ġenimen",
@@ -7275,7 +7275,7 @@ exports[`conjugation snapshots gescieppan conjugation matches snapshot 1`] = `
   "gloss": "to create",
   "imperative": {
     "pl": "ġesċieppaþ",
-    "sg": "ġesċiepp",
+    "sg": "ġesċiepe",
   },
   "lemma": "ġesċieppan",
   "nonFinite": {
@@ -7297,7 +7297,7 @@ exports[`conjugation snapshots gescieppan conjugation matches snapshot 1`] = `
   "presentInd": {
     "pl": "ġesċieppaþ",
     "sg1": "ġesċieppe",
-    "sg2": "ġesċiepst",
+    "sg2": "ġesċiepest",
     "sg3": "ġesċiepþ",
   },
   "presentSubj": {
@@ -7539,7 +7539,7 @@ exports[`conjugation snapshots gesittan conjugation matches snapshot 1`] = `
   "gloss": "to come to rest, sit down; occupy",
   "imperative": {
     "pl": "ġesittaþ",
-    "sg": "ġesitt",
+    "sg": "ġesite",
   },
   "lemma": "ġesittan",
   "nonFinite": {
@@ -7561,8 +7561,8 @@ exports[`conjugation snapshots gesittan conjugation matches snapshot 1`] = `
   "presentInd": {
     "pl": "ġesittaþ",
     "sg1": "ġesitte",
-    "sg2": "ġisitst",
-    "sg3": "ġisitt",
+    "sg2": "ġesitst",
+    "sg3": "ġesitt",
   },
   "presentSubj": {
     "pl": "ġesitten",
@@ -7957,8 +7957,8 @@ exports[`conjugation snapshots gewinnan conjugation matches snapshot 1`] = `
   "presentInd": {
     "pl": "ġewinnaþ",
     "sg1": "ġewinne",
-    "sg2": "ġiwinst",
-    "sg3": "ġiwinþ",
+    "sg2": "ġewinst",
+    "sg3": "ġewinþ",
   },
   "presentSubj": {
     "pl": "ġewinnen",
@@ -8297,14 +8297,14 @@ exports[`conjugation snapshots gretan conjugation matches snapshot 1`] = `
     "presentParticiple": "grētende",
   },
   "pastInd": {
-    "pl": "grēton",
-    "sg1": "grēte",
-    "sg2": "grētest",
-    "sg3": "grēte",
+    "pl": "grētton",
+    "sg1": "grētte",
+    "sg2": "grēttest",
+    "sg3": "grētte",
   },
   "pastSubj": {
-    "pl": "grēten",
-    "sg": "grēte",
+    "pl": "grētten",
+    "sg": "grētte",
   },
   "presentInd": {
     "pl": "grētaþ",
@@ -9481,7 +9481,7 @@ exports[`conjugation snapshots libban conjugation matches snapshot 1`] = `
   "nonFinite": {
     "infinitive": "libban",
     "inflectedInfinitive": "tō libbanne",
-    "pastParticiple": "ġelīfd",
+    "pastParticiple": "ġelifd",
     "presentParticiple": "libbende",
   },
   "pastInd": {
@@ -9519,7 +9519,7 @@ exports[`conjugation snapshots licgan conjugation matches snapshot 1`] = `
   "gloss": "lie; run, lead (roads, rivers)",
   "imperative": {
     "pl": "liċġaþ",
-    "sg": "liċġ",
+    "sg": "liġe",
   },
   "lemma": "liċġan",
   "nonFinite": {
@@ -10674,9 +10674,9 @@ exports[`conjugation snapshots ongietan conjugation matches snapshot 1`] = `
   },
   "pastInd": {
     "pl": "onġēaton",
-    "sg1": "onġēat",
+    "sg1": "onġeat",
     "sg2": "onġēate",
-    "sg3": "onġēat",
+    "sg3": "onġeat",
   },
   "pastSubj": {
     "pl": "onġēaten",
@@ -12202,15 +12202,15 @@ exports[`conjugation snapshots slaepan conjugation matches snapshot 1`] = `
   "class": "Strong VII",
   "gloss": "to sleep",
   "imperative": {
-    "pl": "slæpaþ",
-    "sg": "slæp",
+    "pl": "slǣpaþ",
+    "sg": "slǣp",
   },
-  "lemma": "slæpan",
+  "lemma": "slǣpan",
   "nonFinite": {
-    "infinitive": "slæpan",
-    "inflectedInfinitive": "tō slæpenne",
-    "pastParticiple": "ġeslæpen",
-    "presentParticiple": "slæpende",
+    "infinitive": "slǣpan",
+    "inflectedInfinitive": "tō slǣpenne",
+    "pastParticiple": "ġeslǣpen",
+    "presentParticiple": "slǣpende",
   },
   "pastInd": {
     "pl": "slēpon",
@@ -12223,14 +12223,14 @@ exports[`conjugation snapshots slaepan conjugation matches snapshot 1`] = `
     "sg": "slēpe",
   },
   "presentInd": {
-    "pl": "slæpaþ",
-    "sg1": "slæpe",
-    "sg2": "slæpst",
-    "sg3": "slæpþ",
+    "pl": "slǣpaþ",
+    "sg1": "slǣpe",
+    "sg2": "slǣpst",
+    "sg3": "slǣpþ",
   },
   "presentSubj": {
-    "pl": "slæpen",
-    "sg": "slæpe",
+    "pl": "slǣpen",
+    "sg": "slǣpe",
   },
   "sources": [
     {
@@ -12913,7 +12913,7 @@ exports[`conjugation snapshots tellan conjugation matches snapshot 1`] = `
   "nonFinite": {
     "infinitive": "tellan",
     "inflectedInfinitive": "tō tellenne",
-    "pastParticiple": "ġeteled",
+    "pastParticiple": "ġeteald",
     "presentParticiple": "tellende",
   },
   "pastInd": {
@@ -13397,7 +13397,7 @@ exports[`conjugation snapshots wadan conjugation matches snapshot 1`] = `
   "nonFinite": {
     "infinitive": "wadan",
     "inflectedInfinitive": "tō wadenne",
-    "pastParticiple": "ġewæden",
+    "pastParticiple": "ġewaden",
     "presentParticiple": "wadende",
   },
   "pastInd": {
