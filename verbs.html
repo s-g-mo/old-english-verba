@@ -576,6 +576,15 @@
   <script src="paradigm.js"></script>
   <script>
     let verbs = [];
+    let familyMap = {};   // id → related ids (derived prefix families, base first)
+
+    // Derived prefix family plus any hand-curated `related` extras, deduped.
+    function relatedIdsFor(verb) {
+      const fam = familyMap[verb.id] || [];
+      const seen = new Set(fam);
+      seen.add(verb.id);
+      return fam.concat((verb.related || []).filter(id => !seen.has(id)));
+    }
     let activeId = null;
 
     function tagClass(type) {
@@ -746,9 +755,9 @@
           <div class="tile-grid">${tiles}</div>
         </div>
         ${verb.notes ? `<div class="verb-notes"><p>${verb.notes}</p></div>` : ''}
-        ${verb.related && verb.related.length ? `<div class="verb-sources">
+        ${relatedIdsFor(verb).length ? `<div class="verb-sources">
           <span class="sources-label">Related</span>
-          ${verb.related.map(id => {
+          ${relatedIdsFor(verb).map(id => {
         const rel = verbs.find(v => v.id === id);
         return `<span class="tag-source tag-related" data-id="${id}" style="cursor:pointer">${rel ? rel.lemma : id}</span>`;
       }).join('')}
@@ -845,6 +854,7 @@
         const res = await fetch('verbs.json');
         if (!res.ok) throw new Error(res.statusText);
         verbs = await res.json();
+        familyMap = Paradigm.buildFamilies(verbs);
         renderSidebar('');
         const hash = window.location.hash.slice(1);
         const initial = (hash && verbs.find(v => v.id === hash)) || verbs[0];

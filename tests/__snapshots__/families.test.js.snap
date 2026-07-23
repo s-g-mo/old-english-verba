@@ -1,0 +1,408 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`derived verb families (Related tags) family map matches snapshot 1`] = `
+{
+  "aberan": [
+    "beran",
+  ],
+  "aetstandan": [
+    "standan",
+    "understandan",
+    "wipstandan",
+  ],
+  "aetwindan": [
+    "windan",
+  ],
+  "agan-2": [
+    "gan",
+    "began",
+  ],
+  "agiefan": [
+    "giefan",
+    "forgiefan",
+  ],
+  "aliefan": [
+    "liefan",
+    "geliefan",
+  ],
+  "aliesan": [
+    "onliesan",
+  ],
+  "animan": [
+    "niman",
+    "forniman",
+    "geniman",
+  ],
+  "asendan": [
+    "sendan",
+  ],
+  "asettan": [
+    "settan",
+    "gesettan",
+  ],
+  "ateon": [
+    "teon",
+  ],
+  "awacian": [
+    "wacian",
+  ],
+  "bebeodan": [
+    "forbeodan",
+  ],
+  "beciepan": [
+    "ciepan",
+  ],
+  "becuman": [
+    "cuman",
+  ],
+  "befon": [
+    "onfon",
+    "underfon",
+  ],
+  "began": [
+    "gan",
+    "agan-2",
+  ],
+  "begietan": [
+    "forgietan",
+    "ongietan",
+  ],
+  "behealdan": [
+    "healdan",
+  ],
+  "behydan": [
+    "gehydan",
+  ],
+  "beran": [
+    "aberan",
+  ],
+  "beseon": [
+    "geseon",
+  ],
+  "besittan": [
+    "sittan",
+    "forsittan",
+    "gesittan",
+  ],
+  "beswican": [
+    "swican",
+    "geswican",
+  ],
+  "betynan": [
+    "ontynan",
+  ],
+  "bidan": [
+    "gebidan",
+  ],
+  "biddan": [
+    "gebiddan",
+  ],
+  "ceosan": [
+    "geceosan",
+  ],
+  "ciepan": [
+    "beciepan",
+  ],
+  "cuman": [
+    "becuman",
+  ],
+  "cypan": [
+    "gecypan",
+  ],
+  "deman": [
+    "fordeman",
+  ],
+  "don": [
+    "gedon",
+  ],
+  "faegnian": [
+    "onfaegnian",
+  ],
+  "feallan": [
+    "gefeallan",
+  ],
+  "feohtan": [
+    "gefeohtan",
+  ],
+  "feran": [
+    "forpferan",
+  ],
+  "forbeodan": [
+    "bebeodan",
+  ],
+  "fordeman": [
+    "deman",
+  ],
+  "forgiefan": [
+    "giefan",
+    "agiefan",
+  ],
+  "forgieldan": [
+    "gieldan",
+  ],
+  "forgietan": [
+    "begietan",
+    "ongietan",
+  ],
+  "forlatan": [
+    "laetan",
+  ],
+  "forniman": [
+    "niman",
+    "animan",
+    "geniman",
+  ],
+  "forpferan": [
+    "feran",
+  ],
+  "forpgewitan": [
+    "gewitan",
+  ],
+  "forsittan": [
+    "sittan",
+    "besittan",
+    "gesittan",
+  ],
+  "forwyrcan": [
+    "wyrcan",
+  ],
+  "gadrian": [
+    "gegadrian",
+  ],
+  "gan": [
+    "agan-2",
+    "began",
+  ],
+  "gebidan": [
+    "bidan",
+  ],
+  "gebiddan": [
+    "biddan",
+  ],
+  "geceosan": [
+    "ceosan",
+  ],
+  "gecypan": [
+    "cypan",
+  ],
+  "gedon": [
+    "don",
+  ],
+  "gefeallan": [
+    "feallan",
+  ],
+  "gefeohtan": [
+    "feohtan",
+  ],
+  "gegadrian": [
+    "gadrian",
+  ],
+  "gehatan": [
+    "hatan",
+  ],
+  "gehieran": [
+    "hieran",
+  ],
+  "gehweorfan": [
+    "hweorfan",
+  ],
+  "gehydan": [
+    "behydan",
+  ],
+  "gelaeran": [
+    "laeran",
+  ],
+  "gelician": [
+    "lician",
+  ],
+  "geliefan": [
+    "liefan",
+    "aliefan",
+  ],
+  "geniman": [
+    "niman",
+    "animan",
+    "forniman",
+  ],
+  "gepencan": [
+    "pencan",
+  ],
+  "gesawan": [
+    "sawan",
+    "ofersawan",
+  ],
+  "gesecan": [
+    "secan",
+  ],
+  "gesecgan": [
+    "secgan",
+  ],
+  "geseon": [
+    "beseon",
+  ],
+  "gesettan": [
+    "settan",
+    "asettan",
+  ],
+  "gesittan": [
+    "sittan",
+    "besittan",
+    "forsittan",
+  ],
+  "geswican": [
+    "swican",
+    "beswican",
+  ],
+  "getellan": [
+    "tellan",
+  ],
+  "geweorpan": [
+    "weorpan",
+  ],
+  "gewinnan": [
+    "oferwinnan",
+  ],
+  "gewitan": [
+    "forpgewitan",
+  ],
+  "gewunian": [
+    "wunian",
+  ],
+  "giefan": [
+    "agiefan",
+    "forgiefan",
+  ],
+  "gieldan": [
+    "forgieldan",
+  ],
+  "hatan": [
+    "gehatan",
+  ],
+  "healdan": [
+    "behealdan",
+  ],
+  "hieran": [
+    "gehieran",
+  ],
+  "hweorfan": [
+    "gehweorfan",
+  ],
+  "laeran": [
+    "gelaeran",
+  ],
+  "laetan": [
+    "forlatan",
+  ],
+  "lician": [
+    "gelician",
+  ],
+  "liefan": [
+    "aliefan",
+    "geliefan",
+  ],
+  "niman": [
+    "animan",
+    "forniman",
+    "geniman",
+  ],
+  "ofersawan": [
+    "sawan",
+    "gesawan",
+  ],
+  "oferwinnan": [
+    "gewinnan",
+  ],
+  "ofslean": [
+    "slean",
+  ],
+  "onfaegnian": [
+    "faegnian",
+  ],
+  "onfon": [
+    "befon",
+    "underfon",
+  ],
+  "ongietan": [
+    "begietan",
+    "forgietan",
+  ],
+  "onliesan": [
+    "aliesan",
+  ],
+  "ontynan": [
+    "betynan",
+  ],
+  "pencan": [
+    "gepencan",
+  ],
+  "sawan": [
+    "gesawan",
+    "ofersawan",
+  ],
+  "secan": [
+    "gesecan",
+  ],
+  "secgan": [
+    "gesecgan",
+  ],
+  "sendan": [
+    "asendan",
+  ],
+  "settan": [
+    "asettan",
+    "gesettan",
+  ],
+  "sittan": [
+    "besittan",
+    "forsittan",
+    "gesittan",
+  ],
+  "slean": [
+    "ofslean",
+  ],
+  "standan": [
+    "aetstandan",
+    "understandan",
+    "wipstandan",
+  ],
+  "swican": [
+    "beswican",
+    "geswican",
+  ],
+  "tellan": [
+    "getellan",
+  ],
+  "teon": [
+    "ateon",
+  ],
+  "underfon": [
+    "befon",
+    "onfon",
+  ],
+  "understandan": [
+    "standan",
+    "aetstandan",
+    "wipstandan",
+  ],
+  "wacian": [
+    "awacian",
+  ],
+  "weorpan": [
+    "geweorpan",
+  ],
+  "windan": [
+    "aetwindan",
+  ],
+  "wipstandan": [
+    "standan",
+    "aetstandan",
+    "understandan",
+  ],
+  "wunian": [
+    "gewunian",
+  ],
+  "wyrcan": [
+    "forwyrcan",
+  ],
+}
+`;

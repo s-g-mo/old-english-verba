@@ -462,14 +462,115 @@ var Paradigm = (function () {
     return result;
   }
 
+  // ── Verb families (Related tags) ────────────────────────────────────────────
+  // A verb and all its prefixed variants are mutually related; families are
+  // derived from the lemma list at runtime rather than stored in verbs.json
+  // (decision 2026-07-23, docs/TODOs.md). Pure helper — conjugation untouched.
+
+  var FAMILY_PREFIXES = ['forþ', 'under', 'ofer', 'ymb', 'wiþ', 'æt', 'ġe', 'be', 'of', 'on', 'ā', 'for'];
+  var FAMILY_VOWELS = 'aeiouāēīōūæǣyȳ';
+
+  // All prefix-stripped candidates of a lemma (1–2 layers, consonant must
+  // follow the prefix so ġeo-/ġea- roots stay intact).
+  function familyStrips(lemma) {
+    var out = [];
+    (function rec(s, depth) {
+      for (var i = 0; i < FAMILY_PREFIXES.length; i++) {
+        var p = FAMILY_PREFIXES[i];
+        if (s.indexOf(p) === 0 && s.length > p.length &&
+            FAMILY_VOWELS.indexOf(s.charAt(p.length)) === -1) {
+          var rest = s.slice(p.length);
+          out.push(rest);
+          if (depth < 2) rec(rest, depth + 1);
+        }
+      }
+    }(lemma.normalize('NFC'), 1));
+    return out;
+  }
+
+  // Returns { id: [other family-member ids, base verb first] } for every verb
+  // that belongs to a family of ≥ 2. A strip links directly when it matches an
+  // existing lemma; otherwise verbs sharing an identical stripped root of ≥ 4
+  // chars (or 3 with a long vowel, e.g. -fōn) group even without their base.
+  function buildFamilies(verbList) {
+    var byLemma = {}, parent = {};
+    verbList.forEach(function (v) {
+      byLemma[v.lemma.normalize('NFC')] = v.id;
+      parent[v.id] = v.id;
+    });
+    function find(x) {
+      while (parent[x] !== x) { parent[x] = parent[parent[x]]; x = parent[x]; }
+      return x;
+    }
+    function union(a, b) {
+      var ra = find(a), rb = find(b);
+      if (ra !== rb) parent[ra] = rb;
+    }
+
+    var rootCandidates = {};
+    verbList.forEach(function (v) {
+      familyStrips(v.lemma).forEach(function (s) {
+        if (byLemma[s]) {
+          union(v.id, byLemma[s]);
+        } else if (s.length >= 4 || /[āēīōūǣȳ]/.test(s)) {
+          (rootCandidates[s] = rootCandidates[s] || []).push(v.id);
+        }
+      });
+    });
+    Object.keys(rootCandidates).forEach(function (root) {
+      var ids = rootCandidates[root];
+      for (var i = 1; i < ids.length; i++) union(ids[0], ids[i]);
+    });
+
+    var groups = {};
+    verbList.forEach(function (v) {
+      var r = find(v.id);
+      (groups[r] = groups[r] || []).push(v);
+    });
+
+    var result = {};
+    Object.keys(groups).forEach(function (key) {
+      var members = groups[key];
+      if (members.length < 2) return;
+      // Base = the member other members strip down to (sittan in the sittan
+      // family); when the true base isn't in the DB, the shortest lemma.
+      var base = null;
+      members.forEach(function (m) {
+        var lemma = m.lemma.normalize('NFC');
+        var isTarget = members.some(function (o) {
+          return o !== m && familyStrips(o.lemma).indexOf(lemma) !== -1;
+        });
+        if (isTarget && (base === null || m.lemma.length < base.lemma.length)) base = m;
+      });
+      if (!base) {
+        base = members.reduce(function (a, b) {
+          if (b.lemma.length !== a.lemma.length) return b.lemma.length < a.lemma.length ? b : a;
+          return b.lemma < a.lemma ? b : a;
+        });
+      }
+      var ordered = [base].concat(
+        members.filter(function (m) { return m !== base; })
+          .sort(function (a, b) { return a.lemma.localeCompare(b.lemma); })
+      );
+      members.forEach(function (m) {
+        result[m.id] = ordered
+          .filter(function (o) { return o !== m; })
+          .map(function (o) { return o.id; });
+      });
+    });
+    return result;
+  }
+
   // ── Public API ──────────────────────────────────────────────────────────────
 
-  return { conjugate, inferClass, extractStems, computeSeriesVowels };
+  return { conjugate, inferClass, extractStems, computeSeriesVowels, buildFamilies };
 
 }());
 
 // Node.js / Jest compatibility
 if (typeof module !== 'undefined') module.exports = { Paradigm };
+// buildFamilies: see the "verb families" section — pure helper for the FE
+// Related tags; conjugation output is untouched by it.
 
 // Sanity checks:
 // swimman  → 3sg swimþ   (doubled mm drops before þ)
